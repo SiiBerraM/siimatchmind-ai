@@ -86,8 +86,16 @@
     standings: async () => mode === "api" ? get("/api/standings" + (LEAGUE ? "?" + lq() : "")) : ((ST.standings || {})[LEAGUE] || Object.values(ST.standings || {})[0] || { rows: [] }),
     analyze: async (h, a, mid) => {
       if (mode === "api") return get("/api/analyze?home=" + encodeURIComponent(h) + "&away=" + encodeURIComponent(a) + "&n=10" + (mid ? "&match_id=" + encodeURIComponent(mid) : ""));
-      const r = ST.analyses[h + "|" + a];
-      if (!r) throw { code: "same_team" };
+      const k = h + "|" + a;
+      if (ST.analyses[k]) return ST.analyses[k];
+      if (h === a) throw { code: "same_team" };
+      const th = (ST.teams || []).find(x => x.id === h), ta = (ST.teams || []).find(x => x.id === a);
+      if (!th || !ta) throw { code: "not_found" };
+      if (th.league !== ta.league) throw { code: "different_leagues" };
+      window.SMM_PACKS = window.SMM_PACKS || {};
+      if (!window.SMM_PACKS[th.league]) window.SMM_PACKS[th.league] = await jget("data/analyses/" + th.league + ".json");
+      const r = window.SMM_PACKS[th.league][k];
+      if (!r) throw { code: "not_found" };
       return r;
     }
   };

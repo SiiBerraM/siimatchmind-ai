@@ -223,5 +223,8 @@
  "league.307": "Saudi Pro League",
  "league.200": "Botola Pro (Morocco)",
  "league.301": "UAE Pro League",
- "league.305": "Qatar Stars League"
+ "league.305": "Qatar Stars League",
+ "league.CL": "UEFA Champions League",
+ "league.EC": "European Championship",
+ "league.WC": "FIFA World Cup"
 }

@@ -33,6 +33,24 @@ def build():
             out["analyses"][f"{h}|{w}"] = service.analyze(h, w, 10)
         except Exception:
             pass
+    adir = FRONT / "data" / "analyses"
+    adir.mkdir(parents=True, exist_ok=True)
+    by_league = {}
+    for t in teams:
+        if t.get("league"):
+            by_league.setdefault(t["league"], []).append(t["id"])
+    for code, ids in by_league.items():
+        pack = {}
+        for h in ids:
+            for w in ids:
+                if h == w:
+                    continue
+                try:
+                    pack[f"{h}|{w}"] = service.analyze(h, w, 10)
+                except Exception:
+                    pass
+        (adir / (code + ".json")).write_text(json.dumps(pack, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print("league", code, len(pack), "analyses")
     p = FRONT / "data" / "static.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")

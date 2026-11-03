@@ -1,0 +1,12 @@
+# مثال لنشر على Render (يتطلب حسابًا؛ الخطة المجانية تنام عند عدم الاستخدام ولا تحفظ القرص).
+# للحفاظ على الحسابات والبيانات بين مرات التشغيل تحتاج قرصًا دائمًا (خطة مدفوعة) أو قاعدة بيانات خارجية.
+services:
+  - type: web
+    name: siimatchmind-ai
+    runtime: docker
+    dockerfilePath: deploy/Dockerfile
+    envVars:
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: API_FOOTBALL_KEY
+        sync: false

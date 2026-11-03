@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin — SiiMatchMind AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top"><div class="brand">SiiMatchMind <span>AI</span></div><select id="langSel" class="lang" aria-label="Language"></select></header>
+<main id="view"><h1 id="t"></h1>
+  <div class="pick"><label for="tok" id="tl"></label><input type="password" id="tok" autocomplete="off"><button class="btn" id="go"></button><p class="err" id="err"></p></div>
+  <div id="out"></div></main>
+<script>
+(async function () {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? "—" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const langs = await (await fetch("locales/languages.json")).json();
+  let saved = null; try { saved = localStorage.getItem("smm.lang"); } catch (e) { }
+  const nv = (navigator.language || "ar").slice(0, 2).toLowerCase();
+  let lang = langs.some(l => l.code === saved) ? saved : (langs.some(l => l.code === nv) ? nv : "ar"), D = {}, EN = await (await fetch("locales/en.json")).json();
+  const t = (k, p) => { let s = D[k] != null ? D[k] : (EN[k] != null ? EN[k] : k); if (p) s = s.replace(/\{(\w+)\}/g, (m, x) => p[x] != null ? p[x] : m); return s; };
+  async function setLang(c) {
+    lang = c; D = await (await fetch("locales/" + c + ".json")).json();
+    document.documentElement.lang = c; document.documentElement.dir = langs.find(l => l.code === c).dir;
+    try { localStorage.setItem("smm.lang", c); } catch (e) { }
+    $("t").textContent = t("admin.title"); $("tl").textContent = t("admin.token"); $("go").textContent = t("admin.load");
+  }
+  $("langSel").innerHTML = langs.map(l => `<option value="${l.code}">${esc(l.name)}</option>`).join("");
+  $("langSel").value = lang; await setLang(lang);
+  $("langSel").onchange = async () => { await setLang($("langSel").value); if (window._last) render(window._last); };
+  const row = (k, v) => `<div class="stat"><span>${t(k)}</span><b>${esc(v)}</b></div>`;
+  function render(d) {
+    window._last = d; const db = d.database, lq = d.live_quality, bt = d.backtest;
+    $("out").innerHTML = `<h2>${t("admin.db")}</h2>` + row("admin.users", db.users) + row("admin.favorites", db.favorites) + row("admin.history", db.history) +
+      row("admin.predictions", db.predictions_logged) + row("admin.teams", db.teams_in_db) + row("admin.matches", db.matches_in_db) + row("admin.stats", db.match_stats) +
+      row("admin.last_import", db.last_import) + row("admin.remaining", db.requests_remaining) +
+      `<h2>${t("admin.dataset")}</h2>` + row("admin.dataset", d.dataset.kind + (d.dataset.league ? " — " + d.dataset.league + " " + d.dataset.season : "")) +
+      `<h2>${t("admin.live")}</h2>` + row("admin.logged", lq.logged) + row("admin.resolved", lq.resolved) + row("admin.pending", lq.pending) +
+      (lq.resolved ? row("q.brier", lq.brier) + row("q.logloss", lq.log_loss) + row("q.acc", lq.accuracy) : `<p class="muted">${t("admin.none")}</p>`) +
+      `<p class="cap">${t("admin.note")}</p>` +
+      `<h2>${t("admin.backtest")}</h2>` + (bt.available ? row("q.tested", bt.tested_matches).replace(/\{n\}/, "") + row("q.brier", bt.model.brier) + row("q.logloss", bt.model.log_loss) : `<p class="muted">${t("q.unavailable")}</p>`);
+  }
+  $("go").onclick = async () => {
+    $("err").textContent = "";
+    try {
+      const r = await fetch("/api/admin/summary", { headers: { "X-Admin-Token": $("tok").value } });
+      const j = await r.json();
+      if (!r.ok) throw j.error || { code: "generic" };
+      render(j);
+    } catch (e) { $("err").textContent = t("err." + (e.code || "generic")); }
+  };
+})();
+</script>
+</body>
+</html>

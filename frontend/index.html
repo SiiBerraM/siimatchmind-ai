@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071a33">
+<title>SiiMatchMind AI — تحليل وتوقع المباريات</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">SiiMatchMind <span>AI</span></div>
+  <div class="tools"><div id="demoBadge" class="badge" hidden></div><button id="themeBtn" class="icon" type="button" aria-label="Theme">◐</button><select id="leagueSel" class="lang" hidden></select><select id="langSel" class="lang" aria-label="Language"></select></div>
+</header>
+<div id="demoNote" class="note" hidden></div>
+<main id="view" aria-live="polite"><p class="empty">…</p></main>
+<nav class="bar" aria-label="Main">
+  <a href="#/" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="#/standings" data-tab="standings"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg><span>Table</span></a>
+  <a href="#/analyze" data-tab="analyze"><svg viewBox="0 0 24 24"><path d="M4 20V10m6 10V4m6 16v-7m5 7H3"/></svg><span>Analysis</span></a>
+  <a href="#/teams" data-tab="teams"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.2 3.2 0 0 1 0 6m2 3.2c2 .7 3.5 2.5 3.5 5.8"/></svg><span>Teams</span></a>
+  <a href="#/saved" data-tab="saved"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>Saved</span></a>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>

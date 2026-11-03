@@ -23,10 +23,16 @@ def build():
         "analyses": {},
         "quality": service.quality(),
     }
-    for a in teams:
-        for b in teams:
-            if a["id"] != b["id"]:
-                out["analyses"][f"{a['id']}|{b['id']}"] = service.analyze(a["id"], b["id"], 10)
+    seen = set()
+    for m in out["matches"]["today"] + out["matches"]["upcoming"]:
+        h, w = m["home"], m["away"]
+        if (h, w) in seen:
+            continue
+        seen.add((h, w))
+        try:
+            out["analyses"][f"{h}|{w}"] = service.analyze(h, w, 10)
+        except Exception:
+            pass
     p = FRONT / "data" / "static.json"
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -55,5 +61,7 @@ def standalone():
 
 if __name__ == "__main__":
     build()
+    if "--standalone" in sys.argv:
+        standalone()
     if "--standalone" in sys.argv:
         standalone()

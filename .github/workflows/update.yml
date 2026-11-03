@@ -1,0 +1,24 @@
+name: update-space
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r backend/requirements.txt huggingface_hub
+      - env:
+          FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+        run: |
+          cd backend
+          python importer.py --source football-data --competition PL,ELC,BL1,SA,PD,FL1,DED,PPL,BSA
+          python build_static.py --standalone
+      - env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python -c "from huggingface_hub import HfApi; import os; HfApi().upload_file(path_or_fileobj='dist/SiiMatchMind-standalone.html', path_in_repo='index.html', repo_id='Siiberra/siimatchmind-ai', repo_type='space', token=os.environ['HF_TOKEN'])"

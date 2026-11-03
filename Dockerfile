@@ -4,7 +4,7 @@ WORKDIR /app
 COPY backend/requirements.txt backend/requirements.txt
 RUN pip install --no-cache-dir -r backend/requirements.txt
 COPY --chown=user backend backend
-COPY --chown=user docs frontend
+COPY --chown=user docs docs
 RUN mkdir -p /app/data && chown user /app/data
 USER user
 ENV SMM_DB=/app/data/smm.db PORT=7860

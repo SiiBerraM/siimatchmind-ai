@@ -8,7 +8,7 @@ from pathlib import Path
 import service
 
 ROOT = Path(__file__).resolve().parent.parent
-FRONT = ROOT / "frontend"
+FRONT = ROOT / "docs"
 
 
 def build():

@@ -52,7 +52,7 @@
   try { TOKEN = localStorage.getItem("smm.token"); } catch (e) { }
 
   async function detect() {
-    if (location.protocol.indexOf("http") === 0 && !window.SMM_STATIC) {
+    if (location.protocol.indexOf("http") === 0 && !window.SMM_STATIC && !location.hostname.endsWith("github.io")) {
       try {
         const c = new AbortController(), tm = setTimeout(() => c.abort(), 2000);
         const r = await fetch("/api/health", { signal: c.signal });
@@ -510,7 +510,7 @@
       paintBanner();
       window.addEventListener("hashchange", route);
       await route();
-      if (mode === "api" && "serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => { });
+      if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(() => { });
     } catch (e) {
       view.innerHTML = `<p class="err">${esc(DICT["err.load"] || "تعذّر تحميل البيانات / Could not load data")}<br><small>${esc(e && (e.message || e.code) || "")}</small></p>`;
     }

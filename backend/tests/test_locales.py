@@ -4,7 +4,7 @@ import os
 import re
 import unittest
 
-FRONT = os.path.join(os.path.dirname(__file__), "..", "..", "frontend")
+FRONT = os.path.join(os.path.dirname(__file__), "..", "..", "docs")
 
 
 def load(code):

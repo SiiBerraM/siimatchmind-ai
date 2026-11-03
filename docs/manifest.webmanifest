@@ -4,8 +4,8 @@
   "description": "تحليل وتوقع نتائج مباريات كرة القدم",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#071a33",
   "theme_color": "#071a33",
@@ -29,7 +29,7 @@
       "purpose": "maskable"
     }
   ],
-  "id": "/",
+  "id": "./",
   "orientation": "portrait",
   "categories": [
     "sports"

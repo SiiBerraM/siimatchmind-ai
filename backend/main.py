@@ -15,7 +15,7 @@ import api
 import autorefresh
 
 app = FastAPI(title="SiiMatchMind AI", description="تحليل وتوقع نتائج مباريات كرة القدم", version=api.VERSION)
-FRONTEND = Path(__file__).resolve().parent.parent / "frontend"
+FRONTEND = Path(__file__).resolve().parent.parent / "docs"
 MAX_BODY = 64 * 1024
 
 

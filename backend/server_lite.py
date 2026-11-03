@@ -14,7 +14,7 @@ from urllib.parse import parse_qsl, urlparse
 import api
 import autorefresh
 
-FRONTEND = Path(__file__).resolve().parent.parent / "frontend"
+FRONTEND = Path(__file__).resolve().parent.parent / "docs"
 MAX_BODY = 64 * 1024
 
 

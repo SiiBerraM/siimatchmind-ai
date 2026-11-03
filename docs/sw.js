@@ -1,6 +1,6 @@
 // عامل خدمة بسيط: يخزّن ملفات الواجهة فقط، أما /api فمن الشبكة دائمًا.
-const CACHE = "smm-v5";
-const FILES = ["/", "/style.css", "/app.js", "/manifest.webmanifest", "/privacy.html", "/terms.html", "/icons/icon-512-maskable.png", "/icons/icon-192.png", "/icons/icon-512.png", "/locales/languages.json", "/locales/ar.json", "/locales/en.json", "/locales/fr.json", "/locales/es.json", "/locales/tr.json"];
+const CACHE = "smm-v6";
+const FILES = ["./", "style.css", "app.js", "manifest.webmanifest", "privacy.html", "terms.html", "icons/icon-512-maskable.png", "icons/icon-192.png", "icons/icon-512.png", "locales/languages.json", "locales/ar.json", "locales/en.json", "locales/fr.json", "locales/es.json", "locales/tr.json"];
 self.addEventListener("install", e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))));
 self.addEventListener("activate", e => e.waitUntil(
   caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k))))));

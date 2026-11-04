@@ -14,12 +14,22 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r backend/requirements.txt huggingface_hub
-      - name: Build
+      - name: Import football-data
         env:
           FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
         run: |
           cd backend
           python importer.py --source football-data --competition PL,ELC,BL1,SA,PD,FL1,DED,PPL,BSA,CL,EC,WC
+      - name: Import Highlightly (Arabic leagues)
+        continue-on-error: true
+        env:
+          HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
+        run: |
+          cd backend
+          python importer.py --source highlightly
+      - name: Build static
+        run: |
+          cd backend
           python build_static.py --standalone
       - name: Save static data
         run: |

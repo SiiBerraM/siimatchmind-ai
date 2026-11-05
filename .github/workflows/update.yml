@@ -30,6 +30,8 @@ jobs:
         run: |
           cd backend
           python build_static.py --standalone
+      - name: Fetch press
+        run: python backend/fetch_press.py || echo "::warning::press fetch failed"
       - name: Save static data
         run: |
           git config user.name "github-actions"

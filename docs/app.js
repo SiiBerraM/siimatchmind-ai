@@ -80,7 +80,7 @@
     meta: async () => mode === "api" ? get("/api/meta") : ST.meta,
     leagues: async () => mode === "api" ? get("/api/leagues") : (ST.leagues || []),
     teams: async () => mode === "api" ? get("/api/teams") : ST.teams,
-    matches: async k => mode === "api" ? get("/api/matches?kind=" + k + (LEAGUE ? "&" + lq() : "")) : ST.matches[k],
+    matches: async k => mode === "api" ? get("/api/matches?kind=" + k + (LEAGUE ? "&" + lq() : "")) : (ST.matches_by_league && LEAGUE ? ((ST.matches_by_league[LEAGUE] || {})[k] || []) : ST.matches[k]),
     team: async id => mode === "api" ? get("/api/teams/" + encodeURIComponent(id)) : (ST.team_detail[id] || Promise.reject({ code: "not_found" })),
     quality: async () => mode === "api" ? get("/api/quality" + (LEAGUE ? "?" + lq() : "")) : ST.quality,
     standings: async () => mode === "api" ? get("/api/standings" + (LEAGUE ? "?" + lq() : "")) : ((ST.standings || {})[LEAGUE] || Object.values(ST.standings || {})[0] || { rows: [] }),

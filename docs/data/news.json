@@ -1,12 +1,52 @@
 {
- "updated": "2026-11-05T20:47:57.431983+00:00",
+ "updated": "2026-11-05T21:16:21.606869+00:00",
  "items": [
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El Levante prevé generar 22 millones y reducir su deuda en más de 35 antes del 30 de junio de 2027",
+   "link": "https://www.marca.com/futbol/levante/2026/11/05/levante-preve-generar-22-millones-reducir-deuda-35-30-junio-2027.html",
+   "date": "2026-11-05T21:04:22+00:00",
+   "pred": false
+  },
   {
    "lang": "en",
    "source": "The Guardian",
    "title": "Sunderland v Dinamo Zagreb, Celtic v Besiktas: Europa League – live",
    "link": "https://www.theguardian.com/football/live/2026/nov/05/crystal-palace-hoffenheim-sparta-prague-bournemouth-sunderland-celtic-europa-league-live",
-   "date": "2026-11-05T20:43:19+00:00",
+   "date": "2026-11-05T20:58:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Europa League: Bournemouth stay perfect while Milan humbled at home",
+   "link": "https://www.theguardian.com/football/2026/nov/05/europa-league-roundup-sparta-prague-bournemouth-ferencvaros-milanstay-perfect-while-milan-sunderland-dinamo-zagreb",
+   "date": "2026-11-05T20:51:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« On est arrivé à un point de non-retour » : climat délétère au district de Paris après l'enquête pour soupçons de harcèlement et d'agression sexuelle",
+   "link": "https://www.lequipe.fr/Football/Article/-on-est-arrive-a-un-point-de-non-retour-climat-deletere-au-district-de-paris-apres-l-enquete-pour-soupcons-de-harcelement-et-d-agression-sexuelle/1741460#at_medium=RSS_feeds",
+   "date": "2026-11-05T20:32:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "La suspension de quatre mois ferme infligée à Olivier Létang « pose un précédent préoccupant pour le foot » selon le LOSC",
+   "link": "https://www.lequipe.fr/Football/Actualites/La-suspension-de-quatre-mois-ferme-infligee-a-olivier-letang-pose-un-precedent-preoccupant-pour-le-foot-selon-le-losc/1741457#at_medium=RSS_feeds",
+   "date": "2026-11-05T20:31:25+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Les notes de Real Sociedad-OL : Tessmann en tête de cortège, Abner dans la nasse",
+   "link": "https://www.lequipe.fr/Football/Article/Les-notes-de-real-sociedad-ol-tessmann-en-tete-de-cortege-abner-dans-la-nasse/1741454#at_medium=RSS_feeds",
+   "date": "2026-11-05T20:23:44+00:00",
    "pred": false
   },
   {
@@ -154,30 +194,6 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Podcast « Big 5 » - De Bruyne à Naples, le crépuscule d'un géant",
-   "link": "https://www.lequipe.fr/Football/Actualites/Podcast-big-5-de-bruyne-a-naples-le-crepuscule-d-un-geant/1741423#at_medium=RSS_feeds",
-   "date": "2026-11-05T17:54:22+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Olivier Létang, le président du LOSC, suspendu quatre mois ferme après son nouvel écart contre les arbitres lors de Lille-PSG",
-   "link": "https://www.lequipe.fr/Football/Actualites/Olivier-letang-le-president-du-losc-suspendu-quatre-mois-ferme-apres-son-nouvel-ecart-contre-les-arbitres-lors-de-lille-psg/1741419#at_medium=RSS_feeds",
-   "date": "2026-11-05T17:51:17+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "La carrière internationale de Cristiano Ronaldo avec le Portugal en chiffres",
-   "link": "https://www.lequipe.fr/Football/Actualites/La-carriere-internationale-de-cristiano-ronaldo-avec-le-portugal-en-chiffres/1741418#at_medium=RSS_feeds",
-   "date": "2026-11-05T17:51:06+00:00",
-   "pred": false
-  },
-  {
    "lang": "es",
    "source": "Marca",
    "title": "Manu Bueno y Peque se caen de la lista del Sevilla",
@@ -239,14 +255,6 @@
    "title": "JAL vuelve a La Rosaleda sin haber perdido contra el Málaga",
    "link": "https://www.marca.com/futbol/malaga/2026/11/05/jal-vuelve-rosaleda-haber-perdido-malaga.html",
    "date": "2026-11-05T15:58:50+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Football Daily | Como turn on the style and hammer nine past out-of-focus Lens",
-   "link": "https://www.theguardian.com/football/2026/nov/05/football-daily-email-como-lens",
-   "date": "2026-11-05T15:55:25+00:00",
    "pred": false
   },
   {
@@ -431,14 +439,6 @@
    "title": "Japan FA’s Kozo Tashima to stand against Infantino for Fifa presidency",
    "link": "https://www.theguardian.com/football/2026/nov/05/japan-fa-head-kozo-tashima-stand-against-gianni-infantino-for-fifa-president",
    "date": "2026-11-05T10:48:42+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Isaac Romero se prueba con una protección en su rodilla izquierda",
-   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/isaac-romero-prueba-proteccion-rodilla-izquierda.html",
-   "date": "2026-11-05T10:31:09+00:00",
    "pred": false
   },
   {

@@ -420,6 +420,8 @@
       ${h.length ? h.map(link).join("") + (logged() ? "" : `<button class="btn ghost" id="clr" style="margin-top:12px">${t("saved.clear")}</button>`) : `<p class="muted">${t("saved.hist_empty")}</p>`}
       <p class="cap">${logged() ? t("saved.cap_server") : t("saved.cap_local")}</p>
       <a class="tl" href="#/quality" style="margin-top:14px"><span>${t("saved.quality")}</span><span class="muted">›</span></a>
+      <a class="tl" href="#/press"><span>${t("saved.press")}</span><span class="muted">›</span></a>
+      <a class="tl" href="#/about"><span>${t("saved.about")}</span><span class="muted">›</span></a>
       <p class="cap"><a href="/privacy.html" target="_blank" rel="noopener">${t("legal.privacy")}</a> • <a href="/terms.html" target="_blank" rel="noopener">${t("legal.terms")}</a></p>`;
     const g = id => document.getElementById(id);
     if (g("delacct")) g("delacct").onclick = async () => {
@@ -458,6 +460,31 @@
       <p class="cap">${t("q.calib_cap", { e: pct(q.calibration_error) })}</p>`;
   }
 
+  // ---------- الصحافة ومن نحن ----------
+  async function pagePress() {
+    let d = { items: [] };
+    try { const r = await fetch("data/news.json", { cache: "no-cache" }); if (r.ok) d = await r.json(); } catch (e) { }
+    let cur = "ar"; try { cur = localStorage.getItem("smm.lang") || document.documentElement.lang || "ar"; } catch (e) { }
+    const all = (d.items || []).filter(x => /^https?:\/\//.test(x.link || ""));
+    const when = x => { const dt = new Date(x.date); return isNaN(dt) ? "" : " • " + dt.toLocaleDateString(cur); };
+    const row = x => `<a class="tl" href="${esc(x.link)}" target="_blank" rel="noopener"><span class="nm"><span>${x.pred ? "⭐ " : ""}${esc(x.title)}</span></span><span class="muted">${esc(x.source)}${when(x)}</span></a>`;
+    const byPred = (a, b) => (b.pred ? 1 : 0) - (a.pred ? 1 : 0);
+    const mine = all.filter(x => x.lang === cur).sort(byPred);
+    const others = all.filter(x => x.lang !== cur).sort(byPred).slice(0, 30);
+    view.innerHTML = `<h1>${t("press.title")}</h1>
+      <p class="cap">${t("press.note")}</p>
+      <h2>${t("press.mine")}</h2>${mine.length ? mine.map(row).join("") : `<p class="muted">${t("press.empty")}</p>`}
+      ${others.length ? `<h2>${t("press.other")}</h2>${others.map(row).join("")}` : ""}`;
+  }
+
+  async function pageAbout() {
+    view.innerHTML = `<h1>${t("about.title")}</h1>
+      <h2>${t("about.hello")}</h2>
+      <p>${t("about.p1")}</p><p>${t("about.p2")}</p><p>${t("about.p3")}</p>
+      <p><b>${t("about.sign")}</b></p>
+      <h2>${t("about.disc_title")}</h2><p class="cap">${t("about.disc")}</p>`;
+  }
+
   // ---------- التوجيه ----------
   const routes = [
     [/^#\/analyze\/([\w-]+)\/([\w-]+)(?:\/([\w-]+))?$/, "analyze", m => pageAnalysis(m[1], m[2], m[3])],
@@ -467,6 +494,8 @@
     [/^#\/standings$/, "standings", () => pageStandings()],
     [/^#\/saved$/, "saved", () => pageSaved()],
     [/^#\/quality$/, "saved", () => pageQuality()],
+    [/^#\/press$/, "saved", () => pagePress()],
+    [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]
   ];
 

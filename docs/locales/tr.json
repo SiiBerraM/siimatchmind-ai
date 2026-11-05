@@ -226,5 +226,20 @@
  "league.305": "Katar Stars Ligi",
  "league.CL": "UEFA Şampiyonlar Ligi",
  "league.EC": "Avrupa Şampiyonası",
- "league.WC": "Dünya Kupası"
+ "league.WC": "Dünya Kupası",
+ "press.title": "Basın tahminleri",
+ "press.note": "Spor gazetelerinden başlıklar ve bağlantılar. ⭐ bir ön izleme veya tahmini gösterir. Makaleler yayıncılarına aittir; başlığa dokunmak kaynağı açar.",
+ "press.mine": "Sizin dilinizde",
+ "press.other": "Diğer diller",
+ "press.empty": "Şu an başlık yok.",
+ "saved.press": "Basın tahminleri",
+ "saved.about": "Hakkımızda",
+ "about.title": "Hakkımızda",
+ "about.hello": "SiiMatchMind AI'ye hoş geldiniz 👋",
+ "about.p1": "Ben Berra, bu uygulamanın sahibiyim. Fikir, futbol tutkumdan ve rakamlara olan sevgimden doğdu. Maç analizlerini ve tahminlerini açık ve sade bir şekilde bulabileceğim tek bir yer istedim.",
+ "about.p2": "Umarım her maçtan önce burada sizi eğlendirecek ve işinize yarayacak şeyler bulursunuz. Bir notunuz ya da öneriniz varsa duymaktan memnun olurum; uygulamayı her gün daha iyi yapan şey budur.",
+ "about.p3": "Analizin keyfini çıkarın, kendinize iyi bakın.",
+ "about.sign": "Berra",
+ "about.disc_title": "Uyarı",
+ "about.disc": "Bu uygulamadaki tahmin ve analizler yalnızca eğlence ve bilgi amaçlıdır. Bahis tavsiyesi değildir ve hiçbir maç sonucu garanti edilemez."
 }

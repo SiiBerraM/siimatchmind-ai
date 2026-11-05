@@ -226,5 +226,20 @@
  "league.305": "Liga de Estrellas de Catar",
  "league.CL": "Liga de Campeones (UEFA)",
  "league.EC": "Eurocopa",
- "league.WC": "Copa Mundial"
+ "league.WC": "Copa Mundial",
+ "press.title": "Pronósticos de la prensa",
+ "press.note": "Titulares y enlaces de periódicos deportivos. ⭐ indica una previa o un pronóstico. Los artículos pertenecen a sus editores; al tocar un titular se abre la fuente.",
+ "press.mine": "En tu idioma",
+ "press.other": "Otros idiomas",
+ "press.empty": "No hay titulares por ahora.",
+ "saved.press": "Pronósticos de la prensa",
+ "saved.about": "Sobre nosotros",
+ "about.title": "Sobre nosotros",
+ "about.hello": "Bienvenido a SiiMatchMind AI 👋",
+ "about.p1": "Soy Berra, el creador de esta aplicación. La idea nació de mi pasión por el fútbol y mi amor por los números. Quería un único lugar donde encontrar el análisis de los partidos y sus pronósticos, de forma clara y sencilla.",
+ "about.p2": "Espero que aquí encuentres lo que te entretenga y te ayude antes de cada partido. Si tienes una observación o sugerencia, me encantará escucharla, porque es lo que mejora la aplicación cada día.",
+ "about.p3": "Disfruta del análisis y cuídate.",
+ "about.sign": "Berra",
+ "about.disc_title": "Aviso",
+ "about.disc": "Los pronósticos y análisis de esta aplicación son solo para entretenimiento e información. No son consejo de apuestas y nadie puede garantizar el resultado de un partido."
 }

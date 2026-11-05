@@ -1,0 +1,725 @@
+{
+ "updated": "2026-11-05T20:47:57.431983+00:00",
+ "items": [
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Sunderland v Dinamo Zagreb, Celtic v Besiktas: Europa League – live",
+   "link": "https://www.theguardian.com/football/live/2026/nov/05/crystal-palace-hoffenheim-sparta-prague-bournemouth-sunderland-celtic-europa-league-live",
+   "date": "2026-11-05T20:43:19+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "L'AC Milan tombe face à Ferencvaros, le Crystal Palace de Pierre Sage sauve les apparences face à Hoffenheim et Bournemouth enchaîne",
+   "link": "https://www.lequipe.fr/Football/Actualites/L-ac-milan-tombe-face-a-ferencvaros-le-crystal-palace-de-pierre-sage-sauve-les-apparences-face-a-hoffenheim-et-bournemouth-enchaine/1741451#at_medium=RSS_feeds",
+   "date": "2026-11-05T20:01:36+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Kamada’s late leveller rescues point for 10-man Crystal Palace and denies Hoffenheim",
+   "link": "https://www.theguardian.com/football/2026/nov/05/kamadas-late-leveller-rescues-point-for-10-man-crystal-palace-and-denies-hoffenheim",
+   "date": "2026-11-05T19:56:39+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "La composition de l'OM sur la pelouse du Bayer Leverkusen en Ligue Europa : Paixao et Gouiri titulaires",
+   "link": "https://www.lequipe.fr/Football/Actualites/La-composition-de-l-om-sur-la-pelouse-du-bayer-leverkusen-en-ligue-europa-paixao-et-gouiri-titulaires/1741448#at_medium=RSS_feeds",
+   "date": "2026-11-05T19:47:13+00:00",
+   "pred": true
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Pour sa première sans Paulo Fonseca, l'OL accroche la Real Sociedad en Ligue Europa",
+   "link": "https://www.lequipe.fr/Football/Actualites/Pour-sa-premiere-sans-paulo-fonseca-l-ol-accroche-la-real-sociedad-en-ligue-europa/1741446#at_medium=RSS_feeds",
+   "date": "2026-11-05T19:40:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "قبل أن يصبح سيناتوراً أمريكياً، ما هي كواليس صور آدم حموي مع أطفال غزة؟",
+   "link": "https://www.bbc.com/arabic/articles/c9x28z22el2vo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T19:15:21+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "De Lange, vraiment le meilleur ?",
+   "link": "https://www.lequipe.fr/Football/Article/Pourquoi-le-gardien-de-l-om-jeffrey-de-lange-est-leader-de-l1-aux-buts-evites-sans-donner-l-impression-d-etre-le-meilleur/1741215#at_medium=RSS_feeds",
+   "date": "2026-11-05T19:05:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Où voir Monaco-Nordsjaelland ?",
+   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-monaco-nordsjaelland-en-ligue-conference/1741080#at_medium=RSS_feeds",
+   "date": "2026-11-05T19:04:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "England check on Palmer - what are Tuchel's other big choices?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cw4g1rdn2nl8o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T19:00:04+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Où voir Leverkusen-OM ?",
+   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-bayer-leverkusen-marseille-en-ligue-europa/1741044#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:58:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ما دلالات فوز أمريكيين عرب ومسلمين في انتخابات التجديد النصفي، وما أسباب نجاحهم؟",
+   "link": "https://www.bbc.com/arabic/articles/crp3gg5x8p04o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T18:38:27+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Qu'attendre de la deuxième liste de Zidane ?",
+   "link": "https://www.lequipe.fr/Football/Article/Absents-nouveautes-qu-attendre-de-la-deuxieme-liste-de-zinedine-zidane-a-la-tete-de-l-equipe-de-france/1741438#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:34:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'Clock is ticking' - Gateshead fans fear for future",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cvwy7z01jk4zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T18:33:33+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Italie : Roberto Mancini convoque 31 joueurs pour la Ligue des nations, première pour Alphadjo Cisse",
+   "link": "https://www.lequipe.fr/Football/Actualites/Italie-roberto-mancini-convoque-31-joueurs-pour-la-ligue-des-nations-premiere-pour-alphadjo-cisse/1741431#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:31:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Aulas après le départ Fonseca : « Déçu et très inquiet »",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-1-ol-jean-michel-aulas-apres-le-depart-de-paulo-fonseca-au-sporting-portugal-decu-et-tres-inquiet-pour-lyon/20244937#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:25:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Mon Cristiano à moi, 24 ans à « L'Équipe » dans les pas de la star du Portugal",
+   "link": "https://www.lequipe.fr/Football/Article/-il-avait-cette-facon-de-toiser-son-interlocuteur-grand-reporter-a-l-equipe-regis-dupont-raconte-ses-24-ans-dans-les-pas-de-cristiano-ronaldo/1741430#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:19:58+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Les obsèques de Carlo Molinari prévues le mardi 10 novembre à Metz",
+   "link": "https://www.lequipe.fr/Football/Actualites/Les-obseques-de-carlo-molinari-prevues-le-mardi-10-novembre-a-metz/1741427#at_medium=RSS_feeds",
+   "date": "2026-11-05T18:09:58+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Sutton's predictions v Football Manager, the game",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ck5ynzry64p2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T18:02:15+00:00",
+   "pred": true
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Yacine Sossé Alaoui nommé président-directeur général du Havre",
+   "link": "https://www.lequipe.fr/Football/Actualites/Yacine-sosse-alaoui-nomme-president-directeur-general-du-havre/1741424#at_medium=RSS_feeds",
+   "date": "2026-11-05T17:56:14+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Podcast « Big 5 » - De Bruyne à Naples, le crépuscule d'un géant",
+   "link": "https://www.lequipe.fr/Football/Actualites/Podcast-big-5-de-bruyne-a-naples-le-crepuscule-d-un-geant/1741423#at_medium=RSS_feeds",
+   "date": "2026-11-05T17:54:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Olivier Létang, le président du LOSC, suspendu quatre mois ferme après son nouvel écart contre les arbitres lors de Lille-PSG",
+   "link": "https://www.lequipe.fr/Football/Actualites/Olivier-letang-le-president-du-losc-suspendu-quatre-mois-ferme-apres-son-nouvel-ecart-contre-les-arbitres-lors-de-lille-psg/1741419#at_medium=RSS_feeds",
+   "date": "2026-11-05T17:51:17+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "La carrière internationale de Cristiano Ronaldo avec le Portugal en chiffres",
+   "link": "https://www.lequipe.fr/Football/Actualites/La-carriere-internationale-de-cristiano-ronaldo-avec-le-portugal-en-chiffres/1741418#at_medium=RSS_feeds",
+   "date": "2026-11-05T17:51:06+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Manu Bueno y Peque se caen de la lista del Sevilla",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/manu-bueno-peque-caen-lista-sevilla.html",
+   "date": "2026-11-05T17:38:47+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "التحالف السعودي يعلن اعتراض صاروخ باتجاه المدينة المنورة والحوثيون ينفون استهدافها ويعلنون مهاجمة مطار الدمام",
+   "link": "https://www.bbc.com/arabic/articles/cr5ynen6w4l6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T17:25:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El Mundial sub17 dejará a Terzic de dos a seis partidos sin Imga",
+   "link": "https://www.marca.com/futbol/athletic/2026/11/05/mundial-sub17-dejara-terzic-dos-seis-partidos-imga.html",
+   "date": "2026-11-05T17:05:49+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Diatta pasa por quirófano y estará cerca de medio año de baja",
+   "link": "https://www.marca.com/futbol/villarreal/2026/11/05/diatta-pasa-quirofano-estara-cerca-medio-ano-baja.html",
+   "date": "2026-11-05T16:28:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El fútbol español se unirá en homenaje a Jesús de Miguel: se juega la jornada y se parará en el minuto 9",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/05/futbol-espanol-unira-homenaje-jesus-miguel-juega-jornada-parara-minuto-9.html",
+   "date": "2026-11-05T16:28:04+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'A void that is impossible to fill' - tributes paid at De Miguel funeral",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cr62y4yj39veo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T16:12:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ما حقيقة فرضية انتهاء العالم في 13 نوفمبر؟ نبوءة قديمة تعود إلى الواجهة وتثير الجدل",
+   "link": "https://www.bbc.com/arabic/articles/cmkgq8gwp41zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T16:12:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "JAL vuelve a La Rosaleda sin haber perdido contra el Málaga",
+   "link": "https://www.marca.com/futbol/malaga/2026/11/05/jal-vuelve-rosaleda-haber-perdido-malaga.html",
+   "date": "2026-11-05T15:58:50+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Football Daily | Como turn on the style and hammer nine past out-of-focus Lens",
+   "link": "https://www.theguardian.com/football/2026/nov/05/football-daily-email-como-lens",
+   "date": "2026-11-05T15:55:25+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Emery close to agreeing new Aston Villa contract",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cw99zde82nmno?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T15:45:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Everton's Grealish unavailable again after 'breach of discipline'",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm79p020d9yvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T15:28:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Champions League review: comebacks, thrashings and a Mauritanian first",
+   "link": "https://www.theguardian.com/football/2026/nov/05/champions-league-roundup-koita-real-madrid-bayern-psg",
+   "date": "2026-11-05T15:00:26+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "What new Kane deal means for England and the Premier League record",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm93zvzzl33zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T14:44:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "A bitter end for Ronaldo - the icon who transformed Portugal",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ckn9rwr2zzpvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T14:29:40+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Quique: \"Lo que más nos preocupa ahora es recuperar la moral de los jugadores\"",
+   "link": "https://www.marca.com/futbol/alaves/2026/11/05/quique-preocupa-recuperar-moral-jugadores.html",
+   "date": "2026-11-05T13:55:32+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "مقتل رجل أمن طعناً وإصابة آخر في عمّان، والأمن العام يصنف الحادثة \"عملاً إرهابياً\" والنيابة العامة تباشر التحقيق",
+   "link": "https://www.bbc.com/arabic/articles/c617kjj5lp1vo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T13:40:53+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Cristiano Ronaldo merely the latest example of a great player who couldn’t let go | Jonathan Wilson",
+   "link": "https://www.theguardian.com/football/2026/nov/05/cristiano-ronaldo-retires-international-football-career-portugal",
+   "date": "2026-11-05T13:32:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "La AFE traslada el sentir de los futbolistas: \"Lo más adecuado sería suspender la jornada",
+   "link": "https://www.marca.com/futbol/2026/11/05/afe-traslada-sentir-futbolistas-adecuado-seria-suspender-jornada.html",
+   "date": "2026-11-05T13:01:59+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "\"ترامب للشرق الأوسط: عليكم أنفسكم!\" – مقال في وول ستريت جورنال",
+   "link": "https://www.bbc.com/arabic/articles/c8n5vdvz49gqo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T13:01:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "The international break is almost here: so wave goodbye to your players, and maybe your manager | Max Rushden",
+   "link": "https://www.theguardian.com/football/2026/nov/05/the-international-break-is-almost-here-so-wave-goodbye-to-your-players-and-maybe-your-manager",
+   "date": "2026-11-05T13:00:24+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El Eintracht de Frankfurt se interesa por Buba Sangaré",
+   "link": "https://www.marca.com/futbol/elche/2026/11/05/eintracht-frankfurt-interesa-buba-sangare.html",
+   "date": "2026-11-05T12:58:43+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Japan's Tashima to stand against Infantino for Fifa presidency",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cwvgdyd80g9do?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T12:55:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Luis García Plaza: \"Tenemos que rentabilizar más los momentos en que somos superiores\"",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/luis-garcia-plaza-rentabilizar-momentos-superiores.html",
+   "date": "2026-11-05T12:45:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Vizcay aprovecha la rueda de Terzic",
+   "link": "https://www.marca.com/futbol/athletic/2026/11/05/vizcay-aprovecha-rueda-terzic.html",
+   "date": "2026-11-05T12:22:08+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "عشر نتائج غير مسبوقة في انتخابات التجديد النصفي الأمريكية",
+   "link": "https://www.bbc.com/arabic/articles/cmde800527pzo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T12:04:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Meet Clara Serrajordi: Barcelona’s midfield hope filling the void left by Alexia Putellas | Moving the Goalposts",
+   "link": "https://www.theguardian.com/football/2026/nov/05/clara-serrajordi-barcelona-midfielder-alexia-putellas-moving-the-goalposts",
+   "date": "2026-11-05T11:52:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Una delegación FIFA de 18 personas pone nota a San Mamés y Anoeta",
+   "link": "https://www.marca.com/futbol/2026/11/05/delegacion-fifa-18-personas-pone-nota-san-mames-anoeta.html",
+   "date": "2026-11-05T11:51:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "García Plaza se acuerda de Owono: \"No hagamos dos víctimas\"",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/garcia-plaza-acuerda-owono-hagamos-dos-victimas.html",
+   "date": "2026-11-05T11:38:52+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El Athletic tira de efecto Simón y elige a Ettori como One Club Man 2026",
+   "link": "https://www.marca.com/futbol/athletic/2026/11/05/athletic-tira-efecto-simon-elige-ettori-one-club-man-2026.html",
+   "date": "2026-11-05T11:23:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Ronaldo's most iconic moments as he retires from international football",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cew197l8l17o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T11:22:59+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Balaídos: Donde se consolidó la permanencia y el Castrismo",
+   "link": "https://www.marca.com/futbol/levante/2026/11/05/balaidos-consolido-permanencia-castrismo.html",
+   "date": "2026-11-05T11:04:04+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Japan FA’s Kozo Tashima to stand against Infantino for Fifa presidency",
+   "link": "https://www.theguardian.com/football/2026/nov/05/japan-fa-head-kozo-tashima-stand-against-gianni-infantino-for-fifa-president",
+   "date": "2026-11-05T10:48:42+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Isaac Romero se prueba con una protección en su rodilla izquierda",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/isaac-romero-prueba-proteccion-rodilla-izquierda.html",
+   "date": "2026-11-05T10:31:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Fifa wants to restrict women’s Olympic football to under-23s in controversial move",
+   "link": "https://www.theguardian.com/football/2026/nov/05/fifa-wants-womens-olympic-football-under-23s",
+   "date": "2026-11-05T10:26:54+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "حرائق في ناقلتَي نفط بمضيق هرمز، وكوريا الجنوبية تعتزم نشر طائرة دورية وفريق لإزالة المتفجرات في الممر المائي",
+   "link": "https://www.bbc.com/arabic/articles/c63elqyd7944o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T07:43:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Uefa faces political flashpoint over Sevastopol’s ascent in Russian football",
+   "link": "https://www.theguardian.com/football/2026/nov/05/uefa-fifa-ukraine-crimea-sevastopol-promotion-russia-war",
+   "date": "2026-11-05T07:30:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Trabzonspor, Konferans Ligi'nde Freiburg'u ağırlayacak",
+   "link": "https://www.trthaber.com/haber/spor/trabzonspor-konferans-liginde-freiburgu-agirlayacak-962299.html",
+   "date": "2026-11-05T06:26:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "الرئيس الإسرائيلي يبدأ مشاورات مع الأحزاب لتشكيل الحكومة بعد عدم فوز أي معسكر بالأغلبية",
+   "link": "https://www.bbc.com/arabic/articles/cq4g15rznrk9o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-05T06:10:31+00:00",
+   "pred": true
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Beşiktaş Avrupa Ligi'nde Celtic deplasmanında",
+   "link": "https://www.trthaber.com/haber/spor/besiktas-avrupa-liginde-celtic-deplasmaninda-962298.html",
+   "date": "2026-11-05T06:09:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Como score nine to make Champions League history",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c6wyr8gzzr1zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:45:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ترامب يُقر بأن الحرب مع إيران أدّت إلى خسارة الانتخابات، لكنه يؤكد أنه \"سيفعل ذلك مجدداً\" إذا لزم الأمر",
+   "link": "https://www.bbc.com/arabic/articles/c64g1vl7p3xgo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:43:36+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Haaland scores winner as Man City beat Leipzig",
+   "link": "https://www.bbc.co.uk/sport/football/videos/ckz65ey5q29zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:15:31+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Arsenal survive late Slavia scare for hard-fought win",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cq4g1jwnzmyro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:10:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Liverpool crumble at Kuyt's Fenerbahce",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cqy7ljmzx6d6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:04:16+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Bellingham backheel and Valverde rocket earn Real late win at AEK",
+   "link": "https://www.bbc.co.uk/sport/football/videos/ck7vpj0ggqr8o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T22:04:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "بعد سيطرة الديمقراطيين على الكونغرس.. ماذا ينتظر الرئيس الأمريكي؟",
+   "link": "https://www.bbc.com/arabic/watch/cmz65z3yn74no?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T14:04:41+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "من هو عبد الرحمن السيد، أول مسلم في مجلس الشيوخ الأمريكي؟",
+   "link": "https://www.bbc.com/arabic/watch/cjqlnw65v55qo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-04T11:06:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Has a footballer ever run a marathon faster than James Milner? | The Knowledge",
+   "link": "https://www.theguardian.com/football/2026/nov/04/footballer-run-marathon-faster-than-james-milner-the-knowledge",
+   "date": "2026-11-04T08:00:29+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Fenerbahçe, Şampiyonlar Ligi'nde Liverpool'u ağırlıyor",
+   "link": "https://www.trthaber.com/haber/spor/fenerbahce-sampiyonlar-liginde-liverpoolu-agirliyor-962167.html",
+   "date": "2026-11-04T04:39:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Sergen Yalçın'ın ilk milli takım kadrosu 6 Kasım'da açıklanacak",
+   "link": "https://www.trthaber.com/haber/spor/sergen-yalcinin-ilk-milli-takim-kadrosu-6-kasimda-aciklanacak-962138.html",
+   "date": "2026-11-03T20:21:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ماذا نعرف عن انتخابات التجديد النصفي الأمريكية؟",
+   "link": "https://www.bbc.com/arabic/watch/cm2ke2e4evyyo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-03T15:00:39+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Trabzonspor seriye devam ediyor",
+   "link": "https://www.trthaber.com/haber/spor/trabzonspor-seriye-devam-ediyor-961891.html",
+   "date": "2026-11-01T15:25:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "من هي لانا نسيبة، المرشحة الإماراتية لمنصب الأمين العام للأمم المتحدة؟",
+   "link": "https://www.bbc.com/arabic/watch/c6y4xe081x7no?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-01T10:11:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "كيف تؤثر الحرب في اليمن علينا جميعاً؟",
+   "link": "https://www.bbc.com/arabic/watch/cwdd8pvz018zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-10-31T07:22:05+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Fenerbahçe'de İsmail Kartal dönemi sona erdi",
+   "link": "https://www.trthaber.com/haber/spor/fenerbahcede-ismail-kartal-donemi-sona-erdi-961401.html",
+   "date": "2026-10-27T17:56:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Derbiye kartlar damga vurdu",
+   "link": "https://www.trthaber.com/haber/spor/derbiye-kartlar-damga-vurdu-961350.html",
+   "date": "2026-10-27T10:45:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Derbinin kazananı Galatasaray",
+   "link": "https://www.trthaber.com/haber/spor/derbinin-kazanani-galatasaray-961271.html",
+   "date": "2026-10-26T20:18:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Beşiktaş, Başakşehir'i 2 golle geçti",
+   "link": "https://www.trthaber.com/haber/spor/besiktas-basaksehiri-2-golle-gecti-961265.html",
+   "date": "2026-10-26T18:53:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Trabzonspor, Thomas Reis yönetiminde yoluna kayıpsız devam ediyor",
+   "link": "https://www.trthaber.com/haber/spor/trabzonspor-thomas-reis-yonetiminde-yoluna-kayipsiz-devam-ediyor-961264.html",
+   "date": "2026-10-26T18:34:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Milli güreşçi Yüksel Sarıçiçek dünya ikincisi oldu",
+   "link": "https://www.trthaber.com/haber/spor/milli-guresci-yuksel-saricicek-dunya-ikincisi-oldu-961162.html",
+   "date": "2026-10-25T15:50:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "A Milli Takım'da Sergen Yalçın dönemi resmen başladı",
+   "link": "https://www.trthaber.com/haber/spor/a-milli-takimda-sergen-yalcin-donemi-resmen-basladi-960905.html",
+   "date": "2026-10-22T11:57:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Derbinin hakemi belli oldu",
+   "link": "https://www.trthaber.com/haber/spor/derbinin-hakemi-belli-oldu-960884.html",
+   "date": "2026-10-22T10:15:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Alperen Şengün'den sezona 'doubledouble' başlangıç",
+   "link": "https://www.trthaber.com/haber/spor/alperen-sengunden-sezona-double-double-baslangic-960853.html",
+   "date": "2026-10-22T07:31:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Yeni MHK Başkanı Anthony Taylor oldu",
+   "link": "https://www.trthaber.com/haber/spor/yeni-mhk-baskani-anthony-taylor-oldu-960658.html",
+   "date": "2026-10-20T13:44:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Sign up to the Sport in Focus newsletter: the sporting week in photos",
+   "link": "https://www.theguardian.com/sport/2025/oct/01/sign-up-to-the-sport-in-focus-newsletter-the-sporting-week-in-photos",
+   "date": "2025-10-01T11:00:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Sign up for the Football Daily newsletter: our free football email",
+   "link": "https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up",
+   "date": "2022-11-14T09:05:50+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Sign up for the Moving the Goalposts newsletter: our free women’s football email",
+   "link": "https://www.theguardian.com/football/2022/mar/22/sign-up-for-our-new-womens-football-newsletter-moving-the-goalposts",
+   "date": "2022-03-22T16:57:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Sign up for the Recap newsletter: our free sport highlights email",
+   "link": "https://www.theguardian.com/sport/2017/may/15/the-recap-sign-up-for-the-best-of-the-guardians-sport-coverage",
+   "date": "2017-05-15T11:00:43+00:00",
+   "pred": false
+  }
+ ]
+}

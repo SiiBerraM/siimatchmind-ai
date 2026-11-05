@@ -226,5 +226,20 @@
  "league.305": "Qatar Stars League",
  "league.CL": "UEFA Champions League",
  "league.EC": "European Championship",
- "league.WC": "FIFA World Cup"
+ "league.WC": "FIFA World Cup",
+ "press.title": "Press predictions",
+ "press.note": "Headlines and links from sports newspapers. ⭐ marks a preview or prediction. Articles belong to their publishers; tapping a headline opens the source.",
+ "press.mine": "In your language",
+ "press.other": "Other languages",
+ "press.empty": "No headlines right now.",
+ "saved.press": "Press predictions",
+ "saved.about": "About us",
+ "about.title": "About us",
+ "about.hello": "Welcome to SiiMatchMind AI 👋",
+ "about.p1": "I'm Berra, the creator of this app. The idea started from my passion for football and my love of numbers. I wanted one place where I could find match analysis and predictions, clear and simple.",
+ "about.p2": "I hope you find here what entertains and helps you before every match. If you have a remark or a suggestion, I'd be glad to hear it, because it's what makes the app better every day.",
+ "about.p3": "Enjoy the analysis, and take care.",
+ "about.sign": "Berra",
+ "about.disc_title": "Notice",
+ "about.disc": "The predictions and analyses in this app are for entertainment and information only. They are not betting or financial advice, and no one can guarantee a match result."
 }

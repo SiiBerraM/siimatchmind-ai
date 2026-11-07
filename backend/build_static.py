@@ -19,7 +19,7 @@ def build():
         "leagues": service.leagues(),
         "standings": {l["code"]: service.standings_table(l["code"]) for l in service.leagues()},
         "matches": {k: service.list_matches(k) for k in ("today", "upcoming", "results")},
-        "matches_by_league": {l["code"]: {k: service.list_matches(k, l["code"]) for k in ("today", "upcoming", "results")} for l in service.leagues()},
+        "matches_by_league": {l["code"]: {k: service.list_matches(k, l["code"], None) for k in ("today", "upcoming", "results")} for l in service.leagues()},
         "team_detail": {t["id"]: service.team_detail(t["id"]) for t in teams},
         "analyses": {},
         "quality": service.quality(),

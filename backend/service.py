@@ -158,17 +158,17 @@ def _match_view(m, names, logos=None):
             "home_logo": logos.get(m["home"]), "away_logo": logos.get(m["away"])}
 
 
-def list_matches(kind, league=None):
+def list_matches(kind, league=None, limit=16):
     _check_league(league)
     ds = _league_ds(league)
     names, logos = _names(dataset()), _logos(dataset())
     if kind == "today":
         sel = [m for m in ds["matches"] if m["status"] == "today"]
     elif kind == "upcoming":
-        sel = [m for m in ds["matches"] if m["status"] == "scheduled"][:16]
+        sel = [m for m in ds["matches"] if m["status"] == "scheduled"][:limit]
     elif kind == "results":
         sel = sorted((m for m in ds["matches"] if m["status"] == "played"),
-                     key=lambda m: (m["date"], m["time"] or ""), reverse=True)[:16]
+                     key=lambda m: (m["date"], m["time"] or ""), reverse=True)[:limit]
     else:
         raise ValueError("bad_kind")
     return [_match_view(m, names, logos) for m in sel]

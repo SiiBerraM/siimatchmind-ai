@@ -183,7 +183,7 @@ def team_detail(team_id):
     ms = ds["matches"]
     res = engine.team_results(ms, team_id)
     upcoming = [m for m in ms if m["status"] in ("today", "scheduled") and team_id in (m["home"], m["away"])][:5]
-    model = engine.Model(ms)
+    model = engine.Model(engine._with_history(ms, team_id, team_id))
     stats = engine.team_stats_avg(ds, team_id, 10)
     return {
         "team": {"id": team_id, "name": names[team_id], "logo": logos.get(team_id), "league": _team_league(team_id)},
@@ -206,6 +206,8 @@ def analyze(home, away, n=10, match_id=None, log=True):
         raise ValueError("different_leagues")
     ds = _league_ds(lh)
     res = engine.build_analysis(ds, home, away, n=n, match_id=match_id)
+    import market
+    market.blend_into(res, home, away)
     logos = _logos(full)
     res["home"]["logo"], res["away"]["logo"] = logos.get(home), logos.get(away)
     mm = next((x for x in ds["matches"] if x["id"] == match_id), None) if match_id else None

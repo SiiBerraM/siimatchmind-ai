@@ -9,10 +9,11 @@
 import math
 from datetime import date
 
-HALF_LIFE_DAYS = 180.0   # نصف عمر وزن المباراة: بعد 180 يومًا يصبح وزنها النصف
+HALF_LIFE_DAYS = 365.0   # بعد 365 يومًا يصبح وزن المباراة النصف
 SHRINK_K = 4.0           # قوة السحب نحو المتوسط (بوحدة الأهداف)
 MAX_GOALS = 10           # أقصى أهداف في مصفوفة النتائج
 LAM_MIN, LAM_MAX = 0.15, 4.5
+DC_RHO = -0.15            # تصحيح Dixon-Coles للنتائج المنخفضة (0-0 و1-0 و0-1 و1-1)
 
 
 def _d(s):
@@ -78,6 +79,10 @@ class Model:
         ph = [_pois(i, lh) for i in range(MAX_GOALS + 1)]
         pa = [_pois(j, la) for j in range(MAX_GOALS + 1)]
         mat = [[a * b for b in pa] for a in ph]
+        mat[0][0] *= 1 - lh * la * DC_RHO
+        mat[0][1] *= 1 + lh * DC_RHO
+        mat[1][0] *= 1 + la * DC_RHO
+        mat[1][1] *= 1 - DC_RHO
         s = sum(sum(r) for r in mat)
         mat = [[x / s for x in r] for r in mat]
         p_home = sum(mat[i][j] for i in range(MAX_GOALS + 1) for j in range(i))
@@ -210,6 +215,19 @@ def team_stats_avg(dataset, team, n=10):
             "shots_on": avg("shots_on"), "corners": avg("corners")}
 
 
+def _with_history(matches, home, away):
+    """يضيف مكتبة المواسم السابقة لتدريب النموذج فقط. لا يظهر منها شيء للمستخدم."""
+    try:
+        import history
+        hist = history.matches_for(home, away)
+        if hist:
+            first = min((m["date"] for m in matches), default="9999")
+            return [h for h in hist if h["date"] < first] + list(matches)
+    except Exception:
+        pass
+    return matches
+
+
 def build_analysis(dataset, home, away, n=10, as_of=None, match_id=None):
     """التحليل الكامل لمباراة بين فريقين. هذا ما تعيده واجهة /api/analyze (بدون نصوص مترجمة)."""
     names = {t["id"]: t["name"] for t in dataset["teams"]}
@@ -218,7 +236,7 @@ def build_analysis(dataset, home, away, n=10, as_of=None, match_id=None):
     if home == away:
         raise ValueError("same_team")
     matches = dataset["matches"]
-    model = Model(matches, as_of=as_of)
+    model = Model(_with_history(matches, home, away), as_of=as_of)
     pred = model.predict(home, away)
     pct = to_percent([pred["p_home"], pred["p_draw"], pred["p_away"]])
     conf = confidence(model, home, away, pred)

@@ -1,92 +1,564 @@
 {
- "updated": "2026-11-06T12:43:17.315145+00:00",
+ "updated": "2026-11-08T11:41:46.740459+00:00",
  "items": [
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "لماذا اعتذر مذيع تلفزيوني على الهواء عن سنوات من التغطية الإعلامية؟",
-   "link": "https://www.bbc.com/arabic/articles/cq8rzzvvmljvo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T12:40:25+00:00",
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Liverpool v Arsenal: Women’s Super League – live",
+   "link": "https://www.theguardian.com/football/live/2026/nov/08/liverpool-v-arsenal-womens-super-league-live",
+   "date": "2026-11-08T11:30:38+00:00",
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Qu'attendre de la deuxième liste de Zidane ?",
-   "link": "https://www.lequipe.fr/Football/Article/Absents-nouveautes-qu-attendre-de-la-deuxieme-liste-de-zinedine-zidane-a-la-tete-de-l-equipe-de-france/1741438#at_medium=RSS_feeds",
-   "date": "2026-11-06T12:22:00+00:00",
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "من حرب إلى حرب: معاناة المهاجرين الإثيوبيين في اليمن",
+   "link": "https://www.bbc.com/arabic/articles/crq5nvqvgl2lo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T10:59:30+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "أمطار غزيرة تفاقم معاناة النازحين في غزة، وتحذير من تكرار وفيات الأطفال جراء البرد القارس",
+   "link": "https://www.bbc.com/arabic/articles/c3vgx2kge2yqo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T10:22:02+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "The Guardian",
-   "title": "Jobe Bellingham earned England call with ’special performances’; Palmer left out – football news",
-   "link": "https://www.theguardian.com/football/live/2026/nov/06/england-squad-announced-sunderland-face-jeers-and-fa-cup-first-round-football-news-live",
-   "date": "2026-11-06T12:20:37+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "PSG : la conférence de presse de Luis Enrique avant le match contre Troyes en direct vidéo",
-   "link": "https://www.lequipe.fr/Football/Actualites/Psg-la-conference-de-presse-de-luis-enrique-avant-le-match-contre-troyes-en-direct-video/1741588#at_medium=RSS_feeds",
-   "date": "2026-11-06T12:04:30+00:00",
+   "title": "John Aloisi’s Chengdu choke to blow title chances on final day of Chinese season",
+   "link": "https://www.theguardian.com/football/2026/nov/08/john-aloisi-chengdu-choke-chinese-super-league-final-day-of-season",
+   "date": "2026-11-08T10:10:43+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "Has Anderson lived up to the hype after Man City move?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cqde8w0k2pz1o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T12:00:18+00:00",
+   "title": "Is there something missing despite Rangers' impressive form?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6dxw1k2x4kno?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T10:10:27+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "Palmer misses too many chances to impress - Tuchel",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c9kgjjdg30r4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T11:59:37+00:00",
+   "title": "Raya, Pickford and Wales' search for a new keeper",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cry8335l96q5o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T09:57:58+00:00",
    "pred": false
   },
   {
    "lang": "ar",
    "source": "BBC Arabic",
-   "title": "ترامب: واشنطن ستقرر خلال أسبوعين بشأن إيران، وباقري يقول إن طهران لا تكتفي بـ \"التعهدات الورقية\"",
-   "link": "https://www.bbc.com/arabic/articles/cr9dzzq2ln57o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T11:56:11+00:00",
+   "title": "دوي انفجارات في الرياض، والتحالف يعلن اعتراض صواريخ باليستية وكروز أطلقها الحوثيون",
+   "link": "https://www.bbc.com/arabic/articles/c6kg5ryrzp17o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T09:31:44+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Nouvelle absence à gérer pour Zinédine Zidane : Maghnes Akliouche forfait pour le rassemblement des Bleus",
-   "link": "https://www.lequipe.fr/Football/Actualites/Nouvelle-absence-a-gerer-pour-zinedine-zidane-maghnes-akliouche-forfait-pour-le-rassemblement-des-bleus/1741584#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:51:00+00:00",
+   "title": "De Bruyne à Naples, le crépuscule d'un géant",
+   "link": "https://www.lequipe.fr/collection/podcasts/serie/big-5/#at_medium=RSS_feeds",
+   "date": "2026-11-08T09:18:00+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Achraf Hakimi mis au repos par le PSG contre Troyes samedi en Ligue 1 avant la fenêtre internationale",
-   "link": "https://www.lequipe.fr/Football/Actualites/Achraf-hakimi-mis-au-repos-par-le-psg-contre-troyes-samedi-en-ligue-1-avant-la-fenetre-internationale/1741579#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:34:20+00:00",
+   "title": "Les confidences du discret Doumbia : «Je me trompe rarement»",
+   "link": "https://www.lequipe.fr/Football/Article/Son-enfance-au-mali-son-lien-avec-eric-roy-sa-difficile-adaptation-a-brest-les-confidences-du-discret-kamory-doumbia/1741873#at_medium=RSS_feeds",
+   "date": "2026-11-08T09:05:00+00:00",
    "pred": false
   },
   {
    "lang": "ar",
    "source": "BBC Arabic",
-   "title": "تشييع جثمان الضابط الأردني بعد مقتله طعناً في عمّان، والملك يقول: \"لن نتهاون في محاربة الإرهاب\"",
-   "link": "https://www.bbc.com/arabic/articles/c617kjj5lp1vo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T11:33:24+00:00",
+   "title": "ما الذي نعرفه حتى الآن عن الهجوم المسلح في كراكوف؟",
+   "link": "https://www.bbc.com/arabic/articles/cmlydjg788e1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T08:56:42+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Amedspor, la sensation qui fait la fierté des Kurdes",
-   "link": "https://www.lequipe.fr/Football/Article/-jeu-rock-n-roll-engouement-et-soutien-de-la-communaute-kurde-la-recette-du-succes-d-amedspor-le-promu-qui-cree-la-surprise-en-turquie-derriere-galatasaray/1741102#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:31:00+00:00",
+   "title": "Ferran Torres en crise de confiance",
+   "link": "https://www.lequipe.fr/Football/Actualites/Apres-des-debuts-marquants-au-psg-ferran-torres-est-maintenant-en-crise-de-confiance/1742145#at_medium=RSS_feeds",
+   "date": "2026-11-08T08:45:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« La fracture est totale » : les supporters ne veulent plus de Blue Crow",
+   "link": "https://www.lequipe.fr/Football/Article/-la-fracture-est-totale-apres-une-semaine-de-marasme-la-colere-des-supporters-du-havre-qui-reclament-le-depart-de-blue-crow-le-proprietaire-americain/1741980#at_medium=RSS_feeds",
+   "date": "2026-11-08T08:40:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Mourinho rend hommage à ses joueurs après la victoire face à Valence",
+   "link": "https://www.lequipe.fr/Football/Video/Liga-real-madrid-mourinho-rend-hommage-a-ses-joueurs-apres-la-victoire-face-a-valence/20245123#at_medium=RSS_feeds",
+   "date": "2026-11-08T08:22:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Que reste-t-il du passage de Létang à Rennes ?",
+   "link": "https://www.lequipe.fr/Football/Article/Ambition-recreee-communaute-elargie-et-formation-valorisee-que-reste-t-il-du-passage-d-olivier-letang-a-rennes/1741938#at_medium=RSS_feeds",
+   "date": "2026-11-08T08:21:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Lionel Messi devient le premier joueur à terminer meilleur buteur deux fois de suite en saison régulière de MLS",
+   "link": "https://www.lequipe.fr/Football/Actualites/Lionel-messi-devient-le-premier-joueur-a-terminer-meilleur-buteur-deux-fois-de-suite-en-saison-reguliere-de-mls/1742173#at_medium=RSS_feeds",
+   "date": "2026-11-08T08:04:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Julián Alvarez’s Atlético redemption arc in full focus for visit of Barcelona",
+   "link": "https://www.theguardian.com/football/2026/nov/08/julian-alvarezs-atletico-redemption-arc-in-full-focus-for-visit-of-barcelona",
+   "date": "2026-11-08T08:00:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Aguerd - Egan-Riley, naissance d'une charnière",
+   "link": "https://www.lequipe.fr/Football/Article/Nayef-aguerd-cj-egan-riley-la-naissance-d-une-charniere-qui-n-aurait-jamais-du-voir-le-jour-a-l-om/1742022#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:57:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Les dix-huit franchises qualifiées pour les play-offs de la MLS connues",
+   "link": "https://www.lequipe.fr/Football/Actualites/Les-dix-huit-franchises-qualifiees-pour-les-play-offs-de-la-mls-connues/1742172#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:56:43+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "الحيوانات غير المرئية وعلب الحليب الثرثارة: كيف يمكن للأصدقاء الخياليين تعزيز قدرات عقولنا؟",
+   "link": "https://www.bbc.com/arabic/articles/c6d0994lz9r2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T07:47:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "À quelle heure et sur quelle chaîne voir Brest-OL en Ligue 1 ?",
+   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-brest-lyon-en-ligue-1/1741535#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:38:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "«L'affaire Ceuta» est derrière Mbappé",
+   "link": "https://www.lequipe.fr/Football/Article/En-deplacement-a-valence-avec-le-real-madrid-kylian-mbappe-a-pu-constater-que-l-affaire-ceuta-lui-etait-pardonnee/1742150#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:35:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "À quelle heure et sur quelle chaîne voir Atlético de Madrid-FC Barcelone en Liga ?",
+   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-atletico-madrid-barcelone-en-liga/1741653#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:33:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'I can't believe he is one of us' - inside Salah's life in Trabzon",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmwyqzy934lxo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T07:30:01+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« Il n'y a pas assez d'efficacité »  : plus mauvaise attaque de Ligue 1, le FC Lorient cherche encore ses repères et ses leaders offensifs",
+   "link": "https://www.lequipe.fr/Football/Actualites/-il-n-y-a-pas-assez-d-efficacite-plus-mauvaise-attaque-de-ligue-1-le-fc-lorient-cherche-encore-ses-reperes-et-ses-leaders-offensifs/1742021#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:26:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Tensions entre Antonio Rüdiger et des Valenciens dans le tunnel à la mi-temps de Valence-Real Madrid",
+   "link": "https://www.lequipe.fr/Football/Actualites/Tensions-entre-antonio-rudiger-et-des-valenciens-dans-le-tunnel-a-la-mi-temps-de-valence-real-madrid/1742164#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:25:01+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Messi makes history with MLS Golden Boot",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ckr5ygezr0m9o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T07:23:50+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Son enfance au Mali, son lien avec Éric Roy, sa difficile adaptation à Brest : les confidences du discret Kamory Doumbia",
+   "link": "https://www.lequipe.fr/Football/Article/Son-enfance-au-mali-son-lien-avec-eric-roy-sa-difficile-adaptation-a-brest-les-confidences-du-discret-kamory-doumbia/1741873#at_medium=RSS_feeds",
+   "date": "2026-11-08T07:21:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Why unique Brighton defence is so tricky to unpick",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm0j033lnp5po?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T06:41:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "The oldest club in London making FA Cup history",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cv8ez3pe5x41o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T06:28:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "الرئيس الإسرائيلي يكلف غادي آيزنكوت بتشكيل الحكومة",
+   "link": "https://www.bbc.com/arabic/articles/cm62ypx3wj64o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T05:27:51+00:00",
+   "pred": true
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "كيف نحمي مستخدمي الإنترنت الجدد من المحتالين الإلكترونيين؟",
+   "link": "https://www.bbc.com/arabic/articles/cm98zzzk4kdlo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T04:47:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ترامب يطلب من رئيس \"يو إف سي\" للفنون القتالية تولي منصب المتحدث باسم البيت الأبيض",
+   "link": "https://www.bbc.com/arabic/articles/c689z4pkd0v0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T04:44:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Messi claims second straight Golden Boot as Nashville set points record on MLS Decision Day",
+   "link": "https://www.theguardian.com/football/2026/nov/07/lionel-messi-mls-golden-boot-inter-miami-charlotte-nashville-playoffs",
+   "date": "2026-11-08T03:31:47+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'The worst conditions in my 35-year career' - commentating in the FA Cup fog",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cqev3rdvyvm1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T00:17:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'It's Savage junior's night' - Charlie scores against dad Robbie's side",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cmx2d76znxe1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-08T00:13:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Scottish roundup: Naderi fires Rangers past St Mirren to keep pressure on Celtic",
+   "link": "https://www.theguardian.com/football/2026/nov/07/scottish-premiership-roundup-rangers-st-mirren-aberdeen-hibernian-dundee-united-motherwell-st-johnstone",
+   "date": "2026-11-07T22:08:26+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Enzo Maresca rues Manchester City’s lack of desire after defeat at Nottingham Forest",
+   "link": "https://www.theguardian.com/football/2026/nov/07/enzo-maresca-nottingham-forest-manchester-city-premier-league",
+   "date": "2026-11-07T21:17:41+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Maresca's dream start turns into nightmare as title hopes hit",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm93z0l03n8vo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T20:54:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "NWSL playoffs: Cooper’s extra-time penalty sends Kansas City through as Utah stun San Diego",
+   "link": "https://www.theguardian.com/football/2026/nov/07/nwsl-playoffs-kansas-city-current-angel-city-utah-royals-san-diego-wave",
+   "date": "2026-11-07T20:40:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "غادي آيزنكوت: من هو المكلف بتشكيل الحكومة الإسرائيلية؟",
+   "link": "https://www.bbc.com/arabic/articles/cxj0levgjmydo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T20:16:42+00:00",
+   "pred": true
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Delap double inspires Forest to stunning win over Man City",
+   "link": "https://www.bbc.co.uk/sport/football/videos/crp3gewxj77eo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T20:02:25+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "There are very few reasons for Unai Emery to leave Aston Villa for Manchester United | Jonathan Wilson",
+   "link": "https://www.theguardian.com/football/2026/nov/07/manager-sorts-out-manchester-united-unai-emery",
+   "date": "2026-11-07T20:00:19+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Muniz strike denies Newcastle and Jaissle much-needed win",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cm2d69p2x3g7o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T19:59:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Leeds beat Spurs to end five-game winless run",
+   "link": "https://www.bbc.co.uk/sport/football/videos/ckz7x4jlypq3o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T19:59:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Arsenal beat Hull to extend lead at top of the table",
+   "link": "https://www.bbc.co.uk/sport/football/videos/crx230ke2gzxo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T19:59:31+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Another 1-0 for relentless Arsenal - but did Odegaard spare VAR blushes?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6rmyg7xpnj1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-07T19:34:32+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Championship roundup: Birmingham go top, Cardiff stun Burnley from 4-1 down",
+   "link": "https://www.theguardian.com/football/2026/nov/07/championship-roundup-stoke-norwich-wrexham-wolves",
+   "date": "2026-11-07T19:20:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Martin Ødegaard extends Arsenal lead at top with winner to break Hull resistance",
+   "link": "https://www.theguardian.com/football/2026/nov/07/arsenal-hull-premier-league-match-report",
+   "date": "2026-11-07T17:02:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Muniz rescues late point for Fulham against Newcastle after Murphy stunner",
+   "link": "https://www.theguardian.com/football/2026/nov/07/fulham-newcastle-premier-league-match-report",
+   "date": "2026-11-07T17:00:54+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Manchester City break clear of Chelsea in WSL after Bronze’s freak own goal",
+   "link": "https://www.theguardian.com/football/2026/nov/07/manchester-city-chelsea-everton-west-ham-wsl-roundup",
+   "date": "2026-11-07T15:11:59+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "‘A footballing alien’: Mamadou Sangaré soars to Premier League heights",
+   "link": "https://www.theguardian.com/football/2026/nov/07/a-footballing-alien-mamadou-sangare-brentford-mali-premier-league",
+   "date": "2026-11-07T12:00:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Infantino caught in the web as tide turns against Trump in midterms and leaves Fifa exposed | Barney Ronay",
+   "link": "https://www.theguardian.com/football/2026/nov/07/gianni-infantino-fifa-donald-trump-democrats-republicans",
+   "date": "2026-11-07T08:00:05+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "A qué hora es el Espanyol - Deportivo: horario y dónde ver hoy en TV y online el partido de LaLiga EA Sports",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/07/hora-espanyol-deportivo-horario-ver-hoy-tv-online-partido-laliga-ea-sports.html",
+   "date": "2026-11-07T07:34:55+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "\"Un multihomenaje para la eternidad\"",
+   "link": "https://www.marca.com/futbol/tenerife/opinion/2026/11/07/multihomenaje-eternidad.html",
+   "date": "2026-11-07T07:16:47+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Málaga - Racing de Santander: horario, dónde ver en TV y canal del partido de LaLiga EA Sports",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/05/malaga-racing-de-santander-horario-donde-ver-en-tv-y-canal-del-partido-de-laliga-ea-sports.html",
+   "date": "2026-11-07T07:14:42+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "La paradoja de Hugo Duro ante el Real Madrid",
+   "link": "https://www.marca.com/futbol/valencia/2026/11/07/paradoja-hugo-duro-real-madrid.html",
+   "date": "2026-11-07T06:40:21+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Giménez: \"Al Cholo le debo la vida, desde los 19 años he estado con él\"",
+   "link": "https://www.marca.com/futbol/deportivo/2026/11/07/gimenez-cholo-le-debo-vida-19-anos-he.html",
+   "date": "2026-11-07T06:10:52+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Rise of the ‘schooligans’: how a wave of antisocial behaviour threatens non-league football",
+   "link": "https://www.theguardian.com/football/2026/nov/07/antisocial-behaviour-non-league-football-youth-hooligans-police",
+   "date": "2026-11-07T06:00:05+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Luis García Plaza: \"Sivera estuvo tres años conmigo y no paró ni un penalti\"",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/07/luis-garcia-plaza-sivera-estuvo-tres-anos-paro-penalti.html",
+   "date": "2026-11-06T23:30:20+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Sivera: \"Cada punto cuenta y queda uno menos para el objetivo\"",
+   "link": "https://www.marca.com/futbol/alaves/2026/11/07/sivera-punto-cuenta-queda-objetivo.html",
+   "date": "2026-11-06T23:22:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Quique: \"Hay que dar valor al esfuerzo de los jugadores\"",
+   "link": "https://www.marca.com/futbol/alaves/2026/11/07/quique-hay-dar-valor-esfuerzo-jugadores.html",
+   "date": "2026-11-06T23:16:46+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Iglesias: \"El equipo ha hecho todos los méritos para llevarse la victoria\"",
+   "link": "https://www.marca.com/futbol/sevilla/2026/11/07/iglesias-equipo-hecho-todos-meritos-llevarse-victoria.html",
+   "date": "2026-11-06T23:16:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Barry scores twice as Everton fight back to beat Coventry",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c62l44geqvlyo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T22:30:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Espanyol - Deportivo | Eder Sarabia, ‘ausente’ en el inicio de su proyecto: previa, análisis, pronóstico y predicción",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/06/espanyol-deportivo-eder-sarabia-ausente-inicio-proyecto-previa-analisis-pronostico-prediccion.html",
+   "date": "2026-11-06T20:27:34+00:00",
+   "pred": true
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "A qué hora es el Espanyol - Deportivo: horario y dónde ver hoy en TV y online el partido de LaLiga EA Sports",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/06/hora-espanyol-deportivo-horario-ver-hoy-tv-online-partido-laliga-ea-sports.html",
+   "date": "2026-11-06T20:26:39+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Osasuna- Athletic| Osasuna desafía lo que dice la historia: previa, análisis, pronóstico y predicción",
+   "link": "https://www.marca.com/futbol/primera-division/2026/11/06/osasuna-athletic-osasuna-desafia-dice-historia-previa-analisis-pronostico-prediccion.html",
+   "date": "2026-11-06T19:50:11+00:00",
+   "pred": true
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "Eder Sarabia: “Tenemos recursos de sobra y estamos preparados para poder ganar”",
+   "link": "https://www.marca.com/futbol/espanyol/2026/11/06/eder-sarabia-recursos-sobra-preparados-ganar.html",
+   "date": "2026-11-06T19:37:41+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "El Betis anuncia la Junta General de Accionistas para el 10 de diciembre",
+   "link": "https://www.marca.com/futbol/betis/2026/11/06/betis-anuncia-junta-general-accionistas-10-diciembre.html",
+   "date": "2026-11-06T18:36:41+00:00",
+   "pred": false
+  },
+  {
+   "lang": "es",
+   "source": "Marca",
+   "title": "La enfermería se mueve en La Rosaleda: tres altas contra el Racing",
+   "link": "https://www.marca.com/futbol/malaga/2026/11/06/enfermeria-mueve-rosaleda-tres-altas-racing.html",
+   "date": "2026-11-06T17:52:57+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "واصل يوسف في بلا قيود: الحزب وترامب يتحملان المسؤولية.",
+   "link": "https://www.bbc.com/arabic/watch/c6d7qqzjvny0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-06T17:40:48+00:00",
    "pred": false
   },
   {
@@ -98,190 +570,6 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Mourinho : «Il faut respecter le choix de Ronaldo»",
-   "link": "https://www.lequipe.fr/Football/Video/Portugal-jose-mourinho-appelle-a-respecter-la-decision-de-cristiano-ronaldo-de-mettre-un-terme-a-sa-carriere-internationale/20244986#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:21:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Franck Haise a refusé l'Angleterre à cause de la barrière de la langue : « Je pense toujours que mon niveau d'anglais est insuffisant »",
-   "link": "https://www.lequipe.fr/Football/Actualites/Franck-haise-a-refuse-l-angleterre-a-cause-de-la-barriere-de-la-langue-je-pense-toujours-que-mon-niveau-d-anglais-est-insuffisant/1741573#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:17:36+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Newcastle's Dedic stopped by police after being spotted with bow and arrows",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmpwggy2gz0eo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T11:16:07+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "المحكمة العليا في الصومال ترفض تمديد ولاية الرئيس في ظل أزمة سياسية",
-   "link": "https://www.bbc.com/arabic/articles/c6rryy20lxj4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T11:15:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Je vais te frapper » : Le pétage de plombs de Luciano Spalletti auprès de son défenseur Juan Cabal",
-   "link": "https://www.lequipe.fr/Football/Actualites/-je-vais-te-frapper-le-petage-de-plombs-de-luciano-spalletti-aupres-de-son-defenseur-juan-cabal/1741571#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:09:58+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "La liste de l'Espagne sans Rodri ni Dani Olmo mais avec le défenseur de Côme Jacobo Ramon",
-   "link": "https://www.lequipe.fr/Football/Actualites/La-liste-de-l-espagne-sans-rodri-ni-dani-olmo-mais-avec-le-defenseur-de-come-jacobo-ramon/1741567#at_medium=RSS_feeds",
-   "date": "2026-11-06T11:02:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Savanier, un retour à la Mosson entre émotion et motivation",
-   "link": "https://www.lequipe.fr/Football/Article/Teji-savanier-un-retour-a-la-mosson-avec-metz-entre-emotion-et-motivation/1741561#at_medium=RSS_feeds",
-   "date": "2026-11-06T10:57:19+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Nottingham Forest’s historic goal drought at home is part of longstanding problem",
-   "link": "https://www.theguardian.com/football/2026/nov/06/nottingham-forest-no-goals-home-oliver-glasner",
-   "date": "2026-11-06T10:49:59+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "L'Angleterre avec les frères Bellingham et Josh King pour la Ligue des nations",
-   "link": "https://www.lequipe.fr/Football/Actualites/L-angleterre-avec-les-freres-bellingham-et-josh-king-pour-la-ligue-des-nations/1741554#at_medium=RSS_feeds",
-   "date": "2026-11-06T10:44:42+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Amar Dedic set to escape Newcastle sanction over carrying bow and arrow",
-   "link": "https://www.theguardian.com/football/2026/nov/06/amar-dedic-set-to-escape-newcastle-sanction-over-carrying-bow-and-arrow",
-   "date": "2026-11-06T10:38:34+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Godo et la visualisation d'avant-match : «Ces exercices m'ont aidé»",
-   "link": "https://www.lequipe.fr/Football/Article/Preparation-neurovisuelle-visualisation-mentale-martial-godo-attaquant-de-strasbourg-raconte-ses-avant-matches-ces-exercices-m-ont-aide-a-mieux-voir/1741414#at_medium=RSS_feeds",
-   "date": "2026-11-06T10:34:00+00:00",
-   "pred": true
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "LaLiga denuncia insultos a Oscar Puente y Pedro Sánchez en Getafe, Santander y Elche",
-   "link": "https://www.marca.com/futbol/primera-division/2026/11/06/laliga-denuncia-insultos-oscar-puente-pedro-sanchez-getafe-santander-elche.html",
-   "date": "2026-11-06T10:32:10+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Malgré la prolongation de Kane au Bayern, Tottenham conserverait un droit de préemption sur un éventuel transfert du Ballon d'Or 2026",
-   "link": "https://www.lequipe.fr/Football/Actualites/Malgre-la-prolongation-de-kane-au-bayern-tottenham-conserve-un-droit-sur-un-eventuel-transfert-du-ballon-d-or-2026/1741546#at_medium=RSS_feeds",
-   "date": "2026-11-06T10:22:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« J'effleure le ballon de la tête et mes cheveux se retrouvent par terre » : « Dudu », le footballeur amateur brésilien qui a perdu sa prothèse capillaire en plein match",
-   "link": "https://www.lequipe.fr/Respire/Message-personnel/Actualites/-j-effleure-le-ballon-de-la-tete-et-mes-cheveux-se-retrouvent-par-terre-dudu-le-footballeur-amateur-bresilien-qui-a-perdu-sa-prothese-capillaire-en-plein-match/1741388#at_medium=RSS_feeds",
-   "date": "2026-11-06T10:15:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Aminata Diallo et six autres personnes renvoyées en correctionnelle dans l'affaire Hamraoui",
-   "link": "https://www.lequipe.fr/Football/Actualites/Aminata-diallo-et-six-autres-personnes-renvoyees-en-correctionnelle-dans-l-affaire-hamraoui/1741542#at_medium=RSS_feeds",
-   "date": "2026-11-06T09:57:17+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "\"الحكومات الشعبوية محكوم عليها بالفشل\" - مقال في تلغراف",
-   "link": "https://www.bbc.com/arabic/articles/c62e993lvl23o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T09:36:43+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Makaay: \"No sé de cómo ficharon a Aubameyang o Giménez, pero el Deportivo pertenece a Primera\"",
-   "link": "https://www.marca.com/futbol/bundesliga/2026/11/06/makaay-ficharon-aubameyang-gimenez-deportivo-pertenece-primera.html",
-   "date": "2026-11-06T09:30:12+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Championship preview: Contenders, pretenders and strugglers",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c38xzkkgg7rpo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T09:22:00+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Lampard looks for Coventry progress as belief grows",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cr20w943gvl5o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T08:11:03+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "البيت الأبيض ينفي مغادرة هيغسيث وروبيو منصبيهما عقب خسارة الجمهوريين في الانتخابات",
-   "link": "https://www.bbc.com/arabic/articles/cmp3ggqd8zzqo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T08:02:45+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Win at Everton would put Coventry on right side of history in survival fight",
-   "link": "https://www.theguardian.com/football/2026/nov/06/coventry-everton-frank-lampard-premier-league-survival",
-   "date": "2026-11-06T08:00:47+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "A qué hora es el Sevilla - Alavés: horario, dónde ver hoy en TV y canal del partido de LaLiga EA Sports",
-   "link": "https://www.marca.com/futbol/primera-division/2026/11/04/a-que-hora-es-el-sevilla-alaves-horario-donde-ver-hoy-en-tv-y-canal-del-partido-de-laliga-ea-sports.html",
-   "date": "2026-11-06T07:30:24+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Qué pasó con Mestalla... un 6 de noviembre de 1994: La petición de Luis Casanova para el cambio de nombre al estadio",
-   "link": "https://www.marca.com/futbol/valencia/2026/11/06/paso-mestalla-6-noviembre-1994-peticion-luis-casanova-cambio-nombre-estadio.html",
-   "date": "2026-11-06T07:19:49+00:00",
-   "pred": false
-  },
-  {
    "lang": "ar",
    "source": "BBC Arabic",
    "title": "ماذا نعرف عن هجمات سيبرانية تضرب ثلاجات متاجر أوروبية شهيرة؟",
@@ -290,267 +578,11 @@
    "pred": false
   },
   {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Why managers can learn a lot from leaders like Napoleon - Pulis",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck98z2r17e6po?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:53:56+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "From playing against Messi and Ronaldo to non-league",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cw054d7nmndzo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:42:07+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "هل نستفتي الآلة؟ جدل حول حدود الذكاء الاصطناعي في الفقه",
-   "link": "https://www.bbc.com/arabic/articles/c3j47kvlnnq2o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:41:30+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "'Putting his doubters in their place' - Rooney lands pundit of year award",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck4g1l4nj85zo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:22:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Who am I? Plus today's other quizzes",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm78p02288epo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T06:13:26+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "الرئيس الإسرائيلي يحدد الأحد المقبل موعداً لاختيار مرشح لتشكيل الحكومة",
-   "link": "https://www.bbc.com/arabic/articles/cjdx33ezggwpo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T04:05:41+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Cape Verde captain Ryan Mendes cleared of rape allegation as woman charged with false statement",
-   "link": "https://www.theguardian.com/football/2026/nov/06/cape-verde-football-ryan-mendes-sexual-assault-allegation-dismissed-ntwnfb",
-   "date": "2026-11-06T03:37:32+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "أسهم شركات التكنولوجيا الكبرى تهوي وسط مخاوف من تباطؤ الذكاء الاصطناعي بعد انتخابات التجديد النصفي",
-   "link": "https://www.bbc.com/arabic/articles/cqx288n8vkg1o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T02:50:54+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Sevilla - Alavés | Noche de emoción, homenaje y fútbol: previa, análisis, pronóstico y predicción",
-   "link": "https://www.marca.com/futbol/primera-division/2026/11/06/sevilla-alaves-noche-emocion-homenaje-futbol-previa-analisis-pronostico-prediccion.html",
-   "date": "2026-11-06T00:51:49+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Duran & Osmand spark Celtic into life - but where does that leave Hogh?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwd099ez7z4yo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T00:10:28+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Premier League: 10 things to look out for this weekend",
-   "link": "https://www.theguardian.com/football/2026/nov/06/premier-league-10-things-to-look-out-for-this-weekend",
-   "date": "2026-11-06T00:01:37+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Deschamps not interested in Man Utd job - Friday's gossip",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c9rky3g7e8zro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T22:49:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Scott Parker’s dramatic West Ham return leaves him struggling for words",
-   "link": "https://www.theguardian.com/football/2026/nov/05/scott-parkers-dramatic-west-ham-return-leaves-him-struggling-for-words",
-   "date": "2026-11-05T22:30:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Forest need balance between Woodstock and military - Glasner",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwg5jj6nvmnyo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T22:30:07+00:00",
-   "pred": false
-  },
-  {
    "lang": "tr",
    "source": "TRT Haber",
    "title": "Beşiktaş, Avrupa'da ilk yenilgisini yaşadı",
    "link": "https://www.trthaber.com/haber/spor/besiktas-avrupada-ilk-yenilgisini-yasadi-962380.html",
    "date": "2026-11-05T22:15:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "‘In moments of pain, football comes together’: Spain says goodbye to Jesús de Miguel",
-   "link": "https://www.theguardian.com/football/2026/nov/05/jesus-de-miguel-death-tenerife-funeral-football-spain",
-   "date": "2026-11-05T22:03:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "El Levante prevé generar 22 millones y reducir su deuda en más de 35 antes del 30 de junio de 2027",
-   "link": "https://www.marca.com/futbol/levante/2026/11/05/levante-preve-generar-22-millones-reducir-deuda-35-30-junio-2027.html",
-   "date": "2026-11-05T21:04:22+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "ما دلالات فوز أمريكيين عرب ومسلمين في انتخابات التجديد النصفي، وما أسباب نجاحهم؟",
-   "link": "https://www.bbc.com/arabic/articles/crp3gg5x8p04o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T18:38:27+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Sutton's predictions v Football Manager, the game",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck5ynzry64p2o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T18:02:15+00:00",
-   "pred": true
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Manu Bueno y Peque se caen de la lista del Sevilla",
-   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/manu-bueno-peque-caen-lista-sevilla.html",
-   "date": "2026-11-05T17:38:47+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "El Mundial sub17 dejará a Terzic de dos a seis partidos sin Imga",
-   "link": "https://www.marca.com/futbol/athletic/2026/11/05/mundial-sub17-dejara-terzic-dos-seis-partidos-imga.html",
-   "date": "2026-11-05T17:05:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Diatta pasa por quirófano y estará cerca de medio año de baja",
-   "link": "https://www.marca.com/futbol/villarreal/2026/11/05/diatta-pasa-quirofano-estara-cerca-medio-ano-baja.html",
-   "date": "2026-11-05T16:28:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "El fútbol español se unirá en homenaje a Jesús de Miguel: se juega la jornada y se parará en el minuto 9",
-   "link": "https://www.marca.com/futbol/primera-division/2026/11/05/futbol-espanol-unira-homenaje-jesus-miguel-juega-jornada-parara-minuto-9.html",
-   "date": "2026-11-05T16:28:04+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "JAL vuelve a La Rosaleda sin haber perdido contra el Málaga",
-   "link": "https://www.marca.com/futbol/malaga/2026/11/05/jal-vuelve-rosaleda-haber-perdido-malaga.html",
-   "date": "2026-11-05T15:58:50+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "A bitter end for Ronaldo - the icon who transformed Portugal",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ckn9rwr2zzpvo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T14:29:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Quique: \"Lo que más nos preocupa ahora es recuperar la moral de los jugadores\"",
-   "link": "https://www.marca.com/futbol/alaves/2026/11/05/quique-preocupa-recuperar-moral-jugadores.html",
-   "date": "2026-11-05T13:55:32+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Cristiano Ronaldo merely the latest example of a great player who couldn’t let go | Jonathan Wilson",
-   "link": "https://www.theguardian.com/football/2026/nov/05/cristiano-ronaldo-retires-international-football-career-portugal",
-   "date": "2026-11-05T13:32:02+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Six tournaments, 11 goals - Ronaldo's World Cup legacy",
-   "link": "https://www.bbc.co.uk/sport/football/videos/cwr5y0yj716do?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-05T13:15:21+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "La AFE traslada el sentir de los futbolistas: \"Lo más adecuado sería suspender la jornada",
-   "link": "https://www.marca.com/futbol/2026/11/05/afe-traslada-sentir-futbolistas-adecuado-seria-suspender-jornada.html",
-   "date": "2026-11-05T13:01:59+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "The international break is almost here: so wave goodbye to your players, and maybe your manager | Max Rushden",
-   "link": "https://www.theguardian.com/football/2026/nov/05/the-international-break-is-almost-here-so-wave-goodbye-to-your-players-and-maybe-your-manager",
-   "date": "2026-11-05T13:00:24+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "El Eintracht de Frankfurt se interesa por Buba Sangaré",
-   "link": "https://www.marca.com/futbol/elche/2026/11/05/eintracht-frankfurt-interesa-buba-sangare.html",
-   "date": "2026-11-05T12:58:43+00:00",
-   "pred": false
-  },
-  {
-   "lang": "es",
-   "source": "Marca",
-   "title": "Luis García Plaza: \"Tenemos que rentabilizar más los momentos en que somos superiores\"",
-   "link": "https://www.marca.com/futbol/sevilla/2026/11/05/luis-garcia-plaza-rentabilizar-momentos-superiores.html",
-   "date": "2026-11-05T12:45:03+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Meet Clara Serrajordi: Barcelona’s midfield hope filling the void left by Alexia Putellas | Moving the Goalposts",
-   "link": "https://www.theguardian.com/football/2026/nov/05/clara-serrajordi-barcelona-midfielder-alexia-putellas-moving-the-goalposts",
-   "date": "2026-11-05T11:52:22+00:00",
    "pred": false
   },
   {
@@ -687,38 +719,6 @@
    "title": "Derbinin hakemi belli oldu",
    "link": "https://www.trthaber.com/haber/spor/derbinin-hakemi-belli-oldu-960884.html",
    "date": "2026-10-22T10:15:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up to the Sport in Focus newsletter: the sporting week in photos",
-   "link": "https://www.theguardian.com/sport/2025/oct/01/sign-up-to-the-sport-in-focus-newsletter-the-sporting-week-in-photos",
-   "date": "2025-10-01T11:00:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Football Daily newsletter: our free football email",
-   "link": "https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up",
-   "date": "2022-11-14T09:05:50+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Moving the Goalposts newsletter: our free women’s football email",
-   "link": "https://www.theguardian.com/football/2022/mar/22/sign-up-for-our-new-womens-football-newsletter-moving-the-goalposts",
-   "date": "2022-03-22T16:57:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Recap newsletter: our free sport highlights email",
-   "link": "https://www.theguardian.com/sport/2017/may/15/the-recap-sign-up-for-the-best-of-the-guardians-sport-coverage",
-   "date": "2017-05-15T11:00:43+00:00",
    "pred": false
   }
  ]

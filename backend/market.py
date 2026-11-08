@@ -8,7 +8,7 @@ import engine
 import history
 
 URL = "https://www.football-data.co.uk/fixtures.csv"
-W_MARKET = 0.7          # وزن السوق في المزج
+W_MARKET = 0.9          # وزن السوق في المزج
 CACHE_SECONDS = 6 * 3600
 COLS = (("PPH", "PPD", "PPA"), ("AvgH", "AvgD", "AvgA"), ("B365H", "B365D", "B365A"))
 DIV = {"E0": "PL", "E1": "ELC", "D1": "BL1", "SP1": "PD", "I1": "SA", "F1": "FL1", "N1": "DED", "P1": "PPL"}

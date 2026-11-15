@@ -495,6 +495,7 @@
     [/^#\/saved$/, "saved", () => pageSaved()],
     [/^#\/quality$/, "saved", () => pageQuality()],
     [/^#\/press$/, "saved", () => pagePress()],
+    [/^#\/news$/, "saved", () => (window.smmNews || (() => {}))(view, api)],
     [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]
   ];

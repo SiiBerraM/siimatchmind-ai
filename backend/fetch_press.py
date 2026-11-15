@@ -7,7 +7,8 @@ from pathlib import Path
 FEEDS = [
     ("en", "BBC Sport", "https://feeds.bbci.co.uk/sport/football/rss.xml"),
     ("en", "The Guardian", "https://www.theguardian.com/football/rss"),
-    ("ar", "BBC Arabic", "https://feeds.bbci.co.uk/arabic/sports/rss.xml"),
+    ("ar", "Hespress Sport", "https://www.hespress.com/sport/feed"),
+    ("ar", "France 24 Arabic", "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/rss"),
     ("fr", "L'Equipe", "https://dwh.lequipe.fr/api/edito/rss?path=/Football/"),
     ("es", "Marca", "https://e00-marca.uecdn.es/rss/futbol/primera-division.xml"),
     ("tr", "TRT Haber", "https://www.trthaber.com/spor_articles.rss"),
@@ -19,6 +20,10 @@ KW = {
     "fr": r"pronostic|avant-match|compo|probable|présentation",
     "es": r"pronóstico|previa|alineaci|apuesta|posible",
     "tr": r"tahmin|muhtemel|ilk 11|ön izleme|iddaa",
+}
+FB = {
+    "ar": r"كرة القدم|كأس|دوري|مباراة|منتخب|تصفيات|الفيفا|هدف|مدرب|لاعب",
+    "tr": r"futbol|maç|gol|lig|süper|teknik direktör|transfer|şampiyon|kupa",
 }
 OUT = Path(__file__).resolve().parent.parent / "docs" / "data" / "news.json"
 
@@ -46,6 +51,8 @@ for lang, source, url in FEEDS:
                 le = it.find("{http://www.w3.org/2005/Atom}link")
                 link = le.get("href", "") if le is not None else ""
             if not title or not link.startswith("http"):
+                continue
+            if lang in FB and not re.search(FB[lang], title, re.I):
                 continue
             pred = bool(re.search(KW[lang], title, re.I))
             date = ts(it.findtext("pubDate") or it.findtext("{http://www.w3.org/2005/Atom}updated") or "")

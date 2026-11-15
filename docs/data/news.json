@@ -1,22 +1,6 @@
 {
- "updated": "2026-11-15T02:37:02.294079+00:00",
+ "updated": "2026-11-15T02:51:25.486183+00:00",
  "items": [
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "ترامب يدرس تعليق الضربات على إيران، ونتنياهو يتعهّد بـ\"محو التهديد الإيراني للأبد\"",
-   "link": "https://www.bbc.com/arabic/articles/cwp9dznjmpllo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-15T01:39:57+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "إسرائيل تعلن اغتيال قائد لواء رفح في حماس، والحركة تقول إنه أحد أبرز مخططي هجوم 7 أكتوبر",
-   "link": "https://www.bbc.com/arabic/articles/cm5y1x7r2q25o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-15T00:54:20+00:00",
-   "pred": false
-  },
   {
    "lang": "fr",
    "source": "L'Equipe",
@@ -58,20 +42,20 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "زيلينسكي: الولايات المتحدة اقترحت تنازل أوكرانيا عن دونباس مقابل عضوية الناتو",
-   "link": "https://www.bbc.com/arabic/articles/cqy0eldp4640o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T23:11:24+00:00",
-   "pred": false
-  },
-  {
    "lang": "fr",
    "source": "L'Equipe",
    "title": "Kylian Mbappé de retour en pointe et quelques incertitudes dans le onze probable : Zinédine Zidane brouille les pistes avant France-Turquie",
    "link": "https://www.lequipe.fr/Football/Actualites/Kylian-mbappe-de-retour-en-pointe-et-quelques-incertitudes-dans-le-onze-probable-zinedine-zidane-brouille-les-pistes-avant-france-turquie/1743766#at_medium=RSS_feeds",
    "date": "2026-11-14T23:10:34+00:00",
    "pred": true
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "تصنيف \"الفيفا\" يضع المغرب خامسا",
+   "link": "https://www.hespress.com/%d8%aa%d8%b5%d9%86%d9%8a%d9%81-%d8%a7%d9%84%d9%81%d9%8a%d9%81%d8%a7-%d9%8a%d8%b6%d8%b9-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8-%d8%ae%d8%a7%d9%85%d8%b3%d8%a7-1840084.html",
+   "date": "2026-11-14T23:03:59+00:00",
+   "pred": false
   },
   {
    "lang": "fr",
@@ -195,10 +179,10 @@
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "جرف الصخر أم جرف النصر؟ اتهامات بتهريب النفط تعيد الملفات العالقة إلى الواجهة",
-   "link": "https://www.bbc.com/arabic/articles/c9m2j8pry2ndo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T21:45:10+00:00",
+   "source": "France 24 Arabic",
+   "title": "تصفيات كأس الأمم الأفريقية 2027: الجزائر تفوز بصعوبة على توغو وتعزز صدارتها للمجموعة",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261114-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-2027-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%AA%D9%81%D9%88%D8%B2-%D8%A8%D8%B5%D8%B9%D9%88%D8%A8%D8%A9-%D8%B9%D9%84%D9%89-%D8%AA%D9%88%D8%BA%D9%88-%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D9%84%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9",
+   "date": "2026-11-14T21:24:32+00:00",
    "pred": false
   },
   {
@@ -274,14 +258,6 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "جنوب السودان يرجئ أول انتخابات له مجدداً وسط تصاعد العنف والصراع على السلطة",
-   "link": "https://www.bbc.com/arabic/articles/cw1mdlnn9xkmo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T17:22:46+00:00",
-   "pred": false
-  },
-  {
    "lang": "en",
    "source": "BBC Sport",
    "title": "Tenerife boss says Owono's 12-match ban 'feels light'",
@@ -298,14 +274,6 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "\"غريب في قبري!\"",
-   "link": "https://www.bbc.com/arabic/articles/crwy41p2vxvvo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T15:25:42+00:00",
-   "pred": false
-  },
-  {
    "lang": "en",
    "source": "BBC Sport",
    "title": "Former Stoke City manager Thordarson dies aged 71",
@@ -314,19 +282,19 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "البيت الأبيض: اجتماع \"تاريخي\" بين ترامب وبوتين وشي جينبينغ في الصين",
-   "link": "https://www.bbc.com/arabic/articles/cmlydv2l51gko?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T14:15:35+00:00",
-   "pred": false
-  },
-  {
    "lang": "en",
    "source": "The Guardian",
    "title": "Mauricio Pochettino asked the US to believe in his project. Did he believe in it himself?",
    "link": "https://www.theguardian.com/football/2026/nov/14/mauricio-pochettino-usmnt-legacy-belief",
    "date": "2026-11-14T14:06:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "اليابان تهزم البرازيل في مباراة مثيرة",
+   "link": "https://www.hespress.com/%d8%a7%d9%84%d9%8a%d8%a7%d8%a8%d8%a7%d9%86-%d8%aa%d9%87%d8%b2%d9%85-%d8%a7%d9%84%d8%a8%d8%b1%d8%a7%d8%b2%d9%8a%d9%84-%d9%81%d9%8a-%d9%85%d8%a8%d8%a7%d8%b1%d8%a7%d8%a9-%d9%85%d8%ab%d9%8a%d8%b1%d8%a9-1839717.html",
+   "date": "2026-11-14T13:11:06+00:00",
    "pred": false
   },
   {
@@ -339,10 +307,10 @@
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "عطل في آوتلوك: كيف تواصل العمل وما البدائل المتاحة للبريد الإلكتروني؟ - قراءة في الصحف",
-   "link": "https://www.bbc.com/arabic/articles/cmn80llyzjn6o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T12:02:50+00:00",
+   "source": "Hespress Sport",
+   "title": "إيقاف حارس 12 مباراة بعد وفاة لاعب",
+   "link": "https://www.hespress.com/%d8%a5%d9%8a%d9%82%d8%a7%d9%81-%d8%ad%d8%a7%d8%b1%d8%b3-12-%d9%85%d8%a8%d8%a7%d8%b1%d8%a7%d8%a9-%d8%a8%d8%b9%d8%af-%d9%88%d9%81%d8%a7%d8%a9-%d9%84%d8%a7%d8%b9%d8%a8-1839620.html",
+   "date": "2026-11-14T11:33:16+00:00",
    "pred": false
   },
   {
@@ -359,14 +327,6 @@
    "title": "Clough's longevity: landmark achievement or indictment on football?",
    "link": "https://www.bbc.co.uk/sport/football/articles/cqr7grl145zpo?at_medium=RSS&at_campaign=rss",
    "date": "2026-11-14T08:35:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "ماذا نعرف عن وقف الرحلات الجوية في الولايات المتحدة، وما حقوق المسافرين؟",
-   "link": "https://www.bbc.com/arabic/articles/c3dx1vlv2jqko?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T08:06:11+00:00",
    "pred": false
   },
   {
@@ -394,19 +354,35 @@
    "pred": false
   },
   {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "المنتخب المغربي يكتسح النيجر بخماسية في تصفيات كأس أمم إفريقيا 2027",
+   "link": "https://www.hespress.com/%d8%a7%d9%84%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8%d9%8a-%d9%8a%d9%83%d8%aa%d8%b3%d8%ad-%d8%a7%d9%84%d9%86%d9%8a%d8%ac%d8%b1-%d8%a8%d8%ae%d9%85%d8%a7%d8%b3%d9%8a%d8%a9-1839443.html",
+   "date": "2026-11-13T22:03:16+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "أشبال المغرب يتعثرون أمام مصر بهدف",
+   "link": "https://www.hespress.com/%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a3%d9%82%d9%84-%d9%85%d9%86-17-%d9%8a%d9%86%d9%87%d8%b2%d9%85-%d8%a3%d9%85%d8%a7%d9%85-%d9%85%d8%b5%d8%b1-1839338.html",
+   "date": "2026-11-13T19:33:43+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "تشكيلة المنتخب المغربي لمواجهة النيجر",
+   "link": "https://www.hespress.com/%d8%aa%d8%b4%d9%83%d9%8a%d9%84%d8%a9-%d8%a7%d9%84%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8%d9%8a-%d9%84%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%86%d9%8a%d8%ac-1839350.html",
+   "date": "2026-11-13T19:09:28+00:00",
+   "pred": true
+  },
+  {
    "lang": "en",
    "source": "The Guardian",
    "title": "Rugby League World Cup finals, ATP and WTA tennis, plus WSL – follow with us",
    "link": "https://www.theguardian.com/sport/2026/nov/13/rugby-league-world-cup-finals-atp-and-wta-tennis-plus-wsl-follow-with-us",
    "date": "2026-11-13T16:42:46+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "إثيوبيا والبحر الأحمر.. ما سر \"عقدة\" المنفذ البحري؟",
-   "link": "https://www.bbc.com/arabic/watch/cwdd14grly09o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T14:13:42+00:00",
    "pred": false
   },
   {
@@ -419,18 +395,34 @@
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "استقالة رئيس إنفيديا وسط مزاعم عن علاقة غرامية ثانية",
-   "link": "https://www.bbc.com/arabic/watch/cqd090n1nvg3o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-12T15:05:34+00:00",
+   "source": "France 24 Arabic",
+   "title": "تصفيات أمم أفريقيا 2027: الكونغو الديمقراطية وساحل العاج تقتربان من التأهل والسودان يتعثر",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261112-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D8%A3%D9%85%D9%85-%D8%A5%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-2027-%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D8%AC-%D8%A7%D9%84%D9%83%D9%88%D9%86%D8%BA%D9%88-%D8%A7%D9%84%D8%AF%D9%8A%D9%85%D9%82%D8%B1%D8%A7%D8%B7%D9%8A%D8%A9-%D8%BA%D8%A7%D9%86%D8%A7-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B3%D9%86%D8%BA%D8%A7%D9%84",
+   "date": "2026-11-12T23:28:48+00:00",
    "pred": false
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "ما قصة الصحراء الغربية؟ ولماذا احتفل المغرب بانتهاء مهمة \"مينورسو\"؟",
-   "link": "https://www.bbc.com/arabic/watch/cmvg2rgg6gz5o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-12T14:11:03+00:00",
+   "source": "France 24 Arabic",
+   "title": "دوري الأمم الأوروبية: إيطاليا تهزم فرنسا وإسبانيا تواصل انتصاراتها",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261112-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A7-%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A7-%D8%A5%D9%86%D9%83%D9%84%D8%AA%D8%B1%D8%A7-%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A",
+   "date": "2026-11-12T22:57:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "دوري الأمم الأوروبية: قمة نارية بين إيطاليا وفرنسا وسط غيابات بالجملة في صفوف الزرق",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261112-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D9%82%D9%85%D8%A9-%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A7-%D9%88%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%BA%D9%8A%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A8%D8%A7%D9%84%D8%AC%D9%85%D9%84%D8%A9-%D8%A7%D9%84%D8%B2%D8%B1%D9%82",
+   "date": "2026-11-12T11:13:39+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "كأس الأمم الأفريقية 2027: المغرب على أعتاب التأهل ومصر في مرحلة جديدة والجزائر أمام تحدي الإصابات",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261111-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8-%D9%85%D8%B5%D8%B1-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%A7%D9%84%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-2027",
+   "date": "2026-11-11T14:58:44+00:00",
    "pred": false
   },
   {
@@ -443,18 +435,58 @@
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "سماعات بتقنية التوصيل العظمي.. كيف تنقل الصوت؟",
-   "link": "https://www.bbc.com/arabic/watch/cwg7x7k3meljo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-10T14:41:30+00:00",
+   "source": "France 24 Arabic",
+   "title": "من يفوز بجائزة أفضل لاعب في أفريقيا لعام 2026؟ الجواب في 2 ديسمبر بمدنية لاغوس",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261110-%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9-%D8%A3%D9%81%D8%B6%D9%84-%D9%84%D8%A7%D8%B9%D8%A8-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D9%84%D8%A7%D8%BA%D9%88%D8%B3-%D9%86%D9%8A%D8%AC%D9%8A%D8%B1%D9%8A%D8%A7",
+   "date": "2026-11-10T10:53:37+00:00",
    "pred": false
   },
   {
    "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "كيف تعمل شبكة قراصنة كوريا الشمالية؟",
-   "link": "https://www.bbc.com/arabic/watch/cw8dzd4nd21yo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-10T11:05:35+00:00",
+   "source": "France 24 Arabic",
+   "title": "كأس السوبر الأفريقية: اتحاد العاصمة الجزائري يسقط صن داونز في عقر داره ويحرز اللقب",
+   "link": "https://www.france24.com/ar/%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9-24/20261109-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B3%D9%88%D8%A8%D8%B1-%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A-%D9%8A%D8%B3%D9%82%D8%B7-%D8%B5%D9%86%D8%AF%D8%A7%D9%88%D9%86%D8%B2-%D9%81%D9%8A-%D8%B9%D9%82%D8%B1-%D8%AF%D8%A7%D8%B1%D9%87-%D9%88%D9%8A%D8%AD%D8%B1%D8%B2-%D8%A7%D9%84%D9%84%D9%82%D8%A8",
+   "date": "2026-11-09T16:41:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "برشلونة يقلب الطاولة على أتلتيكو مدريد بثنائية لوبيس ويعزز صدارته للدوري الإسباني",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261108-%D8%A8%D8%B1%D8%B4%D9%84%D9%88%D9%86%D8%A9-%D8%A3%D8%AA%D9%84%D8%AA%D9%8A%D9%83%D9%88-%D9%85%D8%AF%D8%B1%D9%8A%D8%AF-%D9%81%D9%8A%D8%B1%D9%85%D9%8A%D9%86-%D9%84%D9%88%D8%A8%D9%8A%D8%B3-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A",
+   "date": "2026-11-08T23:18:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "كأس السوبر الأفريقية: اتحاد العاصمة الجزائري يفوز على صن داونز الجنوب أفريقي ويتوج بطلا",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261108-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%B3%D9%88%D8%A8%D8%B1-%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A-%D9%8A%D9%87%D8%B2%D9%85-%D8%B5%D9%86-%D8%AF%D8%A7%D9%88%D9%86%D8%B2-%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A-%D9%88%D9%8A%D8%AA%D9%88%D8%AC-%D8%A8%D8%B7%D9%84%D8%A7",
+   "date": "2026-11-08T16:04:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "ريال مدريد يواصل سلسلة انتصاراته بالدوري الإسباني",
+   "link": "https://www.france24.com/ar/%D9%81%D9%8A%D8%AF%D9%8A%D9%88/20261108-%D8%B1%D9%8A%D8%A7%D9%84-%D9%85%D8%AF%D8%B1%D9%8A%D8%AF-%D9%8A%D9%88%D8%A7%D8%B5%D9%84-%D8%B3%D9%84%D8%B3%D9%84%D8%A9-%D8%A7%D9%86%D8%AA%D8%B5%D8%A7%D8%B1%D8%A7%D8%AA%D9%87-%D8%A8%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A",
+   "date": "2026-11-08T10:17:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "كرة القدم: الاتحاد المصري يتخلى عن المدرب حسام حسن ويعين علي ماهر خلفا له",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261107-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%AA%D8%AE%D9%84%D9%89-%D8%B9%D9%86-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%A8-%D8%AD%D8%B3%D8%A7%D9%85-%D8%AD%D8%B3%D9%86-%D9%88%D9%8A%D8%B9%D9%8A%D9%86-%D8%B9%D9%84%D9%8A-%D9%85%D8%A7%D9%87%D8%B1-%D8%AE%D9%84%D9%81%D8%A7-%D9%84%D9%87",
+   "date": "2026-11-07T19:31:49+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "دوري أمم أوروبا: زيدان يكشف عن قائمة منتخب فرنسا",
+   "link": "https://www.france24.com/ar/%D9%81%D9%8A%D8%AF%D9%8A%D9%88/20261107-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A3%D9%85%D9%85-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D8%A7-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D9%8A%D9%83%D8%B4%D9%81-%D8%B9%D9%86-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%81%D8%B1%D9%86%D8%B3%D8%A7",
+   "date": "2026-11-07T14:36:47+00:00",
    "pred": false
   },
   {
@@ -530,6 +562,14 @@
    "pred": false
   },
   {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "زيدان يعلن تشكيلة المنتخب الفرنسي... عودة مبابي وتشواميني وكوناتيه وأول استدعاء لباجيس",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261106-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9-%D8%AA%D8%B4%D9%83%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A-%D8%A7%D9%84%D8%B2%D8%B1%D9%82-%D9%85%D8%A8%D8%A7%D8%A8%D9%8A-%D8%AA%D8%B4%D9%88%D8%A7%D9%85%D9%8A%D9%86%D9%8A-%D9%83%D9%88%D9%86%D8%A7%D8%AA%D9%8A%D9%87-%D8%A7%D8%B3%D8%AA%D8%AF%D8%B9%D8%A7%D8%A1-%D8%A8%D8%A7%D8%AC%D9%8A%D8%B3",
+   "date": "2026-11-06T20:35:45+00:00",
+   "pred": true
+  },
+  {
    "lang": "es",
    "source": "Marca",
    "title": "Espanyol - Deportivo | Eder Sarabia, ‘ausente’ en el inicio de su proyecto: previa, análisis, pronóstico y predicción",
@@ -586,22 +626,6 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "ماذا نعرف عن هجمات سيبرانية تضرب ثلاجات متاجر أوروبية شهيرة؟",
-   "link": "https://www.bbc.com/arabic/watch/cmlykq5k89djo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-06T07:04:21+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Beşiktaş, Avrupa'da ilk yenilgisini yaşadı",
-   "link": "https://www.trthaber.com/haber/spor/besiktas-avrupada-ilk-yenilgisini-yasadi-962380.html",
-   "date": "2026-11-05T22:15:00+00:00",
-   "pred": false
-  },
-  {
    "lang": "tr",
    "source": "TRT Haber",
    "title": "Trabzonspor, Konferans Ligi'nde Freiburg'u ağırlayacak",
@@ -618,51 +642,27 @@
    "pred": false
   },
   {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "دوري أبطال أوروبا: ريال مدريد يخطف فوزا قاتلا وليفربول يتعثر وكومو يكتسح لنس 9-1",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261104-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A3%D8%A8%D8%B7%D8%A7%D9%84-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D8%A7-%D8%B1%D9%8A%D8%A7%D9%84-%D9%85%D8%AF%D8%B1%D9%8A%D8%AF-%D9%84%D9%8A%D9%81%D8%B1%D8%A8%D9%88%D9%84-%D9%83%D9%88%D9%85%D9%88-%D8%A3%D8%B1%D8%B3%D9%86%D8%A7%D9%84-%D9%85%D8%A7%D9%86%D8%B4%D8%B3%D8%AA%D8%B1-%D8%B3%D9%8A%D8%AA%D9%8A",
+   "date": "2026-11-04T23:47:20+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "المرشحون العشرة لجائزة أفضل لاعب أفريقي لعام 2026",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261104-%D9%85%D8%B1%D8%B4%D8%AD%D9%88%D9%86-%D9%84%D8%A7%D8%B9%D8%A8%D9%88%D9%86-%D8%A3%D9%81%D8%B6%D9%84-%D9%84%D8%A7%D8%B9%D8%A8-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A-2026-%D8%AD%D9%83%D9%8A%D9%85%D9%8A-%D8%B5%D9%8A%D8%A8%D8%A7%D8%B1%D9%8A-%D8%AF%D9%8A%D8%A7%D8%B2-%D9%85%D8%A7%D9%86%D9%8A%D9%87",
+   "date": "2026-11-04T16:14:11+00:00",
+   "pred": false
+  },
+  {
    "lang": "tr",
    "source": "TRT Haber",
    "title": "Fenerbahçe, Şampiyonlar Ligi'nde Liverpool'u ağırlıyor",
    "link": "https://www.trthaber.com/haber/spor/fenerbahce-sampiyonlar-liginde-liverpoolu-agirliyor-962167.html",
    "date": "2026-11-04T04:39:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Sergen Yalçın'ın ilk milli takım kadrosu 6 Kasım'da açıklanacak",
-   "link": "https://www.trthaber.com/haber/spor/sergen-yalcinin-ilk-milli-takim-kadrosu-6-kasimda-aciklanacak-962138.html",
-   "date": "2026-11-03T20:21:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Trabzonspor seriye devam ediyor",
-   "link": "https://www.trthaber.com/haber/spor/trabzonspor-seriye-devam-ediyor-961891.html",
-   "date": "2026-11-01T15:25:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Fenerbahçe'de İsmail Kartal dönemi sona erdi",
-   "link": "https://www.trthaber.com/haber/spor/fenerbahcede-ismail-kartal-donemi-sona-erdi-961401.html",
-   "date": "2026-10-27T17:56:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Derbiye kartlar damga vurdu",
-   "link": "https://www.trthaber.com/haber/spor/derbiye-kartlar-damga-vurdu-961350.html",
-   "date": "2026-10-27T10:45:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "tr",
-   "source": "TRT Haber",
-   "title": "Derbinin kazananı Galatasaray",
-   "link": "https://www.trthaber.com/haber/spor/derbinin-kazanani-galatasaray-961271.html",
-   "date": "2026-10-26T20:18:00+00:00",
    "pred": false
   },
   {
@@ -676,25 +676,73 @@
   {
    "lang": "tr",
    "source": "TRT Haber",
-   "title": "Trabzonspor, Thomas Reis yönetiminde yoluna kayıpsız devam ediyor",
-   "link": "https://www.trthaber.com/haber/spor/trabzonspor-thomas-reis-yonetiminde-yoluna-kayipsiz-devam-ediyor-961264.html",
-   "date": "2026-10-26T18:34:00+00:00",
+   "title": "Galatasaraydan Lille maçı öncesi UEFA'ya güvenlik başvurusu",
+   "link": "https://www.trthaber.com/haber/spor/galatasaraydan-lille-maci-oncesi-uefaya-guvenlik-basvurusu-960643.html",
+   "date": "2026-10-20T11:23:00+00:00",
    "pred": false
   },
   {
    "lang": "tr",
    "source": "TRT Haber",
-   "title": "Milli güreşçi Yüksel Sarıçiçek dünya ikincisi oldu",
-   "link": "https://www.trthaber.com/haber/spor/milli-guresci-yuksel-saricicek-dunya-ikincisi-oldu-961162.html",
-   "date": "2026-10-25T15:50:00+00:00",
+   "title": "Milli futbolcu Arda Güler'den jeneriklik gol",
+   "link": "https://www.trthaber.com/haber/spor/milli-futbolcu-arda-gulerden-jeneriklik-gol-960483.html",
+   "date": "2026-10-18T21:03:00+00:00",
    "pred": false
   },
   {
    "lang": "tr",
    "source": "TRT Haber",
-   "title": "A Milli Takım'da Sergen Yalçın dönemi resmen başladı",
-   "link": "https://www.trthaber.com/haber/spor/a-milli-takimda-sergen-yalcin-donemi-resmen-basladi-960905.html",
-   "date": "2026-10-22T11:57:00+00:00",
+   "title": "Beşiktaş Avrupa Ligi'nde Hoffenheim deplasmanında",
+   "link": "https://www.trthaber.com/haber/spor/besiktas-avrupa-liginde-hoffenheim-deplasmaninda-960074.html",
+   "date": "2026-10-14T07:27:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Türk dünyasından gelen futbolcular Türk statüsünde sayılacak",
+   "link": "https://www.trthaber.com/haber/spor/turk-dunyasindan-gelen-futbolcular-turk-statusunde-sayilacak-959739.html",
+   "date": "2026-10-10T09:23:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Süper Lig'de milli aranın ardından perde açılıyor",
+   "link": "https://www.trthaber.com/haber/spor/super-ligde-milli-aranin-ardindan-perde-aciliyor-959505.html",
+   "date": "2026-10-08T07:44:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Türkiye, Uluslar Ligi'nde deplasmanda İtalya karşısında",
+   "link": "https://www.trthaber.com/haber/spor/turkiye-uluslar-liginde-deplasmanda-italya-karsisinda-959051.html",
+   "date": "2026-10-04T06:21:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Fenerbahçe'den transfer yasağı açıklaması",
+   "link": "https://www.trthaber.com/haber/spor/fenerbahceden-transfer-yasagi-aciklamasi-958199.html",
+   "date": "2026-09-26T07:03:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Basketbol Süper Ligi'nde sezon başlıyor",
+   "link": "https://www.trthaber.com/haber/spor/basketbol-super-liginde-sezon-basliyor-957983.html",
+   "date": "2026-09-24T08:46:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "tr",
+   "source": "TRT Haber",
+   "title": "Türkiye, UEFA Uluslar Ligi'nde Fransa ile karşılaşacak",
+   "link": "https://www.trthaber.com/haber/spor/turkiye-uefa-uluslar-liginde-fransa-ile-karsilasacak-957937.html",
+   "date": "2026-09-24T06:26:00+00:00",
    "pred": false
   },
   {

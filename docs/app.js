@@ -499,6 +499,7 @@
     [/^#\/quality$/, "saved", () => pageQuality()],
     [/^#\/press$/, "saved", () => pagePress()],
     [/^#\/news$/, "saved", () => (window.smmNews || (() => {}))(view, api)],
+    [/^#\/watch$/, "saved", () => (window.smmWatch || (() => {}))(view, api)],
     [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]
   ];

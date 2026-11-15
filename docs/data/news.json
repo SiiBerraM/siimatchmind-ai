@@ -1,52 +1,196 @@
 {
- "updated": "2026-11-14T11:58:51.984908+00:00",
+ "updated": "2026-11-15T02:37:02.294079+00:00",
  "items": [
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "ترامب يدرس تعليق الضربات على إيران، ونتنياهو يتعهّد بـ\"محو التهديد الإيراني للأبد\"",
+   "link": "https://www.bbc.com/arabic/articles/cwp9dznjmpllo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-15T01:39:57+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "إسرائيل تعلن اغتيال قائد لواء رفح في حماس، والحركة تقول إنه أحد أبرز مخططي هجوم 7 أكتوبر",
+   "link": "https://www.bbc.com/arabic/articles/cm5y1x7r2q25o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-15T00:54:20+00:00",
+   "pred": false
+  },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "À 46 ans, Ronaldinho sera titulaire en Serie C onze ans après son dernier match en pro",
-   "link": "https://www.lequipe.fr/Football/Actualites/A-46-ans-ronaldinho-sera-titulaire-en-serie-c-onze-ans-apres-son-dernier-match-en-pro/1743611#at_medium=RSS_feeds",
-   "date": "2026-11-14T11:38:12+00:00",
+   "title": "Quelle trace laissera CR7 dans le foot de sélection ?",
+   "link": "https://www.lequipe.fr/collection/podcasts/serie/big-5/#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:30:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "The 'manager's dream' who has put NI one game from history",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c84gn2dl4zleo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T23:21:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Van Bommel : «L'Italie m'a particulièrement impressionné contre la France»",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-belgique-mark-van-bommel-belgique-l-italie-m-a-particulierement-impressionne-contre-la-france/20245588#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:18:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Digard plutôt que Sage, une décision très politique",
+   "link": "https://www.lequipe.fr/Football/Article/Didier-digard-plutot-que-pierre-sage-sur-le-banc-de-lens-un-processus-de-decision-tres-politique/1743728#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:16:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "De la Fuente répond à Tuchel : « Il n'y a pas de racisme en Espagne »",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-de-la-fuente-repond-a-tuchel-il-n-y-a-pas-de-racisme-en-espagne/20245585#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:15:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "زيلينسكي: الولايات المتحدة اقترحت تنازل أوكرانيا عن دونباس مقابل عضوية الناتو",
+   "link": "https://www.bbc.com/arabic/articles/cqy0eldp4640o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T23:11:24+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Kylian Mbappé de retour en pointe et quelques incertitudes dans le onze probable : Zinédine Zidane brouille les pistes avant France-Turquie",
+   "link": "https://www.lequipe.fr/Football/Actualites/Kylian-mbappe-de-retour-en-pointe-et-quelques-incertitudes-dans-le-onze-probable-zinedine-zidane-brouille-les-pistes-avant-france-turquie/1743766#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:10:34+00:00",
+   "pred": true
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Jorge Jesus après la défaite du Portugal contre le Danemark : « Cristiano Ronaldo ? Il ne fait plus partie de la sélection »",
+   "link": "https://www.lequipe.fr/Football/Actualites/Jorge-jesus-apres-la-defaite-du-portugal-contre-le-danemark-cristiano-ronaldo-il-ne-fait-plus-partie-de-la-selection/1743763#at_medium=RSS_feeds",
+   "date": "2026-11-14T23:02:58+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Consultant devenu sélectionneur, Yalçin agace... ses propres joueurs",
+   "link": "https://www.lequipe.fr/Football/Article/De-consultant-pyromane-a-selectionneur-pompier-en-turquie-sergen-yalcin-doit-assumer-le-feu-de-critiques-qu-il-avait-lui-meme-attise-lors-de-la-coupe-du-monde/1743642#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:49:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Berke Özer : « On va tout faire pour arrêter Mbappé et Olise »",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-turquie-berke-zer-avant-france-turquie-on-va-tout-faire-pour-arreter-mbappe-et-olise/20245581#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:42:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Hallgrimsson rues 'painful' defeat for Republic of Ireland",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cr15e4w75wxpo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T22:40:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Devlin nets winner as NI top Nations League group",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c6z9dxk71538o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T22:38:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le résumé vidéo de Portugal - Danemark",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-le-resume-de-portugal-danemark/20245572#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:30:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le PSG s'offre le Classique féminin contre l'OM et récupère la 2e place au classement",
+   "link": "https://www.lequipe.fr/Football/Actualites/Le-psg-s-offre-le-classique-feminin-contre-l-om-et-recupere-la-2e-place-au-classement/1743754#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:27:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "White has 'exciting future' despite boos - Rice",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cq0mdzrjn0j2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T22:26:56+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "The Guardian",
-   "title": "Pochettino to Manchester United latest, WSL and Nations League buildup – matchday live",
-   "link": "https://www.theguardian.com/football/live/2026/nov/14/pochettino-to-manchester-united-latest-wsl-and-nations-league-buildup-matchday-live",
-   "date": "2026-11-14T11:30:59+00:00",
+   "title": "Nations League roundup: Portugal mauled by Denmark as Norway sink Wales",
+   "link": "https://www.theguardian.com/football/2026/nov/14/clinical-norway-dent-wales-nations-league-top-tier-hopes-with-victory-in-oslo",
+   "date": "2026-11-14T22:23:39+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Zidane à Bordeaux, «temps des copains» et exploit européen",
-   "link": "https://www.lequipe.fr/Football/Article/Dejeuners-a-la-cafeteria-casino-trouille-de-sa-vie-le-bon-temps-des-copains-zinedine-zidane-retrouve-bordeaux-avec-les-bleus-la-ville-qui-l-a-vu-devenir-zizou/1741118#at_medium=RSS_feeds",
-   "date": "2026-11-14T11:05:00+00:00",
+   "title": "Lloris, premier Français à intégrer le club des millénaires",
+   "link": "https://www.lequipe.fr/Football/Article/De-nice-a-los-angeles-en-passant-par-lyon-tottenham-et-les-bleus-hugo-lloris-premier-joueur-francais-a-avoir-depasse-les-1-000-matches-chez-les-pros/1743477#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:22:00+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Le Saint-Martin de Jean-Claude Darcheville s'incline à l'aller contre le Salvador, en play-in de la Gold Cup",
-   "link": "https://www.lequipe.fr/Football/Actualites/Le-saint-martin-de-jean-claude-darcheville-s-incline-a-l-aller-contre-le-salvador-en-play-in-de-la-gold-cup/1743600#at_medium=RSS_feeds",
-   "date": "2026-11-14T10:55:13+00:00",
+   "title": "Le résumé de Roumanie - Pologne",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-le-resume-de-roumanie-pologne/20245579#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:21:00+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Maza, la nouvelle star que l'Algérie attendait",
-   "link": "https://www.lequipe.fr/Football/Article/Ultra-creatif-garcon-pose-et-leader-technique-ibrahim-maza-la-nouvelle-star-que-l-algerie-attendait/1743464#at_medium=RSS_feeds",
-   "date": "2026-11-14T10:55:00+00:00",
+   "title": "Le résumé vidéo d'Autriche - Irlande",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-le-resume-video-d-autriche-irlande/20245571#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:08:00+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Pagis, Dalmat, Ismaël, Caveglia, Olmeta... Faites votre équipe type des Bleus à zéro sélection et comparez vos choix avec ceux de « L'Équipe »",
-   "link": "https://www.lequipe.fr/Football/Actualites/Pagis-dalmat-ismael-caveglia-olmeta-faites-votre-equipe-type-des-bleus-a-zero-selection-et-comparez-vos-choix-avec-ceux-de-l-equipe/1743597#at_medium=RSS_feeds",
-   "date": "2026-11-14T10:31:24+00:00",
+   "title": "Le résumé vidéo d'Irlande du Nord - Ukraine",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-le-resume-d-irlande-du-nord-ukraine/20245574#at_medium=RSS_feeds",
+   "date": "2026-11-14T22:02:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le résumé de Suède - Bosnie-Herzégovine",
+   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-le-resume-de-suede-bosnie-herzegovine/20245575#at_medium=RSS_feeds",
+   "date": "2026-11-14T21:56:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Arsenal target Nusa could cost £66m - Sunday's gossip",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6e9kgn532gxo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T21:48:45+00:00",
    "pred": false
   },
   {
@@ -54,55 +198,151 @@
    "source": "BBC Arabic",
    "title": "جرف الصخر أم جرف النصر؟ اتهامات بتهريب النفط تعيد الملفات العالقة إلى الواجهة",
    "link": "https://www.bbc.com/arabic/articles/c9m2j8pry2ndo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T10:23:27+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Jorge Jesus, le maître tacticien qui a mis fin à l'ère CR7",
-   "link": "https://www.lequipe.fr/Football/Article/Jorge-jesus-le-selectionneur-du-portugal-qui-a-mis-fin-a-l-ere-cristiano-ronaldo-raconte-par-ceux-qui-l-ont-cotoye-il-nous-disait-que-le-foot-devait-passer-avant-notre-famille/1743499#at_medium=RSS_feeds",
-   "date": "2026-11-14T10:10:00+00:00",
+   "date": "2026-11-14T21:45:10+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "'Exciting' Moylan flourishing for club and country",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmlydwy2zg10o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T09:59:18+00:00",
+   "title": "What Wales need to stay in Nations League top tier",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmx28nxw1elvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T20:52:48+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "NI target challenge of Nations League promotion",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwx2e0dzvy0vo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T09:57:20+00:00",
+   "title": "'No racism in Spain' – De la Fuente message for Tuchel",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c893r74ryy3qo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T20:43:57+00:00",
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Wesley Sneijder nommé entraîneur d'un club de 9e division néerlandaise",
-   "link": "https://www.lequipe.fr/Football/Actualites/Wesley-sneijder-nomme-entraineur-d-un-club-de-9e-division-hollandaise/1743591#at_medium=RSS_feeds",
-   "date": "2026-11-14T09:49:28+00:00",
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Declan Rice accepts he had an ‘average World Cup’ as England gear up for Spain showdown",
+   "link": "https://www.theguardian.com/football/2026/nov/14/declan-rice-england-spain-nations-league-world-cup-thomas-tuchel",
+   "date": "2026-11-14T20:30:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "De la Fuente adamant there is no racism in Spain despite England reminder to players",
+   "link": "https://www.theguardian.com/football/2026/nov/14/luis-de-la-fuente-spain-england-racism-thomas-tuchel-natiions-league",
+   "date": "2026-11-14T20:27:02+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "Tuchel to remind England of anti-racism protocols before Spain game",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c60mdzn2dk1eo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T09:13:30+00:00",
+   "title": "Spain test will reveal if Tuchel and England have learned World Cup lessons",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cq2d9l3e313zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T20:22:00+00:00",
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Fabian Ruiz souhaite terminer sa carrière professionnelle avec le Betis Séville",
-   "link": "https://www.lequipe.fr/Football/Actualites/Fabian-ruiz-souhaite-terminer-sa-carriere-professionnelle-avec-le-betis-seville/1743588#at_medium=RSS_feeds",
-   "date": "2026-11-14T09:01:17+00:00",
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Here Manchester United go again, taking the Two Ronnies route to hiring a new boss | Jonathan Wilson",
+   "link": "https://www.theguardian.com/football/2026/nov/14/here-manchester-united-go-again-taking-the-two-ronnies-route-to-hiring-a-new-boss",
+   "date": "2026-11-14T20:00:53+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Haaland helps Norway to win over Wales in Nations League",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cr20vgxv43p8o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T19:23:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Portugal immortalise Cristiano Ronaldo’s No 7 shirt in tribute to national legend",
+   "link": "https://www.theguardian.com/football/2026/nov/14/portugal-immortalise-cristiano-ronaldos-no-7-shirt-in-tribute-to-national-legend",
+   "date": "2026-11-14T19:13:43+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Bompastor's risks pay off as Chelsea go top of WSL",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmvg25w18q9qo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T18:55:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "جنوب السودان يرجئ أول انتخابات له مجدداً وسط تصاعد العنف والصراع على السلطة",
+   "link": "https://www.bbc.com/arabic/articles/cw1mdlnn9xkmo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T17:22:46+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Tenerife boss says Owono's 12-match ban 'feels light'",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmjeq0x815zko?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T16:26:49+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Chelsea go top of WSL as Sandy Baltimore bullet sees off Manchester City",
+   "link": "https://www.theguardian.com/football/2026/nov/14/chelsea-manchester-city-womens-super-league-match-report",
+   "date": "2026-11-14T15:36:15+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "\"غريب في قبري!\"",
+   "link": "https://www.bbc.com/arabic/articles/crwy41p2vxvvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T15:25:42+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Former Stoke City manager Thordarson dies aged 71",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c98r7l5yrn6go?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T15:04:59+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "البيت الأبيض: اجتماع \"تاريخي\" بين ترامب وبوتين وشي جينبينغ في الصين",
+   "link": "https://www.bbc.com/arabic/articles/cmlydv2l51gko?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T14:15:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Mauricio Pochettino asked the US to believe in his project. Did he believe in it himself?",
+   "link": "https://www.theguardian.com/football/2026/nov/14/mauricio-pochettino-usmnt-legacy-belief",
+   "date": "2026-11-14T14:06:37+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Raphinha sees red as Brazil stunned by Japan while Argentina’s post-Messi era starts with defeat",
+   "link": "https://www.theguardian.com/football/2026/nov/14/brazil-argentina-japan-uruguay-wales-norway-portugal-denmark",
+   "date": "2026-11-14T13:07:33+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "BBC Arabic",
+   "title": "عطل في آوتلوك: كيف تواصل العمل وما البدائل المتاحة للبريد الإلكتروني؟ - قراءة في الصحف",
+   "link": "https://www.bbc.com/arabic/articles/cmn80llyzjn6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-14T12:02:50+00:00",
    "pred": false
   },
   {
@@ -122,30 +362,6 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Pourquoi Zaïre-Emery pourrait être la solution à droite",
-   "link": "https://www.lequipe.fr/Football/Article/Pourquoi-warren-zaire-emery-pourrait-etre-la-solution-a-droite-de-la-defense-des-bleus/1743494#at_medium=RSS_feeds",
-   "date": "2026-11-14T08:35:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Leonardi Balerdi buteur contre son camp, l'Argentine perd face à l'Uruguay",
-   "link": "https://www.lequipe.fr/Football/Actualites/Pour-sa-premiere-depuis-les-adieux-de-lionel-messi-l-argentine-s-incline-a-domicile-face-a-l-uruguay/1743583#at_medium=RSS_feeds",
-   "date": "2026-11-14T08:27:08+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "قيود التأشيرات الأمريكية تضع مشاركة ملكات جمال أفريقيات في \"ملكة جمال الكون\" على المحك",
-   "link": "https://www.bbc.com/arabic/articles/ck8dvjl95pn6o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T08:22:03+00:00",
-   "pred": false
-  },
-  {
    "lang": "ar",
    "source": "BBC Arabic",
    "title": "ماذا نعرف عن وقف الرحلات الجوية في الولايات المتحدة، وما حقوق المسافرين؟",
@@ -155,106 +371,10 @@
   },
   {
    "lang": "en",
-   "source": "The Guardian",
-   "title": "De la Fuente feels the strain as Lamine Yamal club v country debate rages in Spain",
-   "link": "https://www.theguardian.com/football/2026/nov/14/lamine-yamal-luis-de-la-fuente-spain-england-club-country",
-   "date": "2026-11-14T08:00:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
    "source": "BBC Sport",
    "title": "Six goals to go - will McGinn catch Dalglish & Law?",
    "link": "https://www.bbc.co.uk/sport/football/articles/cke89156y10zo?at_medium=RSS&at_campaign=rss",
    "date": "2026-11-14T07:49:46+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Desmas : «Je prie pour que mon fils ne soit pas gardien»",
-   "link": "https://www.lequipe.fr/Football/Article/-je-prie-pour-que-mon-fils-ne-soit-pas-gardien-la-confession-d-arthur-desmas-contraint-d-arreter-sa-carriere-a-32-ans-a-la-suite-de-plusieurs-commotions-cerebrales/1743518#at_medium=RSS_feeds",
-   "date": "2026-11-14T07:30:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Portugal did the extraordinary with Cristiano Ronaldo. Can they do it without him?",
-   "link": "https://www.theguardian.com/football/2026/nov/14/portugal-cristiano-ronaldo-football-memories-future",
-   "date": "2026-11-14T06:53:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "How a reunion with scout Bompastor solved Chelsea's striker issue",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c5lyey8p8yv4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T06:37:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Who am I? Plus today's other quizzes",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6n83ld3le95o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-14T06:27:36+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "À quelle heure et sur quelle chaîne voir Portugal-Danemark en Ligue des nations ?",
-   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-portugal-danemark-en-ligue-des-nations/1742827#at_medium=RSS_feeds",
-   "date": "2026-11-14T06:27:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "À Martigues, OM-PSG en Arkema Première Ligue sera une affiche placée sous le thème de la « street »",
-   "link": "https://www.lequipe.fr/Football/Actualites/A-martigues-om-psg-en-arkema-premiere-ligue-sera-une-affiche-placee-sous-le-theme-de-la-street/1743462#at_medium=RSS_feeds",
-   "date": "2026-11-14T06:08:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Nouvelles installations, « projet de jeu très marqué », quatrième place... À l'heure d'affronter le PSG, l'OM peut-il devenir une nouvelle place forte du foot féminin français ?",
-   "link": "https://www.lequipe.fr/Football/Article/-ca-ne-sert-a-rien-d-etre-quatriemes-maintenant-si-c-est-pour-craquer-en-janvier-fevrier-un-an-apres-son-retour-dans-l-elite-marseille-confirme/1743404#at_medium=RSS_feeds",
-   "date": "2026-11-14T05:57:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Le résumé vidéo d'Argentine - Uruguay",
-   "link": "https://www.lequipe.fr/Football/Video/Matches-amicaux-le-resume-video-de-l-argentine-battue-par-l-uruguay-premiere-defaite-depuis-la-retraite-de-messi/20245518#at_medium=RSS_feeds",
-   "date": "2026-11-14T01:44:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Nations League: Germany set up Netherlands clash after beating Serbia",
-   "link": "https://www.theguardian.com/football/2026/nov/13/nations-league-germany-set-up-netherlands-clash-serbia-greece",
-   "date": "2026-11-13T23:14:45+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Fitness obsessed & 'control freak' - what can Man Utd expect from Pochettino?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c85y13pv69xwo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T22:53:17+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Goalkeeper involved in fatal collision gets 12-game ban",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm98xy2j8k1ko?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T22:37:30+00:00",
    "pred": false
   },
   {
@@ -267,74 +387,10 @@
   },
   {
    "lang": "en",
-   "source": "BBC Sport",
-   "title": "Man Utd want Paz, Chelsea target Kounde - Saturday's gossip",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cq39glw42xkjo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T22:05:14+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
    "source": "The Guardian",
    "title": "Jesús Owono given 12-match ban for tackle that resulted in Jesús de Miguel’s death",
    "link": "https://www.theguardian.com/football/2026/nov/13/jesus-owono-given-12-match-ban-for-tackle-that-resulted-in-jesus-de-miguels-death",
    "date": "2026-11-13T22:04:08+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "مايكروسوفت تعتذر عن العطل في خدماتها وتنفي ارتباطه بهجوم سيبراني",
-   "link": "https://www.bbc.com/arabic/articles/ck1l04y736q9o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T21:34:25+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "كيف وصلت فضيحة جنسية في إنفيديا إلى البيت الأبيض؟",
-   "link": "https://www.bbc.com/arabic/articles/cwe891n227q5o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T20:01:43+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "'It's a shootout' - Wales out to derail stuttering Norway",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck9871qr76gmo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T19:59:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "‘No one is unbeatable’: Tuchel eager for England to impose style on Spain",
-   "link": "https://www.theguardian.com/football/2026/nov/13/no-one-is-unbeatable-tuchel-eager-for-england-to-impose-style-on-spain",
-   "date": "2026-11-13T19:00:23+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "بين الإصلاحات القضائية وتطبيق الحدود: ماذا تكشف قضية الحكم بجلد عاملة كينية في السعودية؟",
-   "link": "https://www.bbc.com/arabic/articles/cq0k6j2v74xro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T18:57:22+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "إدانة حارس شخصي سابق لأحد قادة حماس أمام محكمة بريطانية",
-   "link": "https://www.bbc.com/arabic/articles/c6jd7595xyl3o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T17:59:20+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Tearful Pochettino says United job was ‘difficult to turn down’ in USMNT farewell",
-   "link": "https://www.theguardian.com/football/2026/nov/13/mauricio-pochettino-usmnt-manchester-united",
-   "date": "2026-11-13T16:53:14+00:00",
    "pred": false
   },
   {
@@ -348,38 +404,6 @@
   {
    "lang": "ar",
    "source": "BBC Arabic",
-   "title": "تركيا وقطر توقعان اتفاقية دفاع مشترك",
-   "link": "https://www.bbc.com/arabic/articles/cvn0d3e5d5lwo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T16:17:25+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Branding it like Beckham: how Jude Bellingham is future-proofing his fame",
-   "link": "https://www.theguardian.com/football/2026/nov/13/jude-bellingham-branding-it-like-beckham",
-   "date": "2026-11-13T16:03:19+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Tearful Pochettino on 'difficult' decision to leave USA for Man Utd",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmd61qne8352o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T15:28:06+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
-   "title": "الوكالة الدولية للطاقة الذرية \"قلقة\" بشأن موقع نووي إيراني",
-   "link": "https://www.bbc.com/arabic/articles/c63eg9d5y80qo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T14:38:08+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "BBC Arabic",
    "title": "إثيوبيا والبحر الأحمر.. ما سر \"عقدة\" المنفذ البحري؟",
    "link": "https://www.bbc.com/arabic/watch/cwdd14grly09o?at_medium=RSS&at_campaign=rss",
    "date": "2026-11-13T14:13:42+00:00",
@@ -388,33 +412,9 @@
   {
    "lang": "en",
    "source": "The Guardian",
-   "title": "Why Chelsea and Manchester City’s WSL clash is not as season-defining as you think",
-   "link": "https://www.theguardian.com/football/2026/nov/13/why-chelsea-and-manchester-citys-wsl-clash-is-not-as-season-defining-as-you-think",
-   "date": "2026-11-13T14:05:44+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "How Ferguson-inspired Pochettino can succeed where Carrick failed at Man Utd",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm2kljzkw77ko?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T12:09:48+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Fernandes rejects second Man Utd contract offer",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm782d4pz9jyo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-13T09:55:01+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Pochettino’s Chelsea maelstrom the best yardstick for what lies ahead at United",
-   "link": "https://www.theguardian.com/football/2026/nov/13/pochettino-chelsea-maelstrom-yardstick-what-lies-ahead-manchester-united",
-   "date": "2026-11-13T07:00:12+00:00",
+   "title": "The beautiful game: revived art prize gives football its creative due once more | Emma John",
+   "link": "https://www.theguardian.com/football/2026/nov/13/football-association-art-prize",
+   "date": "2026-11-13T08:00:12+00:00",
    "pred": false
   },
   {

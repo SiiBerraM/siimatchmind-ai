@@ -68,7 +68,8 @@
   window.smmAds = api;
 
   var CFG = null, view = null, busy = false;
-  var DEMO = { enabled: true, top: true, bottom: true, ads: [
+  var DEMO = { enabled: true, top: true, bottom: true, inline: { selector: ".match", every: 3, max: 2 }, ads: [
+    { id: "demo-inline", type: "text", slots: ["inline"], title: "إعلان بين المباريات", body: "يظهر بعد كل ثلاث بطاقات مباريات.", cta: "تفاصيل", link: "https://example.com" },
     { id: "demo-text", type: "text", slots: ["top"], title: "إعلان تجريبي", body: "هذا مثال على إعلان نصي. يظهر بسبب adsdemo في الرابط فقط.", cta: "اعرف المزيد", link: "https://example.com" },
     { id: "demo-html", type: "html", slots: ["bottom"], height: 90, html: "<body style='margin:0;font-family:sans-serif;background:#12a669;color:#fff;display:flex;align-items:center;justify-content:center;height:90px'>HTML ad (sandbox)</body>" }
   ] };

@@ -211,6 +211,8 @@
     return uniq.length ? `<h2>${t("follow.my_matches")}</h2>${uniq.slice(0, 5).map(matchCard).join("")}<h2>${t("home.title")}</h2>` : "";
   }
 
+  const MORE = { ar: "عرض المزيد", en: "Show more", fr: "Voir plus", es: "Ver más", tr: "Daha fazla" };
+  const moreLbl = () => { let l = "ar"; try { l = localStorage.getItem("smm.lang") || document.documentElement.lang || "ar"; } catch (e) { } return MORE[l] || MORE.ar; };
   async function pageHome(kind) {
     let items;
     if (!kind) {                       // الافتراضي: أول قسم فيه مباريات (اليوم ثم القادمة ثم النتائج)
@@ -220,9 +222,10 @@
     const mine = await myTeamsBlock();
     view.innerHTML = `${mine || `<h1>${t("home.title")}</h1>`}
       <div class="seg" role="tablist">${["today", "upcoming", "results"].map(k => `<button data-k="${k}" class="${k === kind ? "on" : ""}">${t("home." + k)}</button>`).join("")}</div>
-      ${items.length ? items.map(matchCard).join("") : `<p class="empty">${t("home.empty")}</p>`}
+      ${items.length ? items.slice(0, 12).map(matchCard).join("") + (items.length > 12 ? `<button class="more" id="moreBtn" type="button">${moreLbl()} (${items.length - 12})</button>` : "") : `<p class="empty">${t("home.empty")}</p>`}
       <p class="muted">${t("home.hint")}</p>`;
     view.querySelectorAll(".seg button").forEach(b => b.onclick = () => pageHome(b.dataset.k));
+    const mb = view.querySelector("#moreBtn"); if (mb) mb.onclick = () => { mb.insertAdjacentHTML("beforebegin", items.slice(12).map(matchCard).join("")); mb.remove(); };
   }
 
   async function pageStandings() {

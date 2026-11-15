@@ -156,3 +156,5 @@ table.std td.pts{font-weight:700}
 :root[data-theme="light"] .note{background:rgba(183,121,31,.08)}
 :root[data-theme="light"] .hero{background:linear-gradient(180deg,#fff,var(--night))}
 .star.on{background:rgba(30,212,138,.16);border-color:var(--green);color:var(--green)}
+
+.more{display:block;width:100%;margin:12px 0;padding:12px;border-radius:99px;border:1px solid var(--line);background:var(--deep);color:var(--white);font-weight:600;cursor:pointer}

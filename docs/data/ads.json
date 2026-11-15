@@ -1,0 +1,13 @@
+{
+  "enabled": false,
+  "top": true,
+  "bottom": true,
+  "inline": { "selector": "", "every": 4, "max": 3 },
+  "exclude": [],
+  "ads": [
+    { "id": "ex-text", "enabled": false, "type": "text", "slots": ["top"], "title": "عنوان الإعلان", "body": "وصف قصير", "cta": "زيارة", "link": "https://example.com" },
+    { "id": "ex-image", "enabled": false, "type": "image", "slots": ["bottom"], "src": "ads/banner.png", "link": "https://example.com", "alt": "إعلان", "start": "2026-12-01", "end": "2026-12-31", "weight": 2 },
+    { "id": "ex-html", "enabled": false, "type": "html", "slots": ["bottom"], "src": "ads/promo.html", "height": 120, "lang": ["ar"] },
+    { "id": "ex-network", "enabled": false, "type": "trusted", "slots": ["top"], "html": "<!-- الصق هنا كود شبكة إعلانية موثوقة -->" }
+  ]
+}

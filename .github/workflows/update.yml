@@ -26,6 +26,10 @@ jobs:
         run: |
           cd backend
           python importer.py --source highlightly --hl-league 199067,262041,170984,256935,260339 --season 2026 || echo "::warning::Highlightly import failed"
+      - name: Track predictions
+        run: |
+          cd backend
+          python track.py || echo "::warning::tracking failed"
       - name: Build static
         run: |
           cd backend

@@ -1,36 +1,348 @@
 {
- "updated": "2026-11-16T13:22:31.220909+00:00",
+ "updated": "2026-11-17T14:07:12.654396+00:00",
  "items": [
   {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Has Trafford replaced Pickford as England No 1?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmvg2r752ykzo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T13:01:41+00:00",
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le milieu de l'OL Tyler Morton opéré des adducteurs et absent jusqu'en février",
+   "link": "https://www.lequipe.fr/Football/Actualites/Le-milieu-de-l-ol-tyler-morton-opere-et-absent-jusqu-en-fevrier/1744243#at_medium=RSS_feeds",
+   "date": "2026-11-17T13:46:23+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Crystal Palace finaliserait l'arrivée de Thomas Frank, quelques jours après avoir démis de ses fonctions Pierre Sage",
-   "link": "https://www.lequipe.fr/Football/Actualites/Crystal-palace-finaliserait-l-arrivee-de-thomas-frank-quelques-jours-apres-avoir-demis-de-ses-fonctions-pierre-sage/1743994#at_medium=RSS_feeds",
-   "date": "2026-11-16T12:53:07+00:00",
+   "title": "Candidat à la présidence de la FIFA, Philippe Diallo veut en finir avec la « gouvernance solitaire » de Gianni Infantino",
+   "link": "https://www.lequipe.fr/Football/Actualites/Candidat-a-la-presidence-de-la-fifa-philippe-diallo-veut-en-finir-avec-la-gouvernance-solitaire-de-gianni-infantino/1744228#at_medium=RSS_feeds",
+   "date": "2026-11-17T13:43:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Romario demands Ancelotti sacking as war of words continues",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c63rgq02pz9qo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T13:10:58+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Hincapie in advanced talks over new Arsenal deal",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6ge39lgyzzzo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T13:09:23+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "The Guardian",
-   "title": "A long wait, some magic and that smile: Ronaldinho savours Ravenna debut at 46",
-   "link": "https://www.theguardian.com/football/2026/nov/16/ronaldinho-ravenna-debut-serie-c-report",
-   "date": "2026-11-16T12:49:11+00:00",
+   "title": "Wiegman cites young talent as key to new England deal after calling up Goodwin",
+   "link": "https://www.theguardian.com/football/2026/nov/17/sarina-wiegman-england-young-talent-contract-isobel-goodwin-squad",
+   "date": "2026-11-17T13:09:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Man convicted for racist abuse of Real Madrid's Mbappe",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cjn504vweneyo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T12:56:27+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "L'UEFA convoque un comité exécutif pour étudier d'éventuelles candidatures en vue de l'élection à la présidence de la FIFA",
-   "link": "https://www.lequipe.fr/Football/Actualites/L-uefa-convoque-un-comite-executif-pour-etudier-d-eventuelles-candidatures-en-vue-de-l-election-a-la-presidence-de-la-fifa/1743990#at_medium=RSS_feeds",
-   "date": "2026-11-16T12:33:35+00:00",
+   "title": "Le show Vinicius : porté par un triplé en douze minutes de l'attaquant du Real Madrid, le Brésil écrase Singapour en match amical",
+   "link": "https://www.lequipe.fr/Football/Actualites/Le-show-vinicius-porte-par-un-triple-en-douze-minutes-de-l-attaquant-du-real-madrid-le-bresil-ecrase-singapour-en-match-amical/1744221#at_medium=RSS_feeds",
+   "date": "2026-11-17T12:51:44+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« Mon histoire de joueur s'achève » : l'ancien défenseur du PSG et de Monaco Layvin Kurzawa annonce sa retraite",
+   "link": "https://www.lequipe.fr/Football/Actualites/-mon-histoire-de-joueur-s-acheve-layvin-kurzawa-annonce-sa-retraite/1744202#at_medium=RSS_feeds",
+   "date": "2026-11-17T12:29:25+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Plus protecteur et moins ouvert, Zidane imprime sa marque dans la com",
+   "link": "https://www.lequipe.fr/Football/Article/-une-vision-plus-minimaliste-plus-distant-avec-les-medias-et-protecteur-avec-ses-joueurs-zinedine-zidane-imprime-sa-marque-dans-la-communication-des-bleus/1744129#at_medium=RSS_feeds",
+   "date": "2026-11-17T12:23:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "La candidature de Philippe Diallo à la présidence de la FIFA acceptée par le comité exécutif de la FFF",
+   "link": "https://www.lequipe.fr/Football/Actualites/La-candidature-de-philippe-diallo-a-la-presidence-de-la-fifa-acceptee-par-le-comite-executif-de-la-fff/1744201#at_medium=RSS_feeds",
+   "date": "2026-11-17T12:21:06+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Retour en France pour Wissam Ben Yedder : l'ex-attaquant des Bleus s'est engagé avec le Paris 13 Atletico",
+   "link": "https://www.lequipe.fr/Football/Actualites/Retour-en-france-pour-wissam-ben-yedder-l-ex-attaquant-des-bleus-s-est-engage-avec-le-paris-13-atletico/1744200#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:59:17+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Janine van Wyk: ‘Our rooms were empty … no mattresses, no lightbulbs and not a drop of water’",
+   "link": "https://www.theguardian.com/football/2026/nov/17/janine-van-wyck-south-africa-wafcon-book-extract-moving-the-goalposts-newsletter",
+   "date": "2026-11-17T11:57:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« Choix tardif », « tâche compliquée », « candidat capable de mettre fin à la domination d'Infantino » : ce que pense la presse de la candidature de Philippe Diallo à la FIFA",
+   "link": "https://www.lequipe.fr/Medias/Actualites/-choix-tardif-tache-compliquee-candidat-capable-de-mettre-fin-a-la-domination-d-infantino-la-revue-de-presse-internationale-apres-la-candidature-de-philippe-diallo-a-la-presidence-de-la-fifa/1744199#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:54:53+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'Why not have a go?' - the halfway line goal phenomenon",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cw24041nqlygo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T11:54:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Résultats en berne, mercato, Franck Haise : Nicolas De Tavernost, président du conseil d'administration du Stade Rennais, monte au créneau",
+   "link": "https://www.lequipe.fr/Football/Actualites/Resultats-en-berne-mercato-franck-haise-nicolas-de-tavernost-president-du-conseil-d-administration-du-stade-rennais-monte-au-creneau/1744196#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:28:08+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Un supporter d'Oviedo condamné à onze mois de prison pour crime haineux après des insultes racistes proférées envers Kylian Mbappé",
+   "link": "https://www.lequipe.fr/Football/Actualites/Un-supporter-d-oviedo-condamne-a-onze-mois-de-prison-pour-crime-haineux-apres-des-insultes-racistes-proferees-envers-kylian-mbappe/1744195#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:25:18+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Almost impossible for Scotland to not qualify for Euro 2028... or is it?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm62p7eg7nqvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T11:13:40+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Vilotte, un DG si influent",
+   "link": "https://www.lequipe.fr/Football/Article/Discret-sous-didier-deschamps-beaucoup-plus-visible-sous-zinedine-zidane-jean-francois-vilotte-le-dg-de-la-fff-a-l-influence-grandissante/1744111#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:07:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "London City's Goodwin gets first England call-up",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cr9d7pw90x14o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T11:06:33+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Des associations environnementales dénoncent le « bilan désastreux » de la FIFA auprès de l'ONU",
+   "link": "https://www.lequipe.fr/Football/Actualites/Des-associations-environnementales-denoncent-le-bilan-desastreux-de-la-fifa-aupres-de-l-onu/1744193#at_medium=RSS_feeds",
+   "date": "2026-11-17T11:04:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "« Une véritable débâcle » : la presse néerlandaise étrille les Pays-Bas de Xavi après la raclée infligée par l'Allemagne",
+   "link": "https://www.lequipe.fr/Football/Actualites/-une-veritable-debacle-la-presse-neerlandaise-etrille-les-pays-bas-de-xavi-apres-la-raclee-infligee-par-l-allemagne/1744192#at_medium=RSS_feeds",
+   "date": "2026-11-17T10:56:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Blackburn boss Mowbray steps back over health issues",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6dx190nkvl4o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T10:40:41+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Nouvel entraîneur à Strasbourg : le club s'est mis d'accord avec le coach de Swansea Vitor Matos pour remplacer Hugo Oliveira sur le banc",
+   "link": "https://www.lequipe.fr/Football/Actualites/Nouvel-entraineur-a-strasbourg-le-club-s-est-mis-d-accord-avec-le-coach-de-swansea-vitor-matos-pour-remplacer-hugo-oliveira-sur-le-banc/1744186#at_medium=RSS_feeds",
+   "date": "2026-11-17T10:33:57+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Will Infantino feel he's already won as Fifa challengers are revealed?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c8wy53z3ygypo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T10:32:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Blackburn Rovers head coach Tony Mowbray steps down due to health issues",
+   "link": "https://www.theguardian.com/football/2026/nov/17/blackburn-rovers-tony-mowbray-steps-down-due-to-health-issues",
+   "date": "2026-11-17T10:19:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Max Dowman shines in England colours and sends another record tumbling",
+   "link": "https://www.theguardian.com/football/2026/nov/17/max-dowman-england-under-21s-record-jude-bellingham",
+   "date": "2026-11-17T10:13:45+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Bruno Fernandes et Bernardo Silva, capitaines de galère",
+   "link": "https://www.lequipe.fr/Football/Article/La-difficile-succession-de-cristiano-ronaldo-bruno-fernandes-et-bernardo-silva-capitaines-de-galere/1744116#at_medium=RSS_feeds",
+   "date": "2026-11-17T10:10:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Pochettino says he would tell Guardiola to take USA job",
+   "link": "https://www.bbc.co.uk/sport/football/articles/crgj36e6ee5yo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T09:48:24+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "تصفيات أمم أفريقيا.. أزمة غير مسبوقة للمنتخب التونسي والمغرب يقترب من النهائيات",
+   "link": "https://www.france24.com/ar/%D8%A8%D8%B1%D8%A7%D9%85%D8%AC/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9-24/20261117-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D8%A3%D9%85%D9%85-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-%D8%A3%D8%B2%D9%85%D8%A9-%D8%BA%D9%8A%D8%B1-%D9%85%D8%B3%D8%A8%D9%88%D9%82%D8%A9-%D9%84%D9%84%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D8%AA%D9%88%D9%86%D8%B3%D9%8A-%D9%88%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8-%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A%D8%A7%D8%AA",
+   "date": "2026-11-17T09:43:17+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Declan Rice agrees new Arsenal contract making him club’s joint highest-paid player",
+   "link": "https://www.theguardian.com/football/2026/nov/17/declan-rice-new-arsenal-contract-jurrien-timber",
+   "date": "2026-11-17T09:19:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Owono did not deserve 12-match ban - Pique",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c91430yk4el2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T08:28:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "‘He wants to change lives’: the story behind Bukayo Saka’s Sócrates award",
+   "link": "https://www.theguardian.com/football/2026/nov/17/he-wants-to-change-lives-the-story-behind-bukayo-sakas-socrates-award",
+   "date": "2026-11-17T08:00:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Thomas Frank’s to-do list: lift mood, fix defence and fire up Sarr and Mateta",
+   "link": "https://www.theguardian.com/football/2026/nov/17/thomas-frank-crystal-palace-pierre-sage-sacked-steve-parish",
+   "date": "2026-11-17T08:00:08+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Are Scotland still too reliant on 'old guard'?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6zxvd1p4pr0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T07:55:21+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Ronaldo, Maradona, Baggio - what happened to the World XI?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cwj34058rvv6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T07:22:26+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Why always him? The rise and fall of Balotelli",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cvgxvg4v981o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T06:15:43+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Fifa accused of climate ‘record of failure’ due to Aramco deal and tournament expansion",
+   "link": "https://www.theguardian.com/football/2026/nov/17/fifa-accused-climate-record-failure-aramco-deal-tournament-expansion",
+   "date": "2026-11-17T06:00:04+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Life after Ronaldo - Portugal face post-Bale Wales",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ckvg29vler1no?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-17T04:45:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Pochettino: I’d tell Guardiola to ‘take it’ if he’s offered US coaching job",
+   "link": "https://www.theguardian.com/football/2026/nov/16/mauricio-pochettino-pep-guardiola-usmnt-manchester-united",
+   "date": "2026-11-16T23:01:52+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "دوري الأمم الأوروبية: ألمانيا تهزم هولندا بخماسية وتتأهل معها إلى ربع النهائي",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261116-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D9%87%D8%B2%D9%85-%D9%87%D9%88%D9%84%D9%86%D8%AF%D8%A7-%D8%A8%D8%AE%D9%85%D8%A7%D8%B3%D9%8A%D8%A9-%D9%88%D8%AA%D8%AA%D8%A3%D9%87%D9%84-%D9%85%D8%B9%D9%87%D8%A7-%D8%A5%D9%84%D9%89-%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A",
+   "date": "2026-11-16T22:31:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "الاتحاد الأوروبي لكرة القدم يرشّح الفرنسي فيليب ديالو لمنافسة جياني إنفانتينو على رئاسة الفيفا",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261116-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D9%8A%D8%B1%D8%B4%D9%91%D8%AD-%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A-%D9%81%D9%8A%D9%84%D9%8A%D8%A8-%D8%AF%D9%8A%D8%A7%D9%84%D9%88-%D9%85%D9%86%D8%A7%D9%81%D8%B3%D8%A9-%D8%AC%D9%8A%D8%A7%D9%86%D9%8A-%D8%A5%D9%86%D9%81%D8%A7%D9%86%D8%AA%D9%8A%D9%86%D9%88-%D8%B1%D8%A6%D8%A7%D8%B3%D8%A9-%D9%81%D9%8A%D9%81%D8%A7",
+   "date": "2026-11-16T20:52:31+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Tuchel and England must learn lessons of history, Seville and Southgateism | Barney Ronay",
+   "link": "https://www.theguardian.com/football/2026/nov/16/thomas-tuchel-england-must-learn-lessons-history-seville-gareth-southgate",
+   "date": "2026-11-16T20:02:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "How Frank can restore reputation and save Crystal Palace",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmge3y2qjlyro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-16T17:46:16+00:00",
    "pred": false
   },
   {
@@ -39,254 +351,6 @@
    "title": "WSL talking points: Chelsea’s gamble pays off and have Arsenal lost fear factor?",
    "link": "https://www.theguardian.com/football/2026/nov/16/wsl-talking-points-chelseas-gamble-pays-off-and-have-arsenal-lost-fear-factor",
    "date": "2026-11-16T12:30:57+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Les résultats complets de tous les groupes",
-   "link": "https://www.lequipe.fr/Football/Amateur/U19-nationaux/#at_medium=RSS_feeds",
-   "date": "2026-11-16T12:24:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Les résultats complets de tous les groupes",
-   "link": "https://www.lequipe.fr/Football/Amateur/U17-nationaux/#at_medium=RSS_feeds",
-   "date": "2026-11-16T12:19:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Cap fits as Robertson poised to take King Kenny's crown",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cjp3v5r9enp1o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T12:18:45+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Da Cunha, une sentinelle qui s'installe et une base pour construire",
-   "link": "https://www.lequipe.fr/Football/Article/Lucas-da-cunha-qui-a-dispute-les-deux-matches-des-bleus-dans-leur-integralite-lors-de-ce-rassemblement-s-est-installe-au-poste-de-sentinelle/1743931#at_medium=RSS_feeds",
-   "date": "2026-11-16T12:17:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Republic of Ireland captain Collins to miss Kosovo game",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmlyd25gy904o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T12:02:07+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Vinicius says transfer interest affected Real form",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmqx584jwwpvo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T12:01:16+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "M'Barek : «Kroupi a apporté de la fraîcheur»",
-   "link": "https://www.lequipe.fr/Football/Article/Le-debrief-de-sarah-m-barek-apres-la-victoire-des-bleus-face-a-la-turquie-kroupi-a-apporte-de-la-fraicheur/1743985#at_medium=RSS_feeds",
-   "date": "2026-11-16T11:44:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Belgium's Lukaku retires from internationals",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwlymxr0ge8zo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T11:40:20+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Republic of Ireland have plenty of promise, but are unable to shake self-sabotage",
-   "link": "https://www.theguardian.com/football/2026/nov/16/republic-of-ireland-heimir-hallgrimsson-nations-league-kosovo",
-   "date": "2026-11-16T11:30:56+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Klopp says Infantino worse than Blatter",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cjr4gr2k41dxo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T11:27:08+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "French football head Philippe Diallo is shock contender to fight Infantino for Fifa job",
-   "link": "https://www.theguardian.com/football/2026/nov/16/philippe-diallo-fifa-gianni-infantino-president-french-football-federation",
-   "date": "2026-11-16T11:20:03+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "What's at the top of Frick's Aberdeen to-do list?",
-   "link": "https://www.bbc.co.uk/sport/articles/c6894vzg1kjjo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T11:15:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Les notes de France-Turquie",
-   "link": "https://www.lequipe.fr/Football/Article/Les-notes-de-france-turquie-cherki-a-pris-le-relais-d-un-olise-peu-inspire/1743913#at_medium=RSS_feeds",
-   "date": "2026-11-16T11:12:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Vinicius Junior reconnaît que sa préparation a pesé sur son début de saison",
-   "link": "https://www.lequipe.fr/Football/Actualites/Vinicius-junior-reconnait-que-sa-preparation-a-pese-sur-son-debut-de-saison/1743981#at_medium=RSS_feeds",
-   "date": "2026-11-16T11:01:04+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Romelu Lukaku, 94 buts avec la Belgique, annonce la fin de sa carrière internationale : « Je suis en paix avec ma décision »",
-   "link": "https://www.lequipe.fr/Football/Actualites/Romelu-lukaku-94-buts-avec-la-belgique-annonce-la-fin-de-sa-carriere-internationale-je-suis-en-paix-avec-ma-decision/1743979#at_medium=RSS_feeds",
-   "date": "2026-11-16T10:35:38+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Unai Simon : «Nous ne nous sommes jamais sentis invincibles»",
-   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-espagne-unai-simon-nous-ne-nous-sommes-jamais-sentis-invincibles/20245686#at_medium=RSS_feeds",
-   "date": "2026-11-16T10:23:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "L'effet Zinédine Zidane continue sur les audiences : 6,3 millions de téléspectateurs devant France-Turquie sur TF1",
-   "link": "https://www.lequipe.fr/Medias/Actualites/L-effet-zinedine-zidane-continue-sur-les-audiences-6-3-millions-de-telespectateurs-devant-france-turquie-sur-tf1/1743975#at_medium=RSS_feeds",
-   "date": "2026-11-16T10:07:04+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Le ballon de la Ligue des champions passe d'Adidas à Nike : l'équipementier américain sera le prochain fournisseur des compétitions de clubs de l'UEFA",
-   "link": "https://www.lequipe.fr/Football/Actualites/Le-ballon-de-la-ligue-des-champions-passe-d-adidas-a-nike-l-equipementier-americain-sera-le-prochain-fournisseur-des-competitions-de-clubs-de-l-uefa/1743967#at_medium=RSS_feeds",
-   "date": "2026-11-16T10:00:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "À quelle heure et sur quelle chaîne voir Allemagne - Pays-Bas en Ligue des nations ?",
-   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-allemagne-pays-bas-en-ligue-des-nations/1743969#at_medium=RSS_feeds",
-   "date": "2026-11-16T09:33:09+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Pourquoi Diouf est responsable sur l'étrange but turc et pourquoi cela pendait au nez de l'équipe de France",
-   "link": "https://www.lequipe.fr/Football/Actualites/Pourquoi-diouf-est-responsable-sur-l-etrange-but-turc-et-pourquoi-cela-pendait-au-nez-de-l-equipe-de-france/1743958#at_medium=RSS_feeds",
-   "date": "2026-11-16T09:25:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Luis De la Fuente : «Nous savons aussi perdre»",
-   "link": "https://www.lequipe.fr/Football/Video/Ligue-des-nations-espagne-luis-de-la-fuente-nous-savons-aussi-perdre/20245685#at_medium=RSS_feeds",
-   "date": "2026-11-16T09:24:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "الإدريسي يشيد بقدرات لاعبات الجيش",
-   "link": "https://www.hespress.com/%d8%a7%d9%84%d8%a5%d8%af%d8%b1%d9%8a%d8%b3%d9%8a-%d9%8a%d8%b4%d9%8a%d8%af-%d8%a8%d9%82%d8%af%d8%b1%d8%a7%d8%aa-%d9%84%d8%a7%d8%b9%d8%a8%d8%a7%d8%aa-%d8%a7%d9%84%d8%ac%d9%8a%d8%b4-1840555.html",
-   "date": "2026-11-16T08:48:16+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "More than F1 - Monza's captivating football story",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6wy4y3pgpx9o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T08:31:05+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Burnham urges caution on scrapping 3pm TV blackout",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6jre22p3941o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T08:18:33+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "European football body’s plan to go global leaves Fifa on tenterhooks",
-   "link": "https://www.theguardian.com/football/2026/nov/16/fifa-waits-european-football-clubs-plan-global",
-   "date": "2026-11-16T08:00:37+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Vote for the best men's European striker this century",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmpw45kx90npo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T07:59:20+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Homophobia on the rise in football - what is your club doing about it?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c617ked5wn9po?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T07:26:27+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Is Scotland's system limiting Gannon-Doak's threat?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c64gnpvdld40o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T07:09:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "How did England cling on against Spain and what did Tuchel do differently?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6742l4z91lwo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-16T00:02:22+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "60 minutes of perfection, 30 minutes of chaos - an England win for the ages",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c933ge310n33o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-15T23:52:43+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Three Lions’ win over Spain comes in two acts: the first superb, the second heroic | Sid Lowe",
-   "link": "https://www.theguardian.com/football/2026/nov/15/england-superb-heroic-spain-nations-league",
-   "date": "2026-11-15T23:50:31+00:00",
    "pred": false
   },
   {
@@ -299,50 +363,10 @@
   },
   {
    "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "رونالدينيو يعود إلى الملاعب بعد 11 عاما",
-   "link": "https://www.hespress.com/%d8%b1%d9%88%d9%86%d8%a7%d9%84%d8%af%d9%8a%d9%86%d9%8a%d9%88-%d9%8a%d8%b9%d9%88%d8%af-%d8%a5%d9%84%d9%89-%d8%a7%d9%84%d9%85%d9%84%d8%a7%d8%b9%d8%a8-%d8%a8%d8%b9%d8%af-11-%d8%b9%d8%a7%d9%85%d8%a7-1840471.html",
-   "date": "2026-11-15T23:33:48+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Who swaggered around like he owned the place? Spain v England ratings",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cjg46lrpllrpo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-15T22:12:55+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
    "source": "France 24 Arabic",
    "title": "رونالدو \"جونيور\" يسجل ظهوره الأول مع منتخب البرتغال تحت 17 عاما بعد اعتزال والده دوليا",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261115-%D8%B1%D9%88%D9%86%D8%A7%D9%84%D8%AF%D9%88-%D8%AC%D9%88%D9%86%D9%8A%D9%88%D8%B1-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D8%A8%D8%B1%D8%AA%D8%BA%D8%A7%D9%84-%D8%A7%D8%B9%D8%AA%D8%B2%D8%A7%D9%84-%D8%AF%D9%88%D9%84%D9%8A%D8%A7",
    "date": "2026-11-15T18:20:13+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Record-breaking Andy Robertson is Scotland’s finest captain",
-   "link": "https://www.theguardian.com/football/2026/nov/15/record-breaking-andy-robertson-is-scotlands-finest-captain",
-   "date": "2026-11-15T12:00:16+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Terry Butcher: ‘I’ve learned to live with the Hand of God goal better’",
-   "link": "https://www.theguardian.com/football/2026/nov/15/terry-butcher-ive-learned-to-live-with-the-hand-of-god-goal-better",
-   "date": "2026-11-15T08:00:09+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "AFC Wimbledon, a failed £87m investment bid and the challenge for fan ownership",
-   "link": "https://www.theguardian.com/football/2026/nov/15/afc-wimbledon-a-failed-87m-investment-bid-and-the-challenge-for-fan-ownership",
-   "date": "2026-11-15T08:00:09+00:00",
    "pred": false
   },
   {
@@ -351,22 +375,6 @@
    "title": "تصفيات كأس الأمم الأفريقية 2027: الجزائر تفوز بصعوبة على توغو وتعزز صدارتها للمجموعة",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261114-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D9%83%D8%A3%D8%B3-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A9-2027-%D8%A7%D9%84%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1-%D8%AA%D9%81%D9%88%D8%B2-%D8%A8%D8%B5%D8%B9%D9%88%D8%A8%D8%A9-%D8%B9%D9%84%D9%89-%D8%AA%D9%88%D8%BA%D9%88-%D8%B5%D8%AF%D8%A7%D8%B1%D8%A9-%D9%84%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9",
    "date": "2026-11-14T21:24:32+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Here Manchester United go again, taking the Two Ronnies route to hiring a new boss | Jonathan Wilson",
-   "link": "https://www.theguardian.com/football/2026/nov/14/here-manchester-united-go-again-taking-the-two-ronnies-route-to-hiring-a-new-boss",
-   "date": "2026-11-14T20:00:53+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Portugal immortalise Cristiano Ronaldo’s No 7 shirt in tribute to national legend",
-   "link": "https://www.theguardian.com/football/2026/nov/14/portugal-immortalise-cristiano-ronaldos-no-7-shirt-in-tribute-to-national-legend",
-   "date": "2026-11-14T19:13:43+00:00",
    "pred": false
   },
   {
@@ -450,22 +458,6 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "France 24 Arabic",
-   "title": "كرة القدم: الاتحاد المصري يتخلى عن المدرب حسام حسن ويعين علي ماهر خلفا له",
-   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261107-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%AA%D8%AE%D9%84%D9%89-%D8%B9%D9%86-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%A8-%D8%AD%D8%B3%D8%A7%D9%85-%D8%AD%D8%B3%D9%86-%D9%88%D9%8A%D8%B9%D9%8A%D9%86-%D8%B9%D9%84%D9%8A-%D9%85%D8%A7%D9%87%D8%B1-%D8%AE%D9%84%D9%81%D8%A7-%D9%84%D9%87",
-   "date": "2026-11-07T19:31:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "France 24 Arabic",
-   "title": "دوري أمم أوروبا: زيدان يكشف عن قائمة منتخب فرنسا",
-   "link": "https://www.france24.com/ar/%D9%81%D9%8A%D8%AF%D9%8A%D9%88/20261107-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A3%D9%85%D9%85-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D8%A7-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D9%8A%D9%83%D8%B4%D9%81-%D8%B9%D9%86-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%81%D8%B1%D9%86%D8%B3%D8%A7",
-   "date": "2026-11-07T14:36:47+00:00",
-   "pred": false
-  },
-  {
    "lang": "es",
    "source": "Marca",
    "title": "A qué hora es el Espanyol - Deportivo: horario y dónde ver hoy en TV y online el partido de LaLiga EA Sports",
@@ -536,14 +528,6 @@
    "link": "https://www.marca.com/futbol/sevilla/2026/11/07/iglesias-equipo-hecho-todos-meritos-llevarse-victoria.html",
    "date": "2026-11-06T23:16:37+00:00",
    "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "France 24 Arabic",
-   "title": "زيدان يعلن تشكيلة المنتخب الفرنسي... عودة مبابي وتشواميني وكوناتيه وأول استدعاء لباجيس",
-   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261106-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9-%D8%AA%D8%B4%D9%83%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D9%81%D8%B1%D9%86%D8%B3%D9%8A-%D8%A7%D9%84%D8%B2%D8%B1%D9%82-%D9%85%D8%A8%D8%A7%D8%A8%D9%8A-%D8%AA%D8%B4%D9%88%D8%A7%D9%85%D9%8A%D9%86%D9%8A-%D9%83%D9%88%D9%86%D8%A7%D8%AA%D9%8A%D9%87-%D8%A7%D8%B3%D8%AA%D8%AF%D8%B9%D8%A7%D8%A1-%D8%A8%D8%A7%D8%AC%D9%8A%D8%B3",
-   "date": "2026-11-06T20:35:45+00:00",
-   "pred": true
   },
   {
    "lang": "es",

@@ -78,6 +78,13 @@ def _user(headers, required=False):
 
 
 def _admin(headers):
+    """يقبل جلسة حساب مدير (مثل Berra) أو الرمز السري ADMIN_TOKEN."""
+    try:
+        u = _user(headers, required=False)
+    except ApiError:
+        u = None
+    if u and accounts.is_admin(u["id"]):
+        return
     expected = os.environ.get("ADMIN_TOKEN", "")
     if not expected:
         raise ApiError(503, "admin_disabled")
@@ -201,7 +208,8 @@ def _route(method, path, q, headers, body):
         accounts.logout(_bearer(headers))
         return {"ok": True}
     if path == "/api/me" and method == "GET":
-        return {"user": _user(headers, required=True)}
+        u = _user(headers, required=True)
+        return {"user": {**u, **accounts.admin_info(u["id"])}}
     if path == "/api/favorites":
         u = _user(headers, required=True)
         ids = {t["id"] for t in service.dataset()["teams"]}

@@ -162,3 +162,33 @@ def team_follow_add(uid, team_id):
 def team_follow_remove(uid, team_id):
     with db.connect() as con:
         con.execute("DELETE FROM fav_teams WHERE user_id=? AND team_id=?", (uid, team_id))
+
+
+# ---------- حساب المدير ----------
+def is_admin(uid):
+    with db.connect() as con:
+        return con.execute("SELECT 1 FROM admins WHERE user_id=?", (uid,)).fetchone() is not None
+
+
+def admin_info(uid):
+    with db.connect() as con:
+        r = con.execute("SELECT name FROM admins WHERE user_id=?", (uid,)).fetchone()
+    return {"admin": True, "name": r["name"]} if r else {"admin": False}
+
+
+def make_admin(email, password, name="Berra"):
+    """ينشئ الحساب أو يحدّث كلمة سره، ويجعله مديرًا. يُستدعى من make_admin.py فقط (لا من الشبكة)."""
+    email = (email or "").strip().lower()
+    if "@" not in email or len(password or "") < 10:
+        raise ValueError("invalid_admin_input")
+    with db.connect() as con:
+        r = con.execute("SELECT id FROM users WHERE email=?", (email,)).fetchone()
+        if r:
+            uid = r["id"]
+            con.execute("UPDATE users SET pw_hash=? WHERE id=?", (_hash_pw(password), uid))
+        else:
+            cur = con.execute("INSERT INTO users(email, pw_hash, created) VALUES(?,?,?)", (email, _hash_pw(password), _iso(_now())))
+            uid = cur.lastrowid
+        con.execute("INSERT OR REPLACE INTO admins(user_id, name) VALUES(?,?)", (uid, name))
+        con.execute("DELETE FROM sessions WHERE user_id=?", (uid,))
+    return uid

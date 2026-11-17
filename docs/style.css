@@ -158,3 +158,4 @@ table.std td.pts{font-weight:700}
 .star.on{background:rgba(30,212,138,.16);border-color:var(--green);color:var(--green)}
 
 .more{display:block;width:100%;margin:12px 0;padding:12px;border-radius:99px;border:1px solid var(--line);background:var(--deep);color:var(--white);font-weight:600;cursor:pointer}
+.about-img{display:block;width:100%;max-width:420px;height:auto;margin:14px auto 18px;border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:0 14px 36px rgba(0,0,0,.45)}

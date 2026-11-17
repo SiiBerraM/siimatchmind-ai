@@ -482,6 +482,7 @@
 
   async function pageAbout() {
     view.innerHTML = `<h1>${t("about.title")}</h1>
+      <img class="about-img" src="icons/about.jpg" alt="P.F.I Berra VIP" width="420" height="554" loading="lazy">
       <h2>${t("about.hello")}</h2>
       <p>${t("about.p1")}</p><p>${t("about.p2")}</p><p>${t("about.p3")}</p>
       <p><b>${t("about.sign")}</b></p>

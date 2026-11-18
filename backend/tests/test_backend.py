@@ -678,7 +678,7 @@ class PublishReadinessTests(unittest.TestCase):
             with urllib.request.urlopen(base + "/manifest.webmanifest") as r:
                 mf = json.loads(r.read())
             self.assertIn("maskable", [i["purpose"] for i in mf["icons"]])
-            self.assertEqual((mf["display"], mf["id"]), ("standalone", "/"))
+            self.assertEqual((mf["display"], mf["id"]), ("standalone", "./"))
             with urllib.request.urlopen(base + "/icons/icon-512-maskable.png") as r:
                 self.assertEqual(r.status, 200)
         finally:

@@ -10,6 +10,7 @@
 <body>
 <header class="top"><div class="brand">SiiMatchMind <span>AI</span></div><select id="langSel" class="lang" aria-label="Language"></select></header>
 <main id="view"><h1 id="t"></h1>
+  <div class="pick"><label for="em">البريد · Email</label><input type="email" id="em" autocomplete="username"><label for="pw">كلمة السر · Password</label><input type="password" id="pw" autocomplete="current-password"></div>
   <div class="pick"><label for="tok" id="tl"></label><input type="password" id="tok" autocomplete="off"><button class="btn" id="go"></button><p class="err" id="err"></p></div>
   <div id="out"></div></main>
 <script>
@@ -45,7 +46,15 @@
   $("go").onclick = async () => {
     $("err").textContent = "";
     try {
-      const r = await fetch("/api/admin/summary", { headers: { "X-Admin-Token": $("tok").value } });
+      let headers = { "X-Admin-Token": $("tok").value };
+      const em = $("em").value.trim(), pw = $("pw").value;
+      if (em && pw) {
+        const lr = await fetch("/api/auth/login", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: em, password: pw }) });
+        const lj = await lr.json();
+        if (!lr.ok) throw lj.error || { code: "generic" };
+        headers = { "Authorization": "Bearer " + lj.token };
+      }
+      const r = await fetch("/api/admin/summary", { headers });
       const j = await r.json();
       if (!r.ok) throw j.error || { code: "generic" };
       render(j);

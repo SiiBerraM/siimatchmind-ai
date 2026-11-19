@@ -25,7 +25,7 @@ jobs:
           HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
         run: |
           cd backend
-          python importer.py --source highlightly --hl-league 199067,262041,170984,256935,260339 --season 2026 || echo "::warning::Highlightly import failed"
+          python importer.py --source highlightly --hl-league 199067,262041,170984,256935,260339,38228,121626,55248,70566,119073,216938,595633,630524,960712 --season 2026 || echo "::warning::Highlightly import failed"
       - name: Track predictions
         run: |
           cd backend

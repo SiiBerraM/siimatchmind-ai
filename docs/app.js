@@ -334,6 +334,7 @@
 
       <h2>${t("an.why")}</h2>${list(r.reasons.map(x => esc(reasonText("reason.", x))))}
       <h2>${t("an.matrix")}</h2>${matrixTable(r)}
+      ${window.smmMarkets ? window.smmMarkets(r) : ""}
 
       <h2>${t("an.form", { n: r.form.home.length })}</h2>
       <div>${esc(r.home.name)}${formRow(r.form.home)}</div>

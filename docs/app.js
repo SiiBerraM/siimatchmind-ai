@@ -588,7 +588,7 @@
       }
       wrap.hidden = sel.hidden;
     }
-    function close() { panel.hidden = true; btn.classList.remove("open"); }
+    function close() { panel.hidden = true; btn.classList.remove("open"); document.documentElement.classList.remove("ddlock"); }
     function build() {
       panel.innerHTML = "";
       var cur = sel.value;
@@ -611,7 +611,7 @@
     btn.onclick = function (e) {
       e.stopPropagation();
       if (panel.hidden) {
-        build(); var r = btn.getBoundingClientRect(); panel.style.top = (r.bottom + 8) + "px"; panel.style.maxHeight = (window.innerHeight - r.bottom - 90) + "px"; panel.hidden = false; btn.classList.add("open");
+        build(); var r = btn.getBoundingClientRect(); panel.style.top = (r.bottom + 8) + "px"; panel.style.maxHeight = (window.innerHeight - r.bottom - 90) + "px"; panel.hidden = false; btn.classList.add("open"); document.documentElement.classList.add("ddlock");
         var on = panel.querySelector(".on"); if (on) on.scrollIntoView({ block: "center" });
       } else close();
     };

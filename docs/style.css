@@ -192,3 +192,6 @@ table.std td.pts{font-weight:700}
 
 .ddpanel{position:fixed!important;left:12px!important;right:12px!important;inset-inline-end:auto!important;min-width:0!important;max-width:none!important;z-index:2147483000!important;background:#0d1b2e!important;opacity:1!important}
 :root[data-theme="light"] .ddpanel{background:#ffffff!important}
+
+html.ddlock,html.ddlock body{overflow:hidden!important;height:100%!important;touch-action:none}
+.ddpanel{overscroll-behavior:contain!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch}

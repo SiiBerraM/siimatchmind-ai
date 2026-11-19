@@ -144,7 +144,11 @@
     const ls = document.getElementById("leagueSel");
     if (!ls) return;
     LEAGUES.sort((a, b) => lname(a).localeCompare(lname(b), lang));
-    ls.innerHTML = LEAGUES.map(l => `<option value="${esc(l.code)}">${esc(lname(l))}</option>`).join("");
+    const WOM = new Set(["hl38228","hl121626","hl55248","hl70566","hl119073","hl216938","hl595633"]);
+    const GL = {ar:["دوريات الرجال","دوريات السيدات"],en:["Men's leagues","Women's leagues"],fr:["Championnats masculins","Championnats féminins"],es:["Ligas masculinas","Ligas femeninas"],tr:["Erkek ligleri","Kadın ligleri"]}[lang] || ["Men's leagues","Women's leagues"];
+    const opt = l => `<option value="${esc(l.code)}">${esc(lname(l))}</option>`;
+    const men = LEAGUES.filter(l => !WOM.has(l.code)), wom = LEAGUES.filter(l => WOM.has(l.code));
+    ls.innerHTML = `<optgroup label="${GL[0]}">${men.map(opt).join("")}</optgroup>` + (wom.length ? `<optgroup label="${GL[1]}">${wom.map(opt).join("")}</optgroup>` : "");
     ls.value = LEAGUE || ""; ls.hidden = LEAGUES.length < 2;
     ls.setAttribute("aria-label", t("league.label"));
   }

@@ -159,3 +159,21 @@ table.std td.pts{font-weight:700}
 
 .more{display:block;width:100%;margin:12px 0;padding:12px;border-radius:99px;border:1px solid var(--line);background:var(--deep);color:var(--white);font-weight:600;cursor:pointer}
 .about-img{display:block;width:100%;max-width:420px;height:auto;margin:14px auto 18px;border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:0 14px 36px rgba(0,0,0,.45)}
+
+
+/* ===== قوائم مخصصة ===== */
+.ddnative{display:none!important}
+.dd{position:relative}
+.dd[hidden]{display:none}
+.ddbtn{display:flex;align-items:center;gap:6px;max-width:140px;padding:5px 12px;font-size:13px;font-family:inherit;color:var(--white);background:var(--deep);border:1px solid var(--line);border-radius:99px;cursor:pointer;transition:border-color .15s}
+.ddbtn:hover,.ddbtn.open{border-color:var(--green)}
+.ddtx{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ddar{font-size:10px;color:var(--mute);transition:transform .2s}
+.ddbtn.open .ddar{transform:rotate(180deg)}
+.ddpanel{position:absolute;top:calc(100% + 8px);inset-inline-end:0;z-index:999;min-width:240px;max-width:86vw;max-height:60vh;overflow-y:auto;padding:6px;background:var(--deep);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.45)}
+.ddpanel[hidden]{display:none}
+.ddgrp{padding:10px 10px 4px;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--green);text-transform:uppercase}
+.ddgrp:not(:first-child){margin-top:6px;border-top:1px solid var(--line)}
+.dditem{display:block;width:100%;text-align:start;padding:9px 10px;font-size:14px;font-family:inherit;color:var(--white);background:none;border:0;border-radius:9px;cursor:pointer}
+.dditem:hover{background:var(--panel)}
+.dditem.on{background:var(--panel);color:var(--green);font-weight:600}

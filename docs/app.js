@@ -565,3 +565,62 @@
   }
   init();
 })();
+
+
+/* ===== قوائم مخصصة (بطولات + لغة) ===== */
+(function () {
+  function enhance(id) {
+    var sel = document.getElementById(id);
+    if (!sel || sel.dataset.dd) return;
+    sel.dataset.dd = "1";
+    var wrap = document.createElement("div"); wrap.className = "dd";
+    var btn = document.createElement("button"); btn.type = "button"; btn.className = "ddbtn";
+    var panel = document.createElement("div"); panel.className = "ddpanel"; panel.hidden = true;
+    sel.parentNode.insertBefore(wrap, sel);
+    wrap.appendChild(btn); wrap.appendChild(panel); wrap.appendChild(sel);
+    sel.classList.add("ddnative");
+    function label() {
+      var o = sel.options[sel.selectedIndex], t = o ? o.textContent : "";
+      if (btn.dataset.t !== t) {
+        btn.dataset.t = t;
+        btn.innerHTML = '<span class="ddtx"></span><span class="ddar">▾</span>';
+        btn.firstChild.textContent = t;
+      }
+      wrap.hidden = sel.hidden;
+    }
+    function close() { panel.hidden = true; btn.classList.remove("open"); }
+    function build() {
+      panel.innerHTML = "";
+      var cur = sel.value;
+      function item(o) {
+        var b = document.createElement("button"); b.type = "button";
+        b.className = "dditem" + (o.value === cur ? " on" : "");
+        b.textContent = o.textContent;
+        b.onclick = function () { sel.value = o.value; sel.dispatchEvent(new Event("change")); close(); label(); };
+        return b;
+      }
+      Array.prototype.forEach.call(sel.children, function (c) {
+        if (c.tagName === "OPTGROUP") {
+          var h = document.createElement("div"); h.className = "ddgrp"; h.textContent = c.label;
+          panel.appendChild(h);
+          Array.prototype.forEach.call(c.children, function (o) { panel.appendChild(item(o)); });
+        } else panel.appendChild(item(c));
+      });
+      label();
+    }
+    btn.onclick = function (e) {
+      e.stopPropagation();
+      if (panel.hidden) {
+        build(); panel.hidden = false; btn.classList.add("open");
+        var on = panel.querySelector(".on"); if (on) on.scrollIntoView({ block: "center" });
+      } else close();
+    };
+    document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) close(); });
+    new MutationObserver(build).observe(sel, { childList: true, subtree: true });
+    new MutationObserver(label).observe(sel, { attributes: true, attributeFilter: ["hidden"] });
+    setInterval(label, 600);
+    build();
+  }
+  function init() { enhance("leagueSel"); enhance("langSel"); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();

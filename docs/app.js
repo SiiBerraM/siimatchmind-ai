@@ -577,7 +577,7 @@
     var btn = document.createElement("button"); btn.type = "button"; btn.className = "ddbtn";
     var panel = document.createElement("div"); panel.className = "ddpanel"; panel.hidden = true;
     sel.parentNode.insertBefore(wrap, sel);
-    wrap.appendChild(btn); wrap.appendChild(panel); wrap.appendChild(sel);
+    wrap.appendChild(btn); document.body.appendChild(panel); wrap.appendChild(sel);
     sel.classList.add("ddnative");
     function label() {
       var o = sel.options[sel.selectedIndex], t = o ? o.textContent : "";
@@ -611,11 +611,11 @@
     btn.onclick = function (e) {
       e.stopPropagation();
       if (panel.hidden) {
-        build(); panel.hidden = false; btn.classList.add("open");
+        build(); var r = btn.getBoundingClientRect(); panel.style.top = (r.bottom + 8) + "px"; panel.style.maxHeight = (window.innerHeight - r.bottom - 90) + "px"; panel.hidden = false; btn.classList.add("open");
         var on = panel.querySelector(".on"); if (on) on.scrollIntoView({ block: "center" });
       } else close();
     };
-    document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) close(); });
+    document.addEventListener("click", function (e) { if (!wrap.contains(e.target) && !panel.contains(e.target)) close(); }); window.addEventListener("resize", close);
     new MutationObserver(build).observe(sel, { childList: true, subtree: true });
     new MutationObserver(label).observe(sel, { attributes: true, attributeFilter: ["hidden"] });
     setInterval(label, 600);

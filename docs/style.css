@@ -189,3 +189,6 @@ table.std td.pts{font-weight:700}
 :root[data-theme="light"] .dditem:hover,:root[data-theme="light"] .dditem.on{background:#e6edf7!important}
 :root[data-theme="light"] .dditem.on{color:#0e9f63!important}
 :root[data-theme="light"] .ddbtn{color:#0b1f3a!important}
+
+.ddpanel{position:fixed!important;left:12px!important;right:12px!important;inset-inline-end:auto!important;min-width:0!important;max-width:none!important;z-index:2147483000!important;background:#0d1b2e!important;opacity:1!important}
+:root[data-theme="light"] .ddpanel{background:#ffffff!important}

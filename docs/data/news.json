@@ -1,20 +1,324 @@
 {
- "updated": "2026-11-19T14:08:37.600864+00:00",
+ "updated": "2026-11-20T13:51:10.891262+00:00",
  "items": [
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Pochettino session leaked on drone footage; Arteta takes fantasy football action; Nations League draw – live",
+   "link": "https://www.theguardian.com/football/live/2026/nov/20/weekend-football-countdown-live-news-updates",
+   "date": "2026-11-20T13:43:29+00:00",
+   "pred": false
+  },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Ligue 1 : Clinton Mata forfait avec l'OL pour le déplacement à Lille",
-   "link": "https://www.lequipe.fr/Football/Actualites/Ligue-1-clinton-mata-forfait-avec-l-ol-pour-le-deplacement-a-lille/1744641#at_medium=RSS_feeds",
-   "date": "2026-11-19T13:45:55+00:00",
+   "title": "Avant le déplacement du PSG à Nice, Luis Enrique en souriant : « Les joueurs sont des menteurs. Ils vont tous te dire qu'ils sont prêts mais il faut le montrer sur le terrain »",
+   "link": "https://www.lequipe.fr/Football/Actualites/Avant-le-deplacement-du-psg-a-nice-luis-enrique-en-souriant-les-joueurs-sont-des-menteurs-ils-vont-tous-te-dire-qu-ils-sont-prets-mais-il-faut-le-montrer-sur-le-terrain/1744863#at_medium=RSS_feeds",
+   "date": "2026-11-20T13:22:14+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Sur les bancs, le changement, c'est constant",
+   "link": "https://www.lequipe.fr/Football/Article/Pourquoi-les-entraineurs-de-ligue-1-changent-de-plus-en-plus-en-souvent/1744772#at_medium=RSS_feeds",
+   "date": "2026-11-20T13:16:00+00:00",
    "pred": false
   },
   {
    "lang": "en",
    "source": "BBC Sport",
-   "title": "Five return for Wales' World Cup play-off final",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c620535y8zpjo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T13:40:43+00:00",
+   "title": "Southampton give head coach Eckert new deal",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cwm25yx3kj5lo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T13:10:33+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Thibaut Courtois prolonge son contrat avec le Real Madrid jusqu'en 2028",
+   "link": "https://www.lequipe.fr/Football/Actualites/Thibaut-courtois-prolonge-son-contrat-avec-le-real-madrid-jusqu-en-2028/1744860#at_medium=RSS_feeds",
+   "date": "2026-11-20T13:09:19+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Arsenal’s Lisa Baum: ‘I believe in us. I think it’s all about the small margins’",
+   "link": "https://www.theguardian.com/football/2026/nov/20/arsenal-lisa-baum-germany-brother-dennis",
+   "date": "2026-11-20T13:00:29+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Liverpool fan found not guilty of racial abuse after Antoine Semenyo withdraws from case",
+   "link": "https://www.theguardian.com/football/2026/nov/20/liverpool-fan-not-guilty-racial-abuse-antoine-semenyo-withdraws-from-case-bournemouth-liverpool",
+   "date": "2026-11-20T12:20:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Les affiches des quarts de finale et des barrages de la Ligue des nations",
+   "link": "https://www.lequipe.fr/Football/Actualites/Les-affiches-des-quarts-de-finale-et-des-barrages-de-la-ligue-des-nations/1744854#at_medium=RSS_feeds",
+   "date": "2026-11-20T12:10:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "إسبانيا تصطدم بفرنسا في دوري الأمم",
+   "link": "https://www.hespress.com/%d8%a5%d8%b3%d8%a8%d8%a7%d9%86%d9%8a%d8%a7-%d8%aa%d8%b5%d8%b7%d8%af%d9%85-%d8%a8%d9%81%d8%b1%d9%86%d8%b3%d8%a7-%d9%81%d9%8a-%d8%af%d9%88%d8%b1%d9%8a-%d8%a7%d9%84%d8%a3%d9%85%d9%85-1842776.html",
+   "date": "2026-11-20T12:10:01+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Arteta : « Pochettino a toutes les qualités pour construire quelque chose d'incroyable »",
+   "link": "https://www.lequipe.fr/Football/Video/Premier-league-arsenal-arteta-pochettino-a-toutes-les-qualites-pour-construire-quelque-chose-d-incroyable/20245946#at_medium=RSS_feeds",
+   "date": "2026-11-20T12:00:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Jusqu'où peut aller Fofana, quatrième meilleur buteur en Europe ?",
+   "link": "https://www.lequipe.fr/Football/Article/Jusqu-ou-peut-aller-yaya-fofana-reims-quatrieme-meilleur-buteur-en-europe-derriere-raphinha-ou-kylian-mbappe/1744707#at_medium=RSS_feeds",
+   "date": "2026-11-20T11:44:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Après l'entraînement, les joueurs de Toulouse ont testé GTA VI, sous l'oeil attentif de leur club",
+   "link": "https://www.lequipe.fr/Football/Actualites/Apres-l-entrainement-les-joueurs-de-toulouse-ont-teste-gta-vi-sous-l-oeil-attentif-de-leur-club/1744847#at_medium=RSS_feeds",
+   "date": "2026-11-20T11:41:08+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Stoke and Birmingham proving you shouldn't judge a book by its cover",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmy8670vjlx0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T11:35:16+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Défaits par la Roja en Coupe du monde, les Bleus retrouvent déjà l'Espagne en quarts de finale de la Ligue des nations",
+   "link": "https://www.lequipe.fr/Football/Actualites/Les-bleus-heritent-de-l-espagne-en-quarts-de-finale-de-la-ligue-des-nations/1744845#at_medium=RSS_feeds",
+   "date": "2026-11-20T11:28:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Mikel Arteta assure que William Saliba est « prêt » à rejouer, nouvelles moins rassurantes pour Bukayo Saka",
+   "link": "https://www.lequipe.fr/Football/Actualites/Mikel-arteta-assure-que-william-saliba-est-pret-a-rejouer-nouvelles-moins-rassurantes-pour-bukayo-saka/1744834#at_medium=RSS_feeds",
+   "date": "2026-11-20T10:53:49+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Bukayo Saka may not return for Arsenal before Christmas, Mikel Arteta admits",
+   "link": "https://www.theguardian.com/football/2026/nov/20/bukayo-saka-injury-may-not-play-arsenal-before-christmas-mikel-arteta",
+   "date": "2026-11-20T10:46:32+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Mourinho : «Aucun joueur ne bénéficie de privilèges»",
+   "link": "https://www.lequipe.fr/Football/Video/Liga-real-madrid-jose-mourinho-reste-ferme-sur-le-cas-vinicius-au-real-madrid-aucun-joueur-ne-beneficie-de-privileges/20245941#at_medium=RSS_feeds",
+   "date": "2026-11-20T10:43:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Qui affrontera les Bleus ? Posez vos questions avant le tirage des quarts",
+   "link": "https://www.lequipe.fr/Football/actu-en-direct/les-bleus-vont-etre-fixes-live/22490#at_medium=RSS_feeds",
+   "date": "2026-11-20T10:31:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "On a suivi les jeunes du centre de formation en maraude avec la Croix-Rouge",
+   "link": "https://www.lequipe.fr/Football/Article/-je-suis-agreablement-surpris-parce-que-je-n-avais-pas-cette-image-des-joueurs-de-foot-on-a-suivi-les-jeunes-du-fc-lorient-en-maraude-avec-la-croix-rouge/1744701#at_medium=RSS_feeds",
+   "date": "2026-11-20T10:28:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Un opérateur de drone retire une vidéo de l'entraînement de Manchester United et présente ses excuses",
+   "link": "https://www.lequipe.fr/Football/Actualites/Un-operateur-de-drone-retire-une-video-de-l-entrainement-de-manchester-united-et-presente-ses-excuses/1744826#at_medium=RSS_feeds",
+   "date": "2026-11-20T10:08:18+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Philippe Diallo avance ses pions à l'AG de la CAF",
+   "link": "https://www.lequipe.fr/Football/Article/A-l-assemblee-generale-de-la-caf-philippe-diallo-avance-ses-pions-pour-l-election-a-la-presidence-de-la-fifa/1744735#at_medium=RSS_feeds",
+   "date": "2026-11-20T09:56:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Prolongation en bonne voie pour le Rennais Abdelhamid Aït Boudlal",
+   "link": "https://www.lequipe.fr/Football/Actualites/Prolongation-en-bonne-voie-pour-le-rennais-abdelhamid-ait-boudlal/1744820#at_medium=RSS_feeds",
+   "date": "2026-11-20T09:48:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "EFL preview: Evans' gripes & unexpected departures",
+   "link": "https://www.bbc.co.uk/sport/football/articles/crwy4wl1n0q2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T08:24:38+00:00",
+   "pred": true
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "What history tells us about the Premier League table after 10 games of a season",
+   "link": "https://www.theguardian.com/football/2026/nov/20/premier-league-table-history-after-10-games-season",
+   "date": "2026-11-20T08:00:26+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Inside the rise of 'humble' Nyoni and why Iraola trusts him",
+   "link": "https://www.bbc.co.uk/sport/football/articles/ck24enjqvlyeo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T07:42:04+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Moore eyes Kane shirt as Spurs' past and future stars meet",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cq0k65pyp4jvo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T07:26:36+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'I felt like I was a ghost' - when players miss a season through injury",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cqvg27m9xp1xo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-20T06:13:23+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "The male footballers best associated with each shirt number – the readers’ edition",
+   "link": "https://www.theguardian.com/football/ng-interactive/2026/nov/20/male-footballers-best-associated-each-shirt-number-readers-edit",
+   "date": "2026-11-20T06:00:24+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Premier League: 10 things to look out for this weekend",
+   "link": "https://www.theguardian.com/football/2026/nov/20/premier-league-10-things-to-look-out-for-this-weekend",
+   "date": "2026-11-20T00:00:15+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Arsenal 'have ingredients' but Europe's elite on another level",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm4gnxz8dvx1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T23:57:54+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "منتخب مبتوري الأطراف في نصف النهائي",
+   "link": "https://www.hespress.com/%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d9%85%d8%a8%d8%aa%d9%88%d8%b1%d9%8a-%d8%a7%d9%84%d8%a3%d8%b7%d8%b1%d8%a7%d9%81-%d9%81%d9%8a-%d9%86%d8%b5%d9%81-%d8%a7%d9%84%d9%86%d9%87%d8%a7%d8%a6%d9%8a-1842690.html",
+   "date": "2026-11-19T23:51:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "England get one-match suspended ban on away tickets for anti-pope chants in Spain",
+   "link": "https://www.theguardian.com/football/2026/nov/19/england-one-match-suspended-away-tickets-ban-anti-pope-chants-spain-uefa",
+   "date": "2026-11-19T22:05:54+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "OL Lyonnes show their class to hit Arsenal’s ambitions for a top-four WCL finish",
+   "link": "https://www.theguardian.com/football/2026/nov/19/arsenal-ol-lyonnes-womens-champions-league-match-report",
+   "date": "2026-11-19T22:05:36+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Barcelona target Man Utd's Martinez - Friday's gossip",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cj5y14g2wppko?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T21:57:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Shevchenko accuses Mudryk camp of 'baseless slander'",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cmgqx908lk44o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T20:44:11+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Frank happy to be 'back in the circus' at Palace",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cje3900n0vvro?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T20:16:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Sutton's predictions v world champion boxer Lauren Price",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c50mdnxy3ry0o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T18:52:00+00:00",
+   "pred": true
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Pochettino's first Man Utd training session filmed by drone operator",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6wy9d7wqy7wo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T18:45:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "الركراكي يقترب من قيادة منتخب قطر",
+   "link": "https://www.hespress.com/%d8%a7%d9%84%d8%b1%d9%83%d8%b1%d8%a7%d9%83%d9%8a-%d9%8a%d9%82%d8%aa%d8%b1%d8%a8-%d9%85%d9%86-%d9%82%d9%8a%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d9%82%d8%b7%d8%b1-1842256.html",
+   "date": "2026-11-19T16:20:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Culture, defence, Fernandes - Pochettino's priorities at Man Utd",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cxlylzyg38l8o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-19T15:05:21+00:00",
    "pred": false
   },
   {
@@ -26,99 +330,11 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Ismaëlo Ganiou et Abdallah Sima ont repris l'entraînement collectif avec le RC Lens",
-   "link": "https://www.lequipe.fr/Football/Actualites/Ismaelo-ganiou-et-abdallah-sima-ont-repris-l-entrainement-collectif-avec-le-rc-lens/1744635#at_medium=RSS_feeds",
-   "date": "2026-11-19T13:23:38+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Une très grande fierté » : Axel Witsel raconte l'hommage qu'il a reçu en Belgique après avoir mis un terme à sa carrière internationale",
-   "link": "https://www.lequipe.fr/Football/Actualites/-une-tres-grande-fierte-axel-witsel-raconte-l-hommage-qu-il-a-recu-en-belgique-apres-avoir-mis-un-terme-a-sa-carriere-internationale/1744634#at_medium=RSS_feeds",
-   "date": "2026-11-19T13:23:32+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Si je devais comparer un peu, ce serait au Manchester City de Guardiola dans les grandes années » : comment l'OGC Nice aborde la venue du PSG",
-   "link": "https://www.lequipe.fr/Football/Actualites/-si-je-devais-comparer-un-peu-ce-serait-au-manchester-city-de-guardiola-dans-les-grandes-annees-comment-l-ogc-nice-aborde-la-venue-du-psg/1744630#at_medium=RSS_feeds",
-   "date": "2026-11-19T13:12:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Je ne vois pas où est la maltraitance » : Olivier Pantaloni au secours de Mèfi, l'aigle emblème de l'OGC Nice",
-   "link": "https://www.lequipe.fr/Football/Actualites/-je-ne-vois-pas-ou-est-la-maltraitance-olivier-pantaloni-au-secours-de-mefi-l-aigle-embleme-de-l-ogc-nice/1744628#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:59:26+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Hugo Lloris à son frère : «T'as pris le lead, Gautier, enfin!»",
-   "link": "https://www.lequipe.fr/Football/Article/Carrieres-a-distance-vacances-ratees-et-parties-de-padel-programmees-les-freres-lloris-evoquent-leurs-trajectoires-dissemblables-t-as-pris-le-lead-gautier-enfin/1744522#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:57:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Déjà hier après l'entraînement, ça a discuté GTA » : les joueurs de Nice n'échappent pas au phénomène du jeu vidéo",
-   "link": "https://www.lequipe.fr/Football/Actualites/-deja-hier-apres-l-entrainement-ca-a-discute-gta-les-joueurs-de-nice-n-echappent-pas-au-phenomene-du-jeu-video/1744627#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:56:28+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Ligue 1 : Troyes veut Florian Maurice comme nouveau directeur sportif, les négociations avancent",
-   "link": "https://www.lequipe.fr/Football/Actualites/Ligue-1-troyes-veut-florian-maurice-comme-nouveau-directeur-sportif-les-negociations-avancent/1744624#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:50:12+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "La mise au point de Kompany sur les fake news concernant son absence",
-   "link": "https://www.lequipe.fr/Football/Video/Bundesliga-bayern-munich-quand-on-partage-des-informations-sans-connaitre-les-faits-on-parle-sans-vraiment-rien-dire-la-mise-au-point-de-vincent-kompany-sur-les/20245877#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:47:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Ben Yedder à l'entraînement, comme si de rien n'était",
-   "link": "https://www.lequipe.fr/Football/Article/Wissam-ben-yedder-a-l-entrainement-avec-le-paris-13-atletico-comme-si-de-rien-n-etait/1744517#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:42:00+00:00",
-   "pred": false
-  },
-  {
    "lang": "ar",
    "source": "France 24 Arabic",
    "title": "إنفانتينو وديالو وتاشيما يقدمون رسميا طلبات ترشحهم لانتخابات رئاسة الفيفا",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261119-%D8%A5%D9%86%D9%81%D8%A7%D9%86%D8%AA%D9%8A%D9%86%D9%88-%D8%AF%D9%8A%D8%A7%D9%84%D9%88-%D8%AA%D8%A7%D8%B4%D9%8A%D9%85%D8%A7-%D9%8A%D8%AA%D8%B1%D8%B4%D8%AD%D9%88%D9%86-%D8%B1%D8%B3%D9%85%D9%8A%D8%A7-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%B1%D8%A6%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D9%81%D9%8A%D9%81%D8%A7-%D9%85%D8%A7%D8%B1%D8%B3-2027",
    "date": "2026-11-19T12:40:25+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Le milieu de terrain français Aurélien Tchouaméni prolonge jusqu'en 2032 avec le Real Madrid",
-   "link": "https://www.lequipe.fr/Football/Actualites/Le-milieu-de-terrain-francais-aurelien-tchouameni-prolonge-jusqu-en-2032-avec-le-real-madrid/1744622#at_medium=RSS_feeds",
-   "date": "2026-11-19T12:39:10+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Will this be the tightest Championship promotion race ever?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c63ele354444o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T12:36:31+00:00",
    "pred": false
   },
   {
@@ -138,102 +354,6 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Carlos Forbs, le nouveau «7» qui marche au Portugal",
-   "link": "https://www.lequipe.fr/Football/Article/Numero-7-comme-cristiano-ronaldo-coache-par-guardiola-et-bourreau-de-lens-carlos-forbs-le-nouveau-heros-du-portugal/1744381#at_medium=RSS_feeds",
-   "date": "2026-11-19T11:56:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Un joueur de D3 équatorienne suspendu 8 ans pour avoir blessé un arbitre assistant",
-   "link": "https://www.lequipe.fr/Football/Actualites/Un-joueur-de-d3-equatorienne-suspendu-8-ans-pour-avoir-blesse-un-arbitre-assistant/1744618#at_medium=RSS_feeds",
-   "date": "2026-11-19T11:52:33+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Kompany : «Je me sens en pleine forme»",
-   "link": "https://www.lequipe.fr/Football/Video/Bundesliga-bayern-vincent-kompany-enfin-de-retour-avec-le-bayern-apres-ses-problemes-de-sante-je-me-sens-en-pleine-forme/20245875#at_medium=RSS_feeds",
-   "date": "2026-11-19T11:51:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "« Je peux être une solution de secours » : Jonathan Clauss croit en un retour en équipe de France",
-   "link": "https://www.lequipe.fr/Football/Actualites/-je-peux-etre-une-solution-de-secours-jonathan-clauss-croit-en-un-retour-en-equipe-de-france/1744616#at_medium=RSS_feeds",
-   "date": "2026-11-19T11:42:51+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Washington Spirit v Kansas City Current: where the NWSL Championship will be won and lost",
-   "link": "https://www.theguardian.com/football/2026/nov/19/nwsl-championship-washington-spirit-kc-current-moving-the-goalposts",
-   "date": "2026-11-19T11:40:20+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Magill returns to NI squad for Greece friendlies",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cqly43n1vjm8o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T11:12:20+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Inside women’s football’s difficult rise in Syria: ‘A joy that everyone in the country needed’",
-   "link": "https://www.theguardian.com/football/2026/nov/19/syria-womens-football",
-   "date": "2026-11-19T11:00:26+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Race for the Fifa presidency: lineup revealed to challenge Gianni Infantino",
-   "link": "https://www.theguardian.com/football/2026/nov/19/fifa-president-election-philippe-diallo-kozo-tashima-challenge-gianni-infantino",
-   "date": "2026-11-19T10:56:21+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "'I'm very healthy' - Kompany to return to dugout after health scare",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cm0rkzwgn0lro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T10:32:30+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Will Infantino feel he's already won as Fifa challengers confirmed?",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c8wy53z3ygypo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T10:21:10+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Eight-year ban for player who threw rock that hit assistant referee",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cqlyk9yzkz2no?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T10:20:58+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "The best European strikers this century - ranked by you",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cw5y1ver2rpyo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T08:50:01+00:00",
-   "pred": false
-  },
-  {
    "lang": "ar",
    "source": "France 24 Arabic",
    "title": "المنتخب المغربي يرتقي إلى المركز الخامس عالميا ويحقق أفضل ترتيب في تاريخه",
@@ -243,114 +363,10 @@
   },
   {
    "lang": "en",
-   "source": "The Guardian",
-   "title": "Will Pochettino fix Manchester United? Put your questions to Will Unwin",
-   "link": "https://www.theguardian.com/football/live/2026/nov/19/will-pochettino-fix-manchester-united-put-your-questions-to-will-unwin",
-   "date": "2026-11-19T08:06:11+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Maine Road offer non-league haven to fans of scandal-hit Manchester City",
-   "link": "https://www.theguardian.com/football/2026/nov/19/manchester-city-guilty-verdict-premier-league-charges-maine-road-non-league",
-   "date": "2026-11-19T08:00:21+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
    "source": "BBC Sport",
    "title": "How Premier League's big six keep getting richer",
    "link": "https://www.bbc.co.uk/sport/football/articles/c6x28e93zv3jo?at_medium=RSS&at_campaign=rss",
    "date": "2026-11-19T07:38:22+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "From Forest fringes to Glasner's go-to guy - the rise of McAtee",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck98z842gp11o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T07:14:11+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Who am I? Plus today's other quizzes",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmde19r53008o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T07:06:18+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Vote for the first BBC Men's Footballer of the Year",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c61wrqr7l1d8o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T06:30:04+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Manchester United’s infamous 1974 relegation is a warning from history",
-   "link": "https://www.theguardian.com/football/2026/nov/18/manchester-united-infamous-1974-relegation-is-a-warning-from-history",
-   "date": "2026-11-18T22:30:10+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Veerle Buurman scrambles late WCL winner to push blunt Chelsea past PSG",
-   "link": "https://www.theguardian.com/football/2026/nov/18/chelsea-paris-saint-germain-womens-champions-league-match-report",
-   "date": "2026-11-18T22:06:45+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "\"فيفا\": منتخب المغرب يخطف الأضواء",
-   "link": "https://www.hespress.com/%d9%81%d9%8a%d9%81%d8%a7-%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8-%d9%8a%d8%ae%d8%b7%d9%81-%d8%a7%d9%84%d8%a3%d8%b6%d9%88%d8%a7%d8%a1-1842000.html",
-   "date": "2026-11-18T21:34:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Strasbourg appoint Swansea boss Matos",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6174epxv1p4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-18T20:57:54+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Leicester part ways with BC Game after sponsor’s partnership with porn actor",
-   "link": "https://www.theguardian.com/football/2026/nov/18/leicester-city-bc-game-porn-star-eva-elfie-sponsorship",
-   "date": "2026-11-18T19:01:59+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "The tightest survival scrap for years? Why it's not too early to worry",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cj3vgp36z063o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-18T16:09:55+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Joint-record six referee errors in last Premier League weekend",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c69q8jy924y4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-18T12:38:38+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Netflix, Fox and the $2bn bid for the 2030 World Cup that could reshape live sports",
-   "link": "https://www.theguardian.com/football/2026/nov/18/netflix-fox-2030-world-cup-television-rights",
-   "date": "2026-11-18T12:01:00+00:00",
    "pred": false
   },
   {

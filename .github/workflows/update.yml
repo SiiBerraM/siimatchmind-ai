@@ -20,12 +20,12 @@ jobs:
         run: |
           cd backend
           python importer.py --source football-data --competition PL,ELC,BL1,SA,PD,FL1,DED,PPL,BSA,CL,EC,WC
-      - name: Import Highlightly (Arabic and women's leagues)
+      - name: Import Highlightly (Arabic, women's and youth leagues)
         env:
           HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
         run: |
           cd backend
-          for L in 199067 262041 170984 256935 260339 38228 121626 55248 70566 119073 216938 595633; do
+          for L in 199067 262041 170984 256935 260339 38228 121626 55248 70566 119073 216938 595633 12698 758174 775194 630524 960712 598186; do
             python importer.py --source highlightly --hl-league $L --season 2026 || echo "::warning::league $L failed"
           done
       - name: Import national teams pools
@@ -33,7 +33,7 @@ jobs:
           HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
         run: |
           cd backend
-          python import_pools.py --active || echo "::warning::pools failed"
+          python import_pools.py --active --reserve 10 || echo "::warning::pools failed"
       - name: Track predictions
         run: |
           cd backend

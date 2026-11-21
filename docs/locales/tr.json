@@ -246,7 +246,7 @@
  "league.hl121626": "Liga F (İspanya)",
  "league.hl55248": "D1 Féminine (Fransa)",
  "league.hl70566": "Frauen-Bundesliga (Almanya)",
- "league.hl119073": "Kadınlar Serie A (İtalya)",
+ "league.hl119073": "Serie A Kadınlar (İtalya)",
  "league.hl216938": "NWSL (ABD)",
  "league.hl595633": "Kadınlar Championship (İngiltere)",
  "league.hl120775": "Segunda División (İspanya)",
@@ -264,6 +264,15 @@
  "league.hl171835": "Botola 2 (Fas)",
  "league.hl62056": "Serie B (Brezilya)",
  "league.hl76523": "Eerste Divisie (Hollanda)",
- "league.hl630524": "Brasileiro U20 (Brezilya)",
- "league.hl960712": "Brasileiro U17 (Brezilya)"
+ "league.hl630524": "Brasileiro U20",
+ "league.hl960712": "Brasileiro U17",
+ "league.hlnatM": "Milli takımlar (erkek)",
+ "league.hlnatU23": "Milli takımlar U21/U23",
+ "league.hlnatU20": "Milli takımlar U19/U20",
+ "league.hlnatU17": "Milli takımlar U17",
+ "league.hlnatW": "Milli takımlar (kadın)",
+ "league.hl12698": "UEFA Gençlik Ligi",
+ "league.hl758174": "U20 Elit Ligi",
+ "league.hl775194": "Viareggio Kupası (gençler)",
+ "league.hl598186": "Premier League 2 (İngiltere)"
 }

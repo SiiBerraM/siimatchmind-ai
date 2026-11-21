@@ -248,7 +248,7 @@
  "league.hl70566": "Frauen-Bundesliga (Alemania)",
  "league.hl119073": "Serie A femenina (Italia)",
  "league.hl216938": "NWSL (EE. UU.)",
- "league.hl595633": "Women’s Championship (Inglaterra)",
+ "league.hl595633": "Championship femenino (Inglaterra)",
  "league.hl120775": "Segunda División (España)",
  "league.hl116520": "Serie B (Italia)",
  "league.hl68013": "2. Bundesliga (Alemania)",
@@ -264,6 +264,15 @@
  "league.hl171835": "Botola 2 (Marruecos)",
  "league.hl62056": "Serie B (Brasil)",
  "league.hl76523": "Eerste Divisie (Países Bajos)",
- "league.hl630524": "Brasileiro U20 (Brasil)",
- "league.hl960712": "Brasileiro U17 (Brasil)"
+ "league.hl630524": "Brasileiro Sub-20",
+ "league.hl960712": "Brasileiro Sub-17",
+ "league.hlnatM": "Selecciones (hombres)",
+ "league.hlnatU23": "Selecciones U21/U23",
+ "league.hlnatU20": "Selecciones U19/U20",
+ "league.hlnatU17": "Selecciones U17",
+ "league.hlnatW": "Selecciones (mujeres)",
+ "league.hl12698": "Liga Juvenil de la UEFA",
+ "league.hl758174": "Liga Élite Sub-20",
+ "league.hl775194": "Copa Viareggio (juvenil)",
+ "league.hl598186": "Premier League 2 (Inglaterra)"
 }

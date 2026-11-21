@@ -1,12 +1,212 @@
 {
- "updated": "2026-11-21T13:16:31.223571+00:00",
+ "updated": "2026-11-21T20:46:58.662975+00:00",
  "items": [
   {
    "lang": "en",
+   "source": "BBC Sport",
+   "title": "AC Milan monitoring Man Utd's Fernandes - Sunday's gossip",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cq8j4e8nlvm1o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T20:35:12+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le plein de confiance avant Monaco : les Hearts cartonnent contre Dundee et mettent fin à une série de 4 matches sans victoire",
+   "link": "https://www.lequipe.fr/Football/Actualites/Le-plein-de-confiance-avant-monaco-les-hearts-cartonnent-contre-dundee-et-mettent-fin-a-une-serie-de-4-matches-sans-victoire/1745213#at_medium=RSS_feeds",
+   "date": "2026-11-21T20:26:57+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
    "source": "The Guardian",
-   "title": "Manchester City v Fulham: Premier League – live",
-   "link": "https://www.theguardian.com/football/live/2026/nov/21/manchester-city-v-fulham-premier-league-live",
-   "date": "2026-11-21T12:59:44+00:00",
+   "title": "European football: Doué carried off for PSG while Kane vows to return fresh",
+   "link": "https://www.theguardian.com/football/2026/nov/21/european-football-borussia-dortmund-psg-real-madrid",
+   "date": "2026-11-21T20:25:53+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Doué : les larmes, la douleur et les questions",
+   "link": "https://www.lequipe.fr/Football/Article/Apres-la-grave-blessure-de-doue-lors-de-nice-psg-la-douleur-les-larmes-et-les-interrogations/1745212#at_medium=RSS_feeds",
+   "date": "2026-11-21T20:22:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Le Séville FC prive le Betis du podium de la Liga en égalisant dans le temps additionnel lors du derby",
+   "link": "https://www.lequipe.fr/Football/Actualites/Le-seville-fc-prive-le-betis-du-podium-de-la-liga-en-egalisant-dans-le-temps-additionnel-lors-du-derby/1745209#at_medium=RSS_feeds",
+   "date": "2026-11-21T20:11:10+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Nine wins in a row - Bournemouth & Evanilson continue to make history",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c6p9d102k4mdo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T20:07:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Scottish Premiership roundup: Celtic sweep St Mirren aside to strengthen grip at top",
+   "link": "https://www.theguardian.com/football/2026/nov/21/scottish-premiership-roundup-celtic-sweep-st-mirren-aside-to-strengthen-grip-at-top",
+   "date": "2026-11-21T20:05:28+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Strasbourg fête ses 120 ans avant la réception de Brest",
+   "link": "https://www.lequipe.fr/Football/Actualites/Strasbourg-fete-ses-120-ans-avant-la-reception-de-brest/1745202#at_medium=RSS_feeds",
+   "date": "2026-11-21T20:01:07+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Pochettino needs New Manager Bounce to break torrid Manchester United turnover | Jonathan Wilson",
+   "link": "https://www.theguardian.com/football/2026/nov/21/pochettino-needs-new-manager-bounce-to-break-torrid-manchester-united-turnover",
+   "date": "2026-11-21T20:00:06+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Les notes de Nice-PSG : Clauss - Hakimi, la droite caviar",
+   "link": "https://www.lequipe.fr/Football/Article/Les-notes-de-nice-psg-clauss-hakimi-la-droite-caviar/1745201#at_medium=RSS_feeds",
+   "date": "2026-11-21T20:00:01+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Arsenal go six points clear after lively draw at Newcastle",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cm702zzl66l6o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:59:35+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Evanilson strikes again as Bournemouth beat Forest",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cm4gn997yry2o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:59:17+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Leeds dominate Chelsea for first Stamford Bridge win since 1999",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c3ewvkk4qgxjo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:59:13+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Man City drop points to Fulham despite superb Anderson volley",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c30rkq9xyk8eo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:59:08+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Teenager Williams-Barnett shines as Spurs beat Ipswich",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c3174qq2j82zo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:59:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Villa's home woes continue as Sunderland earn point",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c5j9m227l42do?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:58:56+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Coventry beat Palace in Frank's first game after late own goal",
+   "link": "https://www.bbc.co.uk/sport/football/videos/c8wy5ddky5n9o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:58:52+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Avant la redoutée grave blessure de Désiré Doué, les plus longues absences au PSG sous l'ère Luis Enrique",
+   "link": "https://www.lequipe.fr/Football/Actualites/Avant-la-grave-blessure-de-khvitcha-kvaratskhelia-les-plus-longues-absences-au-psg-sous-l-ere-luis-enrique/1737450#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:50:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Raya injured but Madueke rescues point for Arsenal in seesaw Newcastle draw",
+   "link": "https://www.theguardian.com/football/2026/nov/21/newcastle-arsenal-premier-league-match-report",
+   "date": "2026-11-21T19:47:11+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Premier League : le leader Arsenal évite le pire à Newcastle et décroche un nul après un match déroutant",
+   "link": "https://www.lequipe.fr/Football/Actualites/Arsenal-evite-le-pire-a-newcastle-et-decroche-un-nul-apres-un-match-deroutant/1745196#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:31:11+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Who was 'a consistent threat'? Newcastle v Arsenal player ratings",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cq4gn97e8ee4o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:29:48+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Simeone : «Passer à un niveau encore supérieur»",
+   "link": "https://www.lequipe.fr/Football/Video/Liga-atletico-de-madrid-diego-simeone-passer-a-un-niveau-encore-superieur/20246036#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:23:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Olivier Pantaloni, entraîneur de Nice, à propos de Désiré Doué, blessé : « Même si c'est un adversaire, nous le respectons et nous l'admirons »",
+   "link": "https://www.lequipe.fr/Football/Actualites/Olivier-pantaloni-entraineur-de-nice-a-propos-de-desire-doue-blesse-meme-si-c-est-un-adversaire-nous-le-respectons-et-nous-l-admirons/1745193#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:22:42+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'The world got to see today' - who is new Spurs star Williams-Barnett?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cm9d7jg50e12o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:21:01+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "‘Fragile’ Chelsea must toughen up after Leeds humiliation, admits Xabi Alonso",
+   "link": "https://www.theguardian.com/football/2026/nov/21/chelsea-leeds-premier-league-match-report",
+   "date": "2026-11-21T19:20:51+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Montpellier arrache la victoire en fin de rencontre, Nantes remercie Chengshu Wu",
+   "link": "https://www.lequipe.fr/Football/Actualites/Montpellier-arrache-la-victoire-en-fin-de-rencontre-nantes-remercie-chengshu-wu/1745192#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:20:49+00:00",
    "pred": false
   },
   {
@@ -14,23 +214,159 @@
    "source": "L'Equipe",
    "title": "Vinicius ou Diomandé, un casse-tête pour Mourinho ?",
    "link": "https://www.lequipe.fr/Football/Article/La-place-de-vinicius-menacee-par-yan-diomande-un-casse-tete-pour-le-real-madrid-on-a-besoin-de-lui-et-on-va-continuer-de-l-aider/1744977#at_medium=RSS_feeds",
-   "date": "2026-11-21T12:40:00+00:00",
+   "date": "2026-11-21T19:18:00+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "Manchester City :",
-   "link": "https://www.lequipe.fr/Football/Actualites/Manchester-city/1745092#at_medium=RSS_feeds",
-   "date": "2026-11-21T12:39:03+00:00",
+   "title": "Sixième victoire en six matches de Régional 1 pour les Girondins de Bordeaux, provisoirement leaders de leur poule",
+   "link": "https://www.lequipe.fr/Football/Actualites/Sixieme-victoire-en-six-matches-de-regional-1-pour-les-girondins-de-bordeaux-provisoirement-leaders-de-leur-poule/1745190#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:16:17+00:00",
    "pred": false
   },
   {
    "lang": "fr",
    "source": "L'Equipe",
-   "title": "En panne de résultats en Ligue 1, Monaco en 3-4-3 contre Auxerre ?",
-   "link": "https://www.lequipe.fr/Football/Actualites/En-panne-de-resultats-en-ligue-1-monaco-en-3-4-3-contre-auxerre/1745088#at_medium=RSS_feeds",
-   "date": "2026-11-21T12:30:00+00:00",
+   "title": "Comment Brighton a bâti l'effectif le plus cosmopolite du Championnat",
+   "link": "https://www.lequipe.fr/Football/Article/-explorer-la-ou-les-autres-ne-regardent-pas-comment-brighton-a-bati-l-effectif-le-plus-cosmopolite-de-premier-league/1744784#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:15:00+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Imbroglio en Ligue 2 : les supporters de l'AS Saint-Étienne ont dû faire demi-tour et ne se sont finalement pas rendus à Reims",
+   "link": "https://www.lequipe.fr/Football/Actualites/Imbroglio-en-ligue-2-les-supporters-de-l-as-saint-etienne-ont-du-faire-demi-tour-et-ne-se-sont-finalement-pas-rendus-a-reims/1745189#at_medium=RSS_feeds",
+   "date": "2026-11-21T19:08:52+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'Fragile' and 'miles off it' - Alonso's Chelsea honeymoon is over",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cwe8944d004yo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T19:04:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "fr",
+   "source": "L'Equipe",
+   "title": "Luis Enrique, l'entraîneur du PSG : « Désiré Doué reviendra deux fois plus fort »",
+   "link": "https://www.lequipe.fr/Football/Actualites/Luis-enrique-l-entraineur-du-psg-desire-doue-reviendra-deux-fois-plus-fort/1745187#at_medium=RSS_feeds",
+   "date": "2026-11-21T18:57:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Keating stars as Liverpool hold high-flying Chelsea to goalless draw",
+   "link": "https://www.bbc.co.uk/sport/football/videos/cmde1ll6pgj3o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T18:34:55+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "'Officials can't use common sense' - was Rogers handball correct?",
+   "link": "https://www.bbc.co.uk/sport/football/articles/c50md981n277o?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T18:30:22+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "France 24 Arabic",
+   "title": "بطولة فرنسا: لاعب سان جرمان ديزيريه دويه يتعرض لإصابة في الركبة ويغادر الملعب على نقالة",
+   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261121-%D8%A8%D8%B7%D9%88%D9%84%D8%A9-%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%B3%D8%A7%D9%86-%D8%AC%D8%B1%D9%85%D8%A7%D9%86-%D8%AF%D9%8A%D8%B2%D9%8A%D8%B1%D9%8A%D9%87-%D8%AF%D9%88%D9%8A%D9%87-%D8%A5%D8%B5%D8%A7%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D8%B9%D8%A8-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85",
+   "date": "2026-11-21T18:23:47+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Championship roundup: Strelec sends Middlesbrough top; 10-man Stoke go second",
+   "link": "https://www.theguardian.com/football/2026/nov/21/championship-roundup-southampton-birmingham-middlesbrough-swansea",
+   "date": "2026-11-21T17:37:09+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Aston Villa held at home as dogged Sunderland battle for Régis Le Bris",
+   "link": "https://www.theguardian.com/football/2026/nov/21/aston-villa-sunderland-premier-league-match-report",
+   "date": "2026-11-21T17:32:34+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Evanilson and Kluivert sink Forest to earn Bournemouth ninth win in a row",
+   "link": "https://www.theguardian.com/football/2026/nov/21/bournemouth-nottingham-forest-premier-league-match-report",
+   "date": "2026-11-21T17:10:24+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Coventry edge thriller to keep Crystal Palace bottom and ruin Thomas Frank’s start",
+   "link": "https://www.theguardian.com/football/2026/nov/21/coventry-crystal-palace-premier-league-match-report",
+   "date": "2026-11-21T17:09:02+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "اتحاد طنجة يطمئن على المدرب بنشيخة",
+   "link": "https://www.hespress.com/%d8%a7%d8%aa%d8%ad%d8%a7%d8%af-%d8%b7%d9%86%d8%ac%d8%a9-%d9%8a%d8%b7%d9%85%d8%a6%d9%86-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d9%85%d8%af%d8%b1%d8%a8-%d8%a8%d9%86%d8%b4%d9%8a%d8%ae%d8%a9-1843440.html",
+   "date": "2026-11-21T16:58:39+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Teenage ace Williams-Barnett puts Tottenham on path to win over Ipswich",
+   "link": "https://www.theguardian.com/football/2026/nov/21/tottenham-ipswich-premier-league-match-report",
+   "date": "2026-11-21T16:58:31+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "BBC Sport",
+   "title": "Fernandez dropped, Anderson scores - Man City's £327m midfield dilemma",
+   "link": "https://www.bbc.co.uk/sport/football/articles/cxe8944j188yo?at_medium=RSS&at_campaign=rss",
+   "date": "2026-11-21T16:07:19+00:00",
+   "pred": false
+  },
+  {
+   "lang": "ar",
+   "source": "Hespress Sport",
+   "title": "\"منتخب الشاطئية\" يستعد لنهائيات الكان",
+   "link": "https://www.hespress.com/%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d8%b4%d8%a7%d8%b7%d8%a6%d9%8a%d8%a9-%d9%8a%d8%b3%d8%aa%d8%b9%d8%af-%d9%84%d9%86%d9%87%d8%a7%d8%a6%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%83%d8%a7%d9%86-1843364.html",
+   "date": "2026-11-21T15:40:48+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Liverpool keeper Keating holds leaders Chelsea at bay in scoreless WSL draw",
+   "link": "https://www.theguardian.com/football/2026/nov/21/liverpool-chelsea-london-city-lionesses-crystal-palace-wsl",
+   "date": "2026-11-21T15:03:50+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Elliot Anderson halts Manchester City’s losing run but boos greet Fulham draw",
+   "link": "https://www.theguardian.com/football/2026/nov/21/manchester-city-fulham-premier-league-match-report",
+   "date": "2026-11-21T14:34:03+00:00",
+   "pred": false
+  },
+  {
+   "lang": "en",
+   "source": "The Guardian",
+   "title": "Elon Musk’s lawyer joining Tom Brady in buying Chelsea stake",
+   "link": "https://www.theguardian.com/football/2026/nov/21/elon-musk-lawyer-tom-brady-nfl-chelsea-stake",
+   "date": "2026-11-21T14:20:05+00:00",
    "pred": false
   },
   {
@@ -42,131 +378,11 @@
    "pred": false
   },
   {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Nouveau désaveu pour Philippe Diallo : après la Conmebol, la CAF annonce aussi son soutien à Gianni Infantino pour la présidence de la FIFA",
-   "link": "https://www.lequipe.fr/Football/Actualites/Nouveau-desaveu-pour-philippe-diallo-apres-la-conmebol-la-caf-annonce-aussi-son-soutien-a-gianni-infantino-pour-la-presidence-de-la-fifa/1745087#at_medium=RSS_feeds",
-   "date": "2026-11-21T12:13:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Cela n'était arrivé qu'à deux joueurs avant lui : Harry Kane gravement blessé juste après avoir été sacré Ballon d'Or, un cas très rare",
-   "link": "https://www.lequipe.fr/Football/Actualites/Cela-n-etait-arrive-qu-a-deux-joueurs-avant-lui-harry-kane-gravement-blesse-juste-apres-avoir-ete-designe-ballon-d-or-un-cas-tres-rare/1745084#at_medium=RSS_feeds",
-   "date": "2026-11-21T12:01:21+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Un 986e but, un penalty manqué et une défaite pour Cristiano Ronaldo",
-   "link": "https://www.lequipe.fr/Football/Video/Saudi-pro-league-un-986e-but-un-penalty-manque-et-une-defaite-pour-cristiano-avec-al-nassr-riyad-contre-al-ahli/20246014#at_medium=RSS_feeds",
-   "date": "2026-11-21T11:53:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Joueurs floués par leur conseiller financier : l'espoir Jérémy Mathieu",
-   "link": "https://www.lequipe.fr/Football/Article/Derriere-le-combat-de-jeremy-mathieu-contre-son-ex-conseiller-financier-l-espoir-de-footballeurs-floues/1744762#at_medium=RSS_feeds",
-   "date": "2026-11-21T11:29:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Absent plusieurs mois, Harry Kane se montre fataliste après son opération : « Ce sont les hauts et les bas de la vie ! »",
-   "link": "https://www.lequipe.fr/Football/Actualites/Absent-plusieurs-mois-harry-kane-se-montre-fataliste-apres-son-operation-ce-sont-les-hauts-et-les-bas-de-la-vie/1745080#at_medium=RSS_feeds",
-   "date": "2026-11-21T11:13:44+00:00",
-   "pred": false
-  },
-  {
    "lang": "ar",
    "source": "France 24 Arabic",
    "title": "كرة القدم: هاري كاين يخضع لعملية جراحية ناجحة ويغيب عن الملاعب لعدة أشهر",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261121-%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%82%D8%AF%D9%85-%D9%87%D8%A7%D8%B1%D9%8A-%D9%83%D8%A7%D9%8A%D9%86-%D8%A7%D9%84%D9%81%D8%A7%D8%A6%D8%B2-%D8%A8%D8%A7%D9%84%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A%D8%A9-2026-%D8%B3%D9%8A%D8%BA%D9%8A%D8%A8-%D8%B9%D9%86-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%B9%D8%A8-%D9%84%D8%B9%D8%AF%D8%A9-%D8%A3%D8%B4%D9%87%D8%B1",
    "date": "2026-11-21T10:59:19+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Le poids, une question à ne pas prendre à la légère",
-   "link": "https://www.lequipe.fr/Football/Article/-meme-si-on-donne-des-conseils-au-joueur-c-est-lui-qui-decide-le-poids-des-footballeurs-une-question-a-ne-pas-prendre-a-la-legere/1744548#at_medium=RSS_feeds",
-   "date": "2026-11-21T10:51:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Bezahaf, le minot patient et travailleur qui a su saisir sa chance",
-   "link": "https://www.lequipe.fr/Football/Article/-il-montre-qu-on-peut-compter-sur-lui-minot-patient-et-travailleur-kelyann-bezahaf-a-su-saisir-sa-chance-pour-s-imposer-dans-l-effectif-pro-de-l-om/1744950#at_medium=RSS_feeds",
-   "date": "2026-11-21T10:35:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Kompany : «Affronter ces blessures avec le couteau entre les dents»",
-   "link": "https://www.lequipe.fr/Football/Video/Bundesliga-bayern-munich-vincent-kompany-face-a-l-hecatombe-qui-touche-son-effectif-nous-affrontons-ces-blessures-avec-le-couteau-entre-les-dents/20246010#at_medium=RSS_feeds",
-   "date": "2026-11-21T10:32:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Strasbourg : à quoi s'attendre avec Vitor Matos ?",
-   "link": "https://www.lequipe.fr/Football/Article/Quelles-sont-les-idees-de-jeu-de-vitor-matos-le-nouvel-entraineur-de-strasbourg/1744684#at_medium=RSS_feeds",
-   "date": "2026-11-21T09:57:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "Le déplacement des supporters de Saint-Étienne à Reims en suspens après une décision du Conseil d'État qui l'autorise sous certaines conditions",
-   "link": "https://www.lequipe.fr/Football/Actualites/Le-deplacement-des-supporters-de-saint-etienne-a-reims-en-suspens-apres-une-decision-du-conseil-d-etat-qui-l-autorise-sous-certaines-conditions/1745059#at_medium=RSS_feeds",
-   "date": "2026-11-21T09:10:04+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "L'incroyable but contre son camp de Francisco Moura en défaveur du FC Porto face à une équipe de 3e division",
-   "link": "https://www.lequipe.fr/Football/Actualites/L-incroyable-but-contre-son-camp-de-francisco-moura-en-defaveur-du-fc-porto-face-a-une-equipe-de-3e-division/1745055#at_medium=RSS_feeds",
-   "date": "2026-11-21T08:15:03+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "The Chelsea loanee turning heads and Championship defenders at 17",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c6d91xj9vee3o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-21T08:05:46+00:00",
-   "pred": false
-  },
-  {
-   "lang": "fr",
-   "source": "L'Equipe",
-   "title": "À quelle heure et sur quelle chaîne voir la finale de la Copa Sudamericana Atlético Mineiro - Boca Juniors ?",
-   "link": "https://www.lequipe.fr/Football/Actualites/A-quelle-heure-et-sur-quelle-chaine-voir-la-finale-de-la-copa-sudamericana/1744633#at_medium=RSS_feeds",
-   "date": "2026-11-21T08:00:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Who am I? Plus today's other quizzes",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cjwy5d3lxvkzo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-21T06:50:31+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Jeers, injuries and doubters - White's journey back to the top",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cv7028xeler2o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-21T06:17:32+00:00",
    "pred": false
   },
   {
@@ -178,195 +394,11 @@
    "pred": false
   },
   {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "المنتخب المغربي لكرة القدم لمبتوري الأطراف يصنع التاريخ في \"المونديال\"",
-   "link": "https://www.hespress.com/%d8%a7%d9%84%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%a7%d9%84%d9%85%d8%ba%d8%b1%d8%a8%d9%8a-%d9%84%d9%83%d8%b1%d8%a9-%d8%a7%d9%84%d9%82%d8%af%d9%85-%d9%84%d9%85%d8%a8%d8%aa%d9%88%d8%b1%d9%8a-%d8%a7%d9%84-1843131.html",
-   "date": "2026-11-20T23:19:36+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Cost of Man Utd hiring and firing managers nears £100m",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwd01n9z23x5o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T23:18:16+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Bayern Munich confirm Harry Kane ‘out for next few months’ with ankle injury",
-   "link": "https://www.theguardian.com/football/2026/nov/20/harry-kane-ankle-ligament-injury-bayern-munich-england",
-   "date": "2026-11-20T22:43:40+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "NFL great Brady could buy Chelsea stake",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cmg46k97k92do?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T22:36:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "باها: هدف \"الأشبال\" التتويج بالمونديال",
-   "link": "https://www.hespress.com/%d8%a8%d8%a7%d9%87%d8%a7-%d9%87%d8%af%d9%81-%d8%a7%d9%84%d8%a3%d8%b4%d8%a8%d8%a7%d9%84-%d8%a7%d9%84%d8%aa%d8%aa%d9%88%d9%8a%d8%ac-%d8%a8%d8%a7%d9%84%d9%85%d9%88%d9%86%d8%af%d9%8a%d8%a7%d9%84-1843115.html",
-   "date": "2026-11-20T22:32:47+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Premier League news: Moyes demands more from Grealish, Iraola wary of United threat",
-   "link": "https://www.theguardian.com/football/2026/nov/20/premier-league-news-everton-jack-grealish-manchester-city-liverpool-chelsea",
-   "date": "2026-11-20T22:31:19+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Lampard calls for fairness after Coventry penalty row",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c678299n1018o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T22:04:19+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Shevchenko lying about drugs test claims - Mudryk",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cjn502n9vqp4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T21:54:17+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Watch: Inverness and Ayr play out goalless draw",
-   "link": "https://www.bbc.co.uk/sport/football/videos/c6zxvnzjnne4o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T21:47:58+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "باها رجل مباراة \"الأشبال\" وجزر فيجي",
-   "link": "https://www.hespress.com/%d8%a8%d8%a7%d9%87%d8%a7-%d8%b1%d8%ac%d9%84-%d9%85%d8%a8%d8%a7%d8%b1%d8%a7%d8%a9-%d8%a7%d9%84%d8%a3%d8%b4%d8%a8%d8%a7%d9%84-%d9%88%d8%ac%d8%b2%d8%b1-%d9%81%d9%8a%d8%ac%d9%8a-1843074.html",
-   "date": "2026-11-20T21:17:16+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Osimhen keen on Man Utd move - Saturday's gossip",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c60qj1924wyeo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T20:06:51+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Washington Spirit provide hope and joy in a city that badly needs it",
-   "link": "https://www.theguardian.com/football/2026/nov/20/washington-spirit-provide-hope-and-joy-in-a-city-that-badly-needs-it",
-   "date": "2026-11-20T19:56:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Training hard and biding his time, Dele Alli has not given up on football yet",
-   "link": "https://www.theguardian.com/football/2026/nov/20/dele-alli-tottenham-mk-dons-england",
-   "date": "2026-11-20T19:00:37+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Pochettino the connector: will human touch lift Manchester United?",
-   "link": "https://www.theguardian.com/football/2026/nov/20/mauricio-pochettino-manchester-united-manager-liverpool-premier-league",
-   "date": "2026-11-20T19:00:37+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "Hespress Sport",
-   "title": "\"أشبال الأطلس\" يدكون شباك منتخب جزر فيجي بستة أهداف في المونديال",
-   "link": "https://www.hespress.com/%d8%a3%d8%b4%d8%a8%d8%a7%d9%84-%d8%a7%d9%84%d8%a3%d8%b7%d9%84%d8%b3-%d9%8a%d8%af%d9%83%d9%88%d9%86-%d8%b4%d8%a8%d8%a7%d9%83-%d9%85%d9%86%d8%aa%d8%ae%d8%a8-%d8%ac%d8%b2%d8%b1-%d9%81%d9%8a%d8%ac-1842833.html",
-   "date": "2026-11-20T17:57:31+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Pochettino’s fiery start, plus England v All Blacks and ATP Finals finale – follow with us",
-   "link": "https://www.theguardian.com/sport/2026/nov/20/pochettinos-fiery-start-plus-england-v-all-blacks-and-atp-finals-finale-follow-with-us",
-   "date": "2026-11-20T17:27:24+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Man Utd fan criticism has gone too far at times - Berrada",
-   "link": "https://www.bbc.co.uk/sport/football/articles/cwz0k32j9kr9o?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T16:55:11+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Tom Brady in talks over buying Chelsea stake after Birmingham City exit",
-   "link": "https://www.theguardian.com/football/2026/nov/20/tom-brady-chelsea-talks-stake-birmingham-city",
-   "date": "2026-11-20T14:50:09+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Arteta warns Arsenal players over FPL team news leak",
-   "link": "https://www.bbc.co.uk/sport/football/articles/ck62pz5r16pro?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T14:08:55+00:00",
-   "pred": true
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Key questions as Scottish Premiership returns",
-   "link": "https://www.bbc.co.uk/sport/football/articles/c50mdwnn90jyo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-20T13:53:22+00:00",
-   "pred": false
-  },
-  {
    "lang": "en",
    "source": "The Guardian",
    "title": "Arsenal’s Lisa Baum: ‘I believe in us. I think it’s all about the small margins’",
    "link": "https://www.theguardian.com/football/2026/nov/20/arsenal-lisa-baum-germany-brother-dennis",
    "date": "2026-11-20T13:00:29+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "The male footballers best associated with each shirt number – the readers’ edition",
-   "link": "https://www.theguardian.com/football/ng-interactive/2026/nov/20/male-footballers-best-associated-each-shirt-number-readers-edit",
-   "date": "2026-11-20T06:00:24+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Premier League: 10 things to look out for this weekend",
-   "link": "https://www.theguardian.com/football/2026/nov/20/premier-league-10-things-to-look-out-for-this-weekend",
-   "date": "2026-11-20T00:00:15+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Lyon outclass Arsenal for Champions League win",
-   "link": "https://www.bbc.co.uk/sport/football/videos/c3dx1n4xp1xxo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-19T22:56:07+00:00",
    "pred": false
   },
   {
@@ -383,22 +415,6 @@
    "title": "المنتخب المغربي يرتقي إلى المركز الخامس عالميا ويحقق أفضل ترتيب في تاريخه",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261119-%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A-%D9%8A%D8%B1%D8%AA%D9%82%D9%8A-%D8%A7%D9%84%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%AE%D8%A7%D9%85%D8%B3-%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A7-%D9%8A%D8%AD%D9%82%D9%82-%D8%A3%D9%81%D8%B6%D9%84-%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-%D9%81%D9%8A%D9%81%D8%A7",
    "date": "2026-11-19T08:11:25+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Buurman rescues late Chelsea win against PSG",
-   "link": "https://www.bbc.co.uk/sport/football/videos/cjy5xkq5wwrgo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-18T22:13:49+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "BBC Sport",
-   "title": "Hemp and Shaw star as Manchester City get vital win at Hacken",
-   "link": "https://www.bbc.co.uk/sport/football/videos/c32l50p1yk8vo?at_medium=RSS&at_campaign=rss",
-   "date": "2026-11-18T20:25:40+00:00",
    "pred": false
   },
   {
@@ -479,14 +495,6 @@
    "title": "تصفيات أمم أفريقيا 2027: الكونغو الديمقراطية وساحل العاج تقتربان من التأهل والسودان يتعثر",
    "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261112-%D8%AA%D8%B5%D9%81%D9%8A%D8%A7%D8%AA-%D8%A3%D9%85%D9%85-%D8%A5%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-2027-%D8%B3%D8%A7%D8%AD%D9%84-%D8%A7%D9%84%D8%B9%D8%A7%D8%AC-%D8%A7%D9%84%D9%83%D9%88%D9%86%D8%BA%D9%88-%D8%A7%D9%84%D8%AF%D9%8A%D9%85%D9%82%D8%B1%D8%A7%D8%B7%D9%8A%D8%A9-%D8%BA%D8%A7%D9%86%D8%A7-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86-%D8%A7%D9%84%D8%B3%D9%86%D8%BA%D8%A7%D9%84",
    "date": "2026-11-12T23:28:48+00:00",
-   "pred": false
-  },
-  {
-   "lang": "ar",
-   "source": "France 24 Arabic",
-   "title": "دوري الأمم الأوروبية: إيطاليا تهزم فرنسا وإسبانيا تواصل انتصاراتها",
-   "link": "https://www.france24.com/ar/%D8%B1%D9%8A%D8%A7%D8%B6%D8%A9/20261112-%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D8%A9-%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A7-%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D8%B2%D9%8A%D8%AF%D8%A7%D9%86-%D8%A5%D8%B3%D8%A8%D8%A7%D9%86%D9%8A%D8%A7-%D8%A5%D9%86%D9%83%D9%84%D8%AA%D8%B1%D8%A7-%D8%B1%D8%A8%D8%B9-%D8%A7%D9%84%D9%86%D9%87%D8%A7%D8%A6%D9%8A",
-   "date": "2026-11-12T22:57:10+00:00",
    "pred": false
   },
   {
@@ -727,30 +735,6 @@
    "title": "Türkiye, UEFA Uluslar Ligi'nde Fransa ile karşılaşacak",
    "link": "https://www.trthaber.com/haber/spor/turkiye-uefa-uluslar-liginde-fransa-ile-karsilasacak-957937.html",
    "date": "2026-09-24T06:26:00+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Football Daily newsletter: our free football email",
-   "link": "https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up",
-   "date": "2022-11-14T09:05:50+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Moving the Goalposts newsletter: our free women’s football email",
-   "link": "https://www.theguardian.com/football/2022/mar/22/sign-up-for-our-new-womens-football-newsletter-moving-the-goalposts",
-   "date": "2022-03-22T16:57:35+00:00",
-   "pred": false
-  },
-  {
-   "lang": "en",
-   "source": "The Guardian",
-   "title": "Sign up for the Recap newsletter: our free sport highlights email",
-   "link": "https://www.theguardian.com/sport/2017/may/15/the-recap-sign-up-for-the-best-of-the-guardians-sport-coverage",
-   "date": "2017-05-15T11:00:43+00:00",
    "pred": false
   }
  ]

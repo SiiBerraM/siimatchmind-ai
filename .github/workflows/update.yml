@@ -20,12 +20,20 @@ jobs:
         run: |
           cd backend
           python importer.py --source football-data --competition PL,ELC,BL1,SA,PD,FL1,DED,PPL,BSA,CL,EC,WC
-      - name: Import Highlightly (Arabic leagues)
+      - name: Import Highlightly (Arabic and women's leagues)
         env:
           HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
         run: |
           cd backend
-          python importer.py --source highlightly --hl-league 199067,262041,170984,256935,260339,38228,121626,55248,70566,119073,216938,595633,630524,960712,120775,116520,68013,53546,35675,173537,123328,153113,109712,216087,171835,62056,124179,36526,76523 --season 2026 || echo "::warning::Highlightly import failed"
+          for L in 199067 262041 170984 256935 260339 38228 121626 55248 70566 119073 216938 595633; do
+            python importer.py --source highlightly --hl-league $L --season 2026 || echo "::warning::league $L failed"
+          done
+      - name: Import national teams pools
+        env:
+          HIGHLIGHTLY_KEY: ${{ secrets.HIGHLIGHTLY_KEY }}
+        run: |
+          cd backend
+          python import_pools.py --active || echo "::warning::pools failed"
       - name: Track predictions
         run: |
           cd backend
@@ -42,6 +50,7 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
           git status --short
           git add docs
+          if [ -d backend/pooldata ]; then git add backend/pooldata; fi
           git diff --cached --quiet || (git commit -m "Update static data" && git pull --rebase --autostash && git push)
       - name: Upload
         continue-on-error: true

@@ -36,6 +36,15 @@ POOLS = [
      [(7592, 2023), (749664, 2027), (789661, 2026), (567550, 2026), (785406, 2025), (633077, 2025), (922417, 2025), (885824, 2027), (788810, 2025),
       (761578, 2026), (891781, 2028), (1027090, 2025), (890930, 2024)]),
 ]
+def _para_comps():
+    f = os.path.join(B, "para_leagues.json")
+    try:
+        return [tuple(x) for x in json.load(open(f, encoding="utf-8"))]
+    except Exception:
+        return []
+
+
+POOLS.append(("hlpara", N("كرة القدم للمعاقين", "Para football (disability)", "Football handisport", "Fútbol adaptado", "Engelli futbolu"), _para_comps()))
 WOMEN = {
     "hl12698": N("دوري أبطال أوروبا للشباب", "UEFA Youth League", "Ligue des champions des jeunes", "Liga Juvenil de la UEFA", "UEFA Gençlik Ligi"),
     "hl758174": N("دوري النخبة تحت 20", "U20 Elite League", "Ligue élite U20", "Liga Élite Sub-20", "U20 Elit Ligi"),

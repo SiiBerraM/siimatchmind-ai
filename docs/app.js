@@ -144,16 +144,16 @@
     const ls = document.getElementById("leagueSel");
     if (!ls) return;
     LEAGUES.sort((a, b) => lname(a).localeCompare(lname(b), lang));
-    const SETS = { wom: new Set(["hl38228","hl121626","hl55248","hl70566","hl119073","hl216938","hl595633"]), yth: new Set(["hl12698","hl758174","hl775194","hl630524","hl960712","hl598186"]), nm: new Set(["hlnatM"]), ny: new Set(["hlnatU23","hlnatU20","hlnatU17"]), nw: new Set(["hlnatW"]) };
+    const SETS = { wom: new Set(["hl38228","hl121626","hl55248","hl70566","hl119073","hl216938","hl595633"]), yth: new Set(["hl12698","hl758174","hl775194","hl630524","hl960712","hl598186"]), nm: new Set(["hlnatM"]), ny: new Set(["hlnatU23","hlnatU20","hlnatU17"]), nw: new Set(["hlnatW"]), pa: new Set(["hlpara"]) };
     const GLS = {
-      ar: ["دوريات الرجال", "دوريات السيدات", "دوريات الشباب", "منتخبات الرجال", "منتخبات الشباب", "منتخبات السيدات"],
-      en: ["Men's leagues", "Women's leagues", "Youth leagues", "National teams (men)", "National youth teams", "National teams (women)"],
-      fr: ["Championnats masculins", "Championnats féminins", "Championnats de jeunes", "Équipes nationales (hommes)", "Sélections de jeunes", "Équipes nationales (femmes)"],
-      es: ["Ligas masculinas", "Ligas femeninas", "Ligas juveniles", "Selecciones (hombres)", "Selecciones juveniles", "Selecciones (mujeres)"],
-      tr: ["Erkek ligleri", "Kadın ligleri", "Gençlik ligleri", "Milli takımlar (erkek)", "Gençlik milli takımları", "Milli takımlar (kadın)"]
+      ar: ["دوريات الرجال", "دوريات السيدات", "دوريات الشباب", "منتخبات الرجال", "منتخبات الشباب", "منتخبات السيدات", "كرة القدم للمعاقين"],
+      en: ["Men's leagues", "Women's leagues", "Youth leagues", "National teams (men)", "National youth teams", "National teams (women)", "Para football (disability)"],
+      fr: ["Championnats masculins", "Championnats féminins", "Championnats de jeunes", "Équipes nationales (hommes)", "Sélections de jeunes", "Équipes nationales (femmes)", "Football handisport"],
+      es: ["Ligas masculinas", "Ligas femeninas", "Ligas juveniles", "Selecciones (hombres)", "Selecciones juveniles", "Selecciones (mujeres)", "Fútbol adaptado"],
+      tr: ["Erkek ligleri", "Kadın ligleri", "Gençlik ligleri", "Milli takımlar (erkek)", "Gençlik milli takımları", "Milli takımlar (kadın)", "Engelli futbolu"]
     };
     const GL = GLS[lang] || GLS.en;
-    const grp = l => SETS.wom.has(l.code) ? 1 : SETS.yth.has(l.code) ? 2 : SETS.nm.has(l.code) ? 3 : SETS.ny.has(l.code) ? 4 : SETS.nw.has(l.code) ? 5 : 0;
+    const grp = l => SETS.wom.has(l.code) ? 1 : SETS.yth.has(l.code) ? 2 : SETS.nm.has(l.code) ? 3 : SETS.ny.has(l.code) ? 4 : SETS.nw.has(l.code) ? 5 : SETS.pa.has(l.code) ? 6 : 0;
     const opt = l => `<option value="${esc(l.code)}">${esc(lname(l))}</option>`;
     ls.innerHTML = GL.map((label, i) => { const g = LEAGUES.filter(l => grp(l) === i); return g.length ? `<optgroup label="${label}">${g.map(opt).join("")}</optgroup>` : ""; }).join("");
     ls.value = LEAGUE || ""; ls.hidden = LEAGUES.length < 2;

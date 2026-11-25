@@ -100,6 +100,34 @@
     }
   };
 
+  // ---------- ترجمة أسماء الفرق (القاموس: locales/teams.json؛ الاسم غير المعروف يبقى كما هو) ----------
+  let TNAMES = {};
+  const TSUF = /^(.+?) (Women|U17|U20|U21|U23)$/, TKEYS = new Set(["name", "home_name", "away_name", "opponent_name", "team", "a", "b"]);
+  function tn(name) {
+    if (lang === "en" || typeof name !== "string") return name;
+    const e = TNAMES[name];
+    if (e) return e[lang] || name;
+    const m = TSUF.exec(name), be = m && TNAMES[m[1]];
+    if (!be) return name;
+    const b = be[lang] || m[1], k = m[2], w = k === "Women", n = k.slice(1);
+    if (lang === "ar") return w ? b + " (سيدات)" : b + " تحت " + n;
+    if (lang === "fr") return b + (w ? " Féminin" : " " + k);
+    if (lang === "es") return b + (w ? " Femenino" : " Sub-" + n);
+    return b + (w ? " Kadın" : " " + k);
+  }
+  function trDeep(o) {
+    if (lang === "en" || !o || typeof o !== "object") return o;
+    if (Array.isArray(o)) return o.map(trDeep);
+    const r = {};
+    for (const k in o) {
+      const v = o[k];
+      if (typeof v === "string" && TKEYS.has(k)) { r[k] = tn(v); if (k === "name" && r[k] !== v) r._en = v; }
+      else r[k] = trDeep(v);
+    }
+    return r;
+  }
+  ["teams", "matches", "team", "standings", "analyze"].forEach(k => { const f = api[k]; api[k] = async (...a) => trDeep(await f(...a)); });
+
   // ---------- المفضلة والسجل والفرق المتابَعة: على الخادم إن سُجّل الدخول وإلا على الجهاز ----------
   const store = {
     read(k) { try { return JSON.parse(localStorage.getItem(k)) || []; } catch (e) { return []; } },
@@ -377,7 +405,7 @@
 
   async function pageTeams(q) {
     q = (q || "").trim();
-    const items = q ? teamsOf().filter(x => x.name.toLowerCase().indexOf(q.toLowerCase()) >= 0) : teamsOf();
+    const items = q ? teamsOf().filter(x => (x.name + " " + (x._en || "")).toLowerCase().indexOf(q.toLowerCase()) >= 0) : teamsOf();
     view.innerHTML = `<h1>${t("teams.title")}</h1><input type="search" id="q" placeholder="${t("teams.search")}" value="${esc(q)}" aria-label="${t("teams.search")}">
       <div id="tl">${items.length ? items.map(x => `<a class="tl" href="#/team/${esc(x.id)}"><span class="nm">${crest(x.name, x.logo)}<span>${esc(x.name)}</span></span><span class="muted">${t("teams.view")}</span></a>`).join("") : `<p class="empty">${t("teams.none")}</p>`}</div>`;
     const inp = document.getElementById("q");
@@ -548,8 +576,9 @@
       sel.innerHTML = LANGS.map(l => `<option value="${l.code}">${esc(l.name)}</option>`).join("");
       lang = pickLang(); sel.value = lang;
       await setLang(lang);
-      sel.onchange = async () => { await setLang(sel.value); route(); };
+      sel.onchange = async () => { await setLang(sel.value); TEAMS = await api.teams(); route(); };
       await detect();
+      try { TNAMES = window.SMM_TEAMS || await jget("locales/teams.json"); } catch (e) { }
       TEAMS = await api.teams();
       META = await api.meta();
       LEAGUES = await api.leagues();

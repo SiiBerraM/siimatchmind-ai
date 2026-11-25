@@ -153,7 +153,7 @@
       tr: ["Erkek ligleri", "Kadın ligleri", "Gençlik ligleri", "Milli takımlar (erkek)", "Gençlik milli takımları", "Milli takımlar (kadın)", "Engelli futbolu"]
     };
     const GL = GLS[lang] || GLS.en;
-    const grp = l => SETS.wom.has(l.code) ? 1 : SETS.yth.has(l.code) ? 2 : SETS.nm.has(l.code) ? 3 : SETS.ny.has(l.code) ? 4 : SETS.nw.has(l.code) ? 5 : SETS.pa.has(l.code) ? 6 : 0;
+    const grp = l => SETS.wom.has(l.code) ? 1 : SETS.yth.has(l.code) ? 2 : SETS.nm.has(l.code) ? 3 : SETS.ny.has(l.code) ? 4 : SETS.nw.has(l.code) ? 5 : SETS.pa.has(l.code) || String(l.code).startsWith("SF-") ? 6 : 0;
     const opt = l => `<option value="${esc(l.code)}">${esc(lname(l))}</option>`;
     ls.innerHTML = GL.map((label, i) => { const g = LEAGUES.filter(l => grp(l) === i); return g.length ? `<optgroup label="${label}">${g.map(opt).join("")}</optgroup>` : ""; }).join("");
     ls.value = LEAGUE || ""; ls.hidden = LEAGUES.length < 2;

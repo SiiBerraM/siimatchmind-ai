@@ -14,6 +14,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r backend/requirements.txt huggingface_hub
+      - name: Restore saved leagues
+        run: |
+          cd backend
+          python persist.py restore
       - name: Import football-data
         env:
           FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
@@ -55,6 +59,7 @@ jobs:
           git status --short
           git add docs
           if [ -d backend/pooldata ]; then git add backend/pooldata; fi
+          if [ -d backend/leaguedata ]; then git add backend/leaguedata; fi
           git diff --cached --quiet || (git commit -m "Update static data" && git pull --rebase --autostash && git push)
       - name: Upload
         continue-on-error: true

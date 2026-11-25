@@ -34,6 +34,10 @@ jobs:
         run: |
           cd backend
           python import_pools.py --active --reserve 10 || echo "::warning::pools failed"
+      - name: Import Sii-Football (disability football)
+        run: |
+          cd backend
+          python import_sii_football.py || echo "::warning::sii-football import failed"
       - name: Track predictions
         run: |
           cd backend

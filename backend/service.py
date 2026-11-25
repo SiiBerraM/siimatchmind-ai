@@ -193,7 +193,7 @@ def team_detail(team_id):
         "away": engine.summarize(engine.team_results(ms, team_id, 10, venue="away")),
         "last_results": [{**r, "opponent_name": names[r["opponent"]], "opponent_logo": logos.get(r["opponent"])} for r in res[:10]],
         "upcoming": [_match_view(m, names, logos) for m in upcoming],
-        "strength": {"attack": round(model.att[team_id], 2), "defense": round(1 / model.dfn[team_id], 2)},
+        "strength": {"attack": round(model.att.get(team_id, 1.0), 2), "defense": round(1 / model.dfn.get(team_id, 1.0), 2)},
         "stats": stats,
     }
 

@@ -78,6 +78,43 @@ def refresh_hl_once(client=None, log=lambda *_: None):
     return ok > 0
 
 
+def refresh_sf_once(log=lambda *_: None):
+    """يحدّث بيانات Sii-Football (رياضات ذوي الإعاقة) من رابطنا العام؛ لا يحتاج مفتاحًا ولا يمس المصادر الأخرى."""
+    try:
+        import import_sii_football as sf
+        latest = sf._get(sf.BASE + "latest.json")
+        comps = sf._get(sf.BASE + "api/v1/competitions.json")["data"]
+        rows, teams, leagues = sf.build(latest, comps)
+        if not rows:
+            raise ValueError("لا توجد مباريات صالحة")
+        sf.save(rows, teams, leagues)
+        with db.connect() as con:
+            if not db.kv_get(con, "kind"):
+                db.kv_set(con, "kind", "sii-football")
+            db.kv_set(con, "refresh_error_sf", "")
+            db.kv_set(con, "last_refresh_sf", _now())
+        return True
+    except Exception as e:
+        try:
+            with db.connect() as con:
+                db.kv_set(con, "refresh_error_sf", f"{_now()} {e}")
+        except Exception:
+            pass
+        return False
+
+
+def _stale_only(hours, key):
+    with db.connect() as con:
+        last = db.kv_get(con, key)
+    if not last:
+        return True
+    try:
+        age = (datetime.now(timezone.utc) - datetime.fromisoformat(last)).total_seconds()
+    except ValueError:
+        return True
+    return age >= hours * 3600
+
+
 def _stale(hours, key="last_refresh"):
     with db.connect() as con:
         last = db.kv_get(con, key) or db.kv_get(con, "imported_at")
@@ -96,7 +133,9 @@ def start():
     hours = float(os.environ.get("SMM_REFRESH_HOURS", "6"))
     hl_hours = float(os.environ.get("SMM_HL_REFRESH_HOURS", "12"))     # حصة Highlightly: 100 طلب/يوم، فالفاصل أطول
     has_fd, has_hl = bool(os.environ.get("FOOTBALL_DATA_KEY")), bool(os.environ.get("HIGHLIGHTLY_KEY"))
-    if _started or not ((has_fd and hours > 0) or (has_hl and hl_hours > 0)):
+    sf_hours = float(os.environ.get("SMM_SF_REFRESH_HOURS", "6"))      # Sii-Football (ذوي الإعاقة): بلا مفتاح، 0 = تعطيل
+    has_sf = sf_hours > 0
+    if _started or not ((has_fd and hours > 0) or (has_hl and hl_hours > 0) or has_sf):
         return False
     _started = True
 
@@ -107,6 +146,8 @@ def start():
                     refresh_once()
                 if has_hl and hl_hours > 0 and _stale(hl_hours, "last_refresh_hl"):
                     refresh_hl_once()
+                if has_sf and _stale_only(sf_hours, "last_refresh_sf"):
+                    refresh_sf_once()
             except Exception as e:      # لا يموت الخيط أبدًا
                 try:
                     with db.connect() as con:

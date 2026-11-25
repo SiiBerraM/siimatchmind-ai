@@ -72,6 +72,19 @@ def _save(rows, kind, leagues, season, replace=False):
     return len(rows), len(teams)
 
 
+_orig_save = _save
+
+
+def _save(rows, kind, leagues, season, replace=False):
+    """يحفظ نسخة دائمة في backend/leaguedata قبل الحفظ في قاعدة البيانات (فلا تختفي بطولة بعد اليوم)."""
+    try:
+        import persist
+        persist.dump(rows, kind, leagues, season)
+    except Exception as e:
+        print("persist skipped:", str(e)[:80])
+    return _orig_save(rows, kind, leagues, season, replace)
+
+
 def run_fd(client, competition, season=None, replace=False, log=print):
     """استيراد من football-data.org: طلب واحد يجلب كل مباريات الموسم (الحالي إن لم تحدد موسمًا)."""
     data = client.matches(competition, season)

@@ -1,10 +1,12 @@
 (function () {
   "use strict";
 
+  var TARGET_HASH = "#/pronostics";
+  var activeProno = false;
   var removed = {};
   var cached = null;
   var loading = false;
-  var syncScheduled = false;
+  var rafId = null;
 
   var fallbackData = {
     teams: [
@@ -31,9 +33,9 @@
     }
   };
 
-  function isPronoRoute() {
-    var h = (location.hash || "").toLowerCase();
-    return h === "#/pronostics" || h.indexOf("pronostics") !== -1;
+  function isPronoHash(h) {
+    var s = String(h || location.hash || "").toLowerCase();
+    return s === "#/pronostics" || s.indexOf("pronostics") !== -1;
   }
 
   function esc(s) {
@@ -201,25 +203,15 @@
     });
   }
 
-  function ensureView() {
-    if (!isPronoRoute()) return;
-    var v = view();
-    if (!v || v.querySelector("#psRows")) return;
-    if (cached) {
-      applyDom(v, cached);
-      return;
-    }
-    applyDom(v, fallbackData);
-    if (loading) return;
+  function loadOnce() {
+    if (cached || loading) return;
     loading = true;
     fetch("data/static.json", { cache: "no-store" })
       .then(function (r) { return r.json(); })
       .then(function (d) {
         cached = mergeData(d);
         var cur = view();
-        if (isPronoRoute() && cur) {
-          applyDom(cur, cached);
-        }
+        if (activeProno && cur) applyDom(cur, cached);
       })
       .catch(function () {
         cached = fallbackData;
@@ -227,46 +219,66 @@
       .finally(function () { loading = false; });
   }
 
-  function scheduleEnsure() {
-    if (syncScheduled) return;
-    syncScheduled = true;
-    requestAnimationFrame(function () {
-      syncScheduled = false;
-      ensureView();
-    });
+  function enforceProno() {
+    if (isPronoHash()) {
+      activeProno = true;
+    } else if (activeProno && location.hash === "#/") {
+      try {
+        history.replaceState(null, "", TARGET_HASH);
+      } catch (e) {}
+    }
+
+    if (!activeProno) return;
+    var v = view();
+    if (!v) return;
+    if (!v.querySelector("#psRows")) {
+      applyDom(v, cached || fallbackData);
+    }
+    loadOnce();
   }
 
-  function observe() {
-    if (!window.MutationObserver || !document.body) return;
+  function tick() {
+    rafId = null;
+    enforceProno();
+  }
+
+  function schedule() {
+    if (!rafId) rafId = requestAnimationFrame(tick);
+  }
+
+  document.addEventListener("click", function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (isPronoHash(href)) {
+      activeProno = true;
+      schedule();
+    } else if (href.indexOf("#/") === 0 && !isPronoHash(href)) {
+      activeProno = false;
+    }
+  }, true);
+
+  window.addEventListener("hashchange", function () {
+    if (isPronoHash()) {
+      activeProno = true;
+    } else if (activeProno && location.hash === "#/") {
+      try {
+        history.replaceState(null, "", TARGET_HASH);
+      } catch (e) {}
+    }
+    schedule();
+  });
+
+  if (window.MutationObserver && document.body) {
     new MutationObserver(function () {
-      if (isPronoRoute()) {
-        var v = view();
-        if (v && !v.querySelector("#psRows")) {
-          scheduleEnsure();
-        }
-      }
+      if (activeProno) schedule();
     }).observe(document.body, { childList: true, subtree: true });
   }
 
-  window.addEventListener("hashchange", scheduleEnsure);
-  window.addEventListener("load", function () {
-    observe();
-    scheduleEnsure();
-  });
   setInterval(function () {
-    if (isPronoRoute()) {
-      var v = view();
-      if (v && !v.querySelector("#psRows")) ensureView();
-    }
-  }, 200);
+    if (isPronoHash() || activeProno) enforceProno();
+  }, 150);
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      observe();
-      scheduleEnsure();
-    });
-  } else {
-    observe();
-    scheduleEnsure();
-  }
+  if (isPronoHash()) activeProno = true;
+  enforceProno();
 })();

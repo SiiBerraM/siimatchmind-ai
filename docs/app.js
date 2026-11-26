@@ -351,6 +351,7 @@
       <div class="hero">
         <div class="names"><div class="side">${crest(r.home.name, hl, 48)}<b>${esc(r.home.name)}</b><small>${t("an.host")}</small></div><div class="side">${crest(r.away.name, al, 48)}<b>${esc(r.away.name)}</b><small>${t("an.guest")}</small></div></div>
         ${info}
+        ${window.smmCongrats ? window.smmCongrats(r) : ""}
         <div class="strip" role="img" aria-label="${esc(r.home.name)} ${pc.home}% / ${t("an.draw")} ${pc.draw}% / ${esc(r.away.name)} ${pc.away}%">
           <div class="h" style="flex-basis:${pc.home}%">${pc.home}%</div>
           <div class="d" style="flex-basis:${pc.draw}%">${pc.draw}%</div>
@@ -541,6 +542,7 @@
     [/^#\/press$/, "saved", () => pagePress()],
     [/^#\/news$/, "saved", () => (window.smmNews || (() => {}))(view, api)],
     [/^#\/watch$/, "saved", () => (window.smmWatch || (() => {}))(view, api)],
+    [/^#\/today$/, "home", () => (window.smmToday || (() => {}))(view)],
     [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]
   ];

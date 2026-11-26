@@ -1,8 +1,3 @@
-"""لا تختفي بطولة بعد اليوم: كل ما يُستورد يُحفظ في backend/leaguedata/*.json داخل المستودع، ويُسترجع قبل كل بناء.
-python persist.py restore              يسترجع كل البطولات المحفوظة إلى قاعدة البيانات (بلا طلبات)
-python persist.py snapshot             يحفظ كل بطولات قاعدة بياناتك المحلية الحالية في الملفات
-python persist.py refresh --max 14     يحدّث الأقدم تحديثًا فالأحدث من بطولات Highlightly ضمن حصة اليوم
-"""
 import glob
 import json
 import os
@@ -11,17 +6,14 @@ from datetime import date, datetime, timedelta, timezone
 
 B = os.path.dirname(os.path.abspath(__file__))
 DIR = os.path.join(B, "leaguedata")
-SKIP = ("hlnat",)           # المنتخبات لها مجلدها (pooldata)
+SKIP = ("hlnat",)
 KEYS = ("id", "date", "time", "round", "season", "league", "home", "away", "hg", "ag", "status")
-
 
 def _today():
     return datetime.now(timezone.utc).date().isoformat()
 
-
 def _path(code):
     return os.path.join(DIR, code + ".json")
-
 
 def _read(code):
     try:
@@ -29,13 +21,11 @@ def _read(code):
     except Exception:
         return {}
 
-
 def _plain(r):
     r = dict(r)
     if "_teams" in r:
         r["_teams"] = [list(t) for t in r["_teams"]]
     return r
-
 
 def dump(rows, kind, leagues, season):
     by = {}
@@ -51,13 +41,17 @@ def dump(rows, kind, leagues, season):
         merged = {r["id"]: r for r in old.get("rows", []) if r["id"] in new_ids or not (r.get("status") == "scheduled" and (r.get("date") or "") < cutoff)}
         for r in rs:
             merged[r["id"]] = _plain(r)
-        data = {"code": code, "kind": kind, "label": (leagues or {}).get(code) or old.get("label") or code,
-                "season": str(season or old.get("season") or ""), "refreshed": _today(),
-                "rows": sorted(merged.values(), key=lambda r: ((r.get("date") or ""), r["id"]))}
+        data = {
+            "code": code,
+            "kind": kind,
+            "label": (leagues or {}).get(code) or old.get("label") or code,
+            "season": str(season or old.get("season") or ""),
+            "refreshed": _today(),
+            "rows": sorted(merged.values(), key=lambda r: (r.get("date") or "", r["id"])),
+        }
         if old and old.get("rows") == data["rows"] and old.get("label") == data["label"] and old.get("season") == data["season"] and old.get("refreshed") == data["refreshed"]:
             continue
         json.dump(data, open(_path(code), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
-
 
 def restore():
     import importer
@@ -77,7 +71,6 @@ def restore():
         n += 1
         print("restored", d["code"], len(rows), "matches")
     print("restored leagues:", n)
-
 
 def snapshot():
     import db
@@ -109,7 +102,6 @@ def snapshot():
         dump(rows, kind, {code: label}, seasons[-1] if seasons else "")
         print("saved", code, len(rows), "matches |", label)
 
-
 def refresh(max_n=14, reserve=25):
     import importer
     import provider
@@ -120,8 +112,8 @@ def refresh(max_n=14, reserve=25):
             d = json.load(open(path, encoding="utf-8"))
         except Exception:
             continue
-        if d.get("kind") == "highlightly" and str(d["code"])[2:].isdigit() and not str(d["code"]).startswith(SKIP):
-            files.append((d.get("refreshed") or "", d["code"], d.get("season")))
+        if d.get("kind") == "highlightly" and str(d.get("code", ""))[2:].isdigit() and not str(d.get("code", "")).startswith(SKIP):
+            files.append((d.get("refreshed") or "", d.get("code"), d.get("season")))
     files.sort()
     done = 0
     for _, code, season in files:
@@ -138,7 +130,6 @@ def refresh(max_n=14, reserve=25):
             done += 1
     print("refreshed leagues:", done)
 
-
 def main(argv):
     if not argv or argv[0] not in ("restore", "snapshot", "refresh"):
         print(__doc__)
@@ -151,7 +142,6 @@ def main(argv):
         opt = {argv[i]: argv[i + 1] for i in range(1, len(argv) - 1)}
         refresh(int(opt.get("--max", 14)), int(opt.get("--reserve", 25)))
     return 0
-
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv[1:]))

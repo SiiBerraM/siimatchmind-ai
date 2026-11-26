@@ -52,10 +52,28 @@ jobs:
           python build_static.py --standalone
       - name: Fetch press
         run: python backend/fetch_press.py || echo "::warning::press fetch failed"
-      - name: Preserve PayPal button and footer on docs/index.html
+      - name: Preserve UI and SEO files on docs/
         run: |
           python3 - << 'EOF'
           import os, re
+
+          os.makedirs("docs", exist_ok=True)
+
+          robots_path = "docs/robots.txt"
+          robots_content = "User-agent: *\nAllow: /\n\nSitemap: https://siiberram.github.io/siimatchmind-ai/sitemap.xml\n"
+          open(robots_path, "w", encoding="utf-8").write(robots_content)
+
+          sitemap_path = "docs/sitemap.xml"
+          sitemap_content = '''<?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://siiberram.github.io/siimatchmind-ai/</loc>
+              <changefreq>daily</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>
+          '''
+          open(sitemap_path, "w", encoding="utf-8").write(sitemap_content)
 
           path = "docs/index.html"
           if not os.path.isfile(path):
@@ -68,6 +86,9 @@ jobs:
           s = re.sub(r"<style id=\"ny-footer-style\">.*?</style>", "", s, flags=re.S)
           s = re.sub(r"<footer id=\"ny-site-footer\".*?</footer>", "", s, flags=re.S)
           s = re.sub(r"<script id=\"ny-footer-lang-script\">.*?</script>", "", s, flags=re.S)
+          s = re.sub(r"<title>.*?</title>", "", s, flags=re.S | re.I)
+          s = re.sub(r'<meta\s+name="description"[^>]*>\s*', "", s, flags=re.I)
+          s = re.sub(r'<meta\s+property="og:[^"]*"[^>]*>\s*', "", s, flags=re.I)
 
           gift_css = '''<style id="ny-gift-fix-style">
             #ny-center-gift-box {
@@ -223,26 +244,34 @@ jobs:
           })();
           </script>'''
 
-          styles_all = gift_css + "\n" + footer_css
+          seo_head = '''<title>SiiMatchMind® — تحليل كرة القدم والذكاء الاصطناعي | Football Analytics & AI</title>
+          <meta name="description" content="منصة SiiMatchMind® لتحليل مباريات كرة القدم والمنتخبات والبطولات بالذكاء الاصطناعي، متكاملة مع Sii-Football®." />
+          <meta property="og:title" content="SiiMatchMind® — Football Analytics & AI" />
+          <meta property="og:description" content="تحليل كرة القدم والذكاء الاصطناعي — SiiMatchMind® & Sii-Football®" />
+          <meta property="og:url" content="https://siiberram.github.io/siimatchmind-ai/" />
+          <meta property="og:type" content="website" />'''
+
+          head_block = seo_head + "\n" + gift_css + "\n" + footer_css
           if "</head>" in s:
-              s = re.sub(r"</head>", styles_all + "\n</head>", s, count=1)
+              s = re.sub(r"</head>", head_block + "\n</head>", s, count=1, flags=re.I)
           else:
-              s = styles_all + "\n" + s
+              s = head_block + "\n" + s
 
           if "<body" in s:
-              s = re.sub(r"(<body[^>]*>)", r"\1\n" + gift_html, s, count=1)
+              s = re.sub(r"(<body[^>]*>)", r"\1\n" + gift_html, s, count=1, flags=re.I)
           else:
               s = s + "\n" + gift_html
 
           if "</body>" in s:
-              s = re.sub(r"</body>", footer_html + "\n</body>", s, count=1)
+              s = re.sub(r"</body>", footer_html + "\n</body>", s, count=1, flags=re.I)
           else:
               s = s + "\n" + footer_html
 
           open(path, "w", encoding="utf-8").write(s)
-          print("GUARDED_DOCS_INDEX")
+          print("GUARDED_UI_AND_SEO")
           EOF
-      - name: Save static data
+
+- name: Save static data
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"

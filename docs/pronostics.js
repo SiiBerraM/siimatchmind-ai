@@ -4,6 +4,7 @@
   var removed = {};
   var cached = null;
   var loading = false;
+  var syncScheduled = false;
 
   var fallbackData = {
     teams: [
@@ -97,11 +98,10 @@
   }
 
   function mergeData(raw) {
-    var base = {
+    return {
       teams: (raw && Array.isArray(raw.teams) && raw.teams.length) ? raw.teams : fallbackData.teams,
       analyses: (raw && raw.analyses && Object.keys(raw.analyses).length) ? raw.analyses : fallbackData.analyses
     };
-    return base;
   }
 
   function renderHtml(data) {
@@ -227,22 +227,46 @@
       .finally(function () { loading = false; });
   }
 
-  function observe() {
-    var v = view();
-    if (!v || !window.MutationObserver) return;
-    new MutationObserver(function () {
-      if (isPronoRoute() && !v.querySelector("#psRows")) {
-        ensureView();
-      }
-    }).observe(v, { childList: true, subtree: true });
+  function scheduleEnsure() {
+    if (syncScheduled) return;
+    syncScheduled = true;
+    requestAnimationFrame(function () {
+      syncScheduled = false;
+      ensureView();
+    });
   }
 
-  window.addEventListener("hashchange", ensureView);
+  function observe() {
+    if (!window.MutationObserver || !document.body) return;
+    new MutationObserver(function () {
+      if (isPronoRoute()) {
+        var v = view();
+        if (v && !v.querySelector("#psRows")) {
+          scheduleEnsure();
+        }
+      }
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
+  window.addEventListener("hashchange", scheduleEnsure);
   window.addEventListener("load", function () {
     observe();
-    ensureView();
+    scheduleEnsure();
   });
-  setInterval(ensureView, 250);
-  observe();
-  ensureView();
+  setInterval(function () {
+    if (isPronoRoute()) {
+      var v = view();
+      if (v && !v.querySelector("#psRows")) ensureView();
+    }
+  }, 200);
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      observe();
+      scheduleEnsure();
+    });
+  } else {
+    observe();
+    scheduleEnsure();
+  }
 })();

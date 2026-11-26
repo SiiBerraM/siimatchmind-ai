@@ -67,3 +67,193 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
           python upload.py
+      - name: Preserve PayPal button and footer on docs/index.html
+        run: |
+          python3 - << 'EOF'
+          import os, re
+
+          path = "docs/index.html"
+          if not os.path.isfile(path):
+              print("SKIP_NO_INDEX")
+              raise SystemExit(0)
+
+          s = open(path, encoding="utf-8", errors="ignore").read()
+          s = re.sub(r"<style id=\"ny-gift-fix-style\">.*?</style>", "", s, flags=re.S)
+          s = re.sub(r"<div id=\"ny-center-gift-box\">.*?</div>\s*</div>", "", s, flags=re.S)
+          s = re.sub(r"<style id=\"ny-footer-style\">.*?</style>", "", s, flags=re.S)
+          s = re.sub(r"<footer id=\"ny-site-footer\".*?</footer>", "", s, flags=re.S)
+          s = re.sub(r"<script id=\"ny-footer-lang-script\">.*?</script>", "", s, flags=re.S)
+
+          gift_css = '''<style id="ny-gift-fix-style">
+            #ny-center-gift-box {
+              display: block;
+              width: 92%;
+              max-width: 440px;
+              margin: 14px auto;
+              padding: 14px 16px;
+              background: #0f172a;
+              border: 1.5px solid #facc15;
+              border-radius: 14px;
+              text-align: center;
+              box-sizing: border-box;
+            }
+            #ny-center-label {
+              display: block;
+              width: 100%;
+              color: #f8fafc;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 1.5;
+              margin-bottom: 10px;
+            }
+            #ny-direct-paypal-btn {
+              display: inline-block;
+              width: auto;
+              min-width: 190px;
+              padding: 10px 18px;
+              background: #0070ba;
+              color: #ffffff !important;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 1.2;
+              text-decoration: none;
+              border-radius: 8px;
+              white-space: nowrap;
+            }
+          </style>'''
+
+          gift_html = '''<div id="ny-center-gift-box">
+            <div id="ny-center-label">🎁 Support SiiMatchMind® • دعم المنصة</div>
+            <a id="ny-direct-paypal-btn" href="https://www.paypal.com/ncp/payment/EY5BNZ6VKRBD4" target="_blank" rel="noopener noreferrer">🎁 Send Gift via PayPal</a>
+          </div>'''
+
+          footer_css = '''<style id="ny-footer-style">
+            #ny-site-footer {
+              width: 100%;
+              max-width: 960px;
+              margin: 28px auto 18px;
+              padding: 16px 18px;
+              background: #0f172a;
+              border: 1px solid rgba(250, 204, 21, 0.45);
+              border-radius: 14px;
+              color: #e2e8f0;
+              font-size: 13px;
+              line-height: 1.6;
+              text-align: center;
+              box-sizing: border-box;
+            }
+            #ny-site-footer .ny-footer-top {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+              gap: 10px;
+              margin-bottom: 10px;
+            }
+            #ny-site-footer .ny-brand-badge {
+              font-weight: 700;
+              color: #f8fafc;
+            }
+            #ny-site-footer .ny-brand-link {
+              color: #facc15;
+              font-weight: 700;
+              text-decoration: none;
+            }
+            #ny-site-footer .ny-brand-link:hover {
+              text-decoration: underline;
+            }
+            #ny-site-footer .ny-brand-accent {
+              color: #facc15;
+              font-weight: 700;
+            }
+            #ny-site-footer .ny-lang-bar {
+              display: inline-flex;
+              align-items: center;
+              gap: 6px;
+              background: #1e293b;
+              padding: 4px 8px;
+              border-radius: 8px;
+              border: 1px solid rgba(148, 163, 184, 0.25);
+            }
+            #ny-site-footer .ny-lang-btn {
+              background: transparent;
+              color: #cbd5e1;
+              border: none;
+              padding: 3px 8px;
+              border-radius: 6px;
+              font-size: 12px;
+              font-weight: 700;
+              cursor: pointer;
+            }
+            #ny-site-footer .ny-lang-btn.active {
+              background: #0070ba;
+              color: #ffffff;
+            }
+            #ny-site-footer .ny-footer-meta {
+              color: #94a3b8;
+              font-size: 12px;
+            }
+            #ny-site-footer .ny-sig {
+              color: #f8fafc;
+              font-weight: 700;
+            }
+          </style>'''
+
+          footer_html = '''<footer id="ny-site-footer" dir="auto">
+            <div class="ny-footer-top">
+              <span class="ny-brand-badge">© 2026</span>
+              <a class="ny-brand-link" href="https://siiberram.github.io/Sii-Football/" target="_blank" rel="noopener noreferrer">Sii-Football®</a>
+              <span>•</span>
+              <span class="ny-brand-accent">SiiMatchMind®</span>
+              <div class="ny-lang-bar" role="group" aria-label="Language switcher">
+                <button type="button" class="ny-lang-btn active" data-lang="ar">العربية</button>
+                <button type="button" class="ny-lang-btn" data-lang="en">EN</button>
+                <button type="button" class="ny-lang-btn" data-lang="fr">FR</button>
+              </div>
+            </div>
+            <div class="ny-footer-meta" id="ny-footer-desc">
+              منصة تحليل كرة القدم والذكاء الاصطناعي — <span class="ny-sig">Berra</span>
+            </div>
+          </footer>
+          <script id="ny-footer-lang-script">
+          (function() {
+            var texts = {
+              ar: "منصة تحليل كرة القدم والذكاء الاصطناعي — <span class='ny-sig'>Berra</span>",
+              en: "Football Analytics &amp; AI Platform — <span class='ny-sig'>Berra</span>",
+              fr: "Plateforme d'analyse football &amp; IA — <span class='ny-sig'>Berra</span>"
+            };
+            var footer = document.getElementById("ny-site-footer");
+            var desc = document.getElementById("ny-footer-desc");
+            if (!footer || !desc) return;
+            var btns = footer.querySelectorAll(".ny-lang-btn");
+            btns.forEach(function(btn) {
+              btn.addEventListener("click", function() {
+                var lang = btn.getAttribute("data-lang");
+                btns.forEach(function(b) { b.classList.remove("active"); });
+                btn.classList.add("active");
+                if (texts[lang]) desc.innerHTML = texts[lang];
+                footer.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+              });
+            });
+          })();
+          </script>'''
+
+          styles_all = gift_css + "\n" + footer_css
+          if "</head>" in s:
+              s = re.sub(r"</head>", styles_all + "\n</head>", s, count=1)
+          else:
+              s = styles_all + "\n" + s
+
+          if "<body" in s:
+              s = re.sub(r"(<body[^>]*>)", r"\1\n" + gift_html, s, count=1)
+          else:
+              s = s + "\n" + gift_html
+
+          if "</body>" in s:
+              s = re.sub(r"</body>", footer_html + "\n</body>", s, count=1)
+          else:
+              s = s + "\n" + footer_html
+
+          open(path, "w", encoding="utf-8").write(s)
+          print("GUARDED_DOCS_INDEX")
+          EOF

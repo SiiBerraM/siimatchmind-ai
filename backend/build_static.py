@@ -70,7 +70,9 @@ def standalone():
         html = html.replace(tag, "")
     langs = (FRONT / "locales" / "languages.json").read_text(encoding="utf-8")
     locales = {l["code"]: json.loads((FRONT / "locales" / f"{l['code']}.json").read_text(encoding="utf-8")) for l in json.loads(langs)}
-    inject = (f"window.SMM_STATIC={data};window.SMM_LANGS={langs};window.SMM_LOCALES={json.dumps(locales, ensure_ascii=False)};").replace("</", "<\\/")
+    ledger_file = FRONT / "data" / "ledger.json"
+    ledger_json = ledger_file.read_text(encoding="utf-8") if ledger_file.exists() else "null"
+    inject = (f"window.SMM_STATIC={data};window.__LEDGER_DATA__={ledger_json};window.SMM_LANGS={langs};window.SMM_LOCALES={json.dumps(locales, ensure_ascii=False)};").replace("</", "<\\/")
     html = html.replace('<script src="app.js"></script>', f"<script>{inject}</script><script>{js}</script>")
     dist = ROOT / "dist"
     dist.mkdir(exist_ok=True)

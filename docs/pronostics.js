@@ -1,10 +1,39 @@
 (function () {
   "use strict";
 
-  var ROUTE = "#/pronostics";
   var removed = {};
   var cached = null;
   var loading = false;
+
+  var fallbackData = {
+    teams: [
+      { id: "celta", name: "سيلتا فيغو", logo: "" },
+      { id: "bournemouth", name: "بورنموث", logo: "" },
+      { id: "marseille", name: "مارسيليا", logo: "" },
+      { id: "levski", name: "ليفسكي صوفيا", logo: "" },
+      { id: "olympiacos", name: "أولمبياكوس بيرايوس", logo: "" },
+      { id: "milan", name: "ميلان", logo: "" },
+      { id: "plzen", name: "فيكتوريا بلزن", logo: "" },
+      { id: "benfica", name: "بنفيكا", logo: "" },
+      { id: "torreense", name: "تورينس SCU", logo: "" },
+      { id: "celtic", name: "سلتيك", logo: "" },
+      { id: "palace", name: "كريستال بالاس", logo: "" },
+      { id: "sociedad", name: "ريال سوسيداد", logo: "" }
+    ],
+    analyses: {
+      "celta|bournemouth": { market: "من سوف يفوز", prediction: { percent: { home: 52, draw: 26, away: 22 } }, date: "26/11", time: "20:00" },
+      "marseille|levski": { market: "من سوف يفوز ومجموع أهداف المباراة أكثر من 2", prediction: { percent: { home: 64, draw: 20, away: 16 } }, date: "26/11", time: "20:00" },
+      "olympiacos|milan": { market: "من سوف يفوز في الشوط الأول", prediction: { percent: { home: 34, draw: 35, away: 31 } }, date: "26/11", time: "20:00" },
+      "plzen|benfica": { market: "هل كلا الفريقين سيسجل", prediction: { percent: { home: 38, draw: 28, away: 34 } }, date: "26/11", time: "20:00" },
+      "torreense|celtic": { market: "مجموع الأهداف أكثر من 2", prediction: { percent: { home: 31, draw: 27, away: 42 } }, date: "26/11", time: "20:00" },
+      "palace|sociedad": { market: "من سوف يفوز", prediction: { percent: { home: 49, draw: 27, away: 24 } }, date: "26/11", time: "20:00" }
+    }
+  };
+
+  function isPronoRoute() {
+    var h = (location.hash || "").toLowerCase();
+    return h === "#/pronostics" || h.indexOf("pronostics") !== -1;
+  }
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -65,6 +94,14 @@
       return '<img src="' + esc(logo) + '" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.outerHTML=\'<span class=ps-crest>' + code + '</span>\'">';
     }
     return '<span class="ps-crest">' + code + '</span>';
+  }
+
+  function mergeData(raw) {
+    var base = {
+      teams: (raw && Array.isArray(raw.teams) && raw.teams.length) ? raw.teams : fallbackData.teams,
+      analyses: (raw && raw.analyses && Object.keys(raw.analyses).length) ? raw.analyses : fallbackData.analyses
+    };
+    return base;
   }
 
   function renderHtml(data) {
@@ -165,25 +202,28 @@
   }
 
   function ensureView() {
-    if (location.hash !== ROUTE) return;
+    if (!isPronoRoute()) return;
     var v = view();
     if (!v || v.querySelector("#psRows")) return;
     if (cached) {
       applyDom(v, cached);
       return;
     }
+    applyDom(v, fallbackData);
     if (loading) return;
     loading = true;
     fetch("data/static.json", { cache: "no-store" })
       .then(function (r) { return r.json(); })
       .then(function (d) {
-        cached = d;
+        cached = mergeData(d);
         var cur = view();
-        if (location.hash === ROUTE && cur && !cur.querySelector("#psRows")) {
+        if (isPronoRoute() && cur) {
           applyDom(cur, cached);
         }
       })
-      .catch(function () {})
+      .catch(function () {
+        cached = fallbackData;
+      })
       .finally(function () { loading = false; });
   }
 
@@ -191,7 +231,7 @@
     var v = view();
     if (!v || !window.MutationObserver) return;
     new MutationObserver(function () {
-      if (location.hash === ROUTE && !v.querySelector("#psRows")) {
+      if (isPronoRoute() && !v.querySelector("#psRows")) {
         ensureView();
       }
     }).observe(v, { childList: true, subtree: true });

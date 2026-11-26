@@ -195,3 +195,17 @@ table.std td.pts{font-weight:700}
 
 html.ddlock,html.ddlock body{overflow:hidden!important;height:100%!important;touch-action:none}
 .ddpanel{overscroll-behavior:contain!important;touch-action:pan-y!important;-webkit-overflow-scrolling:touch}
+
+
+/* تحسين حدة وجودة عرض شعارات الفرق والصور */
+img.crest, img[class*="crest"], img[class*="logo"], img[class*="avatar"] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  object-fit: contain;
+  filter: contrast(1.04) saturate(1.06);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+img.crest:hover, img[class*="logo"]:hover {
+  transform: scale(1.05);
+  filter: contrast(1.08) saturate(1.12);
+}

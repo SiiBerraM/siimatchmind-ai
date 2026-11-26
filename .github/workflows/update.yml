@@ -52,21 +52,6 @@ jobs:
           python build_static.py --standalone
       - name: Fetch press
         run: python backend/fetch_press.py || echo "::warning::press fetch failed"
-      - name: Save static data
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git status --short
-          git add docs
-          if [ -d backend/pooldata ]; then git add backend/pooldata; fi
-          if [ -d backend/leaguedata ]; then git add backend/leaguedata; fi
-          git diff --cached --quiet || (git commit -m "Update static data" && git pull --rebase --autostash && git push)
-      - name: Upload
-        continue-on-error: true
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: |
-          python upload.py
       - name: Preserve PayPal button and footer on docs/index.html
         run: |
           python3 - << 'EOF'
@@ -257,3 +242,18 @@ jobs:
           open(path, "w", encoding="utf-8").write(s)
           print("GUARDED_DOCS_INDEX")
           EOF
+      - name: Save static data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git status --short
+          git add docs
+          if [ -d backend/pooldata ]; then git add backend/pooldata; fi
+          if [ -d backend/leaguedata ]; then git add backend/leaguedata; fi
+          git diff --cached --quiet || (git commit -m "Update static data" && git pull --rebase --autostash && git push)
+      - name: Upload
+        continue-on-error: true
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python upload.py

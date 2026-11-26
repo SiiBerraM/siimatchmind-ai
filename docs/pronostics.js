@@ -3,6 +3,7 @@
 
   var removed = {};
   var busy = false;
+  var lastData = null;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -65,112 +66,129 @@
     return '<span class="ps-crest">' + code + '</span>';
   }
 
+  function buildHtml(data) {
+    var teams = {};
+    (data.teams || []).forEach(function (t) {
+      if (t.id) teams[t.id] = t;
+      if (t.name) teams[t.name] = t;
+    });
+
+    var list = Object.entries(data.analyses || {}).filter(function (p) {
+      return !removed[p[0]];
+    }).slice(0, 40);
+
+    if (!list.length) {
+      return '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Aucun pronostic disponible.</p></div>';
+    }
+
+    var mult = 1;
+    var rows = list.map(function (pair, i) {
+      var key = pair[0], val = pair[1] || {};
+      var parts = key.split("|");
+      var rH = parts[0] || "", rA = parts[1] || "";
+      var tH = teams[rH] || {}, tA = teams[rA] || {};
+      var nH = tH.name || rH, nA = tA.name || rA;
+
+      var pct = (val.prediction && val.prediction.percent) || {};
+      var ph = pct.home != null ? pct.home : (pct.H != null ? pct.H : 40);
+      var pd = pct.draw != null ? pct.draw : (pct.D != null ? pct.D : 30);
+      var pa = pct.away != null ? pct.away : (pct.A != null ? pct.A : 30);
+
+      var maxP = Math.max(Number(ph) || 1, Number(pd) || 1, Number(pa) || 1);
+      var odd = (100 / Math.max(maxP, 15)).toFixed(2);
+      if (i < 6) mult *= Number(odd);
+
+      var ft = Number(ph) >= Number(pa) ? "1-0" : "0-1";
+      var code = "4965" + String(480 + i);
+      var href = "#/analyze/" + encodeURIComponent(rH) + "/" + encodeURIComponent(rA);
+
+      return (
+        '<div class="ps-row" data-key="' + esc(key) + '">' +
+          '<div class="ps-left">' +
+            '<span class="ps-mkt">' + esc(market(ph, pd, pa, val)) + '</span>' +
+            '<div class="ps-main">' +
+              '<button type="button" class="ps-trash" title="Supprimer" aria-label="Supprimer">' +
+                '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg>' +
+              '</button>' +
+              '<div class="ps-clubs">' +
+                '<a class="ps-club" href="' + href + '">' + crest(tH.logo, nH) + '<span>' + esc(nH) + '</span></a>' +
+                '<a class="ps-club" href="' + href + '">' + crest(tA.logo, nA) + '<span>' + esc(nA) + '</span></a>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="ps-right">' +
+            '<div class="ps-ft">' + esc(ph) + '% - ' + esc(pa) + '% (' + ft + ')</div>' +
+            '<div class="ps-ht">(' + ft + ') • Nul ' + esc(pd) + '%</div>' +
+            '<div class="ps-meta">' +
+              '<span class="ps-code">' + code + '</span>' +
+              '<span class="ps-val">' + odd + '</span>' +
+            '</div>' +
+            '<div class="ps-dt">' + esc(val.date || "26/11") + ' • ' + esc(val.time || "20:00") + '</div>' +
+          '</div>' +
+        '</div>'
+      );
+    }).join("");
+
+    return (
+      '<div class="ps-box">' +
+        '<div class="ps-head">' +
+          '<div class="ps-title">اختياراتي</div>' +
+          '<div class="ps-subbar">' +
+            '<span class="ps-tag" id="psCount">صفحة 1 • ' + list.length + '</span>' +
+            '<span class="ps-tag">المجموع: ' + mult.toFixed(2) + '</span>' +
+            '<span class="ps-qr">QR Code</span>' +
+          '</div>' +
+        '</div>' +
+        '<div id="psRows">' + rows + '</div>' +
+      '</div>'
+    );
+  }
+
+  function bindDelete(v) {
+    v.querySelectorAll(".ps-trash").forEach(function (btn) {
+      btn.onclick = function (ev) {
+        ev.preventDefault();
+        var row = btn.closest(".ps-row");
+        if (row) {
+          var k = row.getAttribute("data-key");
+          if (k) removed[k] = true;
+          row.remove();
+        }
+        var rem = v.querySelectorAll(".ps-row").length;
+        var c = document.getElementById("psCount");
+        if (c) c.textContent = "صفحة 1 • " + rem;
+      };
+    });
+  }
+
+  function inject(v, data) {
+    addStyle();
+    v.innerHTML = buildHtml(data);
+    bindDelete(v);
+  }
+
   async function paint(force) {
     if (location.hash !== "#/pronostics") return;
     var v = viewEl();
     if (!v) return;
     if (!force && v.querySelector("#psRows")) return;
+
+    if (lastData && !force) {
+      inject(v, lastData);
+      return;
+    }
+
     if (busy) return;
     busy = true;
-    addStyle();
-    v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Chargement...</p></div>';
+    if (!v.querySelector("#psRows")) {
+      addStyle();
+      v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Chargement...</p></div>';
+    }
 
     try {
       var res = await fetch("data/static.json", { cache: "no-store" });
-      var data = await res.json();
-      if (location.hash !== "#/pronostics") { busy = false; return; }
-
-      var teams = {};
-      (data.teams || []).forEach(function (t) {
-        if (t.id) teams[t.id] = t;
-        if (t.name) teams[t.name] = t;
-      });
-
-      var list = Object.entries(data.analyses || {}).filter(function (p) {
-        return !removed[p[0]];
-      }).slice(0, 40);
-
-      if (!list.length) {
-        v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Aucun pronostic disponible.</p></div>';
-        busy = false;
-        return;
-      }
-
-      var mult = 1;
-      var html = list.map(function (pair, i) {
-        var key = pair[0], val = pair[1] || {};
-        var parts = key.split("|");
-        var rH = parts[0] || "", rA = parts[1] || "";
-        var tH = teams[rH] || {}, tA = teams[rA] || {};
-        var nH = tH.name || rH, nA = tA.name || rA;
-
-        var pct = (val.prediction && val.prediction.percent) || {};
-        var ph = pct.home != null ? pct.home : (pct.H != null ? pct.H : 40);
-        var pd = pct.draw != null ? pct.draw : (pct.D != null ? pct.D : 30);
-        var pa = pct.away != null ? pct.away : (pct.A != null ? pct.A : 30);
-
-        var maxP = Math.max(Number(ph) || 1, Number(pd) || 1, Number(pa) || 1);
-        var odd = (100 / Math.max(maxP, 15)).toFixed(2);
-        if (i < 6) mult *= Number(odd);
-
-        var ft = Number(ph) >= Number(pa) ? "1-0" : "0-1";
-        var code = "4965" + String(480 + i);
-        var href = "#/analyze/" + encodeURIComponent(rH) + "/" + encodeURIComponent(rA);
-
-        return (
-          '<div class="ps-row" data-key="' + esc(key) + '">' +
-            '<div class="ps-left">' +
-              '<span class="ps-mkt">' + esc(market(ph, pd, pa, val)) + '</span>' +
-              '<div class="ps-main">' +
-                '<button type="button" class="ps-trash" title="Supprimer" aria-label="Supprimer">' +
-                  '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14M10 11v6M14 11v6"/></svg>' +
-                '</button>' +
-                '<div class="ps-clubs">' +
-                  '<a class="ps-club" href="' + href + '">' + crest(tH.logo, nH) + '<span>' + esc(nH) + '</span></a>' +
-                  '<a class="ps-club" href="' + href + '">' + crest(tA.logo, nA) + '<span>' + esc(nA) + '</span></a>' +
-                '</div>' +
-              '</div>' +
-            '</div>' +
-            '<div class="ps-right">' +
-              '<div class="ps-ft">' + esc(ph) + '% - ' + esc(pa) + '% (' + ft + ')</div>' +
-              '<div class="ps-ht">(' + ft + ') • Nul ' + esc(pd) + '%</div>' +
-              '<div class="ps-meta">' +
-                '<span class="ps-code">' + code + '</span>' +
-                '<span class="ps-val">' + odd + '</span>' +
-              '</div>' +
-              '<div class="ps-dt">' + esc(val.date || "26/11") + ' • ' + esc(val.time || "20:00") + '</div>' +
-            '</div>' +
-          '</div>'
-        );
-      }).join("");
-
-      v.innerHTML =
-        '<div class="ps-box">' +
-          '<div class="ps-head">' +
-            '<div class="ps-title">اختياراتي</div>' +
-            '<div class="ps-subbar">' +
-              '<span class="ps-tag" id="psCount">صفحة 1 • ' + list.length + '</span>' +
-              '<span class="ps-tag">المجموع: ' + mult.toFixed(2) + '</span>' +
-              '<span class="ps-qr">QR Code</span>' +
-            '</div>' +
-          '</div>' +
-          '<div id="psRows">' + html + '</div>' +
-        '</div>';
-
-      v.querySelectorAll(".ps-trash").forEach(function (btn) {
-        btn.addEventListener("click", function (ev) {
-          ev.preventDefault();
-          var row = btn.closest(".ps-row");
-          if (row) {
-            var k = row.getAttribute("data-key");
-            if (k) removed[k] = true;
-            row.remove();
-          }
-          var rem = v.querySelectorAll(".ps-row").length;
-          var c = document.getElementById("psCount");
-          if (c) c.textContent = "صفحة 1 • " + rem;
-        });
-      });
+      lastData = await res.json();
+      if (location.hash === "#/pronostics") inject(v, lastData);
     } catch (e) {
       if (location.hash === "#/pronostics") {
         v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;color:#b91c1c;">' + esc(e && e.message || e) + '</p></div>';
@@ -181,11 +199,12 @@
   }
 
   function guard() {
-    if (location.hash === "#/pronostics") {
-      var v = viewEl();
-      if (v && !busy && !v.querySelector("#psRows")) {
-        paint(false);
-      }
+    if (location.hash !== "#/pronostics") return;
+    var v = viewEl();
+    if (!v) return;
+    if (!v.querySelector("#psRows")) {
+      if (lastData) inject(v, lastData);
+      else paint(true);
     }
   }
 
@@ -193,20 +212,28 @@
     var v = viewEl();
     if (v && window.MutationObserver) {
       new MutationObserver(function () {
-        setTimeout(guard, 40);
-      }).observe(v, { childList: true, subtree: false });
+        if (location.hash === "#/pronostics" && !v.querySelector("#psRows")) {
+          guard();
+        }
+      }).observe(v, { childList: true, subtree: true });
     }
   }
 
   window.addEventListener("hashchange", function () {
-    if (location.hash === "#/pronostics") setTimeout(function () { paint(true); }, 90);
+    if (location.hash === "#/pronostics") {
+      guard();
+      setTimeout(guard, 120);
+      setTimeout(guard, 500);
+      setTimeout(guard, 1200);
+    }
   });
   window.addEventListener("load", function () {
     hook();
-    setTimeout(guard, 120);
-    setTimeout(guard, 450);
+    setTimeout(guard, 100);
+    setTimeout(guard, 500);
+    setTimeout(guard, 1200);
   });
-  setInterval(guard, 700);
+  setInterval(guard, 400);
   hook();
-  if (location.hash === "#/pronostics") setTimeout(function () { paint(true); }, 100);
+  if (location.hash === "#/pronostics") paint(true);
 })();

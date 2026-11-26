@@ -244,7 +244,8 @@ jobs:
           })();
           </script>'''
 
-          seo_head = '''<title>SiiMatchMind® — تحليل كرة القدم والذكاء الاصطناعي | Football Analytics & AI</title>
+          seo_head = '''<meta name="google-site-verification" content="h_2s3LM1W1s7tN0nN8wk6mA4TCDh4LdBkU9L7lBmt-E" />
+          <title>SiiMatchMind® — تحليل كرة القدم والذكاء الاصطناعي | Football Analytics & AI</title>
           <meta name="description" content="منصة SiiMatchMind® لتحليل مباريات كرة القدم والمنتخبات والبطولات بالذكاء الاصطناعي، متكاملة مع Sii-Football®." />
           <meta property="og:title" content="SiiMatchMind® — Football Analytics & AI" />
           <meta property="og:description" content="تحليل كرة القدم والذكاء الاصطناعي — SiiMatchMind® & Sii-Football®" />

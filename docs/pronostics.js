@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  var removedKeys = {};
+  var rendering = false;
+  var lastHash = location.hash || "#/";
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -63,25 +67,39 @@
     return '<span class="ps-crest">' + code + '</span>';
   }
 
-  async function renderPronostics() {
+  function isPronoViewRendered(view) {
+    return !!(view && view.querySelector("#psRows"));
+  }
+
+  async function renderPronostics(force) {
     if (location.hash !== "#/pronostics") return;
+    if (rendering && !force) return;
     var view = getView();
     if (!view) return;
+    if (!force && isPronoViewRendered(view)) return;
+
+    rendering = true;
     ensureStyle();
     view.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Chargement...</p></div>';
 
     try {
       var r = await fetch("data/static.json", { cache: "no-store" });
       var d = await r.json();
+      if (location.hash !== "#/pronostics") { rendering = false; return; }
+
       var teamsMap = {};
       (d.teams || []).forEach(function (t) {
         if (t.id) teamsMap[t.id] = t;
         if (t.name) teamsMap[t.name] = t;
       });
 
-      var entries = Object.entries(d.analyses || {}).slice(0, 40);
+      var entries = Object.entries(d.analyses || {}).filter(function (pair) {
+        return !removedKeys[pair[0]];
+      }).slice(0, 40);
+
       if (!entries.length) {
         view.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Aucun pronostic disponible.</p></div>';
+        rendering = false;
         return;
       }
 
@@ -111,7 +129,7 @@
         var href = "#/analyze/" + encodeURIComponent(rawH) + "/" + encodeURIComponent(rawA);
 
         return (
-          '<div class="ps-row" data-mult="' + odd + '">' +
+          '<div class="ps-row" data-key="' + esc(key) + '">' +
             '<div class="ps-left">' +
               '<span class="ps-mkt">' + esc(mkt) + '</span>' +
               '<div class="ps-main">' +
@@ -154,17 +172,43 @@
         btn.addEventListener("click", function (ev) {
           ev.preventDefault();
           var row = btn.closest(".ps-row");
-          if (row) row.remove();
+          if (row) {
+            var k = row.getAttribute("data-key");
+            if (k) removedKeys[k] = true;
+            row.remove();
+          }
           var left = view.querySelectorAll(".ps-row").length;
           var el = document.getElementById("psCount");
           if (el) el.textContent = "صفحة 1 • " + left;
         });
       });
     } catch (e) {
-      view.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;color:#b91c1c;">' + esc(e && e.message || e) + '</p></div>';
+      if (location.hash === "#/pronostics") {
+        view.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;color:#b91c1c;">' + esc(e && e.message || e) + '</p></div>';
+      }
+    } finally {
+      rendering = false;
     }
   }
 
-  window.addEventListener("hashchange", function () { setTimeout(renderPronostics, 30); });
-  if (location.hash === "#/pronostics") setTimeout(renderPronostics, 60);
+  function watchView() {
+    var view = getView();
+    if (!view || !window.MutationObserver) return;
+    var obs = new MutationObserver(function () {
+      if (location.hash === "#/pronostics" && !rendering && !isPronoViewRendered(view)) {
+        setTimeout(function () { renderPronostics(false); }, 40);
+      }
+    });
+    obs.observe(view, { childList: true, subtree: false });
+  }
+
+  window.addEventListener("hashchange", function () {
+    lastHash = location.hash || "#/";
+    if (lastHash === "#/pronostics") {
+      setTimeout(function () { renderPronostics(true); }, 60);
+    }
+  });
+
+  watchView();
+  if (location.hash === "#/pronostics") setTimeout(function () { renderPronostics(true); }, 80);
 })();

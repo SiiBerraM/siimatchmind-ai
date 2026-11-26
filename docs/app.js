@@ -506,7 +506,29 @@
       { key: "market_only", label: "السوق فقط (market_only)", obj: sm.market_only }
     ].filter(x => x.obj) : [];
 
-    const breakdownHtml = metricRows.length ? `<section class="card" style="margin-top:16px">
+    const breakdownHtml = metricRows.length ? `<section class="card" style="margin-top:16px;border:1px solid rgba(56,189,248,0.45)">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+        <h2 style="margin:0">عداد السجل الفعلي (ledger.json)</h2>
+        <span style="font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(56,189,248,0.14);font-weight:700">تتبع مباشر</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:12px 0 14px">
+        <div style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center">
+          <div style="font-size:26px;font-weight:800;line-height:1.1">${sm.settled ?? 0}</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">مباراة منتهية</div>
+        </div>
+        <div style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center">
+          <div style="font-size:26px;font-weight:800;line-height:1.1">${sm.logged ?? 0}</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">توقع مسجّل</div>
+        </div>
+        <div style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center">
+          <div style="font-size:26px;font-weight:800;line-height:1.1">${sm.pending ?? 0}</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">مباراة معلّقة</div>
+        </div>
+        <div style="padding:12px;border-radius:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);text-align:center">
+          <div style="font-size:22px;font-weight:800;line-height:1.1">${fmtAcc(sm.final_all && sm.final_all.accuracy)}</div>
+          <div class="muted" style="font-size:12px;margin-top:4px">دقة النموذج النهائي</div>
+        </div>
+      </div>
       <h2>تفصيل مقاييس السجل (ledger.json)</h2>
       <p class="muted">مقارنة الأداء الفعلي للمباريات المنتهية (<b>${sm.settled || 0}</b> من أصل <b>${sm.logged || 0}</b>) مقابل خط الأساس الموحد (Brier: <b>${baseU.brier}</b> · Log Loss: <b>${baseU.log_loss}</b>).</p>
       <table class="cmp">

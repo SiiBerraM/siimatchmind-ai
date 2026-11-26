@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siiberram.github.io/siimatchmind-ai/sitemap.xml

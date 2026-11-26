@@ -1,9 +1,10 @@
 (function () {
   "use strict";
 
+  var ROUTE = "#/pronostics";
   var removed = {};
-  var busy = false;
-  var lastData = null;
+  var cached = null;
+  var loading = false;
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -11,15 +12,15 @@
     });
   }
 
-  function viewEl() {
+  function view() {
     return document.getElementById("view") || document.querySelector("main .view") || document.querySelector("main");
   }
 
-  function addStyle() {
-    if (document.getElementById("smm-prono-css")) return;
-    var s = document.createElement("style");
-    s.id = "smm-prono-css";
-    s.textContent = [
+  function style() {
+    if (document.getElementById("smm-prono-slip-css")) return;
+    var el = document.createElement("style");
+    el.id = "smm-prono-slip-css";
+    el.textContent = [
       ".ps-box{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#eef2f7;color:#0f172a}",
       ".ps-head{background:#12284e;color:#fff;padding:10px 12px}",
       ".ps-title{text-align:center;font-weight:800;font-size:18px;color:#facc15;margin-bottom:8px}",
@@ -45,7 +46,7 @@
       ".ps-val{background:#1e3a8a;color:#facc15;font-weight:800;font-size:11px;padding:2px 6px;border-radius:3px}",
       ".ps-dt{font-size:10.5px;color:#334155;font-weight:700}"
     ].join("");
-    document.head.appendChild(s);
+    document.head.appendChild(el);
   }
 
   function market(ph, pd, pa, val) {
@@ -66,7 +67,7 @@
     return '<span class="ps-crest">' + code + '</span>';
   }
 
-  function buildHtml(data) {
+  function renderHtml(data) {
     var teams = {};
     (data.teams || []).forEach(function (t) {
       if (t.id) teams[t.id] = t;
@@ -144,7 +145,9 @@
     );
   }
 
-  function bindDelete(v) {
+  function applyDom(v, data) {
+    style();
+    v.innerHTML = renderHtml(data);
     v.querySelectorAll(".ps-trash").forEach(function (btn) {
       btn.onclick = function (ev) {
         ev.preventDefault();
@@ -155,85 +158,51 @@
           row.remove();
         }
         var rem = v.querySelectorAll(".ps-row").length;
-        var c = document.getElementById("psCount");
-        if (c) c.textContent = "صفحة 1 • " + rem;
+        var el = document.getElementById("psCount");
+        if (el) el.textContent = "صفحة 1 • " + rem;
       };
     });
   }
 
-  function inject(v, data) {
-    addStyle();
-    v.innerHTML = buildHtml(data);
-    bindDelete(v);
-  }
-
-  async function paint(force) {
-    if (location.hash !== "#/pronostics") return;
-    var v = viewEl();
-    if (!v) return;
-    if (!force && v.querySelector("#psRows")) return;
-
-    if (lastData && !force) {
-      inject(v, lastData);
+  function ensureView() {
+    if (location.hash !== ROUTE) return;
+    var v = view();
+    if (!v || v.querySelector("#psRows")) return;
+    if (cached) {
+      applyDom(v, cached);
       return;
     }
-
-    if (busy) return;
-    busy = true;
-    if (!v.querySelector("#psRows")) {
-      addStyle();
-      v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;">Chargement...</p></div>';
-    }
-
-    try {
-      var res = await fetch("data/static.json", { cache: "no-store" });
-      lastData = await res.json();
-      if (location.hash === "#/pronostics") inject(v, lastData);
-    } catch (e) {
-      if (location.hash === "#/pronostics") {
-        v.innerHTML = '<div class="ps-box"><div class="ps-head"><div class="ps-title">اختياراتي</div></div><p style="padding:12px;color:#b91c1c;">' + esc(e && e.message || e) + '</p></div>';
-      }
-    } finally {
-      busy = false;
-    }
-  }
-
-  function guard() {
-    if (location.hash !== "#/pronostics") return;
-    var v = viewEl();
-    if (!v) return;
-    if (!v.querySelector("#psRows")) {
-      if (lastData) inject(v, lastData);
-      else paint(true);
-    }
-  }
-
-  function hook() {
-    var v = viewEl();
-    if (v && window.MutationObserver) {
-      new MutationObserver(function () {
-        if (location.hash === "#/pronostics" && !v.querySelector("#psRows")) {
-          guard();
+    if (loading) return;
+    loading = true;
+    fetch("data/static.json", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        cached = d;
+        var cur = view();
+        if (location.hash === ROUTE && cur && !cur.querySelector("#psRows")) {
+          applyDom(cur, cached);
         }
-      }).observe(v, { childList: true, subtree: true });
-    }
+      })
+      .catch(function () {})
+      .finally(function () { loading = false; });
   }
 
-  window.addEventListener("hashchange", function () {
-    if (location.hash === "#/pronostics") {
-      guard();
-      setTimeout(guard, 120);
-      setTimeout(guard, 500);
-      setTimeout(guard, 1200);
-    }
-  });
+  function observe() {
+    var v = view();
+    if (!v || !window.MutationObserver) return;
+    new MutationObserver(function () {
+      if (location.hash === ROUTE && !v.querySelector("#psRows")) {
+        ensureView();
+      }
+    }).observe(v, { childList: true, subtree: true });
+  }
+
+  window.addEventListener("hashchange", ensureView);
   window.addEventListener("load", function () {
-    hook();
-    setTimeout(guard, 100);
-    setTimeout(guard, 500);
-    setTimeout(guard, 1200);
+    observe();
+    ensureView();
   });
-  setInterval(guard, 400);
-  hook();
-  if (location.hash === "#/pronostics") paint(true);
+  setInterval(ensureView, 250);
+  observe();
+  ensureView();
 })();

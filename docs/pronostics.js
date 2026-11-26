@@ -6,7 +6,9 @@
   var removed = {};
   var cached = null;
   var loading = false;
-  var rafId = null;
+  var guardTimer = null;
+  var obs = null;
+  var obsTarget = null;
 
   var fallbackData = {
     teams: [
@@ -53,7 +55,7 @@
     var el = document.createElement("style");
     el.id = "smm-prono-slip-css";
     el.textContent = [
-      ".ps-box{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#eef2f7;color:#0f172a;-webkit-tap-highlight-color:transparent}",
+      ".ps-box{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#eef2f7;color:#0f172a}",
       ".ps-head{background:#12284e;color:#fff;padding:10px 12px}",
       ".ps-title{text-align:center;font-weight:800;font-size:18px;color:#facc15;margin-bottom:8px}",
       ".ps-subbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:12px}",
@@ -94,7 +96,7 @@
   function crest(logo, name) {
     var code = esc((name || "?").slice(0, 2).toUpperCase());
     if (logo) {
-      return '<img src="' + esc(logo) + '" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="this.outerHTML=\'<span class=ps-crest>' + code + '</span>\'">';
+      return '<img src="' + esc(logo) + '" alt="" referrerpolicy="no-referrer" onerror="this.outerHTML=\'<span class=ps-crest>' + code + '</span>\'">';
     }
     return '<span class="ps-crest">' + code + '</span>';
   }
@@ -185,8 +187,11 @@
   }
 
   function applyDom(v, data) {
+    if (!v || v.getAttribute("data-ps-ready") === "1" && v.querySelector(".ps-box")) return;
+    if (obs) obs.disconnect();
     style();
     v.innerHTML = renderHtml(data);
+    v.setAttribute("data-ps-ready", "1");
     v.querySelectorAll(".ps-trash").forEach(function (btn) {
       btn.onclick = function (ev) {
         ev.preventDefault();
@@ -201,17 +206,26 @@
         if (el) el.textContent = "صفحة 1 • " + rem;
       };
     });
+    attachObserver(v);
   }
 
-  function loadOnce() {
-    if (cached || loading) return;
+  function loadData(v) {
+    if (cached) {
+      applyDom(v, cached);
+      return;
+    }
+    applyDom(v, fallbackData);
+    if (loading) return;
     loading = true;
     fetch("data/static.json", { cache: "no-store" })
       .then(function (r) { return r.json(); })
       .then(function (d) {
         cached = mergeData(d);
         var cur = view();
-        if (activeProno && cur) applyDom(cur, cached);
+        if (activeProno && cur) {
+          cur.removeAttribute("data-ps-ready");
+          applyDom(cur, cached);
+        }
       })
       .catch(function () {
         cached = fallbackData;
@@ -219,7 +233,7 @@
       .then(function () { loading = false; }, function () { loading = false; });
   }
 
-  function enforceProno() {
+  function enforceOnce() {
     if (isPronoHash()) {
       activeProno = true;
     } else if (activeProno && (location.hash === "#/" || location.hash === "")) {
@@ -227,41 +241,51 @@
         history.replaceState(null, "", TARGET_HASH);
       } catch (e) {}
     }
-
     if (!activeProno) return;
     var v = view();
     if (!v) return;
-    if (!v.querySelector("#psRows")) {
-      applyDom(v, cached || fallbackData);
+    attachObserver(v);
+    if (!v.querySelector(".ps-box")) {
+      v.removeAttribute("data-ps-ready");
+      loadData(v);
     }
-    loadOnce();
   }
 
-  function tick() {
-    rafId = null;
-    enforceProno();
+  function scheduleGuard() {
+    if (guardTimer) clearTimeout(guardTimer);
+    guardTimer = setTimeout(function () {
+      guardTimer = null;
+      enforceOnce();
+    }, 60);
   }
 
-  function schedule() {
-    if (!rafId) rafId = requestAnimationFrame(tick);
+  function attachObserver(v) {
+    if (!window.MutationObserver || !v) return;
+    if (obs && obsTarget === v) {
+      obs.observe(v, { childList: true });
+      return;
+    }
+    if (obs) obs.disconnect();
+    obsTarget = v;
+    obs = new MutationObserver(function () {
+      if (activeProno && !v.querySelector(".ps-box")) {
+        scheduleGuard();
+      }
+    });
+    obs.observe(v, { childList: true });
   }
 
-  function handleTap(ev) {
-    var target = ev.target;
-    var el = target && target.closest ? target.closest("a, button, [data-route], [href]") : null;
-    if (!el) return;
-    var href = el.getAttribute("href") || el.getAttribute("data-route") || "";
-    var txt = (el.textContent || "").toLowerCase();
-    if (isPronoHash(href) || txt.indexOf("pronostics") !== -1 || txt.indexOf("التوقعات") !== -1) {
+  document.addEventListener("click", function (ev) {
+    var a = ev.target && ev.target.closest ? ev.target.closest("a") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (isPronoHash(href)) {
       activeProno = true;
-      schedule();
+      scheduleGuard();
     } else if (href.indexOf("#/") === 0 && !isPronoHash(href)) {
       activeProno = false;
     }
-  }
-
-  document.addEventListener("click", handleTap, true);
-  document.addEventListener("touchend", handleTap, { passive: true, capture: true });
+  }, true);
 
   window.addEventListener("hashchange", function () {
     if (isPronoHash()) {
@@ -271,27 +295,16 @@
         history.replaceState(null, "", TARGET_HASH);
       } catch (e) {}
     }
-    schedule();
+    scheduleGuard();
   });
 
   window.addEventListener("pageshow", function () {
     if (isPronoHash()) activeProno = true;
-    schedule();
+    scheduleGuard();
   });
 
-  if (window.MutationObserver) {
-    var root = document.body || document.documentElement;
-    if (root) {
-      new MutationObserver(function () {
-        if (activeProno) schedule();
-      }).observe(root, { childList: true, subtree: true });
-    }
-  }
-
-  setInterval(function () {
-    if (isPronoHash() || activeProno) enforceProno();
-  }, 180);
-
   if (isPronoHash()) activeProno = true;
-  enforceProno();
+  enforceOnce();
+  setTimeout(enforceOnce, 300);
+  setTimeout(enforceOnce, 900);
 })();

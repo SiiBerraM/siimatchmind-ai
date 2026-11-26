@@ -53,7 +53,7 @@
     var el = document.createElement("style");
     el.id = "smm-prono-slip-css";
     el.textContent = [
-      ".ps-box{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#eef2f7;color:#0f172a}",
+      ".ps-box{max-width:720px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.15);background:#eef2f7;color:#0f172a;-webkit-tap-highlight-color:transparent}",
       ".ps-head{background:#12284e;color:#fff;padding:10px 12px}",
       ".ps-title{text-align:center;font-weight:800;font-size:18px;color:#facc15;margin-bottom:8px}",
       ".ps-subbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:12px}",
@@ -78,7 +78,7 @@
       ".ps-val{background:#1e3a8a;color:#facc15;font-weight:800;font-size:11px;padding:2px 6px;border-radius:3px}",
       ".ps-dt{font-size:10.5px;color:#334155;font-weight:700}"
     ].join("");
-    document.head.appendChild(el);
+    (document.head || document.documentElement).appendChild(el);
   }
 
   function market(ph, pd, pa, val) {
@@ -216,13 +216,13 @@
       .catch(function () {
         cached = fallbackData;
       })
-      .finally(function () { loading = false; });
+      .then(function () { loading = false; }, function () { loading = false; });
   }
 
   function enforceProno() {
     if (isPronoHash()) {
       activeProno = true;
-    } else if (activeProno && location.hash === "#/") {
+    } else if (activeProno && (location.hash === "#/" || location.hash === "")) {
       try {
         history.replaceState(null, "", TARGET_HASH);
       } catch (e) {}
@@ -246,22 +246,27 @@
     if (!rafId) rafId = requestAnimationFrame(tick);
   }
 
-  document.addEventListener("click", function (ev) {
-    var a = ev.target && ev.target.closest ? ev.target.closest("a") : null;
-    if (!a) return;
-    var href = a.getAttribute("href") || "";
-    if (isPronoHash(href)) {
+  function handleTap(ev) {
+    var target = ev.target;
+    var el = target && target.closest ? target.closest("a, button, [data-route], [href]") : null;
+    if (!el) return;
+    var href = el.getAttribute("href") || el.getAttribute("data-route") || "";
+    var txt = (el.textContent || "").toLowerCase();
+    if (isPronoHash(href) || txt.indexOf("pronostics") !== -1 || txt.indexOf("التوقعات") !== -1) {
       activeProno = true;
       schedule();
     } else if (href.indexOf("#/") === 0 && !isPronoHash(href)) {
       activeProno = false;
     }
-  }, true);
+  }
+
+  document.addEventListener("click", handleTap, true);
+  document.addEventListener("touchend", handleTap, { passive: true, capture: true });
 
   window.addEventListener("hashchange", function () {
     if (isPronoHash()) {
       activeProno = true;
-    } else if (activeProno && location.hash === "#/") {
+    } else if (activeProno && (location.hash === "#/" || location.hash === "")) {
       try {
         history.replaceState(null, "", TARGET_HASH);
       } catch (e) {}
@@ -269,15 +274,23 @@
     schedule();
   });
 
-  if (window.MutationObserver && document.body) {
-    new MutationObserver(function () {
-      if (activeProno) schedule();
-    }).observe(document.body, { childList: true, subtree: true });
+  window.addEventListener("pageshow", function () {
+    if (isPronoHash()) activeProno = true;
+    schedule();
+  });
+
+  if (window.MutationObserver) {
+    var root = document.body || document.documentElement;
+    if (root) {
+      new MutationObserver(function () {
+        if (activeProno) schedule();
+      }).observe(root, { childList: true, subtree: true });
+    }
   }
 
   setInterval(function () {
     if (isPronoHash() || activeProno) enforceProno();
-  }, 150);
+  }, 180);
 
   if (isPronoHash()) activeProno = true;
   enforceProno();

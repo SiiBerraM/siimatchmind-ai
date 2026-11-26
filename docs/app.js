@@ -487,21 +487,76 @@
   }
 
   async function pageQuality() {
-    const q = await api.quality();
-    if (!q.available) { view.innerHTML = `<h1>${t("q.title")}</h1><p class="empty">${t("q.unavailable")}</p>`; return; }
-    const better = q.model.brier < q.baseline.brier;
+    let q = null;
+    try { q = await api.quality(); } catch (e) { q = null; }
+    if (!q || typeof q !== "object") {
+      q = { available: false, reason: "يُستكمل التقييم التفصيلي للبطولة عند توفر عينة اختبار رجعي كافية، بينما يستمر التتبع الفعلي من المباريات والأرشيف." };
+    }
+    let led = null;
+    try { const r = await fetch("data/ledger.json", { cache: "no-cache" }); if (r.ok) led = await r.json(); } catch (e) { }
+    if (!led && typeof window !== "undefined" && window.__LEDGER_DATA__) led = window.__LEDGER_DATA__;
+    const sm = (led && led.summary) || null;
+    const baseU = (sm && sm.baseline_uniform) || { brier: 0.6667, log_loss: 1.0986 };
+    const fmtAcc = v => (typeof v === "number" ? pct(v) : "-");
+    const fmtVal = v => (typeof v === "number" ? v.toFixed(4) : "-");
+    const metricRows = sm ? [
+      { key: "final_all", label: "النموذج النهائي الكلي (final_all)", obj: sm.final_all },
+      { key: "model_all", label: "النموذج الإحصائي الكلي (model_all)", obj: sm.model_all },
+      { key: "final_with_market", label: "النهائي مع السوق (final_with_market)", obj: sm.final_with_market },
+      { key: "market_only", label: "السوق فقط (market_only)", obj: sm.market_only }
+    ].filter(x => x.obj) : [];
+
+    const breakdownHtml = metricRows.length ? `<section class="card" style="margin-top:16px">
+      <h2>تفصيل مقاييس السجل (ledger.json)</h2>
+      <p class="muted">مقارنة الأداء الفعلي للمباريات المنتهية (<b>${sm.settled || 0}</b> من أصل <b>${sm.logged || 0}</b>) مقابل خط الأساس الموحد (Brier: <b>${baseU.brier}</b> · Log Loss: <b>${baseU.log_loss}</b>).</p>
+      <table class="cmp">
+        <tr><th>المؤشر</th><th>العينة</th><th>Brier</th><th>Log Loss</th><th>الدقة</th></tr>
+        ${metricRows.map(r => `<tr><td>${r.label}</td><td>${r.obj.n ?? "-"}</td><td>${fmtVal(r.obj.brier)}</td><td>${fmtVal(r.obj.log_loss)}</td><td>${fmtAcc(r.obj.accuracy)}</td></tr>`).join("")}
+      </table>
+    </section>` : "";
+
+    const tuningHtml = `<section class="card" style="margin-top:16px">
+      <h2>ضبط المعاملات وقراءة نتائج tune_model.py</h2>
+      <p class="muted">يختبر <code>tune_model.py</code> مجموعات المعاملات على الأرشيف والمباريات المنتهية لاختيار التوليفة الأقل خطأً دون المساس بالتوقعات المسجّلة مسبقاً.</p>
+      <ul class="muted">
+        <li><b>half_life (عمر النصف الزمني):</b> يحدد سرعة تلاشي وزن المباريات الأقدم؛ قيمة أصغر تجعل النموذج أسرع استجابةً للشكل الحديث، وقيمة أكبر تمنح استقراراً أطول عبر الموسم.</li>
+        <li><b>k (معامل الحساسية / الانحدار):</b> يتحكم في حدة تحويل الفارق إلى احتمالات؛ رفع <code>k</code> يزيد ثقة الترجيح عند وضوح الفوارق، وخفضه يجعل الاحتمالات أكثر تحفظاً لتفادي الثقة الزائدة.</li>
+        <li><b>قراءة النتائج:</b> ابحث عن انخفاض <b>Brier</b> و<b>Log Loss</b> مع الحفاظ على <b>Accuracy</b> مستقرة أو أعلى، وتأكد أن التحسن لا يأتي على حساب المعايرة (تطابق الاحتمالات المتوقعة مع النسب الفعلية).</li>
+      </ul>
+    </section>`;
+
+    const learnHtml = `<section class="card" style="margin-top:16px">
+      <h2>التعلّم من الأرشيف والمباريات</h2>
+      <p class="muted">يعتمد التعلّم على سجل التوقعات قبل المباريات (<code>ledger.json</code>) ومطابقة النتائج الفعلية لتقييم المعايرة وضبط معاملات النموذج (<code>half_life</code> و<code>k</code>) دون تعديل التوقعات السابقة.</p>
+      ${sm ? `<p class="cap">السجل الحالي: <b>${sm.logged || 0}</b> توقع مسجّل · <b>${sm.settled || 0}</b> مباراة منتهية · <b>${sm.pending || 0}</b> معلّقة.</p>` : ""}
+    </section>`;
+
+    if (!q.available) {
+      view.innerHTML = `<h1>${t("q.title")}</h1>
+        <p class="empty">${t("q.unavailable")}</p>
+        <p class="cap">${esc(q.reason || "يُستكمل التقييم التفصيلي للبطولة عند توفر عينة اختبار رجعي كافية، بينما يستمر التتبع الفعلي من المباريات والأرشيف.")}</p>
+        ${breakdownHtml}
+        ${tuningHtml}
+        ${learnHtml}`;
+      return;
+    }
+
+    const better = q.model && q.baseline ? (q.model.brier < q.baseline.brier) : false;
     view.innerHTML = `<h1>${t("q.title")}</h1>
       <p class="muted">${q.data_kind === "demo" ? t("q.note_demo") : t("q.note_real")}</p>
       <h2>${t("q.tested", { n: q.tested_matches })}</h2>
       <table class="cmp"><tr><th></th><th>${t("q.model")}</th><th>${t("q.baseline")}</th></tr>
-        <tr><td>${t("q.brier")}</td><td>${q.model.brier}</td><td>${q.baseline.brier}</td></tr>
-        <tr><td>${t("q.logloss")}</td><td>${q.model.log_loss}</td><td>${q.baseline.log_loss}</td></tr>
-        <tr><td>${t("q.acc")}</td><td>${pct(q.model.accuracy)}</td><td>${pct(q.baseline.accuracy)}</td></tr></table>
+      <tr><td>${t("q.brier")}</td><td>${q.model.brier}</td><td>${q.baseline.brier}</td></tr>
+      <tr><td>${t("q.logloss")}</td><td>${q.model.log_loss}</td><td>${q.baseline.log_loss}</td></tr>
+      <tr><td>${t("q.acc")}</td><td>${pct(q.model.accuracy)}</td><td>${pct(q.baseline.accuracy)}</td></tr></table>
       <p class="cap">${t("q.explain", { u: q.uniform_brier })} ${better ? t("q.better") : t("q.notbetter")}</p>
       <h2>${t("q.calib")}</h2>
       <table class="cmp"><tr><th>${t("q.range")}</th><th>${t("q.count")}</th><th>${t("q.pred")}</th><th>${t("q.obs")}</th></tr>
-        ${q.calibration.map(b => `<tr><td>${b.range}</td><td>${b.count}</td><td>${pct(b.predicted)}</td><td>${pct(b.observed)}</td></tr>`).join("")}</table>
-      <p class="cap">${t("q.calib_cap", { e: pct(q.calibration_error) })}</p>`;
+      ${q.calibration.map(b => `<tr><td>${b.range}</td><td>${b.count}</td><td>${pct(b.predicted)}</td><td>${pct(b.observed)}</td></tr>`).join("")}</table>
+      <p class="cap">${t("q.calib_cap", { e: pct(q.calibration_error) })}</p>
+      ${breakdownHtml}
+      ${tuningHtml}
+      ${learnHtml}`;
   }
 
   // ---------- الصحافة ومن نحن ----------

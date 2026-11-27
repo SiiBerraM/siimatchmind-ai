@@ -763,7 +763,21 @@
       });
   }
 
-  window.smmMyTeam = function (view) {
+  view.addEventListener("click", function (ev) {
+  var btn = ev.target && ev.target.closest && ev.target.closest("#copyChallengeCodeBtn");
+  if (!btn) return;
+  var codeEl = view.querySelector("#challengeInviteCode");
+  var statusEl = view.querySelector("#copyChallengeCodeStatus");
+  var text = (codeEl && (codeEl.value || codeEl.textContent) || "").trim();
+  if (!text) return;
+  var done = function () { if (statusEl) statusEl.textContent = "تم النسخ ✓"; };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(function () { done(); });
+  } else {
+    done();
+  }
+});
+window.smmMyTeam = function (view) {
     render(view);
   };
 

@@ -11,6 +11,75 @@
   var SUPABASE_KEY = "Sb_publishable_tnRZW4FwUATCGCg0mX0I-Q_2w0h_S8Y";
   var CHALLENGES_ENDPOINT = SUPABASE_URL + "/rest/v1/challenges";
 
+  
+  function getSbCfg() {
+    var cfg = window.SMM_SUPABASE || {};
+    if (!cfg.url || !cfg.key) return null;
+    return {
+      url: String(cfg.url).replace(/\/+$/, ""),
+      key: String(cfg.key),
+      table: String(cfg.table || "challenges")
+    };
+  }
+
+  function sbHeaders(cfg, extra) {
+    var h = Object.assign({
+      "apikey": cfg.key,
+      "Authorization": "Bearer " + cfg.key,
+      "Content-Type": "application/json"
+    }, extra || {});
+    return h;
+  }
+
+  function mapRowToChallenge(row) {
+    if (!row) return null;
+    if (row.payload && typeof row.payload === "object") {
+      return Object.assign({}, row.payload, { id: row.payload.id || row.id });
+    }
+    return {
+      id: row.id,
+      match_label: row.match_label || "",
+      status: row.status || "pending"
+    };
+  }
+
+  function mapChallengeToRow(ch) {
+    var label = ch.match_label || [ch.homeName, ch.awayName].filter(Boolean).join(" vs ") || ch.matchId || ch.id;
+    return {
+      id: String(ch.id),
+      match_label: String(label).slice(0, 200),
+      status: String(ch.status || (ch.opponentMatched ? "matched" : "pending")),
+      payload: ch
+    };
+  }
+
+  function sbUpsertChallenge(ch) {
+    var cfg = getSbCfg();
+    if (!cfg || !ch || !ch.id) return Promise.resolve(false);
+    var endpoint = cfg.url + "/rest/v1/" + encodeURIComponent(cfg.table) + "?on_conflict=id";
+    return fetch(endpoint, {
+      method: "POST",
+      headers: sbHeaders(cfg, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+      body: JSON.stringify([mapChallengeToRow(ch)])
+    }).then(function (r) { return r.ok; }).catch(function () { return false; });
+  }
+
+  function sbPullChallenges() {
+    var cfg = getSbCfg();
+    if (!cfg) return Promise.resolve(null);
+    var endpoint = cfg.url + "/rest/v1/" + encodeURIComponent(cfg.table) + "?select=id,match_label,status,payload&limit=100";
+    return fetch(endpoint, {
+      method: "GET",
+      headers: sbHeaders(cfg)
+    }).then(function (r) {
+      if (!r.ok) return null;
+      return r.json();
+    }).then(function (rows) {
+      if (!Array.isArray(rows)) return null;
+      return rows.map(mapRowToChallenge).filter(Boolean);
+    }).catch(function () { return null; });
+  }
+
   var STORAGE_KEYS = {
     favTeam: "smm.favTeam",
     favLeague: "smm.favLeague",
@@ -765,6 +834,7 @@
 
             var updated = [newCh].concat(readJson(STORAGE_KEYS.challenges, []));
             writeJson(STORAGE_KEYS.challenges, updated);
+          sbUpsertChallenge(newCh);
             emitState({ challengeCreated: newCh.id });
             render(view);
           });
@@ -802,6 +872,7 @@
             target.opponentMethod = sub.payoutMethod || "PayPal";
             target.opponentAccount = sub.payoutAccount || "";
             writeJson(STORAGE_KEYS.challenges, list);
+          sbUpsertChallenge(target);
             emitState({ challengeAccepted: target.id });
             render(view);
           });
@@ -811,6 +882,15 @@
         matches.forEach(function (m) { matchById[m.id] = m; });
 
         var currentChallenges = readJson(STORAGE_KEYS.challenges, []);
+      if (!view.__sbPulled) {
+        view.__sbPulled = true;
+        sbPullChallenges().then(function (remoteList) {
+          if (Array.isArray(remoteList) && remoteList.length) {
+            writeJson(STORAGE_KEYS.challenges, remoteList);
+            render(view);
+          }
+        });
+      }
         var listBox = view.querySelector("#challengesList");
         if (listBox) {
           if (!currentChallenges.length) {

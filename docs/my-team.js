@@ -5,7 +5,11 @@
   var OWNER_NAME = "Berra";
   var PAYPAL_DONATE_URL = "https://www.paypal.com/donate";
   var SII_FOOTBALL_URL = "https://siiberram.github.io/Sii-Football/";
-  var PLATFORM_FEE_RATE = 0.10; // نسبة عمولة التطبيق (10% افتراضياً وقابلة للتعديل)
+  var PLATFORM_FEE_RATE = 0.10;
+
+  var SUPABASE_URL = "https://gbvcmlfgoeptaqetsbwg.supabase.co";
+  var SUPABASE_KEY = "Sb_publishable_tnRZW4FwUATCGCg0mX0I-Q_2w0h_S8Y";
+  var CHALLENGES_ENDPOINT = SUPABASE_URL + "/rest/v1/challenges";
 
   var STORAGE_KEYS = {
     favTeam: "smm.favTeam",
@@ -65,6 +69,97 @@
         detail: Object.assign({ league: getSelectedLeague(), source: "my-team" }, extra || {})
       }));
     } catch (e) {}
+  }
+
+  function sbHeaders(extra) {
+    return Object.assign({
+      "apikey": SUPABASE_KEY,
+      "Authorization": "Bearer " + SUPABASE_KEY,
+      "Content-Type": "application/json"
+    }, extra || {});
+  }
+
+  function serializeChallengeRow(ch) {
+    return {
+      id: String(ch.id),
+      creator_name: String(ch.creatorName || "User"),
+      creator_payout: String((ch.creatorMethod || "PayPal") + (ch.creatorAccount ? (": " + ch.creatorAccount) : "")),
+      match_label: String(ch.matchLabel || ""),
+      team_pick: String(ch.creatorSide === "away" ? (ch.awayName || "Away") : (ch.homeName || "Home")),
+      amount: String(ch.stake != null ? ch.stake : 1),
+      opponent_name: ch.opponentName ? String(ch.opponentName) : null,
+      opponent_payout: ch.opponentAccount
+        ? String((ch.opponentMethod || "PayPal") + ": " + ch.opponentAccount)
+        : (ch.opponentMethod || null),
+      status: ch.opponentMatched ? "matched" : "open",
+      updated_at: new Date().toISOString()
+    };
+  }
+
+  function mergeRowIntoChallenge(row, existingList) {
+    var prev = (existingList || []).find(function (item) { return String(item.id) === String(row.id); }) || {};
+    var parts = String(row.match_label || "").split(" vs ");
+    var homeName = prev.homeName || (parts[0] ? parts[0].trim() : "Home");
+    var awayName = prev.awayName || (parts[1] ? parts[1].trim() : "Away");
+    var creatorSide = prev.creatorSide || (row.team_pick === awayName ? "away" : "home");
+    var stakeNum = Number(row.amount);
+    var stake = Number.isFinite(stakeNum) && stakeNum > 0 ? stakeNum : (prev.stake || 1);
+
+    var merged = Object.assign({}, prev, {
+      id: String(row.id),
+      matchId: prev.matchId || "",
+      matchLabel: row.match_label || prev.matchLabel || (homeName + " vs " + awayName),
+      homeName: homeName,
+      awayName: awayName,
+      creatorName: row.creator_name || prev.creatorName || "User",
+      creatorMethod: prev.creatorMethod || "PayPal",
+      creatorAccount: prev.creatorAccount || "",
+      opponentName: row.opponent_name || prev.opponentName || "",
+      opponentMethod: prev.opponentMethod || "PayPal",
+      opponentAccount: prev.opponentAccount || "",
+      opponentMatched: row.status === "matched" || !!prev.opponentMatched,
+      creatorSide: creatorSide,
+      stake: stake,
+      feeRate: prev.feeRate != null ? prev.feeRate : PLATFORM_FEE_RATE,
+      createdAt: row.created_at || prev.createdAt || new Date().toISOString()
+    });
+    if (!merged.inviteCode) {
+      merged.inviteCode = makeChallengeCode(merged);
+    }
+    return merged;
+  }
+
+  function fetchChallengesFromSupabase() {
+    return fetch(CHALLENGES_ENDPOINT + "?select=*&order=created_at.desc", {
+      method: "GET",
+      headers: sbHeaders(),
+      cache: "no-store"
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("Supabase fetch failed: " + res.status);
+        return res.json();
+      })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return null;
+        var localList = readJson(STORAGE_KEYS.challenges, []);
+        var mapped = rows.map(function (r) { return mergeRowIntoChallenge(r, localList); });
+        writeJson(STORAGE_KEYS.challenges, mapped);
+        return mapped;
+      })
+      .catch(function () {
+        return null;
+      });
+  }
+
+  function upsertChallengeToSupabase(ch) {
+    var payload = serializeChallengeRow(ch);
+    return fetch(CHALLENGES_ENDPOINT + "?on_conflict=id", {
+      method: "POST",
+      headers: sbHeaders({ "Prefer": "resolution=merge-duplicates,return=representation" }),
+      body: JSON.stringify(payload)
+    }).catch(function () {
+      return null;
+    });
   }
 
   function upsertOnlineMember(subObj) {
@@ -272,6 +367,78 @@
             (favTeam
               ? ('<div><b>' + esc(favTeam.name) + '</b>' + (favTeam.league ? (' <small style="opacity:.75">[' + esc(favTeam.league) + ']</small>') : '') + '</div>')
               : ('<p class="note" style="margin:4px 0 0">' + esc(isAr ? "لم تحدد فريقاً مفضلاً بعد. اختر فريقاً من قائمة الفرق أدناه." : "No favorite team selected yet. Pick one below.") + '</p>')) +
+          '</div>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">' +
+            '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">' +
+              '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>' +
+            '</select>' +
+            '<button type="button" id="saveFavTeamBtn" class="btn">' + esc(isAr ? "حفظ الفريق" : "Save Team") + '</button>' +
+            '<button type="button" id="toggleOwnerBtn" class="btn" style="opacity:.85">' +
+              esc(ownerMode ? (isAr ? "إخفاء لوحة المالك (Berra)" : "Hide Owner Panel") : (isAr ? "لوحة المالك (Berra)" : "Owner Panel (Berra)")) +
+            '</button>' +
+          '</div>' +
+        '</div>' +
+
+        (isParaSelected
+          ? '<div class="card" style="margin-bottom:12px;padding:12px;border-color:rgba(250,204,21,.45)">' +
+              '<b>♿ ' + esc(isAr ? "بطولات ذوي الهمم (Para Football)" : "Para Football Competitions") + '</b>' +
+              '<div style="font-size:12px;margin-top:4px">' +
+                '<a href="' + esc(SII_FOOTBALL_URL) + '" target="_blank" rel="noopener noreferrer" style="color:#facc15;font-weight:700">' +
+                  esc(isAr ? "فتح بيانات وتفاصيل دوريات ذوي الهمم عبر Sii-Football®" : "Open Para Football data on Sii-Football®") +
+                '</a>' +
+              '</div>' +
+            '</div>'
+          : '') +
+
+        '<div class="card" style="margin-bottom:12px;padding:14px">' +
+          '<b>🎟️ ' + esc(isAr ? "الاشتراك الشهري الرمزي (بدون ربط بريد إلكتروني)" : "Symbolic Monthly Membership (No Email Required)") + '</b>' +
+          '<p class="note" style="margin:6px 0 10px">' +
+            esc(isAr
+              ? ("يُحفظ اشتراكك وبياناتك على هاتفك فقط. بعد التفعيل يظهر زر «تحدي المستخدمين» وقائمة المشتركين أونلاين؛ وتُوجَّه المدفوعات إلى حساب المالك (" + OWNER_NAME + ") عبر PayPal.")
+              : ("Saved locally on your phone. Once active, User Challenges and the Online Subscribers list appear; payments go to owner " + OWNER_NAME + " via PayPal.")) +
+          '</p>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:10px">' +
+            '<input type="text" id="subMemberName" value="' + esc(sub.memberName || "") + '" placeholder="' + esc(isAr ? "اسمك أو لقبك في التحدي" : "Your display name / tag") + '" style="padding:8px;border-radius:8px">' +
+            '<select id="subPayoutMethod" style="padding:8px;border-radius:8px">' +
+              '<option value="PayPal"' + (sub.payoutMethod === "PayPal" ? " selected" : "") + '>PayPal</option>' +
+              '<option value="Bank Card"' + (sub.payoutMethod === "Bank Card" ? " selected" : "") + '>' + esc(isAr ? "بطاقة بنكية (Bank Card)" : "Bank Card") + '</option>' +
+            '</select>' +
+            '<input type="text" id="subPayoutAccount" value="' + esc(sub.payoutAccount || "") + '" placeholder="' + esc(isAr ? "حساب PayPal أو رقم/مرجع البطاقة" : "PayPal handle or card ref") + '" style="padding:8px;border-radius:8px">' +
+          '</div>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">' +
+            '<a href="' + esc(PAYPAL_DONATE_URL) + '" target="_blank" rel="noopener noreferrer" class="btn" style="text-decoration:none">' +
+              esc(isAr ? ("دفع الاشتراك الرمزي عبر PayPal (" + OWNER_NAME + ")") : ("Pay Symbolic Fee via PayPal (" + OWNER_NAME + ")")) +
+            '</a>' +
+            '<button type="button" id="activateSubBtn" class="btn">' +
+              esc(sub.active ? (isAr ? "تحديث بيانات الاشتراك النشط" : "Update Active Subscription") : (isAr ? "تفعيل الاشتراك الشهري الرمزي" : "Activate Symbolic Monthly Sub")) +
+            '</button>' +
+            (sub.active
+              ? '<button type="button" id="deactivateSubBtn" class="btn" style="opacity:.75">' + esc(isAr ? "إلغاء التفعيل المحلي" : "Deactivate Local") + '</button>'
+              : '') +
+          '</div>' +
+          '<div id="subStatusNote" style="margin-top:8px;font-size:12px">' +
+            (sub.active
+              ? ('✅ ' + esc(isAr ? ("الاشتراك مفعل على هذا الهاتف باسم: " + (sub.memberName || "مستخدم") + " | الاستلام عبر: " + (sub.payoutMethod || "PayPal") + " (" + (sub.payoutAccount || "غير محدد") + ")") : ("Active locally for: " + (sub.memberName || "Member"))))
+              : ('🔒 ' + esc(isAr ? "زر «تحدي المستخدمين» وقائمة المشتركين أونلاين مخفية حالياً حتى تفعيل الاشتراك الشهري الرمزي." : "User Challenges button and Online Subscribers list are hidden until subscription is activated."))) +
+          '</div>' +
+        '</div>' +
+
+        '<div id="challengeGateArea">' +
+          (sub.active
+            ? ('<div style="margin-bottom:12px">' +
+                '<button type="button" id="openChallengePanelBtn" class="btn" style="width:100%;padding:12px;font-weight:700;background:#16a34a;color:#fff">' +
+                  '⚔️ ' + esc(isAr ? "تحدي المستخدمين (قائمة الأونلاين + مباراة + فريق + مطابقة المبلغ)" : "User Challenges (Online List + Match + Team + Equal Stake)") +
+                '</button>' +
+              '</div>' +
+              '<div id="challengePanel" class="card" style="margin-bottom:12px;padding:14px">' +
+                '<div style="margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12)">' +
+                  '<b>🟢 ' + esc(isAr ? "المشتركون أونلاين (اختر شخصاً بالضغط على مؤشر/زر الاختيار)" : "Online Subscribers (Tap indicator/button to pick challenger)") + '</b>' +
+                  '<div id="onlineMembersList" style="margin-top:8px;display:grid;gap:6px">' +
+                    (onlineMembers.length
+                      ? onlineMembers.map(function (m, idx) {
+                          return (
+                            '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.04);font-size:12px">' +
+                              '<span><span style="display:inline-block;width:9px;height:9px;border-radiئمة الفرق أدناه." : "No favorite team selected yet. Pick one below.") + '</p>')) +
           '</div>' +
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">' +
             '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">' +

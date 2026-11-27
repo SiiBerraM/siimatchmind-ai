@@ -1,4 +1,4 @@
-/* SiiMatchMind — صفحة «مباريات اليوم» (#/today) لكل البطولات مع احترام الدوري المختار + دعم بطولات ذوي الهمم (hlpara) وربط Sii-Football. */
+/* SiiMatchMind — صفحة «مباريات اليوم» (#/today) لكل البطولات مع مزامنة كاملة وأسماء الفرق الحقيقية + دعم hlpara و Sii-Football®. */
 (function () {
   "use strict";
 
@@ -20,6 +20,26 @@
     } catch (e) {
       return "";
     }
+  }
+
+  function syncLeagueAcrossControls(leagueVal) {
+    var clean = String(leagueVal || "").trim();
+    try {
+      if (clean) localStorage.setItem("smm.league", clean);
+      else localStorage.removeItem("smm.league");
+    } catch (e) {}
+    window.SMM_LEAGUE = clean;
+
+    var sel = document.getElementById("leagueSel");
+    if (sel && sel.value !== clean) {
+      sel.value = clean;
+    }
+
+    try {
+      window.dispatchEvent(new CustomEvent("smm:state-change", {
+        detail: { league: clean, source: "today" }
+      }));
+    } catch (e) {}
   }
 
   function matchMatchesLeague(m, leagueCode) {
@@ -74,6 +94,53 @@
     return s.slice(0, 10);
   }
 
+  function buildTeamsIndex(data) {
+    var map = Object.create(null);
+    var teams = data && data.teams;
+    if (!teams) return map;
+
+    function addEntry(key, obj) {
+      if (!key) return;
+      var k = String(key).trim();
+      if (!k) return;
+      var name = "";
+      var logo = "";
+      if (typeof obj === "string") {
+        name = obj;
+      } else if (obj && typeof obj === "object") {
+        name = obj.name || obj.team_name || obj.title || obj.shortName || obj.short_name || "";
+        logo = obj.logo || obj.crest || obj.image || obj.img || "";
+      }
+      if (name || logo) {
+        map[k] = { name: name || k, logo: logo || "" };
+        var bare = k.replace(/^[ht]/i, "");
+        if (bare && !map[bare]) map[bare] = { name: name || k, logo: logo || "" };
+      }
+    }
+
+    if (Array.isArray(teams)) {
+      teams.forEach(function (t) {
+        if (!t || typeof t !== "object") return;
+        addEntry(t.id || t.team_id || t.code, t);
+      });
+    } else if (typeof teams === "object") {
+      Object.keys(teams).forEach(function (k) {
+        addEntry(k, teams[k]);
+      });
+    }
+    return map;
+  }
+
+  function resolveTeam(rawVal, fallbackName, teamsMap) {
+    var raw = rawVal != null ? String(rawVal).trim() : "";
+    var fb = fallbackName != null ? String(fallbackName).trim() : "";
+    var entry = (raw && teamsMap[raw]) || (fb && teamsMap[fb]) || null;
+    if (entry && entry.name) {
+      return { name: entry.name, logo: entry.logo || "" };
+    }
+    return { name: fb || raw || "Team", logo: "" };
+  }
+
   function collectMatchesForDay(data, day, leagueCode) {
     var seen = Object.create(null);
     var list = [];
@@ -122,7 +189,7 @@
     if (offsets.indexOf(activeOffset) === -1) activeOffset = 0;
 
     var tabsHtml = offsets.map(function (off) {
-      var cls = off === activeOffset ? " class=\"on\"" : "";
+      var cls = off === activeOffset ? ' class="on"' : "";
       return '<button type="button" data-off="' + off + '"' + cls + '>' + esc(dayLabel(off, isAr)) + '</button>';
     }).join("");
 
@@ -149,7 +216,13 @@
 
     view.querySelectorAll(".seg button").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        view.setAttribute("data-today-offset", btn.getAttribute("data-off") || "0");
+        var nextOff = btn.getAttribute("data-off") || "0";
+        view.setAttribute("data-today-offset", nextOff);
+        try {
+          window.dispatchEvent(new CustomEvent("smm:state-change", {
+            detail: { dayOffset: Number(nextOff), league: getSelectedLeague(), source: "today" }
+          }));
+        } catch (e) {}
         render(view);
       });
     });
@@ -159,6 +232,7 @@
       .then(function (data) {
         var box = view.querySelector("#todayList");
         if (!box) return;
+        var teamsMap = buildTeamsIndex(data || {});
         var dayStr = isoDay(activeOffset);
         var items = collectMatchesForDay(data || {}, dayStr, leagueCode);
 
@@ -175,11 +249,24 @@
         }
 
         box.innerHTML = items.map(function (m) {
-          var h = esc(m.home || m.home_name || "Home");
-          var a = esc(m.away || m.away_name || "Away");
+          var homeInfo = resolveTeam(m.home_id || m.homeTeamId || m.home, m.home_name || m.home, teamsMap);
+          var awayInfo = resolveTeam(m.away_id || m.awayTeamId || m.away, m.away_name || m.away, teamsMap);
+          var hLogo = homeInfo.logo
+            ? '<img src="' + esc(homeInfo.logo) + '" alt="" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-inline-end:6px">'
+            : '';
+          var aLogo = awayInfo.logo
+            ? '<img src="' + esc(awayInfo.logo) + '" alt="" style="width:20px;height:20px;object-fit:contain;vertical-align:middle;margin-inline-start:6px">'
+            : '';
           var score = (m.hg != null && m.ag != null) ? (esc(m.hg) + " - " + esc(m.ag)) : esc(m.time || m.date || "");
           var lgTag = m._league ? (' <small style="opacity:.7">[' + esc(m._league) + ']</small>') : '';
-          return '<div class="card" style="margin-bottom:10px;padding:12px"><b>' + h + '</b> <span>' + score + '</span> <b>' + a + '</b>' + lgTag + '</div>';
+
+          return (
+            '<div class="card" style="margin-bottom:10px;padding:12px;display:flex;justify-content:space-between;align-items:center;gap:8px">' +
+              '<span style="flex:1;text-align:start">' + hLogo + '<b>' + esc(homeInfo.name) + '</b></span>' +
+              '<span style="white-space:nowrap;font-weight:700">' + score + lgTag + '</span>' +
+              '<span style="flex:1;text-align:end"><b>' + esc(awayInfo.name) + '</b>' + aLogo + '</span>' +
+            '</div>'
+          );
         }).join("");
       })
       .catch(function () {
@@ -194,10 +281,22 @@
 
   document.addEventListener("change", function (ev) {
     if (ev && ev.target && ev.target.id === "leagueSel") {
-      try { localStorage.setItem("smm.league", ev.target.value || ""); } catch (e) {}
+      syncLeagueAcrossControls(ev.target.value || "");
       if ((location.hash || "#/") === "#/today") {
         render(document.getElementById("view"));
       }
+    }
+  });
+
+  window.addEventListener("smm:state-change", function (ev) {
+    var detail = (ev && ev.detail) || {};
+    if (detail.source === "today") return;
+    if (typeof detail.league === "string") {
+      var sel = document.getElementById("leagueSel");
+      if (sel && sel.value !== detail.league) sel.value = detail.league;
+    }
+    if ((location.hash || "#/") === "#/today") {
+      render(document.getElementById("view"));
     }
   });
 

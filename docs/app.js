@@ -620,6 +620,7 @@
     [/^#\/news$/, "saved", () => (window.smmNews || (() => {}))(view, api)],
     [/^#\/watch$/, "saved", () => (window.smmWatch || (() => {}))(view, api)],
     [/^#\/pronostics$/, "pronostics", () => { if (window.smmPronostics) window.smmPronostics(view, api); }],
+    [/^#\/my-team$/, "my-team", () => { if (window.smmMyTeam) window.smmMyTeam(view, api); }],
     [/^#\/today$/, "home", () => (window.smmToday || (() => {}))(view)],
     [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]

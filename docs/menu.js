@@ -4,11 +4,11 @@
   var WYDAD_ID = "h824552", RAJA_ID = "h831360";
 
   var L = {
-    ar: { today: "مباريات اليوم", pronostics: "التوقعات", watch: "أين تشاهد", news: "أخبار وأرقام", menu: "القائمة", close: "إغلاق", home: "الرئيسية", standings: "الترتيب", analyze: "التحليل", teams: "الفرق", saved: "المحفوظات", press: "الصحافة", quality: "الجودة", about: "من نحن", wydad: "الوداد البيضاوي", raja: "الرجاء البيضاوي", disc: "الشعارات ملك لأصحابها، والتطبيق غير تابع لهم رسميًا." },
-    en: { today: "Matches by day", pronostics: "Pronostics", watch: "Where to watch", news: "News & Stats", menu: "Menu", close: "Close", home: "Home", standings: "Table", analyze: "Analysis", teams: "Teams", saved: "Saved", press: "Press", quality: "Quality", about: "About", wydad: "Wydad AC", raja: "Raja CA", disc: "Logos belong to their owners; this app is not officially affiliated." },
+    ar: { today: "مباريات اليوم", myTeam: "فريقي المفضل", pronostics: "التوقعات", watch: "أين تشاهد", news: "أخبار وأرقام", menu: "القائمة", close: "إغلاق", home: "الرئيسية", standings: "الترتيب", analyze: "التحليل", teams: "الفرق", saved: "المحفوظات", press: "الصحافة", quality: "الجودة", about: "من نحن", wydad: "الوداد البيضاوي", raja: "الرجاء البيضاوي", disc: "الشعارات ملك لأصحابها، والتطبيق غير تابع لهم رسميًا." },
+    en: { today: "Matches by day", myTeam: "My Team", myTeam: "Mon équipe", pronostics: "Pronostics", watch: "Where to watch", news: "News & Stats", menu: "Menu", close: "Close", home: "Home", standings: "Table", analyze: "Analysis", teams: "Teams", saved: "Saved", press: "Press", quality: "Quality", about: "About", wydad: "Wydad AC", raja: "Raja CA", disc: "Logos belong to their owners; this app is not officially affiliated." },
     fr: { today: "Matchs du jour", pronostics: "Pronostics", watch: "Où regarder", news: "Actus & chiffres", menu: "Menu", close: "Fermer", home: "Accueil", standings: "Classement", analyze: "Analyse", teams: "Équipes", saved: "Favoris", press: "Presse", quality: "Qualité", about: "À propos", wydad: "Wydad AC", raja: "Raja CA", disc: "Les logos appartiennent à leurs propriétaires ; l’application n’est pas affiliée officiellement." },
-    es: { today: "Partidos del día", pronostics: "Pronósticos", watch: "Dónde ver", news: "Noticias y cifras", menu: "Menú", close: "Cerrar", home: "Inicio", standings: "Clasificación", analyze: "Análisis", teams: "Equipos", saved: "Guardados", press: "Prensa", quality: "Calidad", about: "Acerca de", wydad: "Wydad AC", raja: "Raja CA", disc: "Los logotipos pertenecen a sus propietarios; la app no está afiliada oficialmente." },
-    tr: { today: "Günün maçları", pronostics: "Tahminler", watch: "Nereden izlenir", news: "Haber ve rakamlar", menu: "Menü", close: "Kapat", home: "Ana sayfa", standings: "Sıralama", analyze: "Analiz", teams: "Takımlar", saved: "Kaydedilenler", press: "Basın", quality: "Kalite", about: "Hakkında", wydad: "Wydad AC", raja: "Raja CA", disc: "Logolar sahiplerine aittir; uygulama resmî olarak bağlı değildir." }
+    es: { today: "Partidos del día", myTeam: "Mi equipo", pronostics: "Pronósticos", watch: "Dónde ver", news: "Noticias y cifras", menu: "Menú", close: "Cerrar", home: "Inicio", standings: "Clasificación", analyze: "Análisis", teams: "Equipos", saved: "Guardados", press: "Prensa", quality: "Calidad", about: "Acerca de", wydad: "Wydad AC", raja: "Raja CA", disc: "Los logotipos pertenecen a sus propietarios; la app no está afiliada oficialmente." },
+    tr: { today: "Günün maçları", myTeam: "Favori Takımım", pronostics: "Tahminler", watch: "Nereden izlenir", news: "Haber ve rakamlar", menu: "Menü", close: "Kapat", home: "Ana sayfa", standings: "Sıralama", analyze: "Analiz", teams: "Takımlar", saved: "Kaydedilenler", press: "Basın", quality: "Kalite", about: "Hakkında", wydad: "Wydad AC", raja: "Raja CA", disc: "Logolar sahiplerine aittir; uygulama resmî olarak bağlı değildir." }
   };
 
   var ITEMS = [
@@ -17,7 +17,8 @@
     ["news", "#/news", '<path d="M13 3L4 14h7l-1 7 9-11h-7z"/>'],
     ["watch", "#/watch", '<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>'],
     ["standings", "#/standings", '<path d="M4 5h16M4 10h16M4 15h10M4 20h7"/>'],
-    ["pronostics", "#/pronostics", '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'],
+    ["myTeam", "#/my-team", '<path d="M12 2l2.9 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 7.1-1.01L12 2z"/>'],
+          ["pronostics", "#/pronostics", '<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>'],
     ["analyze", "#/analyze", '<path d="M4 20V10m6 10V4m6 16v-7m5 7H3"/>'],
     ["teams", "#/teams", '<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.2 3.2 0 0 1 0 6m2 3.2c2 .7 3.5 2.5 3.5 5.8"/>'],
     ["saved", "#/saved", '<path d="M6 3h12v18l-6-4-6 4z"/>'],

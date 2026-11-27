@@ -64,6 +64,46 @@
     }).then(function (r) { return r.ok; }).catch(function () { return false; });
   }
 
+  function normalizeChallenge(raw) {
+    if (!raw || typeof raw !== "object") return null;
+    var id = String(raw.id || "").trim();
+    if (!id) return null;
+    var matchLabel = String(raw.matchLabel || raw.match_label || [raw.homeName, raw.awayName].filter(Boolean).join(" vs ") || raw.matchId || id).trim();
+    var stakeNum = Number(raw.stake);
+    return Object.assign({}, raw, {
+      id: id,
+      matchId: raw.matchId || raw.match_id || "",
+      matchLabel: matchLabel,
+      homeName: String(raw.homeName || raw.home_name || ""),
+      awayName: String(raw.awayName || raw.away_name || ""),
+      creatorName: String(raw.creatorName || raw.creator_name || "عضو"),
+      creatorSide: raw.creatorSide === "away" ? "away" : "home",
+      stake: Number.isFinite(stakeNum) && stakeNum > 0 ? stakeNum : 0,
+      status: String(raw.status || (raw.opponentMatched ? "matched" : "pending")),
+      opponentName: raw.opponentName || raw.opponent_name || "",
+      opponentMatched: Boolean(raw.opponentMatched || raw.opponent_matched)
+    });
+  }
+
+  function mergeChallenges(localList, remoteList) {
+    var map = Object.create(null);
+    var order = [];
+    var lists = [Array.isArray(remoteList) ? remoteList : [], Array.isArray(localList) ? localList : []];
+    for (var l = 0; l < lists.length; l++) {
+      for (var i = 0; i < lists[l].length; i++) {
+        var item = normalizeChallenge(lists[l][i]);
+        if (!item) continue;
+        if (!map[item.id]) {
+          map[item.id] = item;
+          order.push(item.id);
+        } else {
+          map[item.id] = normalizeChallenge(Object.assign({}, map[item.id], item));
+        }
+      }
+    }
+    return order.map(function (id) { return map[id]; });
+  }
+
   function sbPullChallenges() {
     var cfg = getSbCfg();
     if (!cfg) return Promise.resolve(null);
@@ -76,7 +116,7 @@
       return r.json();
     }).then(function (rows) {
       if (!Array.isArray(rows)) return null;
-      return rows.map(mapRowToChallenge).filter(Boolean);
+      return rows.map(mapRowToChallenge).map(normalizeChallenge).filter(Boolean);
     }).catch(function () { return null; });
   }
 
@@ -881,24 +921,32 @@
         var matchById = Object.create(null);
         matches.forEach(function (m) { matchById[m.id] = m; });
 
-        var currentChallenges = readJson(STORAGE_KEYS.challenges, []);
-      if (!view.__sbPulled) {
-        view.__sbPulled = true;
-        sbPullChallenges().then(function (remoteList) {
-          if (Array.isArray(remoteList) && remoteList.length) {
-            writeJson(STORAGE_KEYS.challenges, remoteList);
-            render(view);
-          }
-        });
-      }
+        var currentChallenges = mergeChallenges(readJson(STORAGE_KEYS.challenges, []), []);
+        writeJson(STORAGE_KEYS.challenges, currentChallenges);
+        if (!view.__sbPulled) {
+          view.__sbPulled = true;
+          sbPullChallenges().then(function (remoteList) {
+            if (!Array.isArray(remoteList)) return;
+            var merged = mergeChallenges(readJson(STORAGE_KEYS.challenges, []), remoteList);
+            writeJson(STORAGE_KEYS.challenges, merged);
+            if (view && view.isConnected) render(view);
+          });
+        }
         var listBox = view.querySelector("#challengesList");
         if (listBox) {
           if (!currentChallenges.length) {
             listBox.innerHTML = '<p class="empty">' + esc(isAr ? "لا توجد تحديات مسجلة بعد." : "No challenges recorded yet.") + '</p>';
           } else {
-            listBox.innerHTML = currentChallenges.map(function (ch) {
+            listBox.innerHTML = currentChallenges.map(function (rawCh) {
+              var ch = normalizeChallenge(rawCh);
+              if (!ch) return "";
               var mObj = matchById[ch.matchId] || null;
-              var ev = evaluateChallenge(ch, mObj);
+              var ev;
+              try {
+                ev = evaluateChallenge(ch, mObj) || { status: "pending" };
+              } catch (e) {
+                ev = { status: "pending" };
+              }
               var pickedTeam = ch.creatorSide === "home" ? ch.homeName : ch.awayName;
               var oppTeam = ch.creatorSide === "home" ? ch.awayName : ch.homeName;
 

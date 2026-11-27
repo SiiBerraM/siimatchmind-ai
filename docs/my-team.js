@@ -431,7 +431,8 @@
           '<div id="favTeamBox" style="margin-top:8px">',
             (favTeam
               ? ('<div><b>' + esc(favTeam.name) + '</b>' + (favTeam.league ? (' <small style="opacity:.75">[' + esc(favTeam.league) + ']</small>') : '') + '</div>')
-              : ('<p class="note" style="margin:4px 0 0">' + esc(isAr ? "لم تحدد فريقاً مفضلاً بعد. اختر فريقاً من قائمة الفرق أدناه." : "No favorite team selected yet. Pick one below.") + '</p>')
+              : ('<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0 8px">','<button type="button" id="toggleChallengeGuideBtn" class="btn" style="padding:6px 12px">' + esc(isAr ? "كيف يعمل التحدي؟" : "How Challenge Works?") + '</button>','</div>','<div id="challengeGuideBox" style="display:none;padding:10px 12px;margin-bottom:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.03)">' + '<p style="margin:0 0 6px;font-weight:700">' + esc(isAr ? "خطوات التحدي بين الأصدقاء:" : "Steps to Challenge Friends:") + '</p>' + '<ul style="margin:0;padding-inline-start:18px;line-height:1.6">' + '<li>' + esc(isAr ? "1. ابحث عن المباراة أو الفريق عبر 🔎 واختر المباراة ثم حدّد فريقك (Home أو Away)." : "1. Search via 🔎, pick the match, and choose your side (Home or Away).") + '</li>' + '<li>' + esc(isAr ? "2. اختر صديقك أو اكتب اسمه، ثم أدخل مبلغ التحدي (يجب أن يدخل الطرف الثاني نفس المبلغ بالضبط)." : "2. Pick or type your friend's name, then enter the stake (opponent must enter the exact same amount).") + '</li>' + '<li>' + esc(isAr ? "3. أنشئ التحدي لتوليد كود الدعوة ومشاركته؛ وتُخصم نسبة التطبيق آلياً عند التسوية." : "3. Create the challenge to get and share the invite code; platform fee is deducted automatically on settlement.") + '</li>' + '</ul>' + '</div>',
+                  '<p class="note" style="margin:4px 0 0">' + esc(isAr ? "لم تحدد فريقاً مفضلاً بعد. اختر فريقاً من قائمة الفرق أدناه." : "No favorite team selected yet. Pick one below.") + '</p>')
             ),
           '</div>',
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">',
@@ -745,6 +746,14 @@
         var stakeInp = view.querySelector("#chStakeInput");
         var calcBox = view.querySelector("#chCalcPreview");
         var createBtn = view.querySelector("#createChallengeBtn");
+        var guideBtn = view.querySelector("#toggleChallengeGuideBtn");
+        var guideBox = view.querySelector("#challengeGuideBox");
+        if (guideBtn && guideBox) {
+          guideBtn.addEventListener("click", function () {
+            var isHidden = guideBox.style.display === "none";
+            guideBox.style.display = isHidden ? "" : "none";
+          });
+        }
         var openPanelBtn = view.querySelector("#openChallengePanelBtn");
         var panelEl = view.querySelector("#challengePanel");
         if (openPanelBtn && panelEl) {

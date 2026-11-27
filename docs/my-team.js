@@ -1,537 +1,753 @@
+/* SiiMatchMind — صفحة «فريقي المفضل» (#/my-team) + تحديات المستخدمين وحساب المالك Berra وقائمة المشتركين أونلاين + دعم hlpara و Sii-Football®. */
 (function () {
   "use strict";
 
-  var ROUTE_HASH = "#/my-team";
-  var STORAGE_KEY = "smm.my_team.v1";
+  var OWNER_NAME = "Berra";
+  var PAYPAL_DONATE_URL = "https://www.paypal.com/donate";
+  var SII_FOOTBALL_URL = "https://siiberram.github.io/Sii-Football/";
+  var PLATFORM_FEE_RATE = 0.10; // نسبة عمولة التطبيق (10% افتراضياً وقابلة للتعديل)
 
-  /* =========================================================
-     طبقة الجاهزية المستقبلية للاشتراك والخطط المدفوعة
-     حاليًا mode = "free" (كل شيء متاح للمستخدمين).
-     مستقبلًا يمكن التبديل إلى "subscription" أو قفل ميزات معينة.
-     ========================================================= */
-  window.SMM_ACCESS_CONFIG = window.SMM_ACCESS_CONFIG || {
-    mode: "free", // "free" | "freemium" | "subscription"
-    defaultPlan: "free",
-    plans: {
-      free: { labelAr: "مجاني", labelEn: "Free", maxPredictionsPerWeek: 999 },
-      vip: { labelAr: "اشتراك VIP", labelEn: "VIP Pass", maxPredictionsPerWeek: 999 }
-    },
-    gatedFeatures: {
-      trophyCabinet: false,
-      starBadges: false,
-      unlimitedPredictions: false,
-      transfersIntel: false
-    },
-    checkoutUrl: "https://www.paypal.com/ncp/payment/LSC7692XCDRK6",
-    checkAccess: function (featureKey, userPlan) {
-      var cfg = window.SMM_ACCESS_CONFIG;
-      if (!cfg || cfg.mode === "free") return { allowed: true, reason: null };
-      var plan = userPlan || cfg.defaultPlan || "free";
-      if (plan === "vip" || plan === "paid" || plan === "pro") {
-        return { allowed: true, reason: null };
-      }
-      if (cfg.mode === "subscription") {
-        return { allowed: false, reason: "subscription_required" };
-      }
-      if (cfg.gatedFeatures && cfg.gatedFeatures[featureKey]) {
-        return { allowed: false, reason: "feature_gated" };
-      }
-      return { allowed: true, reason: null };
-    }
+  var STORAGE_KEYS = {
+    favTeam: "smm.favTeam",
+    favLeague: "smm.favLeague",
+    sub: "smm.challengeSub",
+    onlineMembers: "smm.onlineSubscribers",
+    challenges: "smm.userChallenges",
+    ownerMode: "smm.ownerMode"
   };
-
-  var cache = { staticData: null, ledgerData: null, newsData: null, promise: null };
 
   function getLang() {
     try {
-      return (localStorage.getItem("smm.lang") || document.documentElement.lang || "ar").slice(0, 2).toLowerCase();
+      return (localStorage.getItem("smm.lang") || document.documentElement.lang || "ar").slice(0, 2);
     } catch (e) {
       return "ar";
     }
   }
 
-  function esc(v) {
-    return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) {
+  function getSelectedLeague() {
+    try {
+      var sel = document.getElementById("leagueSel");
+      var v = (sel && sel.value) || localStorage.getItem("smm.league") || window.SMM_LEAGUE || "";
+      v = String(v || "").trim();
+      if (!v || v === "all" || v === "ALL" || v === "*") return "";
+      return v;
+    } catch (e) {
+      return "";
+    }
+  }
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
 
-  function getView() {
-    return document.getElementById("view") || document.querySelector("main");
-  }
-
-  function fetchJsonSafe(url) {
-    return fetch(url, { cache: "no-store" })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .catch(function () { return null; });
-  }
-
-  function loadAllData() {
-    if (cache.promise) return cache.promise;
-    cache.promise = Promise.all([
-      fetchJsonSafe("data/static.json"),
-      fetchJsonSafe("data/ledger.json"),
-      fetchJsonSafe("data/news.json")
-    ]).then(function (res) {
-      cache.staticData = res[0] || cache.staticData || {};
-      cache.ledgerData = res[1] || cache.ledgerData || {};
-      cache.newsData = res[2] || cache.newsData || {};
-      cache.promise = null;
-      return cache;
-    });
-    return cache.promise;
-  }
-
-  function defaultState() {
-    var anonId = "Fan#" + String(Math.floor(1000 + Math.random() * 9000));
-    return {
-      userId: anonId,
-      nickname: anonId,
-      plan: window.SMM_ACCESS_CONFIG.defaultPlan || "free",
-      teamId: "",
-      founderPhoto: "icons/founder-my-team.jpg",
-      predictions: {},
-      leaderboard: [
-        { id: "seed_1", name: "Yassine_AI", points: 24, streak: 3, isSelf: false },
-        { id: "seed_2", name: "Casa_Ultra", points: 18, streak: 2, isSelf: false },
-        { id: "seed_3", name: "Atlas_Scout", points: 12, streak: 1, isSelf: false }
-      ]
-    };
-  }
-
-  function loadState() {
-    var base = defaultState();
+  function readJson(key, fallback) {
     try {
-      var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return base;
+      var raw = localStorage.getItem(key);
+      if (!raw) return fallback;
       var parsed = JSON.parse(raw);
-      return {
-        userId: parsed.userId || base.userId,
-        nickname: parsed.nickname || parsed.userId || base.nickname,
-        plan: parsed.plan || base.plan,
-        teamId: parsed.teamId || "",
-        founderPhoto: parsed.founderPhoto || "icons/founder-my-team.jpg",
-        predictions: parsed.predictions && typeof parsed.predictions === "object" ? parsed.predictions : {},
-        leaderboard: Array.isArray(parsed.leaderboard) && parsed.leaderboard.length ? parsed.leaderboard : base.leaderboard
-      };
+      return parsed != null ? parsed : fallback;
     } catch (e) {
-      return base;
+      return fallback;
     }
   }
 
-  function saveState(st) {
+  function writeJson(key, val) {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(st));
+      localStorage.setItem(key, JSON.stringify(val));
     } catch (e) {}
   }
 
-  function extractTeams(staticData) {
-    if (!staticData) return [];
-    if (Array.isArray(staticData.teams) && staticData.teams.length) {
-      return staticData.teams.map(function (t, idx) {
-        return {
-          id: String(t.id || t.code || t.team_id || idx),
-          name: String(t.name || t.title || t.team || ("Team " + (idx + 1))),
-          league: String(t.league || t.competition || ""),
-          logo: String(t.logo || t.crest || ""),
-          trophies: Array.isArray(t.trophies) ? t.trophies : (Array.isArray(t.honours) ? t.honours : [])
-        };
-      });
-    }
-    if (staticData.teams && typeof staticData.teams === "object") {
-      return Object.keys(staticData.teams).map(function (k) {
-        var t = staticData.teams[k] || {};
-        return {
-          id: String(t.id || k),
-          name: String(t.name || k),
-          league: String(t.league || ""),
-          logo: String(t.logo || ""),
-          trophies: Array.isArray(t.trophies) ? t.trophies : []
-        };
-      });
-    }
-    return [];
+  function emitState(extra) {
+    try {
+      window.dispatchEvent(new CustomEvent("smm:state-change", {
+        detail: Object.assign({ league: getSelectedLeague(), source: "my-team" }, extra || {})
+      }));
+    } catch (e) {}
   }
 
-  function extractMatches(staticData, ledgerData, teamId) {
-    var pools = [];
-    [staticData, ledgerData].forEach(function (src) {
-      if (!src) return;
-      ["matches", "fixtures", "upcoming", "events"].forEach(function (key) {
-        if (Array.isArray(src[key])) pools = pools.concat(src[key]);
+  function upsertOnlineMember(subObj) {
+    if (!subObj || !subObj.active) return;
+    var members = readJson(STORAGE_KEYS.onlineMembers, []);
+    var name = (subObj.memberName || "مشترك").trim();
+    var method = subObj.payoutMethod || "PayPal";
+    var account = (subObj.payoutAccount || "").trim();
+    var key = (name + "|" + account).toLowerCase();
+
+    var filtered = members.filter(function (m) {
+      return ((String(m.name || "") + "|" + String(m.account || "")).toLowerCase()) !== key;
+    });
+
+    filtered.unshift({
+      id: "SUB-" + key.replace(/[^a-z0-9\u0600-\u06ff]+/gi, "-").slice(0, 18),
+      name: name,
+      method: method,
+      account: account,
+      online: true,
+      lastSeen: new Date().toISOString()
+    });
+
+    writeJson(STORAGE_KEYS.onlineMembers, filtered.slice(0, 50));
+  }
+
+  function buildTeamsMap(data) {
+    var map = Object.create(null);
+    var teams = data && data.teams;
+    if (!teams) return map;
+
+    function add(id, obj) {
+      if (!id) return;
+      var k = String(id).trim();
+      if (!k) return;
+      var name = typeof obj === "string" ? obj : (obj && (obj.name || obj.team_name || obj.title || obj.shortName)) || k;
+      var logo = typeof obj === "object" && obj ? (obj.logo || obj.crest || obj.image || "") : "";
+      map[k] = { id: k, name: name, logo: logo };
+      var bare = k.replace(/^[ht]/i, "");
+      if (bare && !map[bare]) map[bare] = { id: k, name: name, logo: logo };
+    }
+
+    if (Array.isArray(teams)) {
+      teams.forEach(function (t) {
+        if (t && typeof t === "object") add(t.id || t.team_id || t.code, t);
       });
-      if (src.predictions && typeof src.predictions === "object") {
-        Object.keys(src.predictions).forEach(function (k) {
-          var item = src.predictions[k];
-          if (item && typeof item === "object") {
-            pools.push(Object.assign({ id: k }, item));
-          }
+    } else if (typeof teams === "object") {
+      Object.keys(teams).forEach(function (k) { add(k, teams[k]); });
+    }
+    return map;
+  }
+
+  function resolveTeamName(rawId, fallback, teamsMap) {
+    var k = rawId != null ? String(rawId).trim() : "";
+    var fb = fallback != null ? String(fallback).trim() : "";
+    var entry = (k && teamsMap[k]) || (fb && teamsMap[fb]) || null;
+    if (entry && entry.name) return entry.name;
+    return fb || k || "Team";
+  }
+
+  function collectMatches(data, teamsMap, leagueFilter) {
+    var list = [];
+    var seen = Object.create(null);
+
+    function push(m, lg) {
+      if (!m || typeof m !== "object") return;
+      var leagueCode = String(lg || m.league || m.league_id || m.comp || "").trim();
+      if (leagueFilter && leagueCode !== leagueFilter) return;
+      var homeId = String(m.home_id || m.homeTeamId || m.home || "").trim();
+      var awayId = String(m.away_id || m.awayTeamId || m.away || "").trim();
+      var homeName = resolveTeamName(homeId, m.home_name || m.home, teamsMap);
+      var awayName = resolveTeamName(awayId, m.away_name || m.away, teamsMap);
+      var matchId = String(m.id || m.match_id || m.fixture_id || (homeId + "_vs_" + awayId + "_" + (m.date || "")));
+      if (seen[matchId]) return;
+      seen[matchId] = 1;
+
+      var hg = (m.hg != null && m.hg !== "") ? Number(m.hg) : (m.home_goals != null ? Number(m.home_goals) : null);
+      var ag = (m.ag != null && m.ag !== "") ? Number(m.ag) : (m.away_goals != null ? Number(m.away_goals) : null);
+
+      list.push({
+        id: matchId,
+        league: leagueCode,
+        date: String(m.date || m.utcDate || "").slice(0, 10),
+        time: String(m.time || ""),
+        homeId: homeId || homeName,
+        awayId: awayId || awayName,
+        homeName: homeName,
+        awayName: awayName,
+        hg: Number.isFinite(hg) ? hg : null,
+        ag: Number.isFinite(ag) ? ag : null
+      });
+    }
+
+    var mbl = (data && data.matches_by_league) || {};
+    Object.keys(mbl).forEach(function (code) {
+      var bucket = mbl[code];
+      if (Array.isArray(bucket)) {
+        bucket.forEach(function (m) { push(m, code); });
+      } else if (bucket && typeof bucket === "object") {
+        ["yesterday", "today", "tomorrow", "day_after", "upcoming", "results", "matches", "fixtures"].forEach(function (k) {
+          if (Array.isArray(bucket[k])) bucket[k].forEach(function (m) { push(m, code); });
         });
       }
     });
 
-    var seen = Object.create(null);
-    var list = [];
-    pools.forEach(function (m, i) {
-      var id = String(m.id || m.match_id || m.fixture_id || ("m_" + i));
-      if (seen[id]) return;
-      var hId = String(m.home_id || m.homeTeamId || (m.home && m.home.id) || "");
-      var aId = String(m.away_id || m.awayTeamId || (m.away && m.away.id) || "");
-      var hName = String(m.home_name || m.homeTeam || (m.home && m.home.name) || m.home || "Home");
-      var aName = String(m.away_name || m.awayTeam || (m.away && m.away.name) || m.away || "Away");
-      var matchesTeam = !teamId || hId === teamId || aId === teamId || hName === teamId || aName === teamId;
-      if (!matchesTeam) return;
-      seen[id] = true;
-      var actualOutcome = null;
-      if (typeof m.home_goals === "number" && typeof m.away_goals === "number") {
-        actualOutcome = m.home_goals > m.away_goals ? "H" : (m.home_goals < m.away_goals ? "A" : "D");
-      } else if (m.result || m.outcome) {
-        actualOutcome = String(m.result || m.outcome).toUpperCase();
-      }
-      list.push({
-        id: id,
-        home: hName,
-        away: aName,
-        date: String(m.date || m.utcDate || m.kickoff || ""),
-        actualOutcome: actualOutcome
-      });
-    });
-    return list.slice(0, 12);
+    if (Array.isArray(data && data.matches)) {
+      data.matches.forEach(function (m) { push(m, m.league || m.league_id || ""); });
+    }
+
+    return list.slice(0, 120);
   }
 
-  function computePointsAndStars(st, matches) {
-    var points = 0;
-    var correctCount = 0;
-    var streak = 0;
-    var bestStreak = 0;
-
-    matches.forEach(function (m) {
-      var pick = st.predictions[m.id];
-      if (!pick || !m.actualOutcome) return;
-      if (pick === m.actualOutcome) {
-        points += 3;
-        correctCount += 1;
-        streak += 1;
-        if (streak > bestStreak) bestStreak = streak;
-      } else {
-        points += 0;
-        streak = 0;
-      }
-    });
-
-    var stars = Math.min(5, Math.floor(points / 6) + (bestStreak >= 2 ? 1 : 0));
-    return { points: points, correctCount: correctCount, stars: stars };
-  }
-
-  function extractNewsBuckets(newsData, team) {
-    var rawItems = [];
-    if (Array.isArray(newsData)) rawItems = newsData;
-    else if (newsData && Array.isArray(newsData.items)) rawItems = newsData.items;
-    else if (newsData && Array.isArray(newsData.news)) rawItems = newsData.news;
-
-    var teamName = team ? team.name.toLowerCase() : "";
-    var teamNews = [], playerNews = [], transferNews = [];
-
-    rawItems.forEach(function (item) {
-      var title = String(item.title || item.headline || item.text || "");
-      var cat = String(item.category || item.type || item.tag || "").toLowerCase();
-      var hay = (title + " " + cat).toLowerCase();
-      if (teamName && rawItems.length > 6 && hay.indexOf(teamName) === -1 && cat.indexOf("transfer") === -1) {
-        return;
-      }
-      if (cat.indexOf("transfer") !== -1 || hay.indexOf("انتقال") !== -1 || hay.indexOf("transfer") !== -1 || hay.indexOf("mercato") !== -1) {
-        transferNews.push(title);
-      } else if (cat.indexOf("player") !== -1 || hay.indexOf("لاعب") !== -1 || hay.indexOf("player") !== -1 || hay.indexOf("إصابة") !== -1) {
-        playerNews.push(title);
-      } else {
-        teamNews.push(title);
-      }
-    });
-
+  function calcSettlement(stakeAmount, feeRate) {
+    var stake = Math.max(0, Number(stakeAmount) || 0);
+    var rate = Math.min(0.95, Math.max(0, Number(feeRate != null ? feeRate : PLATFORM_FEE_RATE) || 0));
+    var totalPool = +(stake * 2).toFixed(2);
+    var feeAmount = +(totalPool * rate).toFixed(2);
+    var winnerPayout = +(totalPool - feeAmount).toFixed(2);
+    var drawRefundEach = +((stake * (1 - rate))).toFixed(2);
     return {
-      teamNews: teamNews.slice(0, 5),
-      playerNews: playerNews.slice(0, 5),
-      transferNews: transferNews.slice(0, 5)
+      stake: stake,
+      ratePercent: +(rate * 100).toFixed(1),
+      totalPool: totalPool,
+      feeAmount: feeAmount,
+      winnerPayout: winnerPayout,
+      drawRefundEach: drawRefundEach
     };
   }
 
-  function buildLeaderboard(st, stats) {
-    var others = (st.leaderboard || []).filter(function (u) { return !u.isSelf; });
-    var selfRow = {
-      id: st.userId,
-      name: st.nickname || st.userId,
-      points: stats.points,
-      stars: stats.stars,
-      isSelf: true
+  function evaluateChallenge(ch, matchObj) {
+    if (!matchObj || matchObj.hg == null || matchObj.ag == null) {
+      return { status: "pending", outcome: "pending", winnerSide: null };
+    }
+    var s = calcSettlement(ch.stake, ch.feeRate);
+    if (matchObj.hg > matchObj.ag) {
+      return {
+        status: "settled",
+        outcome: "home_win",
+        winnerSide: "home",
+        winnerName: ch.creatorSide === "home" ? ch.creatorName : (ch.opponentName || "الطرف الثاني"),
+        payout: s.winnerPayout,
+        fee: s.feeAmount
+      };
+    }
+    if (matchObj.ag > matchObj.hg) {
+      return {
+        status: "settled",
+        outcome: "away_win",
+        winnerSide: "away",
+        winnerName: ch.creatorSide === "away" ? ch.creatorName : (ch.opponentName || "الطرف الثاني"),
+        payout: s.winnerPayout,
+        fee: s.feeAmount
+      };
+    }
+    return {
+      status: "settled",
+      outcome: "draw",
+      winnerSide: null,
+      refundEach: s.drawRefundEach,
+      fee: s.feeAmount
     };
-    return others.concat([selfRow]).sort(function (a, b) {
-      return (b.points || 0) - (a.points || 0);
-    });
   }
 
-  function injectStyles() {
-    if (document.getElementById("smm-my-team-css")) return;
-    var s = document.createElement("style");
-    s.id = "smm-my-team-css";
-    s.textContent = [
-      ".mt-wrap{display:flex;flex-direction:column;gap:14px;padding-bottom:24px}",
-      ".mt-cabinet{background:linear-gradient(135deg,#0c2240,#13355e);border:1px solid rgba(250,204,21,.45);border-radius:14px;padding:12px 14px}",
-      ".mt-cabinet-hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;font-weight:700;color:#facc15}",
-      ".mt-trophies{display:flex;flex-wrap:wrap;gap:8px}",
-      ".mt-trophy-pill{background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.4);color:#fef08a;padding:5px 10px;border-radius:999px;font-size:12px}",
-      ".mt-card{background:rgba(15,23,42,.82);border:1px solid rgba(148,163,184,.22);border-radius:14px;padding:14px}",
-      ".mt-head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}",
-      ".mt-stars{color:#facc15;font-size:18px;letter-spacing:2px}",
-      ".mt-form{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}",
-      ".mt-form select,.mt-form input{background:#0b1526;color:#f8fafc;border:1px solid rgba(148,163,184,.35);border-radius:10px;padding:8px 10px;font-size:13px}",
-      ".mt-match{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid rgba(148,163,184,.14)}",
-      ".mt-match:last-child{border-bottom:none}",
-      ".mt-picks{display:flex;gap:6px}",
-      ".mt-pick-btn{padding:6px 10px;border-radius:8px;border:1px solid rgba(148,163,184,.3);background:#0b1526;color:#e2e8f0;cursor:pointer;font-size:12px;font-weight:700}",
-      ".mt-pick-btn.on{background:#1ed48a;color:#062015;border-color:#1ed48a}",
-      ".mt-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}",
-      ".mt-table{width:100%;border-collapse:collapse;font-size:13px}",
-      ".mt-table th,.mt-table td{padding:8px 6px;border-bottom:1px solid rgba(148,163,184,.14);text-align:start}",
-      ".mt-self{background:rgba(30,212,138,.12);font-weight:700}",
-      ".mt-founder{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:linear-gradient(135deg,rgba(15,23,42,.95),rgba(20,45,82,.88));border:1px solid rgba(250,204,21,.35);border-radius:14px;padding:14px}",
-      ".mt-founder-img{width:84px;height:104px;object-fit:cover;border-radius:12px;border:1.5px solid rgba(250,204,21,.6);flex:none;background:#091324}",
-      ".mt-founder-body{flex:1;min-width:220px}",
-      ".mt-founder-quote{margin:6px 0 8px;font-size:13.5px;line-height:1.75;color:#f1f5f9}",
-      ".mt-founder-sign{font-size:12px;color:#facc15;font-weight:700}"
-    ].join("\n");
-    document.head.appendChild(s);
+  function makeChallengeCode(ch) {
+    var payload = {
+      id: ch.id,
+      matchId: ch.matchId,
+      matchLabel: ch.matchLabel,
+      homeName: ch.homeName,
+      awayName: ch.awayName,
+      creatorSide: ch.creatorSide,
+      stake: ch.stake,
+      opponentName: ch.opponentName || "",
+      owner: OWNER_NAME
+    };
+    try {
+      return "SMM-" + btoa(unescape(encodeURIComponent(JSON.stringify(payload)))).slice(0, 32);
+    } catch (e) {
+      return ch.id + "-" + ch.stake;
+    }
   }
 
-  function renderPage(targetView) {
-    if (!targetView) return;
-    if ((location.hash || "#/") !== ROUTE_HASH) return;
-    injectStyles();
+  function render(view) {
+    if (!view) return;
+    var isAr = getLang() === "ar";
+    var leagueCode = getSelectedLeague();
+    var favTeam = readJson(STORAGE_KEYS.favTeam, null);
+    var sub = readJson(STORAGE_KEYS.sub, { active: false, memberName: "", payoutMethod: "PayPal", payoutAccount: "", plan: "monthly_symbolic" });
+    if (sub && sub.active) upsertOnlineMember(sub);
+    var onlineMembers = readJson(STORAGE_KEYS.onlineMembers, []);
+    var challenges = readJson(STORAGE_KEYS.challenges, []);
+    var ownerMode = !!readJson(STORAGE_KEYS.ownerMode, false);
 
-    var lang = getLang();
-    var isAr = lang === "ar";
-    var st = loadState();
-    var teams = extractTeams(cache.staticData);
-    var selectedTeam = null;
-    for (var i = 0; i < teams.length; i++) {
-      if (teams[i].id === st.teamId) {
-        selectedTeam = teams[i];
-        break;
-      }
-    }
-    if (!selectedTeam && teams.length) {
-      selectedTeam = teams[0];
-      st.teamId = selectedTeam.id;
-      saveState(st);
-    }
+    var isParaSelected = leagueCode.toLowerCase().indexOf("para") !== -1 || leagueCode === "hlpara" ||
+      (favTeam && String(favTeam.league || "").toLowerCase().indexOf("para") !== -1);
 
-    var matches = extractMatches(cache.staticData, cache.ledgerData, selectedTeam ? selectedTeam.id : "");
-    var stats = computePointsAndStars(st, matches);
-    var board = buildLeaderboard(st, stats);
-    var news = extractNewsBuckets(cache.newsData, selectedTeam);
-
-    var trophies = (selectedTeam && selectedTeam.trophies && selectedTeam.trophies.length)
-      ? selectedTeam.trophies
-      : (selectedTeam ? [isAr ? ("خزانة ألقاب " + selectedTeam.name) : (selectedTeam.name + " Trophy Cabinet")] : []);
-
-    var starsVisual = stats.stars > 0
-      ? Array(stats.stars + 1).join("★") + Array(5 - stats.stars + 1).join("☆")
-      : "☆☆☆☆☆";
-
-    var teamOptionsHtml = teams.map(function (t) {
-      var sel = selectedTeam && t.id === selectedTeam.id ? " selected" : "";
-      return '<option value="' + esc(t.id) + '"' + sel + '>' + esc(t.name) + '</option>';
-    }).join("");
-
-    var matchesHtml = matches.length ? matches.map(function (m) {
-      var curPick = st.predictions[m.id] || "";
-      var statusBadge = "";
-      if (m.actualOutcome && curPick) {
-        statusBadge = curPick === m.actualOutcome
-          ? '<span style="color:#1ed48a;font-weight:700"> (+3 ' + (isAr ? "نقاط" : "pts") + ')</span>'
-          : '<span style="color:#f87171"> (0 ' + (isAr ? "نقاط" : "pts") + ')</span>';
-      }
-      return (
-        '<div class="mt-match" data-mid="' + esc(m.id) + '">' +
-          '<div><b>' + esc(m.home) + '</b> vs <b>' + esc(m.away) + '</b>' + statusBadge +
-            (m.date ? '<div style="font-size:11px;opacity:.75">' + esc(m.date) + '</div>' : '') +
+    view.innerHTML =
+      '<div class="wrap">' +
+        '<div class="card" style="margin-bottom:12px;padding:14px">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">' +
+            '<b>⭐ ' + esc(isAr ? "فريقي المفضل" : "My Favorite Team") + '</b>' +
+            '<span style="font-size:12px;opacity:.85">' + esc(isAr ? ("المالك الرئيسي: " + OWNER_NAME) : ("Owner Account: " + OWNER_NAME)) + '</span>' +
           '</div>' +
-          '<div class="mt-picks">' +
-            '<button type="button" class="mt-pick-btn' + (curPick === "H" ? " on" : "") + '" data-pick="H">1</button>' +
-            '<button type="button" class="mt-pick-btn' + (curPick === "D" ? " on" : "") + '" data-pick="D">X</button>' +
-            '<button type="button" class="mt-pick-btn' + (curPick === "A" ? " on" : "") + '" data-pick="A">2</button>' +
+          '<div id="favTeamBox" style="margin-top:8px">' +
+            (favTeam
+              ? ('<div><b>' + esc(favTeam.name) + '</b>' + (favTeam.league ? (' <small style="opacity:.75">[' + esc(favTeam.league) + ']</small>') : '') + '</div>')
+              : ('<p class="note" style="margin:4px 0 0">' + esc(isAr ? "لم تحدد فريقاً مفضلاً بعد. اختر فريقاً من قائمة الفرق أدناه." : "No favorite team selected yet. Pick one below.") + '</p>')) +
           '</div>' +
-        '</div>'
-      );
-    }).join("") : ('<p style="opacity:.75">' + (isAr ? "لا توجد مباريات قادمة مسجلة حاليًا." : "No upcoming matches found.") + '</p>');
-
-    var boardHtml = board.map(function (row, idx) {
-      var rowStars = typeof row.stars === "number" ? ("★".repeat(row.stars)) : "";
-      return (
-        '<tr class="' + (row.isSelf ? "mt-self" : "") + '">' +
-          '<td>#' + (idx + 1) + '</td>' +
-          '<td>' + esc(row.name) + (row.isSelf ? (isAr ? " (أنت)" : " (You)") : "") + '</td>' +
-          '<td>' + esc(row.points) + '</td>' +
-          '<td style="color:#facc15">' + esc(rowStars || "-") + '</td>' +
-        '</tr>'
-      );
-    }).join("");
-
-    function renderList(arr, fallback) {
-      if (!arr || !arr.length) return '<p style="opacity:.75;font-size:13px">' + esc(fallback) + '</p>';
-      return '<ul style="margin:6px 0 0;padding-inline-start:18px;font-size:13px">' +
-        arr.map(function (x) { return '<li style="margin-bottom:6px">' + esc(x) + '</li>'; }).join("") +
-      '</ul>';
-    }
-
-    targetView.innerHTML =
-      '<div class="mt-wrap">' +
-        '<div class="mt-cabinet">' +
-          '<div class="mt-cabinet-hd">' +
-            '<span>🏆 ' + (isAr ? "خزانة ألقاب الفريق وكؤوسه" : "Team Trophy Cabinet") + '</span>' +
-            '<span style="font-size:12px;opacity:.9">' + (isAr ? "الوضع الحالي: مجاني (جاهز للاشتراكات مستقبلًا)" : "Current Tier: Free (Subscription-Ready)") + '</span>' +
-          '</div>' +
-          '<div class="mt-trophies">' +
-            trophies.map(function (tr) {
-              return '<span class="mt-trophy-pill">🏆 ' + esc(typeof tr === "string" ? tr : (tr.title || tr.name || "Cup")) + '</span>';
-            }).join("") +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">' +
+            '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">' +
+              '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>' +
+            '</select>' +
+            '<button type="button" id="saveFavTeamBtn" class="btn">' + esc(isAr ? "حفظ الفريق" : "Save Team") + '</button>' +
+            '<button type="button" id="toggleOwnerBtn" class="btn" style="opacity:.85">' +
+              esc(ownerMode ? (isAr ? "إخفاء لوحة المالك (Berra)" : "Hide Owner Panel") : (isAr ? "لوحة المالك (Berra)" : "Owner Panel (Berra)")) +
+            '</button>' +
           '</div>' +
         '</div>' +
 
-        '<div class="mt-card">' +
-          '<div class="mt-head-row">' +
-            '<div>' +
-              '<h1 style="margin:0;font-size:20px">' + (isAr ? "فريقي المفضل" : "My Favorite Team") + (selectedTeam ? (" — " + esc(selectedTeam.name)) : "") + '</h1>' +
-              '<div style="font-size:12px;opacity:.8;margin-top:4px">' +
-                (isAr ? "المعرّف:" : "ID:") + ' <b>' + esc(st.userId) + '</b> • ' +
-                (isAr ? "النقاط:" : "Points:") + ' <b>' + stats.points + '</b> • ' +
-                (isAr ? "توقعات صحيحة:" : "Correct:") + ' <b>' + stats.correctCount + '</b>' +
+        (isParaSelected
+          ? '<div class="card" style="margin-bottom:12px;padding:12px;border-color:rgba(250,204,21,.45)">' +
+              '<b>♿ ' + esc(isAr ? "بطولات ذوي الهمم (Para Football)" : "Para Football Competitions") + '</b>' +
+              '<div style="font-size:12px;margin-top:4px">' +
+                '<a href="' + esc(SII_FOOTBALL_URL) + '" target="_blank" rel="noopener noreferrer" style="color:#facc15;font-weight:700">' +
+                  esc(isAr ? "فتح بيانات وتفاصيل دوريات ذوي الهمم عبر Sii-Football®" : "Open Para Football data on Sii-Football®") +
+                '</a>' +
               '</div>' +
-            '</div>' +
-            '<div title="' + (isAr ? "نجوم الإنجاز المعلقة" : "Earned Achievement Stars") + '">' +
-              '<div style="font-size:11px;opacity:.8;text-align:center">' + (isAr ? "نجوم الفريق" : "Team Stars") + '</div>' +
-              '<div class="mt-stars">' + starsVisual + '</div>' +
-            '</div>' +
+            '</div>'
+          : '') +
+
+        '<div class="card" style="margin-bottom:12px;padding:14px">' +
+          '<b>🎟️ ' + esc(isAr ? "الاشتراك الشهري الرمزي (بدون ربط بريد إلكتروني)" : "Symbolic Monthly Membership (No Email Required)") + '</b>' +
+          '<p class="note" style="margin:6px 0 10px">' +
+            esc(isAr
+              ? ("يُحفظ اشتراكك وبياناتك على هاتفك فقط. بعد التفعيل يظهر زر «تحدي المستخدمين» وقائمة المشتركين أونلاين؛ وتُوجَّه المدفوعات إلى حساب المالك (" + OWNER_NAME + ") عبر PayPal.")
+              : ("Saved locally on your phone. Once active, User Challenges and the Online Subscribers list appear; payments go to owner " + OWNER_NAME + " via PayPal.")) +
+          '</p>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-bottom:10px">' +
+            '<input type="text" id="subMemberName" value="' + esc(sub.memberName || "") + '" placeholder="' + esc(isAr ? "اسمك أو لقبك في التحدي" : "Your display name / tag") + '" style="padding:8px;border-radius:8px">' +
+            '<select id="subPayoutMethod" style="padding:8px;border-radius:8px">' +
+              '<option value="PayPal"' + (sub.payoutMethod === "PayPal" ? " selected" : "") + '>PayPal</option>' +
+              '<option value="Bank Card"' + (sub.payoutMethod === "Bank Card" ? " selected" : "") + '>' + esc(isAr ? "بطاقة بنكية (Bank Card)" : "Bank Card") + '</option>' +
+            '</select>' +
+            '<input type="text" id="subPayoutAccount" value="' + esc(sub.payoutAccount || "") + '" placeholder="' + esc(isAr ? "حساب PayPal أو رقم/مرجع البطاقة" : "PayPal handle or card ref") + '" style="padding:8px;border-radius:8px">' +
           '</div>' +
-
-          '<div class="mt-form">' +
-            '<input id="mtNickInput" type="text" value="' + esc(st.nickname) + '" placeholder="' + (isAr ? "اسمك / لقبك" : "Your nickname") + '">' +
-            '<select id="mtTeamSelect">' + teamOptionsHtml + '</select>' +
-            '<button id="mtSaveProfileBtn" type="button" class="mt-pick-btn on">' + (isAr ? "حفظ الفريق والهوية" : "Save Team & ID") + '</button>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">' +
+            '<a href="' + esc(PAYPAL_DONATE_URL) + '" target="_blank" rel="noopener noreferrer" class="btn" style="text-decoration:none">' +
+              esc(isAr ? ("دفع الاشتراك الرمزي عبر PayPal (" + OWNER_NAME + ")") : ("Pay Symbolic Fee via PayPal (" + OWNER_NAME + ")")) +
+            '</a>' +
+            '<button type="button" id="activateSubBtn" class="btn">' +
+              esc(sub.active ? (isAr ? "تحديث بيانات الاشتراك النشط" : "Update Active Subscription") : (isAr ? "تفعيل الاشتراك الشهري الرمزي" : "Activate Symbolic Monthly Sub")) +
+            '</button>' +
+            (sub.active
+              ? '<button type="button" id="deactivateSubBtn" class="btn" style="opacity:.75">' + esc(isAr ? "إلغاء التفعيل المحلي" : "Deactivate Local") + '</button>'
+              : '') +
           '</div>' +
-        '</div>' +
-
-        '<div class="mt-card">' +
-          '<h2 style="margin:0 0 6px;font-size:16px">' + (isAr ? "توقعات المباريات القادمة" : "Upcoming Match Predictions") + '</h2>' +
-          '<div style="font-size:12px;opacity:.75;margin-bottom:8px">' +
-            (isAr ? "اختر 1 (فوز المضيف) أو X (تعادل) أو 2 (فوز الضيف): التوقع الصحيح يضيف نقاطًا، والخطأ لا يضيف أي نقاط." : "Pick 1 / X / 2: accurate picks earn points; wrong picks earn 0.") +
-          '</div>' +
-          matchesHtml +
-        '</div>' +
-
-        '<div class="mt-card">' +
-          '<h2 style="margin:0 0 8px;font-size:16px">' + (isAr ? "ترتيب المستخدمين" : "Users Leaderboard") + '</h2>' +
-          '<table class="mt-table"><thead><tr>' +
-            '<th>#</th><th>' + (isAr ? "المستخدم" : "User") + '</th><th>' + (isAr ? "النقاط" : "Points") + '</th><th>' + (isAr ? "النجوم" : "Stars") + '</th>' +
-          '</tr></thead><tbody>' + boardHtml + '</tbody></table>' +
-        '</div>' +
-
-        '<div class="mt-founder">' +
-          '<img id="mtFounderImg" class="mt-founder-img" src="' + esc(st.founderPhoto || "icons/founder-my-team.jpg") + '" alt="Berra" onerror="this.src=\'icons/about.jpg\';this.onerror=null;">' +
-          '<div class="mt-founder-body">' +
-            '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">' +
-              '<b style="color:#facc15;font-size:14px">' + (isAr ? "كلمة لك من مؤسس المنصة" : "A Message From The Founder") + '</b>' +
-              '<label style="font-size:11px;cursor:pointer;padding:4px 8px;border-radius:8px;border:1px solid rgba(148,163,184,.35);background:#0b1526;color:#e2e8f0">' +
-                (isAr ? "تغيير الصورة محليًا" : "Change Photo") +
-                '<input id="mtFounderFile" type="file" accept="image/*" style="display:none">' +
-              '</label>' +
-            '</div>' +
-            '<p class="mt-founder-quote">' +
-              (isAr
-                ? "«أهلاً بكم في مساحة شغفكم الحقيقي بكرة القدم. اختر فريقك بقلبٍ ينبض بالانتماء، وتوقّع بروح المحلل، واجمع النقاط والنجوم خطوةً بخطوة لتصنع مجدك الخاص داخل التطبيق. نحن هنا لنمنح شغفكم منصة تليق بكم، والقادم أجمل وأرقى بكم ومعكم دائماً.»"
-                : "“Welcome to the home of your true football passion. Choose your club with heart, predict like an analyst, and earn points and stars step by step to build your own legacy inside the app.”") +
-            '</p>' +
-            '<div class="mt-founder-sign">Berra • SiiMatchMind®</div>' +
+          '<div id="subStatusNote" style="margin-top:8px;font-size:12px">' +
+            (sub.active
+              ? ('✅ ' + esc(isAr ? ("الاشتراك مفعل على هذا الهاتف باسم: " + (sub.memberName || "مستخدم") + " | الاستلام عبر: " + (sub.payoutMethod || "PayPal") + " (" + (sub.payoutAccount || "غير محدد") + ")") : ("Active locally for: " + (sub.memberName || "Member"))))
+              : ('🔒 ' + esc(isAr ? "زر «تحدي المستخدمين» وقائمة المشتركين أونلاين مخفية حالياً حتى تفعيل الاشتراك الشهري الرمزي." : "User Challenges button and Online Subscribers list are hidden until subscription is activated."))) +
           '</div>' +
         '</div>' +
 
-        '<div class="mt-card" style="border-color:rgba(250,204,21,.4)">' +
-        '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">' +
-          '<b style="color:#facc15;font-size:14px">' +
-            (isAr ? '♿ دوريات ذوي الهمم (hlpara) وبيانات Sii-Football®' : '♿ Para Football (hlpara) & Sii-Football®') +
-          '</b>' +
-          '<a href="https://siiberram.github.io/Sii-Football/" target="_blank" rel="noopener noreferrer" style="color:#1ed48a;font-size:12px;font-weight:700">' +
-            (isAr ? 'فتح منصة Sii-Football® ↗' : 'Open Sii-Football® ↗') +
-          '</a>' +
+        '<div id="challengeGateArea">' +
+          (sub.active
+            ? ('<div style="margin-bottom:12px">' +
+                '<button type="button" id="openChallengePanelBtn" class="btn" style="width:100%;padding:12px;font-weight:700;background:#16a34a;color:#fff">' +
+                  '⚔️ ' + esc(isAr ? "تحدي المستخدمين (قائمة الأونلاين + مباراة + فريق + مطابقة المبلغ)" : "User Challenges (Online List + Match + Team + Equal Stake)") +
+                '</button>' +
+              '</div>' +
+              '<div id="challengePanel" class="card" style="margin-bottom:12px;padding:14px">' +
+                '<div style="margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,.12)">' +
+                  '<b>🟢 ' + esc(isAr ? "المشتركون أونلاين (اختر شخصاً بالضغط على مؤشر/زر الاختيار)" : "Online Subscribers (Tap indicator/button to pick challenger)") + '</b>' +
+                  '<div id="onlineMembersList" style="margin-top:8px;display:grid;gap:6px">' +
+                    (onlineMembers.length
+                      ? onlineMembers.map(function (m, idx) {
+                          return (
+                            '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.04);font-size:12px">' +
+                              '<span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#22c55e;margin-inline-end:6px" title="Online"></span><b>' + esc(m.name) + '</b> <small style="opacity:.75">(' + esc(m.method || "PayPal") + ')</small></span>' +
+                              '<button type="button" class="btn pickOnlineBtn" data-idx="' + idx + '" style="padding:5px 10px;font-size:11px">' +
+                                '📍 ' + esc(isAr ? "اختيار للتحدي" : "Select") +
+                              '</button>' +
+                            '</div>'
+                          );
+                        }).join("")
+                      : ('<p class="note" style="margin:4px 0 0">' + esc(isAr ? "لا يوجد مشتركون أونلاين مسجلون بعد." : "No online subscribers yet.") + '</p>')) +
+                  '</div>' +
+                '</div>' +
+
+                '<b>⚔️ ' + esc(isAr ? "إنشاء أو إرسال تحدٍ بالقيمة" : "Create & Send Challenge With Stake") + '</b>' +
+                '<p class="note" style="margin:6px 0 10px">' +
+                  esc(isAr
+                    ? ("اختر مباراة وفريقك، واكتب مبلغ التحدي (مثلاً 1). يجب أن يدخل الطرف الثاني نفس المبلغ بالضبط. نسبة التطبيق (" + (PLATFORM_FEE_RATE * 100) + "%) تُخصم آلياً من الفائز أو عند التعادل.")
+                    : ("Pick a match and your team, then enter stake amount (e.g. 1). Opponent must match the exact same amount. App fee (" + (PLATFORM_FEE_RATE * 100) + "%) applies on win or draw.")) +
+                '</p>' +
+                '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-bottom:10px">' +
+                  '<select id="chMatchSelect" style="padding:8px;border-radius:8px">' +
+                    '<option value="">' + esc(isAr ? "جاري تحميل المباريات..." : "Loading matches...") + '</option>' +
+                  '</select>' +
+                  '<select id="chSideSelect" style="padding:8px;border-radius:8px">' +
+                    '<option value="home">' + esc(isAr ? "أختار الفريق الأول (Home)" : "Pick Home Team") + '</option>' +
+                    '<option value="away">' + esc(isAr ? "أختار الفريق الثاني (Away)" : "Pick Away Team") + '</option>' +
+                  '</select>' +
+                  '<input type="number" id="chStakeInput" min="0.5" step="0.5" value="1" placeholder="' + esc(isAr ? "قيمة التحدي ($)" : "Stake amount ($)") + '" style="padding:8px;border-radius:8px">' +
+                  '<input type="text" id="chOpponentName" placeholder="' + esc(isAr ? "اسم المتحدَّى من القائمة أو يدوياً" : "Selected or typed opponent") + '" style="padding:8px;border-radius:8px">' +
+                '</div>' +
+                '<div id="chCalcPreview" class="card" style="padding:10px;margin-bottom:10px;font-size:12px;background:rgba(255,255,255,.03)"></div>' +
+                '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+                  '<button type="button" id="createChallengeBtn" class="btn">' + esc(isAr ? "إرسال/إنشاء التحدي وتوليد كود الدعوة" : "Send/Create Challenge & Code") + '</button>' +
+                  '<a href="' + esc(PAYPAL_DONATE_URL) + '" target="_blank" rel="noopener noreferrer" class="btn" style="text-decoration:none">' +
+                    esc(isAr ? ("إرسال مبلغ التحدي إلى PayPal (" + OWNER_NAME + ")") : ("Send Stake to PayPal (" + OWNER_NAME + ")")) +
+                  '</a>' +
+                '</div>' +
+                '<div style="margin-top:12px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12)">' +
+                  '<div style="font-size:12px;font-weight:700;margin-bottom:6px">' + esc(isAr ? "قبول تحدٍ من صديق (إلزام مطابقة المبلغ)" : "Accept Friend Challenge (Exact Stake Match Required)") + '</div>' +
+                  '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+                    '<input type="text" id="acceptChallengeId" placeholder="' + esc(isAr ? "معرّف التحدي (مثال: CH-...)" : "Challenge ID (e.g. CH-...)") + '" style="flex:1;min-width:150px;padding:8px;border-radius:8px">' +
+                    '<input type="number" id="acceptStakeInput" min="0.5" step="0.5" placeholder="' + esc(isAr ? "أدخل نفس المبلغ بالضبط" : "Enter exact same amount") + '" style="width:170px;padding:8px;border-radius:8px">' +
+                    '<input type="text" id="acceptOpponentName" placeholder="' + esc(isAr ? "اسمك كمتحدٍ ثانٍ" : "Your opponent name") + '" style="width:160px;padding:8px;border-radius:8px">' +
+                    '<button type="button" id="acceptChallengeBtn" class="btn">' + esc(isAr ? "تأكيد ومطابقة المبلغ" : "Match & Join") + '</button>' +
+                  '</div>' +
+                  '<div id="acceptMsg" style="margin-top:6px;font-size:12px"></div>' +
+                '</div>' +
+              '</div>')
+            : '') +
         '</div>' +
-        '<p style="margin:6px 0 0;font-size:12.5px;opacity:.85">' +
-          (isAr ? 'بطولات ذوي الهمم مفعّلة ومدعومة ضمن النظام (hlpara)، ويمكنك متابعة تفاصيلها عبر Sii-Football® وصفحة المباريات حسب اليوم.' : 'Para football competitions (hlpara) are supported here; view full details via Sii-Football®.') +
-        '</p>' +
-        '</div>' +
-        '<div class="mt-grid-3">' +
-          '<div class="mt-card"><h3 style="margin:0;font-size:14px">' + (isAr ? "أخبار الفريق" : "Team News") + '</h3>' +
-            renderList(news.teamNews, isAr ? "لا توجد أخبار فريق حديثة." : "No recent team news.") + '</div>' +
-          '<div class="mt-card"><h3 style="margin:0;font-size:14px">' + (isAr ? "أخبار اللاعبين" : "Players News") + '</h3>' +
-            renderList(news.playerNews, isAr ? "لا توجد أخبار لاعبين حديثة." : "No recent player news.") + '</div>' +
-          '<div class="mt-card"><h3 style="margin:0;font-size:14px">' + (isAr ? "الانتقالات" : "Transfers") + '</h3>' +
-            renderList(news.transferNews, isAr ? "لا توجد أخبار انتقالات حديثة." : "No recent transfer news.") + '</div>' +
+
+        (ownerMode
+          ? ('<div id="ownerSettlementPanel" class="card" style="margin-bottom:12px;padding:14px;border-color:rgba(56,189,248,.5)">' +
+              '<b>👑 ' + esc(isAr ? ("لوحة المالك الرئيسية — " + OWNER_NAME) : ("Owner Settlement Console — " + OWNER_NAME)) + '</b>' +
+              '<p class="note" style="margin:6px 0 10px">' +
+                esc(isAr
+                  ? "تُعرض هنا التحديات المسجلة على الجهاز مع احتساب صافي المستحق للإرسال للفائز أو لكل طرف عند التعادل بعد خصم عمولة التطبيق."
+                  : "Displays recorded challenges with net payout to winner or refund per side on draw after app fee deduction.") +
+              '</p>' +
+              '<div id="ownerSettlementList"></div>' +
+            '</div>')
+          : '') +
+
+        '<div class="card" style="padding:14px">' +
+          '<b>🏆 ' + esc(isAr ? "سجل التحديات الحالية والنتائج" : "Active & Settled Challenges") + '</b>' +
+          '<div id="challengesList" style="margin-top:8px"></div>' +
         '</div>' +
       '</div>';
 
-    var fileInput = targetView.querySelector("#mtFounderFile");
-    if (fileInput) {
-      fileInput.onchange = function () {
-        var f = fileInput.files && fileInput.files[0];
-        if (!f || !window.FileReader) return;
-        var reader = new FileReader();
-        reader.onload = function (ev) {
-          var nextSt = loadState();
-          nextSt.founderPhoto = String(ev.target && ev.target.result || "");
-          saveState(nextSt);
-          renderPage(targetView);
-        };
-        reader.readAsDataURL(f);
-      };
+    var saveFavBtn = view.querySelector("#saveFavTeamBtn");
+    var favSel = view.querySelector("#favTeamSelect");
+    var toggleOwnerBtn = view.querySelector("#toggleOwnerBtn");
+    var activateSubBtn = view.querySelector("#activateSubBtn");
+    var deactivateSubBtn = view.querySelector("#deactivateSubBtn");
+
+    if (saveFavBtn && favSel) {
+      saveFavBtn.addEventListener("click", function () {
+        var opt = favSel.options[favSel.selectedIndex];
+        var val = favSel.value;
+        if (!val) {
+          localStorage.removeItem(STORAGE_KEYS.favTeam);
+        } else {
+          writeJson(STORAGE_KEYS.favTeam, {
+            id: val,
+            name: opt ? opt.getAttribute("data-name") || opt.textContent : val,
+            league: opt ? opt.getAttribute("data-league") || "" : ""
+          });
+        }
+        emitState({ favTeamId: val });
+        render(view);
+      });
     }
 
-    var saveBtn = targetView.querySelector("#mtSaveProfileBtn");
-    if (saveBtn) {
-      saveBtn.onclick = function () {
-        var nickEl = targetView.querySelector("#mtNickInput");
-        var teamEl = targetView.querySelector("#mtTeamSelect");
-        var nextSt = loadState();
-        nextSt.nickname = (nickEl && nickEl.value.trim()) || nextSt.userId;
-        nextSt.teamId = teamEl ? teamEl.value : nextSt.teamId;
-        saveState(nextSt);
-        renderPage(targetView);
-      };
+    if (toggleOwnerBtn) {
+      toggleOwnerBtn.addEventListener("click", function () {
+        writeJson(STORAGE_KEYS.ownerMode, !ownerMode);
+        render(view);
+      });
     }
 
-    targetView.querySelectorAll(".mt-match").forEach(function (rowEl) {
-      var mid = rowEl.getAttribute("data-mid");
-      rowEl.querySelectorAll(".mt-pick-btn").forEach(function (btnEl) {
-        btnEl.onclick = function () {
-          var pick = btnEl.getAttribute("data-pick");
-          var nextSt = loadState();
-          if (nextSt.predictions[mid] === pick) delete nextSt.predictions[mid];
-          else nextSt.predictions[mid] = pick;
-          saveState(nextSt);
-          renderPage(targetView);
+    if (activateSubBtn) {
+      activateSubBtn.addEventListener("click", function () {
+        var mName = (view.querySelector("#subMemberName") && view.querySelector("#subMemberName").value.trim()) || (isAr ? "مشترك" : "Member");
+        var pMethod = (view.querySelector("#subPayoutMethod") && view.querySelector("#subPayoutMethod").value) || "PayPal";
+        var pAcc = (view.querySelector("#subPayoutAccount") && view.querySelector("#subPayoutAccount").value.trim()) || "";
+        var nextSub = {
+          active: true,
+          memberName: mName,
+          payoutMethod: pMethod,
+          payoutAccount: pAcc,
+          plan: "monthly_symbolic",
+          activatedAt: new Date().toISOString()
         };
+        writeJson(STORAGE_KEYS.sub, nextSub);
+        upsertOnlineMember(nextSub);
+        emitState({ subscriptionActive: true });
+        render(view);
+      });
+    }
+
+    if (deactivateSubBtn) {
+      deactivateSubBtn.addEventListener("click", function () {
+        writeJson(STORAGE_KEYS.sub, {
+          active: false,
+          memberName: (view.querySelector("#subMemberName") && view.querySelector("#subMemberName").value.trim()) || "",
+          payoutMethod: (view.querySelector("#subPayoutMethod") && view.querySelector("#subPayoutMethod").value) || "PayPal",
+          payoutAccount: (view.querySelector("#subPayoutAccount") && view.querySelector("#subPayoutAccount").value.trim()) || "",
+          plan: "monthly_symbolic"
+        });
+        emitState({ subscriptionActive: false });
+        render(view);
+      });
+    }
+
+    view.querySelectorAll(".pickOnlineBtn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var idx = Number(btn.getAttribute("data-idx"));
+        var chosen = onlineMembers[idx];
+        var oppInput = view.querySelector("#chOpponentName");
+        if (chosen && oppInput) {
+          oppInput.value = chosen.name || "";
+          oppInput.setAttribute("data-payout-method", chosen.method || "PayPal");
+          oppInput.setAttribute("data-payout-account", chosen.account || "");
+          oppInput.focus();
+        }
       });
     });
+
+    fetch("data/static.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .then(function (data) {
+        var teamsMap = buildTeamsMap(data || {});
+        var matches = collectMatches(data || {}, teamsMap, leagueCode);
+        if (!matches.length && leagueCode) {
+          matches = collectMatches(data || {}, teamsMap, "");
+        }
+
+        if (favSel) {
+          var currentFavId = favTeam && favTeam.id ? String(favTeam.id) : "";
+          var teamEntries = [];
+          Object.keys(teamsMap).forEach(function (k) {
+            var item = teamsMap[k];
+            if (item && item.id === k) teamEntries.push(item);
+          });
+          teamEntries.sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
+          favSel.innerHTML =
+            '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>' +
+            teamEntries.slice(0, 400).map(function (t) {
+              var selAttr = t.id === currentFavId ? " selected" : "";
+              return '<option value="' + esc(t.id) + '" data-name="' + esc(t.name) + '" data-league="' + esc(t.league || "") + '"' + selAttr + '>' +
+                esc(t.name) + (t.league ? (' [' + esc(t.league) + ']') : '') +
+              '</option>';
+            }).join("");
+        }
+
+        var matchSel = view.querySelector("#chMatchSelect");
+        var sideSel = view.querySelector("#chSideSelect");
+        var stakeInp = view.querySelector("#chStakeInput");
+        var calcBox = view.querySelector("#chCalcPreview");
+        var createBtn = view.querySelector("#createChallengeBtn");
+        var openPanelBtn = view.querySelector("#openChallengePanelBtn");
+        var panelEl = view.querySelector("#challengePanel");
+
+        if (openPanelBtn && panelEl) {
+          openPanelBtn.addEventListener("click", function () {
+            var hidden = panelEl.style.display === "none";
+            panelEl.style.display = hidden ? "" : "none";
+          });
+        }
+
+        if (matchSel) {
+          matchSel.innerHTML = matches.length
+            ? matches.map(function (m) {
+                return '<option value="' + esc(m.id) + '">' +
+                  esc(m.homeName + " vs " + m.awayName + (m.date ? (" (" + m.date + ")") : "")) +
+                '</option>';
+              }).join("")
+            : ('<option value="">' + esc(isAr ? "لا توجد مباريات متاحة حالياً" : "No matches available") + '</option>');
+        }
+
+        function refreshSideLabelsAndCalc() {
+          var selectedMatch = matches.find(function (m) { return m.id === (matchSel && matchSel.value); }) || matches[0];
+          if (sideSel && selectedMatch) {
+            var prevVal = sideSel.value || "home";
+            sideSel.innerHTML =
+              '<option value="home"' + (prevVal === "home" ? " selected" : "") + '>' + esc((isAr ? "الفريق الأول: " : "Home: ") + selectedMatch.homeName) + '</option>' +
+              '<option value="away"' + (prevVal === "away" ? " selected" : "") + '>' + esc((isAr ? "الفريق الثاني: " : "Away: ") + selectedMatch.awayName) + '</option>';
+          }
+          if (calcBox) {
+            var s = calcSettlement(stakeInp ? stakeInp.value : 1, PLATFORM_FEE_RATE);
+            calcBox.innerHTML = isAr
+              ? ('قيمة كل طرف: <b>$' + s.stake + '</b> (يجب أن يدفع الطرف الثاني نفس القيمة <b>$' + s.stake + '</b>) | ' +
+                 'إجمالي الرهان: <b>$' + s.totalPool + '</b> | عمولة التطبيق (' + s.ratePercent + '%): <b>$' + s.feeAmount + '</b><br>' +
+                 '🏆 عند الفوز يستلم الفائز: <b>$' + s.winnerPayout + '</b> | 🤝 عند التعادل يسترد كل طرف: <b>$' + s.drawRefundEach + '</b>')
+              : ('Each side stake: <b>$' + s.stake + '</b> (exact match required) | Pool: <b>$' + s.totalPool + '</b> | Fee (' + s.ratePercent + '%): <b>$' + s.feeAmount + '</b><br>' +
+                 '🏆 Winner net payout: <b>$' + s.winnerPayout + '</b> | 🤝 Draw refund each: <b>$' + s.drawRefundEach + '</b>');
+          }
+        }
+
+        refreshSideLabelsAndCalc();
+        if (matchSel) matchSel.addEventListener("change", refreshSideLabelsAndCalc);
+        if (stakeInp) stakeInp.addEventListener("input", refreshSideLabelsAndCalc);
+
+        if (createBtn) {
+          createBtn.addEventListener("click", function () {
+            var mObj = matches.find(function (m) { return m.id === (matchSel && matchSel.value); }) || matches[0];
+            var stakeVal = Number(stakeInp && stakeInp.value);
+            if (!mObj || !Number.isFinite(stakeVal) || stakeVal <= 0) return;
+
+            var sideVal = (sideSel && sideSel.value) || "home";
+            var oppInput = view.querySelector("#chOpponentName");
+            var oppName = (oppInput && oppInput.value.trim()) || "";
+            var oppMethod = (oppInput && oppInput.getAttribute("data-payout-method")) || "PayPal";
+            var oppAccount = (oppInput && oppInput.getAttribute("data-payout-account")) || "";
+
+            var newCh = {
+              id: "CH-" + Date.now().toString(36).toUpperCase(),
+              matchId: mObj.id,
+              matchLabel: mObj.homeName + " vs " + mObj.awayName,
+              homeName: mObj.homeName,
+              awayName: mObj.awayName,
+              creatorName: sub.memberName || (isAr ? "مستخدم" : "User"),
+              creatorMethod: sub.payoutMethod || "PayPal",
+              creatorAccount: sub.payoutAccount || "",
+              opponentName: oppName,
+              opponentMethod: oppMethod,
+              opponentAccount: oppAccount,
+              opponentMatched: false,
+              creatorSide: sideVal,
+              stake: stakeVal,
+              feeRate: PLATFORM_FEE_RATE,
+              createdAt: new Date().toISOString()
+            };
+            newCh.inviteCode = makeChallengeCode(newCh);
+
+            var updated = [newCh].concat(readJson(STORAGE_KEYS.challenges, []));
+            writeJson(STORAGE_KEYS.challenges, updated);
+            emitState({ challengeCreated: newCh.id });
+            render(view);
+          });
+        }
+
+        var acceptBtn = view.querySelector("#acceptChallengeBtn");
+        if (acceptBtn) {
+          acceptBtn.addEventListener("click", function () {
+            var cid = (view.querySelector("#acceptChallengeId") && view.querySelector("#acceptChallengeId").value.trim()) || "";
+            var enteredStake = Number(view.querySelector("#acceptStakeInput") && view.querySelector("#acceptStakeInput").value);
+            var oppName = (view.querySelector("#acceptOpponentName") && view.querySelector("#acceptOpponentName").value.trim()) || (sub.memberName || (isAr ? "المتحدي الثاني" : "Opponent"));
+            var msgEl = view.querySelector("#acceptMsg");
+            var list = readJson(STORAGE_KEYS.challenges, []);
+            var target = list.find(function (item) {
+              return item.id.toLowerCase() === cid.toLowerCase() || (item.inviteCode && item.inviteCode.toLowerCase() === cid.toLowerCase());
+            });
+
+            if (!target) {
+              if (msgEl) msgEl.innerHTML = '<span style="color:#f87171">' + esc(isAr ? "لم يتم العثور على التحدي بهذا المعرّف." : "Challenge ID not found.") + '</span>';
+              return;
+            }
+            if (!Number.isFinite(enteredStake) || Math.abs(enteredStake - Number(target.stake)) > 0.0001) {
+              if (msgEl) {
+                msgEl.innerHTML = '<span style="color:#f87171">' + esc(
+                  isAr
+                    ? ("يجب إدخال نفس قيمة التحدي بالضبط ($" + target.stake + ") لقبول التحدي.")
+                    : ("You must enter the exact same stake amount ($" + target.stake + ").")
+                ) + '</span>';
+              }
+              return;
+            }
+
+            target.opponentMatched = true;
+            target.opponentName = oppName;
+            target.opponentMethod = sub.payoutMethod || "PayPal";
+            target.opponentAccount = sub.payoutAccount || "";
+            writeJson(STORAGE_KEYS.challenges, list);
+            emitState({ challengeAccepted: target.id });
+            render(view);
+          });
+        }
+
+        var matchById = Object.create(null);
+        matches.forEach(function (m) { matchById[m.id] = m; });
+
+        var currentChallenges = readJson(STORAGE_KEYS.challenges, []);
+        var listBox = view.querySelector("#challengesList");
+        if (listBox) {
+          if (!currentChallenges.length) {
+            listBox.innerHTML = '<p class="empty">' + esc(isAr ? "لا توجد تحديات مسجلة بعد." : "No challenges recorded yet.") + '</p>';
+          } else {
+            listBox.innerHTML = currentChallenges.map(function (ch) {
+              var mObj = matchById[ch.matchId] || null;
+              var ev = evaluateChallenge(ch, mObj);
+              var pickedTeam = ch.creatorSide === "home" ? ch.homeName : ch.awayName;
+              var oppTeam = ch.creatorSide === "home" ? ch.awayName : ch.homeName;
+
+              var statusBadge = "";
+              if (ev.status === "pending") {
+                statusBadge = isAr ? "⏳ بانتظار نتيجة المباراة" : "⏳ Awaiting match result";
+              } else if (ev.outcome === "draw") {
+                statusBadge = isAr ? ("🤝 تعادل — استرداد $" + ev.refundEach + " لكل طرف (بعد خصم $" + ev.fee + ")") : ("🤝 Draw — $" + ev.refundEach + " refund each");
+              } else {
+                statusBadge = isAr ? ("🏆 الفائز: " + ev.winnerName + " — صافي المستحق: $" + ev.payout + " (عمولة $" + ev.fee + ")") : ("🏆 Winner: " + ev.winnerName + " — Net: $" + ev.payout);
+              }
+
+              return (
+                '<div class="card" style="margin-bottom:10px;padding:12px">' +
+                  '<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">' +
+                    '<b>' + esc(ch.matchLabel) + '</b>' +
+                    '<span style="font-size:12px;opacity:.85">' + esc(ch.id) + ' | $' + esc(ch.stake) + ' × 2</span>' +
+                  '</div>' +
+                  '<div style="font-size:12px;margin-top:6px">' +
+                    esc(isAr
+                      ? (ch.creatorName + " اختار: " + pickedTeam + " | الطرف المنافس (" + (ch.opponentName || "بانتظار الانضمام") + "): " + oppTeam + (ch.opponentMatched ? " [مطابق للمبلغ ✅]" : " [بانتظار مطابقة المبلغ]"))
+                      : (ch.creatorName + " picked: " + pickedTeam + " vs " + oppTeam)) +
+                  '</div>' +
+                  '<div style="font-size:12px;margin-top:4px;font-weight:700">' + esc(statusBadge) + '</div>' +
+                  '<div style="font-size:11px;margin-top:6px;opacity:.8;word-break:break-all">' +
+                    esc(isAr ? "كود الدعوة: " : "Invite Code: ") + '<code>' + esc(ch.inviteCode || ch.id) + '</code>' +
+                  '</div>' +
+                '</div>'
+              );
+            }).join("");
+          }
+        }
+
+        var ownerBox = view.querySelector("#ownerSettlementList");
+        if (ownerBox) {
+          if (!currentChallenges.length) {
+            ownerBox.innerHTML = '<p class="empty">' + esc(isAr ? "لا توجد تحديات لتسويتها حالياً." : "No challenges to settle yet.") + '</p>';
+          } else {
+            ownerBox.innerHTML = currentChallenges.map(function (ch) {
+              var mObj = matchById[ch.matchId] || null;
+              var ev = evaluateChallenge(ch, mObj);
+              var winnerSide = ev.winnerSide;
+              var recipientName = "";
+              var recipientMethod = "";
+              var recipientAcc = "";
+
+              if (winnerSide && winnerSide === ch.creatorSide) {
+                recipientName = ch.creatorName;
+                recipientMethod = ch.creatorMethod || "PayPal";
+                recipientAcc = ch.creatorAccount || (isAr ? "غير مسجل" : "N/A");
+              } else if (winnerSide && winnerSide !== ch.creatorSide) {
+                recipientName = ch.opponentName || (isAr ? "الطرف الثاني" : "Opponent");
+                recipientMethod = ch.opponentMethod || "PayPal";
+                recipientAcc = ch.opponentAccount || (isAr ? "غير مسجل" : "N/A");
+              }
+
+              var settlementLine = "";
+              if (ev.status === "pending") {
+                settlementLine = isAr ? "المباراة لم تُحسم بعد في static.json." : "Match result not available yet.";
+              } else if (ev.outcome === "draw") {
+                settlementLine = isAr
+                  ? ("إرجاع $" + ev.refundEach + " إلى " + ch.creatorName + " (" + (ch.creatorMethod || "PayPal") + ": " + (ch.creatorAccount || "-") + ") وإرجاع $" + ev.refundEach + " إلى " + (ch.opponentName || "الطرف الثاني") + " (" + (ch.opponentMethod || "PayPal") + ": " + (ch.opponentAccount || "-") + ") | عمولة المالك (" + OWNER_NAME + "): $" + ev.fee)
+                  : ("Refund $" + ev.refundEach + " to each side | Owner fee: $" + ev.fee);
+              } else {
+                settlementLine = isAr
+                  ? ("إرسال $" + ev.payout + " إلى الفائز " + recipientName + " عبر " + recipientMethod + " (" + recipientAcc + ") | عمولة المالك (" + OWNER_NAME + "): $" + ev.fee)
+                  : ("Send $" + ev.payout + " to " + recipientName + " via " + recipientMethod + " (" + recipientAcc + ") | Owner fee: $" + ev.fee);
+              }
+
+              return (
+                '<div style="padding:8px 10px;margin-bottom:8px;border-radius:8px;background:rgba(255,255,255,.04);font-size:12px">' +
+                  '<div><b>' + esc(ch.id) + ' — ' + esc(ch.matchLabel) + '</b></div>' +
+                  '<div style="margin-top:4px">' + esc(settlementLine) + '</div>' +
+                '</div>'
+              );
+            }).join("");
+          }
+        }
+      })
+      .catch(function () {
+        var listBox = view.querySelector("#challengesList");
+        if (listBox) listBox.innerHTML = '<p class="empty">' + esc(isAr ? "تعذر تحميل بيانات المباريات والفرق." : "Failed to load matches/teams data.") + '</p>';
+      });
   }
 
-  window.smmMyTeam = function (customView) {
-    var target = customView || getView();
-    renderPage(target);
-    loadAllData().then(function () {
-      renderPage(target);
-    });
+  window.smmMyTeam = function (view) {
+    render(view);
   };
 
-  window.addEventListener("hashchange", function () {
-    if ((location.hash || "#/") === ROUTE_HASH) {
-      window.smmMyTeam(getView());
+  window.addEventListener("smm:state-change", function (ev) {
+    var detail = (ev && ev.detail) || {};
+    if (detail.source === "my-team") return;
+    if ((location.hash || "#/") === "#/my-team") {
+      render(document.getElementById("view"));
     }
   });
+
+  if (location.hash === "#/my-team") window.dispatchEvent(new Event("hashchange"));
 })();

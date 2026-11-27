@@ -436,7 +436,8 @@
           '</div>',
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">',
             '<div style="display:flex;gap:6px;flex:1;min-width:220px;align-items:center">',
-              '<input type="search" id="favTeamSearchInput" placeholder="' + esc(isAr ? "ابحث عن اسم الفريق أو الدوري..." : "Search team or league...") + '" autocomplete="off" style="flex:1;min-width:150px;padding:8px;border-radius:8px">',
+              '<span aria-hidden="true" style="padding:0 4px;font-size:15px">🔍</span>',
+              '<input type="search" id="favTeamSearchInput" placeholder="\' + esc(isAr ? "ابحث عن اسم الفريق أو الدوري..." : "Search team or league...") + \'" autocomplete="off" style="flex:1;min-width:150px;padding:8px;border-radius:8px">\'',
               '<button type="button" id="clearFavTeamSearchBtn" class="btn" title="' + esc(isAr ? "مسح البحث" : "Clear search") + '" style="padding:8px 10px">✕</button>',
             '</div>',
             '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">',
@@ -528,7 +529,7 @@
                       : ("Pick a match and your team, then enter stake amount (e.g. 1). Opponent must match the exact same amount. App fee (" + (PLATFORM_FEE_RATE * 100) + "%) applies on win or draw.")) +
                   '</p>' +
                   '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">' +
-                    '<select id="chMatchSelect" style="padding:8px;border-radius:8px">' +
+                    '<div style="display:flex;gap:6px;align-items:center">', '<span aria-hidden="true" style="padding:0 2px;font-size:14px">🔍</span>', '<input type="search" id="chMatchSearchInput" placeholder="' + esc(isAr ? "ابحث عن مباراة أو فريق..." : "Search match or team...") + '" autocomplete="off" style="flex:1;min-width:130px;padding:8px;border-radius:8px">', '<button type="button" id="clearChMatchSearchBtn" class="btn" title="' + esc(isAr ? "مسح بحث المباراة" : "Clear match search") + '" style="padding:8px 10px">✕</button>', '</div>', '<select id="chMatchSelect" style="padding:8px;border-radius:8px">',
                       '<option value="">' + esc(isAr ? "جاري تحميل المباريات..." : "Loading matches...") + '</option>' +
                     '</select>' +
                     '<select id="chSideSelect" style="padding:8px;border-radius:8px">' +
@@ -753,13 +754,58 @@
           });
         }
         if (matchSel) {
-          matchSel.innerHTML = matches.length
-            ? matches.map(function (m) {
-                return '<option value="' + esc(m.id) + '">' +
-                  esc(m.homeName + " vs " + m.awayName + (m.date ? (" (" + m.date + ")") : "")) +
-                '</option>';
-              }).join("")
-            : ('<option value="">' + esc(isAr ? "لا توجد مباريات متاحة حالياً" : "No matches available") + '</option>');
+          var matchSearchInp = view.querySelector("#chMatchSearchInput");
+          var clearMatchSearchBtn = view.querySelector("#clearChMatchSearchBtn");
+
+          function renderMatchOptions(queryText) {
+            var q = String(queryText || "").trim().toLowerCase();
+            var filteredMatches = !matches.length
+              ? []
+              : (!q
+                  ? matches
+                  : matches.filter(function (m) {
+                      var label = (m.label || (m.homeName || "") + " vs " + (m.awayName || "") || m.id || "").toLowerCase();
+                      return label.indexOf(q) !== -1;
+                    }));
+
+            if (!matches.length) {
+              matchSel.innerHTML = '<option value="">' + esc(isAr ? "لا توجد مباريات متاحة حالياً" : "No matches available") + '</option>';
+              return;
+            }
+
+            if (!filteredMatches.length) {
+              matchSel.innerHTML = '<option value="">' + esc(isAr ? "لا توجد مباريات مطابقة للبحث" : "No matching matches") + '</option>';
+              return;
+            }
+
+            matchSel.innerHTML = filteredMatches.map(function (m) {
+              return '<option value="' + esc(m.id) + '">' + esc(m.label) + '</option>';
+            }).join("");
+
+            if (q && filteredMatches.length > 0) {
+              matchSel.value = filteredMatches[0].id;
+            }
+          }
+
+          renderMatchOptions(matchSearchInp ? matchSearchInp.value : "");
+
+          if (matchSearchInp && !matchSearchInp.dataset.boundMatchFilter) {
+            matchSearchInp.dataset.boundMatchFilter = "1";
+            matchSearchInp.addEventListener("input", function () {
+              renderMatchOptions(matchSearchInp.value);
+            });
+          }
+
+          if (clearMatchSearchBtn && !clearMatchSearchBtn.dataset.boundClearMatch) {
+            clearMatchSearchBtn.dataset.boundClearMatch = "1";
+            clearMatchSearchBtn.addEventListener("click", function () {
+              if (matchSearchInp) {
+                matchSearchInp.value = "";
+                matchSearchInp.focus();
+              }
+              renderMatchOptions("");
+            });
+          }
         }
         function refreshSideLabelsAndCalc() {
           var selectedMatch = matches.find(function (m) { return m.id === (matchSel && matchSel.value); }) || matches[0];

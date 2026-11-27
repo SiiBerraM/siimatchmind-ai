@@ -435,6 +435,10 @@
             ),
           '</div>',
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">',
+            '<div style="display:flex;gap:6px;flex:1;min-width:220px;align-items:center">',
+              '<input type="search" id="favTeamSearchInput" placeholder="' + esc(isAr ? "ابحث عن اسم الفريق أو الدوري..." : "Search team or league...") + '" autocomplete="off" style="flex:1;min-width:150px;padding:8px;border-radius:8px">',
+              '<button type="button" id="clearFavTeamSearchBtn" class="btn" title="' + esc(isAr ? "مسح البحث" : "Clear search") + '" style="padding:8px 10px">✕</button>',
+            '</div>',
             '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">',
               '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>',
             '</select>',
@@ -657,21 +661,83 @@
           matches = collectMatches(data || {}, teamsMap, "");
         }
         if (favSel) {
-          var currentFavId = favTeam && favTeam.id ? String(favTeam.id) : "";
-          var teamEntries = [];
+          var allTeamOptions = [];
           Object.keys(teamsMap).forEach(function (k) {
             var item = teamsMap[k];
-            if (item && item.id === k) teamEntries.push(item);
+            if (!item) return;
+            var tName = item.name || k;
+            var tLeague = item.league || "";
+            allTeamOptions.push({
+              id: String(item.id || k),
+              name: String(tName),
+              league: String(tLeague)
+            });
           });
-          teamEntries.sort(function (a, b) { return String(a.name).localeCompare(String(b.name)); });
-          favSel.innerHTML =
-            '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>' +
-            teamEntries.slice(0, 400).map(function (t) {
-              var selAttr = t.id === currentFavId ? " selected" : "";
-              return '<option value="' + esc(t.id) + '" data-name="' + esc(t.name) + '" data-league="' + esc(t.league || "") + '"' + selAttr + '>' +
-                esc(t.name) + (t.league ? (' [' + esc(t.league) + ']') : '') +
-              '</option>';
-            }).join("");
+          allTeamOptions.sort(function (a, b) {
+            return a.name.localeCompare(b.name, isAr ? "ar" : "en");
+          });
+
+          var searchInput = view.querySelector("#favTeamSearchInput");
+          var clearSearchBtn = view.querySelector("#clearFavTeamSearchBtn");
+          var savedFavId = (favTeam && favTeam.id) ? String(favTeam.id) : "";
+
+          function renderTeamOptions(queryText, autoPickFirst) {
+            var q = String(queryText || "").trim().toLowerCase();
+            var filtered = !q
+              ? allTeamOptions
+              : allTeamOptions.filter(function (t) {
+                  return t.name.toLowerCase().indexOf(q) !== -1 ||
+                         t.league.toLowerCase().indexOf(q) !== -1 ||
+                         t.id.toLowerCase().indexOf(q) !== -1;
+                });
+
+            var optsHtml = ['<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>'];
+            filtered.forEach(function (t) {
+              var label = t.name + (t.league ? " [" + t.league + "]" : "");
+              optsHtml.push(
+                '<option value="' + esc(t.id) + '" data-name="' + esc(t.name) + '" data-league="' + esc(t.league) + '">' +
+                  esc(label) +
+                '</option>'
+              );
+            });
+            favSel.innerHTML = optsHtml.join("");
+
+            if (q && autoPickFirst && filtered.length > 0) {
+              favSel.value = filtered[0].id;
+            } else if (savedFavId && filtered.some(function (t) { return t.id === savedFavId; })) {
+              favSel.value = savedFavId;
+            } else if (filtered.length === 1) {
+              favSel.value = filtered[0].id;
+            } else {
+              favSel.value = "";
+            }
+          }
+
+          renderTeamOptions(searchInput ? searchInput.value : "", false);
+
+          if (searchInput && !searchInput.dataset.boundFilter) {
+            searchInput.dataset.boundFilter = "1";
+            searchInput.addEventListener("input", function () {
+              renderTeamOptions(searchInput.value, true);
+            });
+            searchInput.addEventListener("keydown", function (ev) {
+              if (ev.key === "Enter" && favSel.value && saveFavBtn) {
+                ev.preventDefault();
+                saveFavBtn.click();
+              }
+            });
+          }
+
+          if (clearSearchBtn && !clearSearchBtn.dataset.boundClear) {
+            clearSearchBtn.dataset.boundClear = "1";
+            clearSearchBtn.addEventListener("click", function () {
+              if (searchInput) {
+                searchInput.value = "";
+                searchInput.focus();
+              }
+              renderTeamOptions("", false);
+            });
+          }
         }
         var matchSel = view.querySelector("#chMatchSelect");
         var sideSel = view.querySelector("#chSideSelect");

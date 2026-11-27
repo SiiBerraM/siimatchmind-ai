@@ -435,12 +435,12 @@
             ),
           '</div>',
           '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">',
-            '<div style="display:flex;gap:6px;flex:1;min-width:220px;align-items:center">',
+            '<div style="display:flex;gap:6px;flex:1 1 100%;min-width:0;align-items:center">',
               '<span aria-hidden="true" style="padding:0 4px;font-size:15px">🔍</span>',
-              '<input type="search" id="favTeamSearchInput" placeholder="\' + esc(isAr ? "ابحث عن اسم الفريق أو الدوري..." : "Search team or league...") + \'" autocomplete="off" style="flex:1;min-width:150px;padding:8px;border-radius:8px">\'',
+              '<input type="search" id="favTeamSearchInput" placeholder="' + esc(isAr ? "ابحث عن اسم الفريق أو الدوري..." : "Search team or league...") + '" autocomplete="off" style="flex:1;min-width:0;width:100%;padding:8px;border-radius:8px">',
               '<button type="button" id="clearFavTeamSearchBtn" class="btn" title="' + esc(isAr ? "مسح البحث" : "Clear search") + '" style="padding:8px 10px">✕</button>',
             '</div>',
-            '<select id="favTeamSelect" style="flex:1;min-width:180px;padding:8px;border-radius:8px">',
+            '<select id="favTeamSelect" style="flex:1 1 100%;min-width:0;padding:8px;border-radius:8px">',
               '<option value="">' + esc(isAr ? "اختر فريقك المفضل..." : "Select favorite team...") + '</option>',
             '</select>',
             '<button type="button" id="saveFavTeamBtn" class="btn">' + esc(isAr ? "حفظ الفريق" : "Save Team") + '</button>',
@@ -529,7 +529,7 @@
                       : ("Pick a match and your team, then enter stake amount (e.g. 1). Opponent must match the exact same amount. App fee (" + (PLATFORM_FEE_RATE * 100) + "%) applies on win or draw.")) +
                   '</p>' +
                   '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px">' +
-                    '<div style="display:flex;gap:6px;align-items:center">', '<span aria-hidden="true" style="padding:0 2px;font-size:14px">🔍</span>', '<input type="search" id="chMatchSearchInput" placeholder="' + esc(isAr ? "ابحث عن مباراة أو فريق..." : "Search match or team...") + '" autocomplete="off" style="flex:1;min-width:130px;padding:8px;border-radius:8px">', '<button type="button" id="clearChMatchSearchBtn" class="btn" title="' + esc(isAr ? "مسح بحث المباراة" : "Clear match search") + '" style="padding:8px 10px">✕</button>', '</div>', '<select id="chMatchSelect" style="padding:8px;border-radius:8px">',
+                    '<div style="display:flex;gap:6px;align-items:center;min-width:0;grid-column:1 / -1">', '<span aria-hidden="true" style="padding:0 2px;font-size:14px;flex:0 0 auto">🔍</span>', '<input type="search" id="chMatchSearchInput" placeholder="' + esc(isAr ? "ابحث عن مباراة أو فريق..." : "Search match or team...") + '" autocomplete="off" style="flex:1;min-width:0;width:100%;padding:8px;border-radius:8px">', '<button type="button" id="clearChMatchSearchBtn" class="btn" title="' + esc(isAr ? "مسح بحث المباراة" : "Clear match search") + '" style="padding:8px 10px;flex:0 0 auto">✕</button>', '</div>', '<select id="chMatchSelect" style="padding:8px;border-radius:8px;min-width:0;grid-column:1 / -1">',
                       '<option value="">' + esc(isAr ? "جاري تحميل المباريات..." : "Loading matches...") + '</option>' +
                     '</select>' +
                     '<select id="chSideSelect" style="padding:8px;border-radius:8px">' +

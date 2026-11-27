@@ -619,6 +619,7 @@
     [/^#\/press$/, "saved", () => pagePress()],
     [/^#\/news$/, "saved", () => (window.smmNews || (() => {}))(view, api)],
     [/^#\/watch$/, "saved", () => (window.smmWatch || (() => {}))(view, api)],
+    [/^#\/pronostics$/, "pronostics", () => { if (window.smmPronostics) window.smmPronostics(view, api); }],
     [/^#\/today$/, "home", () => (window.smmToday || (() => {}))(view)],
     [/^#\/about$/, "saved", () => pageAbout()],
     [/^#?\/?$/, "home", () => pageHome()]

@@ -454,6 +454,19 @@
           '</div>' +
         '</div>' +
 
+        '<div class="mt-card" style="border-color:rgba(250,204,21,.4)">' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">' +
+          '<b style="color:#facc15;font-size:14px">' +
+            (isAr ? '♿ دوريات ذوي الهمم (hlpara) وبيانات Sii-Football®' : '♿ Para Football (hlpara) & Sii-Football®') +
+          '</b>' +
+          '<a href="https://siiberram.github.io/Sii-Football/" target="_blank" rel="noopener noreferrer" style="color:#1ed48a;font-size:12px;font-weight:700">' +
+            (isAr ? 'فتح منصة Sii-Football® ↗' : 'Open Sii-Football® ↗') +
+          '</a>' +
+        '</div>' +
+        '<p style="margin:6px 0 0;font-size:12.5px;opacity:.85">' +
+          (isAr ? 'بطولات ذوي الهمم مفعّلة ومدعومة ضمن النظام (hlpara)، ويمكنك متابعة تفاصيلها عبر Sii-Football® وصفحة المباريات حسب اليوم.' : 'Para football competitions (hlpara) are supported here; view full details via Sii-Football®.') +
+        '</p>' +
+        '</div>' +
         '<div class="mt-grid-3">' +
           '<div class="mt-card"><h3 style="margin:0;font-size:14px">' + (isAr ? "أخبار الفريق" : "Team News") + '</h3>' +
             renderList(news.teamNews, isAr ? "لا توجد أخبار فريق حديثة." : "No recent team news.") + '</div>' +

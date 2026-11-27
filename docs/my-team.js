@@ -400,7 +400,7 @@
                   ? "تُعرض هنا التحديات المسجلة على الجهاز مع احتساب صافي المستحق للإرسال للفائز أو لكل طرف عند التعادل بعد خصم عمولة التطبيق."
                   : "Displays recorded challenges with net payout to winner or refund per side on draw after app fee deduction.") +
               '</p>' +
-              '<div id="ownerSettlementList"></div>' +
+              '<div id="ownerManualCalcBox" style="padding:10px;margin-bottom:10px;border-radius:8px;background:rgba(255,255,255,.04);font-size:12px"><div style="font-weight:700;margin-bottom:6px">حاسبة الرد والاقتطاع الآلية عند الدفع / Auto Refund & Fee Calculator</div><div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center"><input type="number" id="ownerPaidAmountInput" min="0.1" step="0.1" value="1" placeholder="المبلغ المدفوع" style="width:130px;padding:6px;border-radius:6px"><select id="ownerTxModeSelect" style="padding:6px;border-radius:6px"><option value="refund">رد / استرداد دفعة (مع اقتطاع التطبيق)</option><option value="win_pool">تسوية فوز من رهان طرفين (مبلغ × 2)</option><option value="draw_pool">تسوية تعادل من رهان طرفين (مبلغ × 2)</option></select><span id="ownerAutoCalcResult" style="font-weight:700"></span></div></div><div id="ownerSettlementList"></div>' +
             '</div>')
           : '') +
 
@@ -685,6 +685,32 @@
           }
         }
 
+        var paidInp = view.querySelector("#ownerPaidAmountInput");
+        var modeSel = view.querySelector("#ownerTxModeSelect");
+        var calcRes = view.querySelector("#ownerAutoCalcResult");
+        function updateOwnerAutoCalc() {
+          if (!calcRes) return;
+          var amt = Math.max(0, Number(paidInp && paidInp.value) || 0);
+          var mode = (modeSel && modeSel.value) || "refund";
+          var rate = PLATFORM_FEE_RATE;
+          if (mode === "win_pool") {
+            var pool = +(amt * 2).toFixed(2);
+            var fee = +(pool * rate).toFixed(2);
+            var net = +(pool - fee).toFixed(2);
+            calcRes.innerHTML = "المقتطع للتطبيق: $" + fee + " | الواجب إرساله للفائز: $" + net;
+          } else if (mode === "draw_pool") {
+            var feeEach = +(amt * rate).toFixed(2);
+            var refundEach = +(amt - feeEach).toFixed(2);
+            calcRes.innerHTML = "المقتطع لكل طرف: $" + feeEach + " | الواجب رده لكل طرف: $" + refundEach;
+          } else {
+            var feeOne = +(amt * rate).toFixed(2);
+            var refundOne = +(amt - feeOne).toFixed(2);
+            calcRes.innerHTML = "المقتطع للتطبيق: $" + feeOne + " | الواجب رده للمستخدم: $" + refundOne;
+          }
+        }
+        updateOwnerAutoCalc();
+        if (paidInp) paidInp.addEventListener("input", updateOwnerAutoCalc);
+        if (modeSel) modeSel.addEventListener("change", updateOwnerAutoCalc);
         var ownerBox = view.querySelector("#ownerSettlementList");
         if (ownerBox) {
           if (!currentChallenges.length) {

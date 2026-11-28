@@ -818,8 +818,9 @@
       const label = escSafe(isAr ? c.ar : c.en);
       const cnt = (grouped[c.key] || []).length;
       const act = c.key === chosenCat ? " active" : "";
-      const bgStyle = c.img ? ' style="--cat-bg:url(\'' + escSafe(c.img) + '\')"' : '';
-      return '<button type="button" class="smm-cat-card' + act + '" data-cat="' + c.key + '"' + bgStyle + '>' +
+      const imgHtml = c.img ? '<img class="smm-cat-bg" src="' + escSafe(c.img) + '" alt="" loading="lazy" decoding="async" onerror="this.remove()">' : '';
+      return '<button type="button" class="smm-cat-card' + act + '" data-cat="' + c.key + '">' +
+        imgHtml +
         '<span class="smm-cat-ico">' + c.ico + '</span>' +
         '<span class="smm-cat-name">' + label + '</span>' +
         '<span class="smm-cat-cnt">' + cnt + ' ' + escSafe(isAr ? "بطولة" : "leagues") + '</span>' +

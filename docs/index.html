@@ -131,11 +131,14 @@
 .smm-hub{display:grid;gap:14px;padding:6px 0}
 .smm-hub-title{font-size:1.05rem;font-weight:700;margin:0}
 .smm-hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
-.smm-cat-card{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px;border-radius:12px;border:1px solid rgba(212,175,55,.28);background:rgba(20,20,24,.72);color:inherit;cursor:pointer;text-align:start;font:inherit}
-.smm-cat-card.active,.smm-cat-card:hover{border-color:#d4af37;background:rgba(212,175,55,.14)}
-.smm-cat-ico{font-size:1.35rem;line-height:1}
-.smm-cat-name{font-weight:700;font-size:.95rem}
-.smm-cat-cnt{font-size:.78rem;opacity:.8}
+.smm-cat-card{position:relative;overflow:hidden;min-height:108px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:4px;padding:12px;border-radius:12px;border:1px solid rgba(212,175,55,.28);background-color:rgba(20,20,24,.78);background-image:var(--cat-bg, none);background-size:cover;background-position:center;background-repeat:no-repeat;color:#fff;cursor:pointer;text-align:start;font:inherit;transition:border-color .2s ease,transform .2s ease}
+.smm-cat-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,24,.28) 0%,rgba(10,14,24,.82) 100%);pointer-events:none;z-index:0}
+.smm-cat-card>*{position:relative;z-index:1}
+.smm-cat-card.active,.smm-cat-card:hover{border-color:#d4af37;transform:translateY(-1px)}
+.smm-cat-card.active::before,.smm-cat-card:hover::before{background:linear-gradient(180deg,rgba(212,175,55,.16) 0%,rgba(10,14,24,.76) 100%)}
+.smm-cat-ico{font-size:1.25rem;line-height:1}
+.smm-cat-name{font-weight:700;font-size:.95rem;text-shadow:0 1px 4px rgba(0,0,0,.85)}
+.smm-cat-cnt{font-size:.78rem;opacity:.9;text-shadow:0 1px 4px rgba(0,0,0,.85)}
 .smm-lg-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
 .smm-lg-btn{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:inherit;cursor:pointer;text-align:start;font:inherit}
 .smm-lg-btn.active,.smm-lg-btn:hover{border-color:#d4af37;background:rgba(212,175,55,.16)}

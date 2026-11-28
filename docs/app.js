@@ -760,12 +760,12 @@
 /* ===== SiiMatchMind Leagues Hub & World Cup (Hardened) ===== */
 (function () {
   const CATS = [
-    { key: "men", ico: "▣", ar: "دوري الرجال", en: "Men's Leagues" },
-    { key: "women", ico: "◈", ar: "دوري السيدات", en: "Women's Leagues" },
-    { key: "para", ico: "❖", ar: "دوري المعاقين", en: "Para Football" },
-    { key: "youth", ico: "▸", ar: "دوري الشباب", en: "Youth Leagues" },
-    { key: "wc", ico: "◎", ar: "كأس العالم", en: "World Cup" },
-    { key: "other", ico: "◫", ar: "رياضات أخرى", en: "Other Sports" }
+    { key: "men", ico: "▣", ar: "دوري الرجال", en: "Men's Leagues", img: "icons/leagues/men.png" },
+    { key: "women", ico: "◈", ar: "دوري السيدات", en: "Women's Leagues", img: "icons/leagues/women.png" },
+    { key: "para", ico: "❖", ar: "دوري المعاقين", en: "Para Football", img: "icons/leagues/para.png" },
+    { key: "youth", ico: "▸", ar: "دوري الشباب", en: "Youth Leagues", img: "icons/leagues/youth.png" },
+    { key: "wc", ico: "◎", ar: "كأس العالم", en: "World Cup", img: "icons/leagues/wc.png" },
+    { key: "other", ico: "◫", ar: "رياضات أخرى", en: "Other Sports", img: "icons/leagues/other.png" }
   ];
   const ALLOWED_CATS = new Set(CATS.map(c => c.key));
   const escSafe = (v) => (typeof esc === "function" ? esc(String(v ?? "")) : String(v ?? "").replace(/[&<>"']/g, s => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[s])));
@@ -818,7 +818,8 @@
       const label = escSafe(isAr ? c.ar : c.en);
       const cnt = (grouped[c.key] || []).length;
       const act = c.key === chosenCat ? " active" : "";
-      return '<button type="button" class="smm-cat-card' + act + '" data-cat="' + c.key + '">' +
+      const bgStyle = c.img ? ' style="--cat-bg:url(\'' + escSafe(c.img) + '\')"' : '';
+      return '<button type="button" class="smm-cat-card' + act + '" data-cat="' + c.key + '"' + bgStyle + '>' +
         '<span class="smm-cat-ico">' + c.ico + '</span>' +
         '<span class="smm-cat-name">' + label + '</span>' +
         '<span class="smm-cat-cnt">' + cnt + ' ' + escSafe(isAr ? "بطولة" : "leagues") + '</span>' +

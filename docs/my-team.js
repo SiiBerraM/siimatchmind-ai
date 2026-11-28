@@ -665,7 +665,40 @@
         }
       });
     });
-    fetch("data/static.json", { cache: "no-store" })
+  var SIIFOOTBALL_API_URL = "";
+  function mergeSiifootballData(baseData, extra) {
+    var out = Object.assign({}, baseData || {});
+    if (!extra || typeof extra !== "object") return out;
+    out.teams = Object.assign({}, (baseData && baseData.teams) || {}, extra.teams || {});
+    var baseMbl = (baseData && baseData.matches_by_league) || {};
+    var extraMbl = extra.matches_by_league || {};
+    var mergedMbl = Object.assign({}, baseMbl);
+    Object.keys(extraMbl).forEach(function (lg) {
+      var a = Array.isArray(mergedMbl[lg]) ? mergedMbl[lg] : [];
+      var b = Array.isArray(extraMbl[lg]) ? extraMbl[lg] : [];
+      mergedMbl[lg] = a.concat(b);
+    });
+    out.matches_by_league = mergedMbl;
+    var baseMatches = Array.isArray(baseData && baseData.matches) ? baseData.matches : [];
+    var extraMatches = Array.isArray(extra.matches) ? extra.matches : [];
+    out.matches = baseMatches.concat(extraMatches);
+    return out;
+  }
+  function loadCombinedMatchData() {
+    var apiUrl = String((typeof window !== "undefined" && window.SIIFOOTBALL_API_URL) || SIIFOOTBALL_API_URL || (typeof localStorage !== "undefined" && localStorage.getItem("smm.siifootballApiUrl")) || "").trim();
+    return fetch("data/static.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (baseData) {
+        if (!apiUrl) return baseData;
+        return fetch(apiUrl, { cache: "no-store" })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (extData) { return mergeSiifootballData(baseData, extData); })
+          .catch(function () { return baseData; });
+      });
+  }
+
+    loadCombinedMatchData()
       .then(function (r) { return r.ok ? r.json() : {}; })
       .then(function (data) {
         var teamsMap = buildTeamsMap(data || {});

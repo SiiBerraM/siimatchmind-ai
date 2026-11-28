@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "league_code": "SF-short-stature-wc",
+    "source": "sii-football",
+    "category": "para_sports",
+    "specialization": {
+      "name": "Short Stature / Dwarf Football World Cup",
+      "ar_name": "كأس العالم لكرة القدم لقصار القامة (الأقزام)",
+      "format": "7v7 / International",
+      "key_rule": "Dedicated height/stature classification & adapted pitch pacing"
+    }
+  },
+  "league": {
+    "code": "SF-short-stature-wc",
+    "name": "Short Stature / Dwarf Football World Cup",
+    "source": "sii-football"
+  },
+  "matches_index": {}
+}

@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "league_code": "SF-deaf-football",
+    "source": "sii-football",
+    "category": "para_sports",
+    "specialization": {
+      "name": "Deaf Football (ICSD / Deaflympics)",
+      "ar_name": "كرة قدم الصم والبكم",
+      "format": "11v11 / Futsal",
+      "key_rule": "No hearing aids on pitch; visual/flag officiating"
+    }
+  },
+  "league": {
+    "code": "SF-deaf-football",
+    "name": "Deaf Football (ICSD / Deaflympics)",
+    "source": "sii-football"
+  },
+  "matches_index": {}
+}

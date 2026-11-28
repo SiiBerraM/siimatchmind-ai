@@ -1,0 +1,8371 @@
+{
+  "sf:blind-football:england|sf:blind-football:india": {
+    "home": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 85,
+        "draw": 14,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.23,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.23
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.23
+        },
+        {
+          "score": "1-0",
+          "p": 0.2013
+        },
+        {
+          "score": "3-0",
+          "p": 0.1713
+        },
+        {
+          "score": "0-0",
+          "p": 0.0968
+        },
+        {
+          "score": "4-0",
+          "p": 0.0957
+        }
+      ],
+      "p_over25": 0.4261,
+      "p_btts": 0.129,
+      "score_matrix": [
+        [
+          0.0968,
+          0.0092,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2013,
+          0.0355,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.23,
+          0.0345,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1713,
+          0.0257,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0957,
+          0.0144,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0428,
+          0.0064,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8521301432681919,
+        "draw": 0.13501162178767162,
+        "away": 0.01285823494413646
+      }
+    },
+    "confidence": {
+      "score": 0.26,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "India",
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "n": 2
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:england|sf:blind-football:iran": {
+    "home": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 86,
+        "draw": 13,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.26,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2294
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2294
+        },
+        {
+          "score": "1-0",
+          "p": 0.1985
+        },
+        {
+          "score": "3-0",
+          "p": 0.1727
+        },
+        {
+          "score": "4-0",
+          "p": 0.0975
+        },
+        {
+          "score": "0-0",
+          "p": 0.0945
+        }
+      ],
+      "p_over25": 0.4326,
+      "p_btts": 0.1293,
+      "score_matrix": [
+        [
+          0.0945,
+          0.0089,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1985,
+          0.035,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2294,
+          0.0344,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1727,
+          0.0259,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0975,
+          0.0146,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0441,
+          0.0066,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8552649108768257,
+        "draw": 0.1322111076062343,
+        "away": 0.012523981516940036
+      }
+    },
+    "confidence": {
+      "score": 0.26,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 2.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:iran",
+          "away": "sf:blind-football:england",
+          "hg": 0,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 1
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "England",
+        "wa": 0,
+        "draws": 1,
+        "b": "Iran",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:england|sf:blind-football:italy": {
+    "home": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 87,
+        "draw": 12,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.33,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2272
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2272
+        },
+        {
+          "score": "1-0",
+          "p": 0.1904
+        },
+        {
+          "score": "3-0",
+          "p": 0.1767
+        },
+        {
+          "score": "4-0",
+          "p": 0.1031
+        },
+        {
+          "score": "0-0",
+          "p": 0.0878
+        }
+      ],
+      "p_over25": 0.4519,
+      "p_btts": 0.1302,
+      "score_matrix": [
+        [
+          0.0878,
+          0.0081,
+          0.0009,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1904,
+          0.0336,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2272,
+          0.0341,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1767,
+          0.0265,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1031,
+          0.0155,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0481,
+          0.0072,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.864329912237095,
+        "draw": 0.1241027858314781,
+        "away": 0.01156730193142691
+      }
+    },
+    "confidence": {
+      "score": 0.27,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:england|sf:blind-football:korea": {
+    "home": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 81,
+        "draw": 17,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.96,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2329
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2329
+        },
+        {
+          "score": "1-0",
+          "p": 0.2325
+        },
+        {
+          "score": "3-0",
+          "p": 0.152
+        },
+        {
+          "score": "0-0",
+          "p": 0.1268
+        },
+        {
+          "score": "4-0",
+          "p": 0.0744
+        }
+      ],
+      "p_over25": 0.3526,
+      "p_btts": 0.125,
+      "score_matrix": [
+        [
+          0.1268,
+          0.0129,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2325,
+          0.041,
+          0.0027,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2329,
+          0.0349,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.152,
+          0.0228,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0744,
+          0.0112,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0291,
+          0.0044,
+          0.0003,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8121850292555876,
+        "draw": 0.17055476349425194,
+        "away": 0.017260207250160503
+      }
+    },
+    "confidence": {
+      "score": 0.23,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 1,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Korea",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:england|sf:blind-football:poland": {
+    "home": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 94,
+        "draw": 6,
+        "away": 0
+      },
+      "expected_goals": {
+        "home": 3.24,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 3,
+        "away": 0,
+        "p": 0.1912
+      },
+      "top_scores": [
+        {
+          "score": "3-0",
+          "p": 0.1912
+        },
+        {
+          "score": "2-0",
+          "p": 0.177
+        },
+        {
+          "score": "4-0",
+          "p": 0.1549
+        },
+        {
+          "score": "1-0",
+          "p": 0.1068
+        },
+        {
+          "score": "5-0",
+          "p": 0.1004
+        }
+      ],
+      "p_over25": 0.6581,
+      "p_btts": 0.1363,
+      "score_matrix": [
+        [
+          0.0362,
+          0.0026,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1068,
+          0.0189,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.177,
+          0.0266,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1912,
+          0.0287,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1549,
+          0.0232,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1004,
+          0.0151,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9384595738278405,
+        "draw": 0.05713990188279532,
+        "away": 0.0044005242893641675
+      }
+    },
+    "confidence": {
+      "score": 0.34,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 6,
+        "avg_gf": 0.0,
+        "avg_ga": 6.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Poland",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:india|sf:blind-football:england": {
+    "home": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 76,
+        "draw": 22,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.65,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2665
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2665
+        },
+        {
+          "score": "2-0",
+          "p": 0.2251
+        },
+        {
+          "score": "0-0",
+          "p": 0.1712
+        },
+        {
+          "score": "3-0",
+          "p": 0.1239
+        },
+        {
+          "score": "4-0",
+          "p": 0.0512
+        }
+      ],
+      "p_over25": 0.2698,
+      "p_btts": 0.1187,
+      "score_matrix": [
+        [
+          0.1712,
+          0.0186,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2665,
+          0.047,
+          0.0031,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2251,
+          0.0338,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1239,
+          0.0186,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0512,
+          0.0077,
+          0.0006,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0169,
+          0.0025,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7552507702030782,
+        "draw": 0.22081091804047318,
+        "away": 0.023938311756448644
+      }
+    },
+    "confidence": {
+      "score": 0.2,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      },
+      "away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "England",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:india|sf:blind-football:iran": {
+    "home": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 86,
+        "draw": 13,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.26,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2294
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2294
+        },
+        {
+          "score": "1-0",
+          "p": 0.1985
+        },
+        {
+          "score": "3-0",
+          "p": 0.1727
+        },
+        {
+          "score": "4-0",
+          "p": 0.0975
+        },
+        {
+          "score": "0-0",
+          "p": 0.0945
+        }
+      ],
+      "p_over25": 0.4326,
+      "p_btts": 0.1293,
+      "score_matrix": [
+        [
+          0.0945,
+          0.0089,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1985,
+          0.035,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2294,
+          0.0344,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1727,
+          0.0259,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0975,
+          0.0146,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0441,
+          0.0066,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8552649108768257,
+        "draw": 0.1322111076062343,
+        "away": 0.012523981516940036
+      }
+    },
+    "confidence": {
+      "score": 0.29,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 2.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:india|sf:blind-football:italy": {
+    "home": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 87,
+        "draw": 12,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.33,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2272
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2272
+        },
+        {
+          "score": "1-0",
+          "p": 0.1904
+        },
+        {
+          "score": "3-0",
+          "p": 0.1767
+        },
+        {
+          "score": "4-0",
+          "p": 0.1031
+        },
+        {
+          "score": "0-0",
+          "p": 0.0878
+        }
+      ],
+      "p_over25": 0.4519,
+      "p_btts": 0.1302,
+      "score_matrix": [
+        [
+          0.0878,
+          0.0081,
+          0.0009,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1904,
+          0.0336,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2272,
+          0.0341,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1767,
+          0.0265,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1031,
+          0.0155,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0481,
+          0.0072,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.864329912237095,
+        "draw": 0.1241027858314781,
+        "away": 0.01156730193142691
+      }
+    },
+    "confidence": {
+      "score": 0.27,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      },
+      "away": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:india|sf:blind-football:korea": {
+    "home": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 81,
+        "draw": 17,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.96,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2329
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2329
+        },
+        {
+          "score": "1-0",
+          "p": 0.2325
+        },
+        {
+          "score": "3-0",
+          "p": 0.152
+        },
+        {
+          "score": "0-0",
+          "p": 0.1268
+        },
+        {
+          "score": "4-0",
+          "p": 0.0744
+        }
+      ],
+      "p_over25": 0.3526,
+      "p_btts": 0.125,
+      "score_matrix": [
+        [
+          0.1268,
+          0.0129,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2325,
+          0.041,
+          0.0027,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2329,
+          0.0349,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.152,
+          0.0228,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0744,
+          0.0112,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0291,
+          0.0044,
+          0.0003,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8121850292555876,
+        "draw": 0.17055476349425194,
+        "away": 0.017260207250160503
+      }
+    },
+    "confidence": {
+      "score": 0.26,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 1,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:korea",
+          "away": "sf:blind-football:india",
+          "hg": 3,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 1,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Korea",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "India",
+        "wa": 0,
+        "draws": 0,
+        "b": "Korea",
+        "wb": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:india|sf:blind-football:poland": {
+    "home": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 94,
+        "draw": 6,
+        "away": 0
+      },
+      "expected_goals": {
+        "home": 3.24,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 3,
+        "away": 0,
+        "p": 0.1912
+      },
+      "top_scores": [
+        {
+          "score": "3-0",
+          "p": 0.1912
+        },
+        {
+          "score": "2-0",
+          "p": 0.177
+        },
+        {
+          "score": "4-0",
+          "p": 0.1549
+        },
+        {
+          "score": "1-0",
+          "p": 0.1068
+        },
+        {
+          "score": "5-0",
+          "p": 0.1004
+        }
+      ],
+      "p_over25": 0.6581,
+      "p_btts": 0.1363,
+      "score_matrix": [
+        [
+          0.0362,
+          0.0026,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1068,
+          0.0189,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.177,
+          0.0266,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1912,
+          0.0287,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1549,
+          0.0232,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1004,
+          0.0151,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9384595738278405,
+        "draw": 0.05713990188279532,
+        "away": 0.0044005242893641675
+      }
+    },
+    "confidence": {
+      "score": 0.37,
+      "level": "mid",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 6,
+        "avg_gf": 0.0,
+        "avg_ga": 6.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:poland",
+          "away": "sf:blind-football:india",
+          "hg": 2,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 1,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "away_form",
+        "team": "Poland",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "India",
+        "wa": 0,
+        "draws": 0,
+        "b": "Poland",
+        "wb": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:iran|sf:blind-football:england": {
+    "home": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 63,
+        "draw": 33,
+        "away": 4
+      },
+      "expected_goals": {
+        "home": 1.17,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.3056
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.3056
+        },
+        {
+          "score": "0-0",
+          "p": 0.2745
+        },
+        {
+          "score": "2-0",
+          "p": 0.1827
+        },
+        {
+          "score": "3-0",
+          "p": 0.0712
+        },
+        {
+          "score": "1-1",
+          "p": 0.0539
+        }
+      ],
+      "p_over25": 0.1473,
+      "p_btts": 0.103,
+      "score_matrix": [
+        [
+          0.2745,
+          0.0331,
+          0.003,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.3056,
+          0.0539,
+          0.0035,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.1827,
+          0.0274,
+          0.0021,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0712,
+          0.0107,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0208,
+          0.0031,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0049,
+          0.0007,
+          0.0001,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.6294600306921059,
+        "draw": 0.3304859031713654,
+        "away": 0.04005406613652873
+      }
+    },
+    "confidence": {
+      "score": 0.14,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      },
+      "away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:iran",
+          "away": "sf:blind-football:england",
+          "hg": 0,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 1
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "England",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Iran",
+        "wa": 0,
+        "draws": 1,
+        "b": "England",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:iran|sf:blind-football:india": {
+    "home": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 74,
+        "draw": 23,
+        "away": 3
+      },
+      "expected_goals": {
+        "home": 1.58,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2737
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2737
+        },
+        {
+          "score": "2-0",
+          "p": 0.2214
+        },
+        {
+          "score": "0-0",
+          "p": 0.1834
+        },
+        {
+          "score": "3-0",
+          "p": 0.1167
+        },
+        {
+          "score": "1-1",
+          "p": 0.0483
+        }
+      ],
+      "p_over25": 0.2511,
+      "p_btts": 0.1169,
+      "score_matrix": [
+        [
+          0.1834,
+          0.0203,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2737,
+          0.0483,
+          0.0031,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2214,
+          0.0332,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1167,
+          0.0175,
+          0.0013,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0461,
+          0.0069,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0146,
+          0.0022,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7399885340268718,
+        "draw": 0.23421157230510511,
+        "away": 0.02579989366802307
+      }
+    },
+    "confidence": {
+      "score": 0.22,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away_away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "India",
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "n": 2
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:iran|sf:blind-football:italy": {
+    "home": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 76,
+        "draw": 22,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.65,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2665
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2665
+        },
+        {
+          "score": "2-0",
+          "p": 0.2251
+        },
+        {
+          "score": "0-0",
+          "p": 0.1712
+        },
+        {
+          "score": "3-0",
+          "p": 0.1239
+        },
+        {
+          "score": "4-0",
+          "p": 0.0512
+        }
+      ],
+      "p_over25": 0.2698,
+      "p_btts": 0.1187,
+      "score_matrix": [
+        [
+          0.1712,
+          0.0186,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2665,
+          0.047,
+          0.0031,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2251,
+          0.0338,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1239,
+          0.0186,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0512,
+          0.0077,
+          0.0006,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0169,
+          0.0025,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7552507702030782,
+        "draw": 0.22081091804047318,
+        "away": 0.023938311756448644
+      }
+    },
+    "confidence": {
+      "score": 0.2,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      },
+      "away": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away_away": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:iran|sf:blind-football:korea": {
+    "home": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 69,
+        "draw": 28,
+        "away": 3
+      },
+      "expected_goals": {
+        "home": 1.39,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2916
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2916
+        },
+        {
+          "score": "0-0",
+          "p": 0.222
+        },
+        {
+          "score": "2-0",
+          "p": 0.2067
+        },
+        {
+          "score": "3-0",
+          "p": 0.0955
+        },
+        {
+          "score": "1-1",
+          "p": 0.0515
+        }
+      ],
+      "p_over25": 0.2002,
+      "p_btts": 0.1112,
+      "score_matrix": [
+        [
+          0.222,
+          0.0256,
+          0.0024,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2916,
+          0.0515,
+          0.0034,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2067,
+          0.031,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0955,
+          0.0143,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0331,
+          0.005,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0092,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.6924086460139163,
+        "draw": 0.27581404591276787,
+        "away": 0.03177730807331586
+      }
+    },
+    "confidence": {
+      "score": 0.2,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 1,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "Korea",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:iran|sf:blind-football:poland": {
+    "home": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 86,
+        "draw": 13,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.29,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2285
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2285
+        },
+        {
+          "score": "1-0",
+          "p": 0.1948
+        },
+        {
+          "score": "3-0",
+          "p": 0.1746
+        },
+        {
+          "score": "4-0",
+          "p": 0.1001
+        },
+        {
+          "score": "0-0",
+          "p": 0.0914
+        }
+      ],
+      "p_over25": 0.4415,
+      "p_btts": 0.1297,
+      "score_matrix": [
+        [
+          0.0914,
+          0.0085,
+          0.001,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1948,
+          0.0344,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2285,
+          0.0343,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1746,
+          0.0262,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1001,
+          0.015,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0459,
+          0.0069,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8595167517287727,
+        "draw": 0.1284098410945786,
+        "away": 0.012073407176648676
+      }
+    },
+    "confidence": {
+      "score": 0.3,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 6,
+        "avg_gf": 0.0,
+        "avg_ga": 6.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:poland",
+          "away": "sf:blind-football:iran",
+          "hg": 2,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 1,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "Poland",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Iran",
+        "wa": 0,
+        "draws": 0,
+        "b": "Poland",
+        "wb": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:italy|sf:blind-football:england": {
+    "home": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 69,
+        "draw": 28,
+        "away": 3
+      },
+      "expected_goals": {
+        "home": 1.39,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2916
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2916
+        },
+        {
+          "score": "0-0",
+          "p": 0.222
+        },
+        {
+          "score": "2-0",
+          "p": 0.2067
+        },
+        {
+          "score": "3-0",
+          "p": 0.0955
+        },
+        {
+          "score": "1-1",
+          "p": 0.0515
+        }
+      ],
+      "p_over25": 0.2002,
+      "p_btts": 0.1112,
+      "score_matrix": [
+        [
+          0.222,
+          0.0256,
+          0.0024,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2916,
+          0.0515,
+          0.0034,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2067,
+          0.031,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0955,
+          0.0143,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0331,
+          0.005,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0092,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.6924086460139162,
+        "draw": 0.2758140459127679,
+        "away": 0.03177730807331591
+      }
+    },
+    "confidence": {
+      "score": 0.17,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Italy",
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "England",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:italy|sf:blind-football:india": {
+    "home": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 80,
+        "draw": 18,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.87,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2419
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2419
+        },
+        {
+          "score": "2-0",
+          "p": 0.232
+        },
+        {
+          "score": "3-0",
+          "p": 0.145
+        },
+        {
+          "score": "0-0",
+          "p": 0.1376
+        },
+        {
+          "score": "4-0",
+          "p": 0.068
+        }
+      ],
+      "p_over25": 0.3301,
+      "p_btts": 0.1235,
+      "score_matrix": [
+        [
+          0.1376,
+          0.0142,
+          0.0015,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2419,
+          0.0427,
+          0.0028,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.232,
+          0.0348,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.145,
+          0.0218,
+          0.0016,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.068,
+          0.0102,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0255,
+          0.0038,
+          0.0003,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7981686090980742,
+        "draw": 0.18296843736891358,
+        "away": 0.018862953533012233
+      }
+    },
+    "confidence": {
+      "score": 0.22,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away_away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Italy",
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "India",
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "n": 2
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:italy|sf:blind-football:iran": {
+    "home": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 80,
+        "draw": 18,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.9,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2396
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2396
+        },
+        {
+          "score": "2-0",
+          "p": 0.2323
+        },
+        {
+          "score": "3-0",
+          "p": 0.1468
+        },
+        {
+          "score": "0-0",
+          "p": 0.1348
+        },
+        {
+          "score": "4-0",
+          "p": 0.0696
+        }
+      ],
+      "p_over25": 0.3357,
+      "p_btts": 0.1239,
+      "score_matrix": [
+        [
+          0.1348,
+          0.0139,
+          0.0015,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2396,
+          0.0423,
+          0.0028,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2323,
+          0.0348,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1468,
+          0.022,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0696,
+          0.0104,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0264,
+          0.004,
+          0.0003,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8017515140832577,
+        "draw": 0.17979792720976848,
+        "away": 0.01845055870697379
+      }
+    },
+    "confidence": {
+      "score": 0.23,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 2.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Italy",
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:italy|sf:blind-football:korea": {
+    "home": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 75,
+        "draw": 22,
+        "away": 3
+      },
+      "expected_goals": {
+        "home": 1.64,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2673
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2673
+        },
+        {
+          "score": "2-0",
+          "p": 0.2247
+        },
+        {
+          "score": "0-0",
+          "p": 0.1726
+        },
+        {
+          "score": "3-0",
+          "p": 0.1231
+        },
+        {
+          "score": "4-0",
+          "p": 0.0506
+        }
+      ],
+      "p_over25": 0.2676,
+      "p_btts": 0.1185,
+      "score_matrix": [
+        [
+          0.1726,
+          0.0188,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2673,
+          0.0472,
+          0.0031,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2247,
+          0.0337,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1231,
+          0.0185,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0506,
+          0.0076,
+          0.0006,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0166,
+          0.0025,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7535040844003932,
+        "draw": 0.22234600014475775,
+        "away": 0.02414991545484907
+      }
+    },
+    "confidence": {
+      "score": 0.2,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 1,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:italy",
+          "away": "sf:blind-football:korea",
+          "hg": 1,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 1,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Italy",
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "Korea",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Italy",
+        "wa": 1,
+        "draws": 0,
+        "b": "Korea",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:italy|sf:blind-football:poland": {
+    "home": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 90,
+        "draw": 9,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.72,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2098
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2098
+        },
+        {
+          "score": "3-0",
+          "p": 0.1902
+        },
+        {
+          "score": "1-0",
+          "p": 0.1509
+        },
+        {
+          "score": "4-0",
+          "p": 0.1293
+        },
+        {
+          "score": "5-0",
+          "p": 0.0703
+        }
+      ],
+      "p_over25": 0.5468,
+      "p_btts": 0.1336,
+      "score_matrix": [
+        [
+          0.0602,
+          0.005,
+          0.0006,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1509,
+          0.0266,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2098,
+          0.0315,
+          0.0024,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1902,
+          0.0285,
+          0.0021,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1293,
+          0.0194,
+          0.0015,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0703,
+          0.0105,
+          0.0008,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9030004556856052,
+        "draw": 0.08933234588340574,
+        "away": 0.007667198430989092
+      }
+    },
+    "confidence": {
+      "score": 0.3,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 6,
+        "avg_gf": 0.0,
+        "avg_ga": 6.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Italy",
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "n": 1
+      },
+      {
+        "k": "away_form",
+        "team": "Poland",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:korea|sf:blind-football:england": {
+    "home": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 86,
+        "draw": 13,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.27,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2292
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2292
+        },
+        {
+          "score": "1-0",
+          "p": 0.1977
+        },
+        {
+          "score": "3-0",
+          "p": 0.1731
+        },
+        {
+          "score": "4-0",
+          "p": 0.0981
+        },
+        {
+          "score": "0-0",
+          "p": 0.0938
+        }
+      ],
+      "p_over25": 0.4345,
+      "p_btts": 0.1294,
+      "score_matrix": [
+        [
+          0.0938,
+          0.0088,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1977,
+          0.0349,
+          0.0023,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2292,
+          0.0344,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1731,
+          0.026,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0981,
+          0.0147,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0445,
+          0.0067,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8561752732717166,
+        "draw": 0.13139748974243162,
+        "away": 0.01242723698585177
+      }
+    },
+    "confidence": {
+      "score": 0.26,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 9,
+        "ga": 0,
+        "avg_gf": 4.5,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Korea",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "England",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:korea|sf:blind-football:india": {
+    "home": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 93,
+        "draw": 7,
+        "away": 0
+      },
+      "expected_goals": {
+        "home": 3.07,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 3,
+        "away": 0,
+        "p": 0.1928
+      },
+      "top_scores": [
+        {
+          "score": "3-0",
+          "p": 0.1928
+        },
+        {
+          "score": "2-0",
+          "p": 0.1886
+        },
+        {
+          "score": "4-0",
+          "p": 0.1477
+        },
+        {
+          "score": "1-0",
+          "p": 0.1203
+        },
+        {
+          "score": "5-0",
+          "p": 0.0906
+        }
+      ],
+      "p_over25": 0.6232,
+      "p_btts": 0.1356,
+      "score_matrix": [
+        [
+          0.0429,
+          0.0033,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1203,
+          0.0212,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1886,
+          0.0283,
+          0.0021,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1928,
+          0.0289,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1477,
+          0.0222,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0906,
+          0.0136,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9283232545915387,
+        "draw": 0.06637795860907707,
+        "away": 0.005298786799384184
+      }
+    },
+    "confidence": {
+      "score": 0.36,
+      "level": "mid",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 9,
+        "ga": 0,
+        "avg_gf": 4.5,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:korea",
+          "away": "sf:blind-football:india",
+          "hg": 3,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 1,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Korea",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "India",
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "n": 2
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Korea",
+        "wa": 1,
+        "draws": 0,
+        "b": "India",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:korea|sf:blind-football:iran": {
+    "home": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 93,
+        "draw": 6,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 3.1,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 3,
+        "away": 0,
+        "p": 0.1926
+      },
+      "top_scores": [
+        {
+          "score": "3-0",
+          "p": 0.1926
+        },
+        {
+          "score": "2-0",
+          "p": 0.1864
+        },
+        {
+          "score": "4-0",
+          "p": 0.1492
+        },
+        {
+          "score": "1-0",
+          "p": 0.1176
+        },
+        {
+          "score": "5-0",
+          "p": 0.0925
+        }
+      ],
+      "p_over25": 0.6302,
+      "p_btts": 0.1357,
+      "score_matrix": [
+        [
+          0.0415,
+          0.0031,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1176,
+          0.0207,
+          0.0014,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1864,
+          0.028,
+          0.0021,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1926,
+          0.0289,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1492,
+          0.0224,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0925,
+          0.0139,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9304148398467729,
+        "draw": 0.06447426071774039,
+        "away": 0.005110899435486746
+      }
+    },
+    "confidence": {
+      "score": 0.36,
+      "level": "mid",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 9,
+        "ga": 0,
+        "avg_gf": 4.5,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 2.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Korea",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:korea|sf:blind-football:italy": {
+    "home": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 94,
+        "draw": 6,
+        "away": 0
+      },
+      "expected_goals": {
+        "home": 3.2,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 3,
+        "away": 0,
+        "p": 0.1917
+      },
+      "top_scores": [
+        {
+          "score": "3-0",
+          "p": 0.1917
+        },
+        {
+          "score": "2-0",
+          "p": 0.1796
+        },
+        {
+          "score": "4-0",
+          "p": 0.1534
+        },
+        {
+          "score": "1-0",
+          "p": 0.1097
+        },
+        {
+          "score": "5-0",
+          "p": 0.0982
+        }
+      ],
+      "p_over25": 0.6507,
+      "p_btts": 0.1361,
+      "score_matrix": [
+        [
+          0.0376,
+          0.0027,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1097,
+          0.0194,
+          0.0013,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1796,
+          0.0269,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1917,
+          0.0288,
+          0.0022,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1534,
+          0.023,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0982,
+          0.0147,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9363649338979765,
+        "draw": 0.059051510010122175,
+        "away": 0.004583556091901343
+      }
+    },
+    "confidence": {
+      "score": 0.34,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 9,
+        "ga": 0,
+        "avg_gf": 4.5,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:italy",
+          "away": "sf:blind-football:korea",
+          "hg": 1,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 1,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Korea",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Korea",
+        "wa": 0,
+        "draws": 0,
+        "b": "Italy",
+        "wb": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:korea|sf:blind-football:poland": {
+    "home": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 98,
+        "draw": 2,
+        "away": 0
+      },
+      "expected_goals": {
+        "home": 4.45,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 4,
+        "away": 0,
+        "p": 0.1653
+      },
+      "top_scores": [
+        {
+          "score": "4-0",
+          "p": 0.1653
+        },
+        {
+          "score": "3-0",
+          "p": 0.1487
+        },
+        {
+          "score": "5-0",
+          "p": 0.147
+        },
+        {
+          "score": "6-0",
+          "p": 0.1089
+        },
+        {
+          "score": "2-0",
+          "p": 0.1004
+        }
+      ],
+      "p_over25": 0.8359,
+      "p_btts": 0.1387,
+      "score_matrix": [
+        [
+          0.0112,
+          0.0005,
+          0.0001,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0441,
+          0.0078,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.1004,
+          0.0151,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1487,
+          0.0223,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1653,
+          0.0248,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.147,
+          0.022,
+          0.0017,
+          0.0001,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.9785976951603018,
+        "draw": 0.02017822200864976,
+        "away": 0.0012240828310484224
+      }
+    },
+    "confidence": {
+      "score": 0.45,
+      "level": "mid",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 3
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 9,
+        "ga": 0,
+        "avg_gf": 4.5,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 6,
+        "avg_gf": 0.0,
+        "avg_ga": 6.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:korea",
+          "away": "sf:blind-football:poland",
+          "hg": 6,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 1,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Korea",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "Poland",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Korea",
+        "wa": 1,
+        "draws": 0,
+        "b": "Poland",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:poland|sf:blind-football:england": {
+    "home": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:england",
+      "name": "England",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 73,
+        "draw": 24,
+        "away": 3
+      },
+      "expected_goals": {
+        "home": 1.56,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2762
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2762
+        },
+        {
+          "score": "2-0",
+          "p": 0.2198
+        },
+        {
+          "score": "0-0",
+          "p": 0.188
+        },
+        {
+          "score": "3-0",
+          "p": 0.114
+        },
+        {
+          "score": "1-1",
+          "p": 0.0487
+        }
+      ],
+      "p_over25": 0.2443,
+      "p_btts": 0.1163,
+      "score_matrix": [
+        [
+          0.188,
+          0.0209,
+          0.002,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2762,
+          0.0487,
+          0.0032,
+          0.0002,
+          0.0,
+          0.0
+        ],
+        [
+          0.2198,
+          0.033,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.114,
+          0.0171,
+          0.0013,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0443,
+          0.0066,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0138,
+          0.0021,
+          0.0002,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7341819590989759,
+        "draw": 0.2393025386949712,
+        "away": 0.02651550220605292
+      }
+    },
+    "confidence": {
+      "score": 0.19,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "away",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 4,
+        "ga": 0,
+        "avg_gf": 2.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": 0.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 1,
+        "points": 1
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "strength",
+        "team": "England",
+        "att": "+0%",
+        "dfn": "+41%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Poland",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "England",
+        "w": 0,
+        "d": 1,
+        "l": 0,
+        "n": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:poland|sf:blind-football:india": {
+    "home": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:india",
+      "name": "India",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 83,
+        "draw": 15,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 2.1,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2324
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2324
+        },
+        {
+          "score": "1-0",
+          "p": 0.2159
+        },
+        {
+          "score": "3-0",
+          "p": 0.163
+        },
+        {
+          "score": "0-0",
+          "p": 0.1099
+        },
+        {
+          "score": "4-0",
+          "p": 0.0858
+        }
+      ],
+      "p_over25": 0.3918,
+      "p_btts": 0.1273,
+      "score_matrix": [
+        [
+          0.1099,
+          0.0108,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2159,
+          0.0381,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2324,
+          0.0349,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.163,
+          0.0244,
+          0.0018,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0858,
+          0.0129,
+          0.001,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0361,
+          0.0054,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8345341979478457,
+        "draw": 0.15070014907862925,
+        "away": 0.014765652973525084
+      }
+    },
+    "confidence": {
+      "score": 0.28,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 3,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 4,
+        "ga": 0,
+        "avg_gf": 2.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 2,
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "gf": 0,
+        "ga": 5,
+        "avg_gf": 0.0,
+        "avg_ga": 2.5,
+        "clean_sheets": 0,
+        "failed_to_score": 2,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:poland",
+          "away": "sf:blind-football:india",
+          "hg": 2,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 1,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "strength",
+        "team": "India",
+        "att": "+0%",
+        "dfn": "+4%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Poland",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "India",
+        "w": 0,
+        "d": 0,
+        "l": 2,
+        "n": 2
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Poland",
+        "wa": 1,
+        "draws": 0,
+        "b": "India",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:poland|sf:blind-football:iran": {
+    "home": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:iran",
+      "name": "Iran",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 84,
+        "draw": 15,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.13,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2321
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2321
+        },
+        {
+          "score": "1-0",
+          "p": 0.2132
+        },
+        {
+          "score": "3-0",
+          "p": 0.1646
+        },
+        {
+          "score": "0-0",
+          "p": 0.1074
+        },
+        {
+          "score": "4-0",
+          "p": 0.0875
+        }
+      ],
+      "p_over25": 0.398,
+      "p_btts": 0.1276,
+      "score_matrix": [
+        [
+          0.1074,
+          0.0105,
+          0.0012,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2132,
+          0.0376,
+          0.0025,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2321,
+          0.0348,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1646,
+          0.0247,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0875,
+          0.0131,
+          0.001,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0373,
+          0.0056,
+          0.0004,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8378359548112697,
+        "draw": 0.1477602404775344,
+        "away": 0.0144038047111959
+      }
+    },
+    "confidence": {
+      "score": 0.28,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 2
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "away",
+          "gf": 0,
+          "ga": 2,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:england",
+          "venue": "home",
+          "gf": 0,
+          "ga": 0,
+          "result": "D"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 2,
+        "w": 0,
+        "d": 1,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 1,
+        "failed_to_score": 2,
+        "points": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 4,
+        "ga": 0,
+        "avg_gf": 2.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 2,
+        "avg_gf": 0.0,
+        "avg_ga": 2.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:poland",
+          "away": "sf:blind-football:iran",
+          "hg": 2,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 1,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "strength",
+        "team": "Iran",
+        "att": "-29%",
+        "dfn": "+3%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Poland",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "Iran",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Poland",
+        "wa": 1,
+        "draws": 0,
+        "b": "Iran",
+        "wb": 0
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:poland|sf:blind-football:italy": {
+    "home": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:italy",
+      "name": "Italy",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 85,
+        "draw": 14,
+        "away": 1
+      },
+      "expected_goals": {
+        "home": 2.2,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 2,
+        "away": 0,
+        "p": 0.2308
+      },
+      "top_scores": [
+        {
+          "score": "2-0",
+          "p": 0.2308
+        },
+        {
+          "score": "1-0",
+          "p": 0.2053
+        },
+        {
+          "score": "3-0",
+          "p": 0.1691
+        },
+        {
+          "score": "0-0",
+          "p": 0.1003
+        },
+        {
+          "score": "4-0",
+          "p": 0.0929
+        }
+      ],
+      "p_over25": 0.4166,
+      "p_btts": 0.1286,
+      "score_matrix": [
+        [
+          0.1003,
+          0.0096,
+          0.0011,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2053,
+          0.0362,
+          0.0024,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2308,
+          0.0346,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1691,
+          0.0254,
+          0.0019,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0929,
+          0.0139,
+          0.001,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0408,
+          0.0061,
+          0.0005,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.8474080079190556,
+        "draw": 0.13922701170597726,
+        "away": 0.013364980374967167
+      }
+    },
+    "confidence": {
+      "score": 0.26,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 1
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "home",
+          "gf": 1,
+          "ga": 0,
+          "result": "W"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 1,
+        "w": 1,
+        "d": 0,
+        "l": 0,
+        "gf": 1,
+        "ga": 0,
+        "avg_gf": 1.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0,
+        "points": 3
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 4,
+        "ga": 0,
+        "avg_gf": 2.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 0,
+        "w": 0,
+        "d": 0,
+        "l": 0,
+        "gf": 0,
+        "ga": 0,
+        "avg_gf": null,
+        "avg_ga": null,
+        "clean_sheets": 0,
+        "failed_to_score": 0,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [],
+      "count": 0,
+      "wins_a": 0,
+      "wins_b": 0,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "strength",
+        "team": "Italy",
+        "att": "-16%",
+        "dfn": "+0%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Poland",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "sf:blind-football:poland|sf:blind-football:korea": {
+    "home": {
+      "id": "sf:blind-football:poland",
+      "name": "Poland",
+      "logo": null
+    },
+    "away": {
+      "id": "sf:blind-football:korea",
+      "name": "Korea",
+      "logo": null
+    },
+    "data_kind": "sii-football",
+    "prediction": {
+      "percent": {
+        "home": 79,
+        "draw": 19,
+        "away": 2
+      },
+      "expected_goals": {
+        "home": 1.84,
+        "away": 0.15
+      },
+      "most_likely_score": {
+        "home": 1,
+        "away": 0,
+        "p": 0.2454
+      },
+      "top_scores": [
+        {
+          "score": "1-0",
+          "p": 0.2454
+        },
+        {
+          "score": "2-0",
+          "p": 0.2315
+        },
+        {
+          "score": "3-0",
+          "p": 0.1423
+        },
+        {
+          "score": "0-0",
+          "p": 0.1417
+        },
+        {
+          "score": "4-0",
+          "p": 0.0656
+        }
+      ],
+      "p_over25": 0.3218,
+      "p_btts": 0.1229,
+      "score_matrix": [
+        [
+          0.1417,
+          0.0148,
+          0.0015,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2454,
+          0.0433,
+          0.0028,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.2315,
+          0.0347,
+          0.0026,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.1423,
+          0.0213,
+          0.0016,
+          0.0001,
+          0.0,
+          0.0
+        ],
+        [
+          0.0656,
+          0.0098,
+          0.0007,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0242,
+          0.0036,
+          0.0003,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "raw": {
+        "home": 0.7927946761719774,
+        "draw": 0.1877204289834591,
+        "away": 0.019484894844563505
+      }
+    },
+    "confidence": {
+      "score": 0.28,
+      "level": "low",
+      "reasons": [
+        {
+          "k": "few_matches",
+          "n": 3
+        }
+      ]
+    },
+    "form": {
+      "home": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:korea",
+          "venue": "away",
+          "gf": 0,
+          "ga": 6,
+          "result": "L"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:iran",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 2,
+          "ga": 0,
+          "result": "W"
+        }
+      ],
+      "away": [
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:poland",
+          "venue": "home",
+          "gf": 6,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:india",
+          "venue": "home",
+          "gf": 3,
+          "ga": 0,
+          "result": "W"
+        },
+        {
+          "date": "2026-11-25",
+          "opponent": "sf:blind-football:italy",
+          "venue": "away",
+          "gf": 0,
+          "ga": 1,
+          "result": "L"
+        }
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 4,
+        "ga": 6,
+        "avg_gf": 1.33,
+        "avg_ga": 2.0,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      },
+      "away": {
+        "played": 3,
+        "w": 2,
+        "d": 0,
+        "l": 1,
+        "gf": 9,
+        "ga": 1,
+        "avg_gf": 3.0,
+        "avg_ga": 0.33,
+        "clean_sheets": 2,
+        "failed_to_score": 1,
+        "points": 6
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "played": 2,
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "gf": 4,
+        "ga": 0,
+        "avg_gf": 2.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 2,
+        "failed_to_score": 0,
+        "points": 6
+      },
+      "away_away": {
+        "played": 1,
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "gf": 0,
+        "ga": 1,
+        "avg_gf": 0.0,
+        "avg_ga": 1.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1,
+        "points": 0
+      }
+    },
+    "head_to_head": {
+      "matches": [
+        {
+          "date": "2026-11-25",
+          "home": "sf:blind-football:korea",
+          "away": "sf:blind-football:poland",
+          "hg": 6,
+          "ag": 0
+        }
+      ],
+      "count": 1,
+      "wins_a": 0,
+      "wins_b": 1,
+      "draws": 0
+    },
+    "stats": null,
+    "context": null,
+    "reasons": [
+      {
+        "k": "strength",
+        "team": "Poland",
+        "att": "-6%",
+        "dfn": "-28%"
+      },
+      {
+        "k": "strength",
+        "team": "Korea",
+        "att": "+37%",
+        "dfn": "+19%"
+      },
+      {
+        "k": "home_adv",
+        "mu_h": "2.33",
+        "mu_a": "0.00"
+      },
+      {
+        "k": "home_form",
+        "team": "Poland",
+        "w": 2,
+        "d": 0,
+        "l": 0,
+        "n": 2
+      },
+      {
+        "k": "away_form",
+        "team": "Korea",
+        "w": 0,
+        "d": 0,
+        "l": 1,
+        "n": 1
+      },
+      {
+        "k": "h2h",
+        "count": 1,
+        "a": "Poland",
+        "wa": 0,
+        "draws": 0,
+        "b": "Korea",
+        "wb": 1
+      }
+    ],
+    "missing_data": [
+      {
+        "k": "no_injury_model"
+      },
+      {
+        "k": "no_stats"
+      },
+      {
+        "k": "few_h2h"
+      },
+      {
+        "k": "no_availability"
+      }
+    ],
+    "match": null,
+    "league": {
+      "code": "SF-blind-football",
+      "name": "Blind Football (IBSA)",
+      "source": "sii-football"
+    }
+  },
+  "para_specialization": {
+    "ar_name": "كرة قدم المكفوفين (IBSA)",
+    "format": "5v5",
+    "key_rule": "Acoustic ball + eyeshades"
+  }
+}

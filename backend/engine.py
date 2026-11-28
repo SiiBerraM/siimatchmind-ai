@@ -9,8 +9,8 @@
 import math
 from datetime import date
 
-HALF_LIFE_DAYS = 365.0   # بعد 365 يومًا يصبح وزن المباراة النصف
-SHRINK_K = 4.0           # قوة السحب نحو المتوسط (بوحدة الأهداف)
+HALF_LIFE_DAYS = 300.0   # بعد 365 يومًا يصبح وزن المباراة النصف
+SHRINK_K = 0.5           # قوة السحب نحو المتوسط (بوحدة الأهداف)
 MAX_GOALS = 10           # أقصى أهداف في مصفوفة النتائج
 LAM_MIN, LAM_MAX = 0.15, 4.5
 DC_RHO = -0.15            # تصحيح Dixon-Coles للنتائج المنخفضة (0-0 و1-0 و0-1 و1-1)
@@ -79,10 +79,10 @@ class Model:
         ph = [_pois(i, lh) for i in range(MAX_GOALS + 1)]
         pa = [_pois(j, la) for j in range(MAX_GOALS + 1)]
         mat = [[a * b for b in pa] for a in ph]
-        mat[0][0] *= 1 - lh * la * DC_RHO
-        mat[0][1] *= 1 + lh * DC_RHO
-        mat[1][0] *= 1 + la * DC_RHO
-        mat[1][1] *= 1 - DC_RHO
+        mat[0][0] *= max(0.0, 1 - lh * la * DC_RHO)
+        mat[0][1] *= max(0.0, 1 + lh * DC_RHO)
+        mat[1][0] *= max(0.0, 1 + la * DC_RHO)
+        mat[1][1] *= max(0.0, 1 - DC_RHO)
         s = sum(sum(r) for r in mat)
         mat = [[x / s for x in r] for r in mat]
         p_home = sum(mat[i][j] for i in range(MAX_GOALS + 1) for j in range(i))
@@ -177,11 +177,11 @@ def confidence(model, home, away, pred):
     """مستوى الثقة: كفاية البيانات + وضوح الفارق بين الاحتمالات. لا يتجاوز 0.85 أبدًا.
     المخرجات رموز (codes) تترجمها الواجهة إلى لغة المستخدم."""
     n = min(model.n_matches[home], model.n_matches[away])
-    data_score = min(1.0, n / 20.0)
+    data_score = min(1.0, n / 25.0)
     probs = [pred["p_home"], pred["p_draw"], pred["p_away"]]
     ent = -sum(p * math.log(p) for p in probs if p > 0)
     clarity = 1 - ent / math.log(3)
-    score = round(min(0.85, 0.6 * data_score + 0.4 * clarity), 2)
+    score = round(min(0.85, 0.55 * data_score + 0.45 * clarity), 2)
     level = "low" if score < 0.35 else ("mid" if score < 0.55 else "good")
     reasons = []
     if n < 8:
@@ -209,7 +209,13 @@ def team_stats_avg(dataset, team, n=10):
         return None
 
     def avg(key):
-        v = [r[key] for r in rows if r.get(key) is not None]
+        v = [
+            float(r[key]) for r in rows
+            if r.get(key) is not None
+            and isinstance(r.get(key), (int, float))
+            and not isinstance(r.get(key), bool)
+            and float(r[key]) >= 0.0
+        ]
         return round(sum(v) / len(v), 1) if v else None
     return {"matches": len(rows), "possession": avg("possession"), "shots": avg("shots"),
             "shots_on": avg("shots_on"), "corners": avg("corners")}
@@ -228,6 +234,25 @@ def _with_history(matches, home, away):
     return matches
 
 
+
+def _stats_adjust(st_h, st_a):
+    """تعديل طفيف ومحدود جدًا (-3% إلى +3%) بناءً على إحصائيات الأداء إن وُجدت."""
+    if not st_h or not st_a:
+        return 1.0, 1.0
+    score = 0.0
+    weights = 0.0
+    for key, w in (("shots_on", 0.50), ("shots", 0.30), ("possession", 0.20)):
+        vh, va = st_h.get(key), st_a.get(key)
+        if vh is not None and va is not None and (vh + va) > 0:
+            diff = (vh - va) / ((vh + va) * 0.5)
+            score += w * max(-0.5, min(0.5, diff))
+            weights += w
+    if weights <= 0:
+        return 1.0, 1.0
+    delta = max(-0.03, min(0.03, (score / weights) * 0.05))
+    return 1.0 + delta, 1.0 - delta
+
+
 def build_analysis(dataset, home, away, n=10, as_of=None, match_id=None):
     """التحليل الكامل لمباراة بين فريقين. هذا ما تعيده واجهة /api/analyze (بدون نصوص مترجمة)."""
     names = {t["id"]: t["name"] for t in dataset["teams"]}
@@ -237,7 +262,38 @@ def build_analysis(dataset, home, away, n=10, as_of=None, match_id=None):
         raise ValueError("same_team")
     matches = dataset["matches"]
     model = Model(_with_history(matches, home, away), as_of=as_of)
+    st_h_pre, st_a_pre = team_stats_avg(dataset, home, n), team_stats_avg(dataset, away, n)
+    fh_s, fa_s = _stats_adjust(st_h_pre, st_a_pre)
     pred = model.predict(home, away)
+    if fh_s != 1.0 or fa_s != 1.0:
+        lh_adj = min(LAM_MAX, max(LAM_MIN, pred["lambda_home"] * fh_s))
+        la_adj = min(LAM_MAX, max(LAM_MIN, pred["lambda_away"] * fa_s))
+        ph = [_pois(i, lh_adj) for i in range(MAX_GOALS + 1)]
+        pa = [_pois(j, la_adj) for j in range(MAX_GOALS + 1)]
+        mat = [[a * b for b in pa] for a in ph]
+        mat[0][0] *= max(0.0, 1 - lh_adj * la_adj * DC_RHO)
+        mat[0][1] *= max(0.0, 1 + lh_adj * DC_RHO)
+        mat[1][0] *= max(0.0, 1 + la_adj * DC_RHO)
+        mat[1][1] *= max(0.0, 1 - DC_RHO)
+        s = sum(sum(r) for r in mat)
+        if s > 0:
+            mat = [[x / s for x in r] for r in mat]
+            p_home = sum(mat[i][j] for i in range(MAX_GOALS + 1) for j in range(i))
+            p_draw = sum(mat[i][i] for i in range(MAX_GOALS + 1))
+            p_away = max(0.0, 1.0 - p_home - p_draw)
+            flat = sorted(((mat[i][j], i, j) for i in range(MAX_GOALS + 1) for j in range(MAX_GOALS + 1)), reverse=True)
+            pred = {
+                "lambda_home": lh_adj,
+                "lambda_away": la_adj,
+                "p_home": p_home,
+                "p_draw": p_draw,
+                "p_away": p_away,
+                "top_scores": [{"score": f"{i}-{j}", "home": i, "away": j, "p": p} for p, i, j in flat[:5]],
+                "most_likely": {"home": flat[0][1], "away": flat[0][2], "p": flat[0][0]},
+                "p_over25": sum(mat[i][j] for i in range(MAX_GOALS + 1) for j in range(MAX_GOALS + 1) if i + j > 2),
+                "p_btts": sum(mat[i][j] for i in range(1, MAX_GOALS + 1) for j in range(1, MAX_GOALS + 1)),
+                "matrix": mat,
+            }
     pct = to_percent([pred["p_home"], pred["p_draw"], pred["p_away"]])
     conf = confidence(model, home, away, pred)
 

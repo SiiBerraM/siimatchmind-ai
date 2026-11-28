@@ -8,7 +8,7 @@ import engine
 import history
 
 URL = "https://www.football-data.co.uk/fixtures.csv"
-W_MARKET = 0.9          # وزن السوق في المزج
+W_MARKET = 0.65          # وزن السوق في المزج
 CACHE_SECONDS = 6 * 3600
 COLS = (("PPH", "PPD", "PPA"), ("AvgH", "AvgD", "AvgA"), ("B365H", "B365D", "B365A"))
 DIV = {"E0": "PL", "E1": "ELC", "D1": "BL1", "SP1": "PD", "I1": "SA", "F1": "FL1", "N1": "DED", "P1": "PPL"}
@@ -53,8 +53,13 @@ def blend_into(res, home, away):
     """يعدّل res["prediction"] في مكانه. يرجع True إن تم المزج."""
     try:
         q = _fetch().get((home, away))
-        if not q:
+        if not q or len(q) != 3:
             return False
+        q = [float(x) for x in q]
+        if any(x < 0.0 for x in q) or sum(q) <= 0.0:
+            return False
+        qs = sum(q)
+        q = [x / qs for x in q]
         pr = res["prediction"]
         raw = pr["raw"]
         pm = [raw["home"], raw["draw"], raw["away"]]

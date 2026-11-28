@@ -613,7 +613,8 @@
     [/^#\/analyze$/, "analyze", () => pageAnalyzeForm()],
     [/^#\/team\/([\w-]+)$/, "teams", m => pageTeam(m[1])],
     [/^#\/teams$/, "teams", () => pageTeams()],
-    [/^#\/standings$/, "standings", () => pageStandings()],
+    [/^#\/leagues$/, "leagues", () => window.SMM_RENDER_LEAGUES && window.SMM_RENDER_LEAGUES()],
+        [/^#\/standings$/, "standings", () => pageStandings()],
     [/^#\/saved$/, "saved", () => pageSaved()],
     [/^#\/quality$/, "saved", () => pageQuality()],
     [/^#\/press$/, "saved", () => pagePress()],
@@ -740,4 +741,117 @@
   }
   function init() { enhance("leagueSel"); enhance("langSel"); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+
+/* ===== SiiMatchMind Leagues Hub & World Cup (Hardened) ===== */
+(function () {
+  const CATS = [
+    { key: "men", ico: "⚽", ar: "دوري الرجال", en: "Men's Leagues" },
+    { key: "women", ico: "👑", ar: "دوري السيدات", en: "Women's Leagues" },
+    { key: "para", ico: "♿", ar: "دوري المعاقين", en: "Para Football" },
+    { key: "youth", ico: "🌱", ar: "دوري الشباب", en: "Youth Leagues" },
+    { key: "wc", ico: "🌍", ar: "كأس العالم", en: "World Cup" }
+  ];
+  const ALLOWED_CATS = new Set(CATS.map(c => c.key));
+  const escSafe = (v) => (typeof esc === "function" ? esc(String(v ?? "")) : String(v ?? "").replace(/[&<>"']/g, s => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[s])));
+  const validCode = (c) => /^[A-Za-z0-9_-]{1,32}$/.test(String(c || ""));
+
+  function classifyLeague(l) {
+    const code = String((l && l.code) || "");
+    const name = String((l && l.name) || "").toLowerCase();
+    if (code === "WC" || name.includes("world cup")) return "wc";
+    if (code.startsWith("SF-") || code === "hlpara" || name.includes("para") || name.includes("blind") || name.includes("amputee") || name.includes("cp football")) return "para";
+    if (["hl12698","hl758174","hl775194","hl630524","hl960712","hl598186","hlnatU23","hlnatU20","hlnatU17"].includes(code) || /\bu(17|19|20|21|23)\b|youth/.test(name)) return "youth";
+    if (["hl38228","hl121626","hl55248","hl70566","hl119073","hl216938","hl595633","hlnatW"].includes(code) || /women|feminine|femenina|frauen|wsl|nwsl/.test(name)) return "women";
+    return "men";
+  }
+
+  function selectLeagueCode(code) {
+    if (!validCode(code)) return;
+    const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+    if (all.length && !all.some(l => l.code === code)) return;
+    const ls = document.getElementById("leagueSel");
+    if (ls && Array.from(ls.options).some(o => o.value === code)) {
+      ls.value = code;
+      ls.dispatchEvent(new Event("change", { bubbles: true }));
+    } else {
+      try { localStorage.setItem("smm.league", code); } catch (e) {}
+      location.hash = "#/";
+    }
+  }
+
+  function renderLeaguesHub(activeCat) {
+    const view = document.getElementById("view");
+    if (!view) return;
+    const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+    const isAr = (document.documentElement.lang || "ar").startsWith("ar");
+    const grouped = { men: [], women: [], para: [], youth: [], wc: [] };
+    all.forEach(l => {
+      const k = classifyLeague(l);
+      if (grouped[k]) grouped[k].push(l);
+    });
+    const safeCat = ALLOWED_CATS.has(activeCat) ? activeCat : null;
+    const chosenCat = safeCat || classifyLeague(all.find(x => x.code === window.LEAGUE)) || "men";
+    const items = grouped[chosenCat] || [];
+    const titleText = escSafe(isAr ? "مراكز الدوريات والبطولات" : "Leagues & Competitions Hub");
+
+    const catsHtml = CATS.map(c => {
+      const label = escSafe(isAr ? c.ar : c.en);
+      const cnt = (grouped[c.key] || []).length;
+      const act = c.key === chosenCat ? " active" : "";
+      return '<button type="button" class="smm-cat-card' + act + '" data-cat="' + c.key + '">' +
+        '<span class="smm-cat-ico">' + c.ico + '</span>' +
+        '<span class="smm-cat-name">' + label + '</span>' +
+        '<span class="smm-cat-cnt">' + cnt + ' ' + escSafe(isAr ? "بطولة" : "leagues") + '</span>' +
+      '</button>';
+    }).join("");
+
+    const listHtml = items.length ? items.map(l => {
+      const rawCode = validCode(l && l.code) ? l.code : "";
+      if (!rawCode) return "";
+      const disp = escSafe((typeof lname === "function") ? lname(l) : (l.name || rawCode));
+      const cur = (rawCode === window.LEAGUE) ? " active" : "";
+      const mCnt = (typeof l.matches === "number" && Number.isFinite(l.matches)) ? (Math.max(0, Math.floor(l.matches)) + " " + escSafe(isAr ? "مباراة" : "m")) : "";
+      return '<button type="button" class="smm-lg-btn' + cur + '" data-code="' + rawCode + '">' +
+        '<span>' + disp + '</span>' +
+        '<span class="smm-lg-meta">' + mCnt + '</span>' +
+      '</button>';
+    }).join("") : ('<p class="empty">' + escSafe(isAr ? "لا توجد بطولات حالياً في هذا القسم." : "No competitions in this category.") + '</p>');
+
+    view.innerHTML = '<section class="smm-hub"><h2 class="smm-hub-title">' + titleText + '</h2><div class="smm-hub-grid">' + catsHtml + '</div><div class="smm-lg-list">' + listHtml + '</div></section>';
+
+    view.querySelectorAll(".smm-cat-card").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const k = btn.dataset.cat;
+        if (ALLOWED_CATS.has(k)) renderLeaguesHub(k);
+      });
+    });
+    view.querySelectorAll(".smm-lg-btn").forEach(btn => {
+      btn.addEventListener("click", () => selectLeagueCode(btn.dataset.code));
+    });
+  }
+
+  window.SMM_RENDER_LEAGUES = renderLeaguesHub;
+
+  function hookHub() {
+    const wcBtn = document.getElementById("wcQuickBtn");
+    if (wcBtn && !wcBtn.dataset.bound) {
+      wcBtn.dataset.bound = "1";
+      wcBtn.addEventListener("click", () => {
+        const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+        if (all.some(l => l.code === "WC")) {
+          selectLeagueCode("WC");
+        } else {
+          location.hash = "#/leagues";
+          renderLeaguesHub("wc");
+        }
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", hookHub);
+  } else {
+    hookHub();
+  }
 })();

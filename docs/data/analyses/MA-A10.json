@@ -1,0 +1,102 @@
+{
+  "ma-a10:najm-ifriquia-04|ma-a10:ثلاث-الاربعاء-الغيس": {
+    "match_id": "ma-a10-2026-11-28-ثلاث-الاربعاء-الغيس",
+    "data_kind": "manual",
+    "home": {
+      "id": "ma-a10:najm-ifriquia-04",
+      "name": "النجم افريقيا04",
+      "logo": null
+    },
+    "away": {
+      "id": "ma-a10:ثلاث-الاربعاء-الغيس",
+      "name": "ثلاث الاربعاء الغيس",
+      "logo": null
+    },
+    "match": {
+      "id": "ma-a10-2026-11-28-ثلاث-الاربعاء-الغيس",
+      "date": "2026-11-28",
+      "time": "15:00",
+      "round": "الجولة 1",
+      "status": "played",
+      "hg": 5,
+      "ag": 0
+    },
+    "prediction": {
+      "percent": {
+        "home": 85,
+        "draw": 10,
+        "away": 5
+      },
+      "most_likely_score": {
+        "home": 5,
+        "away": 0,
+        "p": 0.65
+      },
+      "expected_goals": {
+        "home": 5.0,
+        "away": 0.0
+      },
+      "p_over25": 0.75,
+      "p_btts": 0.15
+    },
+    "confidence": {
+      "level": "good",
+      "reasons": [
+        "manual_match_record"
+      ]
+    },
+    "reasons": [
+      "الهدافون: ناصر (رأس حربة)، كريم (جناح أيمن)"
+    ],
+    "form": {
+      "home": [
+        "W"
+      ],
+      "away": [
+        "L"
+      ]
+    },
+    "form_summary": {
+      "home": {
+        "avg_gf": 5.0,
+        "avg_ga": 0.0,
+        "clean_sheets": 1,
+        "failed_to_score": 0
+      },
+      "away": {
+        "avg_gf": 0.0,
+        "avg_ga": 5.0,
+        "clean_sheets": 0,
+        "failed_to_score": 1
+      }
+    },
+    "venue_split": {
+      "home_at_home": {
+        "w": 1,
+        "d": 0,
+        "l": 0
+      },
+      "away_away": {
+        "w": 0,
+        "d": 0,
+        "l": 1
+      }
+    },
+    "head_to_head": {
+      "count": 1,
+      "wins_a": 1,
+      "draws": 0,
+      "wins_b": 0,
+      "matches": [
+        {
+          "date": "2026-11-28",
+          "home": "النجم افريقيا04",
+          "away": "ثلاث الاربعاء الغيس",
+          "hg": 5,
+          "ag": 0
+        }
+      ]
+    },
+    "missing_data": []
+  }
+}

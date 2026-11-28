@@ -80,7 +80,7 @@
     meta: async () => mode === "api" ? get("/api/meta") : ST.meta,
     leagues: async () => mode === "api" ? get("/api/leagues") : (ST.leagues || []),
     teams: async () => mode === "api" ? get("/api/teams") : ST.teams,
-    matches: async k => mode === "api" ? get("/api/matches?kind=" + k + (LEAGUE ? "&" + lq() : "")) : (ST.matches_by_league && LEAGUE ? ((ST.matches_by_league[LEAGUE] || {})[k] || []) : ST.matches[k]),
+    matches: async k => mode === "api" ? get("/api/matches?kind=" + k + (LEAGUE ? "&" + lq() : "")) : (LEAGUE ? (((ST.matches_by_league && ST.matches_by_league[LEAGUE]) || {})[k] || (ST.matches[k] || []).filter(m => m.league === LEAGUE)) : (ST.matches[k] || [])),
     team: async id => mode === "api" ? get("/api/teams/" + encodeURIComponent(id)) : (ST.team_detail[id] || Promise.reject({ code: "not_found" })),
     quality: async () => mode === "api" ? get("/api/quality" + (LEAGUE ? "?" + lq() : "")) : ST.quality,
     standings: async () => mode === "api" ? get("/api/standings" + (LEAGUE ? "?" + lq() : "")) : ((ST.standings || {})[LEAGUE] || Object.values(ST.standings || {})[0] || { rows: [] }),
@@ -241,10 +241,12 @@
 
   // ---------- الصفحات ----------
   async function myTeamsBlock() {
-    const ids = (await follows.list()).slice(0, 8);
+    let ids = await follows.list();
+    if (LEAGUE) ids = ids.filter(id => { const tm = (TEAMS || []).find(x => x.id === id); return tm ? tm.league === LEAGUE : String(id).toLowerCase().startsWith(String(LEAGUE).toLowerCase() + ":"); });
+    ids = ids.slice(0, 8);
     if (!ids.length) return "";
     const found = [];
-    for (const id of ids) { try { const d = await api.team(id); if (d.upcoming && d.upcoming[0]) found.push(d.upcoming[0]); } catch (e) { } }
+    for (const id of ids) { try { const d = await api.team(id); if (d.upcoming && d.upcoming[0] && (!LEAGUE || d.upcoming[0].league === LEAGUE)) found.push(d.upcoming[0]); } catch (e) { } }
     const seen = new Set(), uniq = found.filter(m => !seen.has(m.id) && seen.add(m.id));
     uniq.sort((a, b) => (a.date + (a.time || "")).localeCompare(b.date + (b.time || "")));
     return uniq.length ? `<h2>${t("follow.my_matches")}</h2>${uniq.slice(0, 5).map(matchCard).join("")}<h2>${t("home.title")}</h2>` : "";
@@ -343,6 +345,15 @@
     const p = r.prediction, pc = p.percent, c = r.confidence, ms = p.most_likely_score;
     const fs = r.form_summary, vs = r.venue_split, hh = r.head_to_head, mt = r.match;
     const lvl = { low: 0, mid: 1, good: 2 }[c.level];
+    const matchId = mid || (mt && mt.id) || "";
+    let matchNote = "";
+    if (matchId && /^[A-Za-z0-9_\u0600-\u06FF-]{1,120}$/.test(String(matchId))) {
+      try {
+        const an = await jget("data/analyses/" + encodeURIComponent(matchId) + ".json");
+        if (an && an.scorers_and_notes) matchNote = String(an.scorers_and_notes);
+      } catch (_) {}
+    }
+    const scorersHtml = matchNote ? `<h2>${lang === "en" ? "Scorers & Match Notes" : "الهدافون وملاحظات المباراة"}</h2><div class="card"><p>${esc(matchNote)}</p></div>` : "";
     const hl = r.home.logo || tinfo(h).logo, al = r.away.logo || tinfo(a).logo;
     const info = mt ? (mt.status === "played"
       ? `<div class="score-big">${mt.hg} - ${mt.ag}</div><div style="text-align:center"><span class="pill">${t("an.actual")}</span></div>`
@@ -351,6 +362,7 @@
       <div class="hero">
         <div class="names"><div class="side">${crest(r.home.name, hl, 48)}<b>${esc(r.home.name)}</b><small>${t("an.host")}</small></div><div class="side">${crest(r.away.name, al, 48)}<b>${esc(r.away.name)}</b><small>${t("an.guest")}</small></div></div>
         ${info}
+        ${scorersHtml}
         ${window.smmCongrats ? window.smmCongrats(r) : ""}
         <div class="strip" role="img" aria-label="${esc(r.home.name)} ${pc.home}% / ${t("an.draw")} ${pc.draw}% / ${esc(r.away.name)} ${pc.away}%">
           <div class="h" style="flex-basis:${pc.home}%">${pc.home}%</div>
@@ -664,12 +676,14 @@
       TEAMS = await api.teams();
       META = await api.meta();
       LEAGUES = await api.leagues();
+      window.LEAGUES = LEAGUES;
       let savedL = null; try { savedL = localStorage.getItem("smm.league"); } catch (e) { }
       LEAGUE = LEAGUES.some(l => l.code === savedL) ? savedL : null;
       fillLeagueSel();
       if (!LEAGUE && LEAGUES[0]) LEAGUE = LEAGUES[0].code;       // أول بطولة بعد الترتيب الأبجدي
+      window.LEAGUE = LEAGUE;
       const ls = document.getElementById("leagueSel"); ls.value = LEAGUE || "";
-      ls.onchange = () => { LEAGUE = ls.value; try { localStorage.setItem("smm.league", LEAGUE); } catch (e) { } paintBanner(); if (location.hash && location.hash !== "#/") location.hash = "#/"; else route(); };
+      ls.onchange = async () => { LEAGUE = ls.value; window.LEAGUE = LEAGUE; window.SMM_LEAGUE = LEAGUE; try { localStorage.setItem("smm.league", LEAGUE); } catch (e) { } TEAMS = await api.teams(); paintBanner(); if (location.hash && location.hash !== "#/") location.hash = "#/"; else route(); };
       if (mode === "api" && TOKEN) {
         try { USER = (await get("/api/me")).user; } catch (e) { TOKEN = null; try { localStorage.removeItem("smm.token"); } catch (x) { } }
       }
@@ -746,11 +760,12 @@
 /* ===== SiiMatchMind Leagues Hub & World Cup (Hardened) ===== */
 (function () {
   const CATS = [
-    { key: "men", ico: "⚽", ar: "دوري الرجال", en: "Men's Leagues" },
-    { key: "women", ico: "👑", ar: "دوري السيدات", en: "Women's Leagues" },
-    { key: "para", ico: "♿", ar: "دوري المعاقين", en: "Para Football" },
-    { key: "youth", ico: "🌱", ar: "دوري الشباب", en: "Youth Leagues" },
-    { key: "wc", ico: "🌍", ar: "كأس العالم", en: "World Cup" }
+    { key: "men", ico: "▣", ar: "دوري الرجال", en: "Men's Leagues" },
+    { key: "women", ico: "◈", ar: "دوري السيدات", en: "Women's Leagues" },
+    { key: "para", ico: "❖", ar: "دوري المعاقين", en: "Para Football" },
+    { key: "youth", ico: "▸", ar: "دوري الشباب", en: "Youth Leagues" },
+    { key: "wc", ico: "◎", ar: "كأس العالم", en: "World Cup" },
+    { key: "other", ico: "◫", ar: "رياضات أخرى", en: "Other Sports" }
   ];
   const ALLOWED_CATS = new Set(CATS.map(c => c.key));
   const escSafe = (v) => (typeof esc === "function" ? esc(String(v ?? "")) : String(v ?? "").replace(/[&<>"']/g, s => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[s])));
@@ -760,7 +775,11 @@
     const code = String((l && l.code) || "");
     const name = String((l && l.name) || "").toLowerCase();
     if (code === "WC" || name.includes("world cup")) return "wc";
-    if (code.startsWith("SF-") || code === "hlpara" || name.includes("para") || name.includes("blind") || name.includes("amputee") || name.includes("cp football")) return "para";
+    if (code.startsWith("SF-")) {
+      if (/(basketball|volleyball|handball|motorsport|tennis|athletics|multi-sport|multi sport)/i.test(code + " " + name)) return "other";
+      return "para";
+    }
+    if (code === "hlpara" || name.includes("para") || name.includes("blind") || name.includes("amputee") || name.includes("cp football")) return "para";
     if (["hl12698","hl758174","hl775194","hl630524","hl960712","hl598186","hlnatU23","hlnatU20","hlnatU17"].includes(code) || /\bu(17|19|20|21|23)\b|youth/.test(name)) return "youth";
     if (["hl38228","hl121626","hl55248","hl70566","hl119073","hl216938","hl595633","hlnatW"].includes(code) || /women|feminine|femenina|frauen|wsl|nwsl/.test(name)) return "women";
     return "men";
@@ -768,7 +787,7 @@
 
   function selectLeagueCode(code) {
     if (!validCode(code)) return;
-    const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+    const all = (Array.isArray(window.LEAGUES) && window.LEAGUES.length) ? window.LEAGUES : (Array.isArray(LEAGUES) ? LEAGUES : []);
     if (all.length && !all.some(l => l.code === code)) return;
     const ls = document.getElementById("leagueSel");
     if (ls && Array.from(ls.options).some(o => o.value === code)) {
@@ -783,9 +802,9 @@
   function renderLeaguesHub(activeCat) {
     const view = document.getElementById("view");
     if (!view) return;
-    const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+    const all = (Array.isArray(window.LEAGUES) && window.LEAGUES.length) ? window.LEAGUES : (Array.isArray(LEAGUES) ? LEAGUES : []);
     const isAr = (document.documentElement.lang || "ar").startsWith("ar");
-    const grouped = { men: [], women: [], para: [], youth: [], wc: [] };
+    const grouped = { men: [], women: [], para: [], youth: [], wc: [], other: [] };
     all.forEach(l => {
       const k = classifyLeague(l);
       if (grouped[k]) grouped[k].push(l);
@@ -838,7 +857,7 @@
     if (wcBtn && !wcBtn.dataset.bound) {
       wcBtn.dataset.bound = "1";
       wcBtn.addEventListener("click", () => {
-        const all = Array.isArray(window.LEAGUES) ? window.LEAGUES : [];
+        const all = (Array.isArray(window.LEAGUES) && window.LEAGUES.length) ? window.LEAGUES : (Array.isArray(LEAGUES) ? LEAGUES : []);
         if (all.some(l => l.code === "WC")) {
           selectLeagueCode("WC");
         } else {

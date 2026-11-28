@@ -5,49 +5,119 @@
 import json
 import re
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.request import Request, urlopen
 
 import db
 
-BASE = "https://siiberram.github.io/Sii-Football/data/"
+BASE_URLS = [
+    "https://siiberram.github.io/Sii-Football/api/para/",
+    "https://siiberram.github.io/Sii-Football/api/",
+]
 SOURCE = "sii-football"
+PARA_CATEGORIES = {"amputee-football", "blind-football", "cp-football"}
+
+CATEGORY_LABELS = {
+    "amputee-football": "Amputee Football (WAFF)",
+    "blind-football": "Blind Football (IBSA)",
+    "cp-football": "CP Football (IFCPF)",
+}
 
 
-def _get(url):
-    req = Request(url, headers={"User-Agent": "SiiMatchMind/1.0"})
-    with urlopen(req, timeout=30) as r:
-        return json.loads(r.read().decode("utf-8"))
+def _get(filename):
+    last_err = None
+    for base in BASE_URLS:
+        url = base + filename
+        try:
+            req = Request(url, headers={"User-Agent": "SiiMatchMind/1.0"})
+            with urlopen(req, timeout=30) as r:
+                return json.loads(r.read().decode("utf-8"))
+        except Exception as exc:
+            last_err = exc
+    raise RuntimeError(f"Failed to fetch {filename}: {last_err}")
 
 
 def _slug(s):
-    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+    return re.sub(r"[^a-z0-9]+", "-", str(s or "").lower()).strip("-") or "unknown"
 
 
-def build(latest, comps):
-    names = {c["code"]: c["name"] for c in comps}
+def _parse_date(val):
+    if not val:
+        return datetime.now(timezone.utc)
+    s = str(val).strip()
+    try:
+        return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except Exception:
+        return datetime.now(timezone.utc)
+
+
+def build(matches_doc, leagues_doc, teams_doc=None):
     rows, teams, leagues = [], {}, {}
-    for m in latest["matches"]:
-        if m["status"] == "finished":
-            hg, ag = m["home_team"]["score"], m["away_team"]["score"]
+
+    for comp in (leagues_doc.get("competitions") or []):
+        cat = str(comp.get("category") or "").strip().lower()
+        if cat not in PARA_CATEGORIES:
+            continue
+        code = "SF-" + _slug(cat)
+        leagues[code] = CATEGORY_LABELS.get(cat, cat)
+
+    for tm in ((teams_doc or {}).get("teams") or []):
+        cat = str(tm.get("category") or "").strip().lower()
+        name = str(tm.get("name") or "").strip()
+        if cat in PARA_CATEGORIES and name:
+            tid = f"sf:{cat}:{_slug(name)}"
+            teams[tid] = name
+
+    all_matches = list(matches_doc.get("matches") or [])
+    if not all_matches:
+        all_matches = list(leagues_doc.get("matches") or [])
+
+    for idx, m in enumerate(all_matches, start=1):
+        cat = str(m.get("category") or "").strip().lower()
+        if cat not in PARA_CATEGORIES:
+            continue
+
+        raw_status = str(m.get("status") or "").strip().lower()
+        if raw_status in ("finished", "played", "ft"):
+            hg = m.get("home_score")
+            ag = m.get("away_score")
             if hg is None or ag is None:
                 continue
             status = "played"
-        elif m["status"] == "scheduled":
+        elif raw_status in ("scheduled", "upcoming", "fixture"):
             hg = ag = None
             status = "scheduled"
         else:
             continue
-        d = datetime.fromisoformat(m["date_utc"].replace("Z", "+00:00"))
-        code = "SF-" + m["competition"]
-        hid = f"sf:{m['sport']}:{_slug(m['home_team']['name'])}"
-        aid = f"sf:{m['sport']}:{_slug(m['away_team']['name'])}"
-        rows.append({"id": "sf" + m["match_id"], "date": d.date().isoformat(), "time": d.strftime("%H:%M"),
-                     "round": None, "season": str(d.year), "league": code, "home": hid, "away": aid,
-                     "hg": hg, "ag": ag, "status": status})
-        teams[hid] = m["home_team"]["name"]
-        teams[aid] = m["away_team"]["name"]
-        leagues[code] = names.get(m["competition"], m["competition"])
+
+        home_name = m["home_team"]["name"] if isinstance(m.get("home_team"), dict) else str(m.get("home_team") or "").strip()
+        away_name = m["away_team"]["name"] if isinstance(m.get("away_team"), dict) else str(m.get("away_team") or "").strip()
+        if not home_name or not away_name:
+            continue
+
+        d = _parse_date(m.get("date_utc") or m.get("date") or m.get("fetched_at"))
+        code = "SF-" + _slug(cat)
+        hid = f"sf:{cat}:{_slug(home_name)}"
+        aid = f"sf:{cat}:{_slug(away_name)}"
+        mid = "sf-" + _slug(m.get("match_id") or f"{cat}-{idx}")
+
+        rows.append({
+            "id": mid,
+            "date": d.date().isoformat(),
+            "time": d.strftime("%H:%M"),
+            "round": None,
+            "season": str(d.year),
+            "league": code,
+            "home": hid,
+            "away": aid,
+            "hg": hg,
+            "ag": ag,
+            "status": status,
+        })
+        teams[hid] = home_name
+        teams[aid] = away_name
+        leagues.setdefault(code, CATEGORY_LABELS.get(cat, cat))
+
     return rows, teams, leagues
 
 
@@ -73,11 +143,15 @@ def save(rows, teams, leagues):
 
 
 def main():
-    latest = _get(BASE + "latest.json")
-    comps = _get(BASE + "api/v1/competitions.json")["data"]
-    rows, teams, leagues = build(latest, comps)
-    if not rows:
-        print("لا توجد مباريات صالحة؛ لم يتغير شيء.")
+    matches_doc = _get("matches.json")
+    leagues_doc = _get("leagues.json")
+    try:
+        teams_doc = _get("teams.json")
+    except Exception:
+        teams_doc = {}
+    rows, teams, leagues = build(matches_doc, leagues_doc, teams_doc)
+    if not rows and not teams and not leagues:
+        print("لا توجد بيانات صالحة؛ لم يتغير شيء.")
         return
     save(rows, teams, leagues)
     print(f"تم: {len(rows)} مباراة، {len(teams)} فريقًا، {len(leagues)} بطولة (مصدر {SOURCE}).")
